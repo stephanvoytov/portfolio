@@ -40,13 +40,13 @@ export const services: Service[] = [
     title: "Боты",
     desc: "Боты для Telegram, VK и Max: заявки, запись, уведомления, рассылки.",
     meta: "около недели",
-    href: "/contacts",
+    href: "/bots",
   },
   {
     num: "06",
     title: "Поддержка и доработка",
     desc: "Обновления, новые страницы, помощь — сайт продолжает работать и приносить клиентов.",
     meta: "по запросу",
-    href: "/contacts",
+    href: "/support",
   },
 ];

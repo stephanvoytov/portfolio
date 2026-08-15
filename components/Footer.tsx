@@ -7,6 +7,8 @@ const nav = [
   { href: "/catalog", label: "Каталоги" },
   { href: "/ecommerce", label: "Магазины" },
   { href: "/migrate", label: "Миграция" },
+  { href: "/bots", label: "Боты" },
+  { href: "/support", label: "Поддержка" },
   { href: "/portfolio", label: "Работы" },
   { href: "/contacts", label: "Контакты" },
 ];
@@ -57,7 +59,7 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col gap-2 border-t border-line pt-6 text-xs text-faint sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 Стефан — разработка сайтов для бизнеса</p>
-          <p>Next.js · React · TypeScript · Ozon API · Wildberries API</p>
+          <p>Next.js · React · TypeScript</p>
         </div>
       </Container>
     </footer>

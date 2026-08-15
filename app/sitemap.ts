@@ -7,6 +7,8 @@ const paths = [
   { path: "/catalog", priority: 0.8 },
   { path: "/ecommerce", priority: 0.8 },
   { path: "/migrate", priority: 0.8 },
+  { path: "/bots", priority: 0.8 },
+  { path: "/support", priority: 0.6 },
   { path: "/portfolio", priority: 0.8 },
   { path: "/contacts", priority: 0.6 },
 ];

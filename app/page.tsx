@@ -17,7 +17,6 @@ export const metadata = pageMeta({
     "Кастомная разработка на Next.js: интернет-магазины, каталоги с синхронизацией Ozon и Wildberries, лендинги и миграция с маркетплейсов. Под ключ, от идеи до запуска и поддержки.",
   path: "/",
 });
-
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -41,7 +40,7 @@ export default function HomePage() {
         <Container>
           <Reveal>
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent">
-              Next.js · Ozon API · Wildberries API
+              Next.js · React · TypeScript
             </p>
             <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-heading sm:text-6xl">
               Делаю сайты,
