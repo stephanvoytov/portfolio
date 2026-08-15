@@ -28,10 +28,10 @@ export default function ProcessSteps() {
     <ol className="grid gap-4 sm:grid-cols-2">
       {steps.map((s, i) => (
         <Reveal key={s.num} delay={i * 0.07}>
-          <li className="h-full rounded-2xl border border-white/5 bg-white/[0.02] p-6">
-            <span className="font-mono text-sm text-violet-400">{s.num}</span>
-            <h3 className="mt-3 text-lg font-semibold text-white">{s.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-500">{s.desc}</p>
+          <li className="h-full rounded-2xl border border-line bg-panel p-6 shadow-sm">
+            <span className="font-mono text-sm text-accent">{s.num}</span>
+            <h3 className="mt-3 text-lg font-semibold text-heading">{s.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
           </li>
         </Reveal>
       ))}

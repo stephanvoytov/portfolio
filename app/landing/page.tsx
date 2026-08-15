@@ -128,9 +128,9 @@ export default function LandingPage() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {included.map((f, i) => (
               <Reveal key={f.title} delay={i * 0.05}>
-                <div className="h-full rounded-2xl border border-white/5 bg-white/[0.02] p-6">
-                  <h3 className="text-base font-semibold text-white">{f.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-500">{f.desc}</p>
+                <div className="h-full rounded-2xl border border-line bg-panel p-6 shadow-sm">
+                  <h3 className="text-base font-semibold text-heading">{f.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{f.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -139,7 +139,7 @@ export default function LandingPage() {
       </section>
 
       {/* Кейс Diverse */}
-      <section className="border-y border-white/5 bg-white/[0.015] py-20">
+      <section className="border-y border-line bg-panel-soft py-20">
         <Container>
           <SectionHeading
             kicker="Кейс"
@@ -155,16 +155,13 @@ export default function LandingPage() {
       {/* Кому подходит */}
       <section className="py-20">
         <Container>
-          <SectionHeading
-            kicker="Кому подходит"
-            title="Для кого такой лендинг"
-          />
+          <SectionHeading kicker="Кому подходит" title="Для кого такой лендинг" />
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {audience.map((a, i) => (
               <Reveal key={a.title} delay={i * 0.06}>
-                <div className="h-full rounded-2xl border border-white/5 bg-white/[0.02] p-6">
-                  <h3 className="text-base font-semibold text-white">{a.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-500">{a.desc}</p>
+                <div className="h-full rounded-2xl border border-line bg-panel p-6 shadow-sm">
+                  <h3 className="text-base font-semibold text-heading">{a.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{a.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -173,7 +170,7 @@ export default function LandingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="border-t border-white/5 py-20">
+      <section className="border-t border-line py-20">
         <Container>
           <SectionHeading kicker="FAQ" title="Частые вопросы" />
           <div className="mt-10 max-w-3xl">

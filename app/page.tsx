@@ -40,15 +40,15 @@ export default function HomePage() {
       <section className="hero-glow grid-bg relative overflow-hidden pb-16 pt-32 sm:pt-40">
         <Container>
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-violet-400">
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent">
               Next.js · Ozon API · Wildberries API
             </p>
-            <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl">
+            <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-heading sm:text-6xl">
               Делаю сайты,
               <br />
-              которые <em className="not-italic text-violet-400">продают</em>
+              которые <em className="not-italic text-accent">продают</em>
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
               Лендинги, интернет-магазины и каталоги с автоматической синхронизацией с Ozon и
               Wildberries — под ключ, от идеи до запуска и поддержки.
             </p>
@@ -82,7 +82,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Работы ===== */}
-      <section className="border-y border-white/5 bg-white/[0.015] py-20">
+      <section className="border-y border-line bg-panel-soft py-20">
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading

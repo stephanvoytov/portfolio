@@ -3,10 +3,32 @@
 @theme inline {
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains);
+
+  /* Семантические цвета (светлая тема) */
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-panel-soft: var(--panel-soft);
+  --color-heading: var(--heading);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
+  --bg: #fafafa;
+  --panel: #ffffff;
+  --panel-soft: #f4f4f5;
+  --heading: #18181b;
+  --body: #3f3f46;
+  --muted: #71717a;
+  --faint: #a1a1aa;
+  --line: #e4e4e7;
+  --line-strong: #d4d4d8;
+  --accent: #7c3aed;
 }
 
 html {
@@ -14,44 +36,45 @@ html {
 }
 
 body {
-  background: #090b10;
-  color: #e4e4e7;
+  background: var(--bg);
+  color: var(--body);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: rgba(139, 92, 246, 0.35);
-  color: #fff;
+  background: rgba(124, 58, 237, 0.18);
+  color: var(--heading);
 }
 
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #090b10;
+  background: #f4f4f5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #d4d4d8;
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #a1a1aa;
 }
 
-/* Фоновое свечение для герой-секций */
+/* Фоновое свечение для герой-секций — только сверху, не перекрывает контент */
 .hero-glow {
-  background:
-    radial-gradient(ellipse 65% 55% at 50% 0%, rgba(139, 92, 246, 0.16), transparent 70%),
-    radial-gradient(ellipse 40% 35% at 80% 10%, rgba(99, 102, 241, 0.1), transparent 70%);
+  background: radial-gradient(
+    ellipse 70% 45% at 50% -5%,
+    rgba(124, 58, 237, 0.08),
+    transparent 70%
+  );
 }
 
-/* Сетка на фоне */
+/* Сетка на фоне — равномерная, без затухания к низу */
 .grid-bg {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
   background-size: 44px 44px;
-  mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
 }

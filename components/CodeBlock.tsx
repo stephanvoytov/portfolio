@@ -9,7 +9,7 @@ interface CodeBlockProps {
 export default function CodeBlock({ code, caption }: CodeBlockProps) {
   return (
     <Reveal>
-      <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0d1017]">
+      <div className="overflow-hidden rounded-2xl border border-line-strong bg-[#0d1017] shadow-sm">
         {caption && (
           <div className="flex items-center gap-2 border-b border-white/5 px-4 py-2.5">
             <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />

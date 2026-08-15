@@ -24,14 +24,14 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-[#090b10]/80 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-bg/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link
           href="/"
-          className="text-lg font-semibold tracking-tight text-white"
+          className="text-lg font-semibold tracking-tight text-heading"
           onClick={() => setOpen(false)}
         >
-          Стефан<span className="text-violet-400">.</span>
+          Стефан<span className="text-accent">.</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -40,7 +40,7 @@ export default function Header() {
               key={l.href}
               href={l.href}
               className={`rounded-full px-3 py-2 text-sm transition-colors ${
-                isActive(l.href) ? "text-white" : "text-zinc-400 hover:text-white"
+                isActive(l.href) ? "text-heading" : "text-muted hover:text-heading"
               }`}
             >
               {l.label}
@@ -57,24 +57,24 @@ export default function Header() {
         </nav>
 
         <button
-          className="grid h-10 w-10 place-items-center rounded-full border border-white/10 md:hidden"
+          className="grid h-10 w-10 place-items-center rounded-full border border-line-strong md:hidden"
           aria-label={open ? "Закрыть меню" : "Открыть меню"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
           <span className="relative block h-3 w-4">
             <i
-              className={`absolute left-0 top-0 h-0.5 w-4 rounded bg-white transition-transform ${
+              className={`absolute left-0 top-0 h-0.5 w-4 rounded bg-heading transition-transform ${
                 open ? "translate-y-1.5 rotate-45" : ""
               }`}
             />
             <i
-              className={`absolute left-0 top-1.5 h-0.5 w-4 rounded bg-white transition-opacity ${
+              className={`absolute left-0 top-1.5 h-0.5 w-4 rounded bg-heading transition-opacity ${
                 open ? "opacity-0" : ""
               }`}
             />
             <i
-              className={`absolute left-0 top-3 h-0.5 w-4 rounded bg-white transition-transform ${
+              className={`absolute left-0 top-3 h-0.5 w-4 rounded bg-heading transition-transform ${
                 open ? "-translate-y-1.5 -rotate-45" : ""
               }`}
             />
@@ -83,14 +83,14 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-white/5 bg-[#0b0e15] px-4 pb-6 pt-2 md:hidden">
+        <nav className="border-t border-line bg-panel px-4 pb-6 pt-2 md:hidden">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
               className={`block rounded-xl px-3 py-3 text-base ${
-                isActive(l.href) ? "text-white" : "text-zinc-400"
+                isActive(l.href) ? "text-heading" : "text-muted"
               }`}
             >
               {l.label}

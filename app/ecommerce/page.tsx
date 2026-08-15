@@ -112,9 +112,9 @@ export default function EcommercePage() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {modules.map((m, i) => (
               <Reveal key={m.title} delay={i * 0.04}>
-                <div className="h-full rounded-2xl border border-white/5 bg-white/[0.02] p-6">
-                  <h3 className="text-base font-semibold text-white">{m.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-500">{m.desc}</p>
+                <div className="h-full rounded-2xl border border-line bg-panel p-6 shadow-sm">
+                  <h3 className="text-base font-semibold text-heading">{m.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{m.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -123,7 +123,7 @@ export default function EcommercePage() {
       </section>
 
       {/* Интеграции */}
-      <section className="border-y border-white/5 bg-white/[0.015] py-20">
+      <section className="border-y border-line bg-panel-soft py-20">
         <Container>
           <SectionHeading
             kicker="Интеграции"
@@ -133,9 +133,9 @@ export default function EcommercePage() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {integrations.map((m, i) => (
               <Reveal key={m.title} delay={i * 0.05}>
-                <div className="h-full rounded-2xl border border-white/5 bg-white/[0.02] p-6">
-                  <h3 className="text-base font-semibold text-white">{m.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-500">{m.desc}</p>
+                <div className="h-full rounded-2xl border border-line bg-panel p-6 shadow-sm">
+                  <h3 className="text-base font-semibold text-heading">{m.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{m.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -146,16 +146,13 @@ export default function EcommercePage() {
       {/* Безопасность */}
       <section className="py-20">
         <Container>
-          <SectionHeading
-            kicker="Безопасность"
-            title="Данные под защитой"
-          />
+          <SectionHeading kicker="Безопасность" title="Данные под защитой" />
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {security.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.06}>
-                <div className="h-full rounded-2xl border border-white/5 bg-white/[0.02] p-6">
-                  <h3 className="text-base font-semibold text-white">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-500">{s.desc}</p>
+                <div className="h-full rounded-2xl border border-line bg-panel p-6 shadow-sm">
+                  <h3 className="text-base font-semibold text-heading">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -164,7 +161,7 @@ export default function EcommercePage() {
       </section>
 
       {/* Кейс */}
-      <section className="border-t border-white/5 py-20">
+      <section className="border-t border-line py-20">
         <Container>
           <SectionHeading
             kicker="Кейс"

@@ -111,12 +111,12 @@ export default function CatalogPage() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {syncSteps.map((s, i) => (
               <Reveal key={s.num} delay={i * 0.07}>
-                <div className="relative h-full rounded-2xl border border-white/5 bg-white/[0.02] p-6">
-                  <span className="font-mono text-sm text-violet-400">{s.num}</span>
-                  <h3 className="mt-3 text-base font-semibold text-white">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-500">{s.desc}</p>
+                <div className="relative h-full rounded-2xl border border-line bg-panel p-6 shadow-sm">
+                  <span className="font-mono text-sm text-accent">{s.num}</span>
+                  <h3 className="mt-3 text-base font-semibold text-heading">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
                   {i < syncSteps.length - 1 && (
-                    <span className="absolute -right-3 top-1/2 hidden -translate-y-1/2 font-mono text-zinc-600 lg:block">
+                    <span className="absolute -right-3 top-1/2 hidden -translate-y-1/2 font-mono text-faint lg:block">
                       →
                     </span>
                   )}
@@ -128,7 +128,7 @@ export default function CatalogPage() {
       </section>
 
       {/* Пример кода */}
-      <section className="border-y border-white/5 bg-white/[0.015] py-20">
+      <section className="border-y border-line bg-panel-soft py-20">
         <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
             <SectionHeading
@@ -140,7 +140,7 @@ export default function CatalogPage() {
               {["Ozon Seller API", "Wildberries API", "Крон / webhook", "Админка"].map((t) => (
                 <span
                   key={t}
-                  className="rounded-full border border-white/10 px-3 py-1 font-mono text-xs text-zinc-400"
+                  className="rounded-full border border-line-strong px-3 py-1 font-mono text-xs text-muted"
                 >
                   {t}
                 </span>
@@ -154,16 +154,13 @@ export default function CatalogPage() {
       {/* Преимущества */}
       <section className="py-20">
         <Container>
-          <SectionHeading
-            kicker="Зачем это нужно"
-            title="Меньше рутины — больше продаж"
-          />
+          <SectionHeading kicker="Зачем это нужно" title="Меньше рутины — больше продаж" />
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {benefits.map((b, i) => (
               <Reveal key={b.title} delay={i * 0.05}>
-                <div className="h-full rounded-2xl border border-white/5 bg-white/[0.02] p-6">
-                  <h3 className="text-base font-semibold text-white">{b.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-500">{b.desc}</p>
+                <div className="h-full rounded-2xl border border-line bg-panel p-6 shadow-sm">
+                  <h3 className="text-base font-semibold text-heading">{b.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{b.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -172,7 +169,7 @@ export default function CatalogPage() {
       </section>
 
       {/* Кейс */}
-      <section className="border-t border-white/5 py-20">
+      <section className="border-t border-line py-20">
         <Container>
           <SectionHeading
             kicker="Кейс"

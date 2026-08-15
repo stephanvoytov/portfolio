@@ -101,16 +101,13 @@ export default function MigratePage() {
       {/* Проблема */}
       <section className="py-20">
         <Container>
-          <SectionHeading
-            kicker="Проблема"
-            title="Почему бизнес уходит с маркетплейсов"
-          />
+          <SectionHeading kicker="Проблема" title="Почему бизнес уходит с маркетплейсов" />
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {problems.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.05}>
-                <div className="h-full rounded-2xl border border-white/5 bg-white/[0.02] p-6">
-                  <h3 className="text-base font-semibold text-white">{p.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-500">{p.desc}</p>
+                <div className="h-full rounded-2xl border border-line bg-panel p-6 shadow-sm">
+                  <h3 className="text-base font-semibold text-heading">{p.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{p.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -119,7 +116,7 @@ export default function MigratePage() {
       </section>
 
       {/* Чек-лист */}
-      <section className="border-y border-white/5 bg-white/[0.015] py-20">
+      <section className="border-y border-line bg-panel-soft py-20">
         <Container>
           <SectionHeading
             kicker="План из 5 шагов"
@@ -129,11 +126,11 @@ export default function MigratePage() {
           <ol className="mt-10 space-y-4">
             {checklist.map((s, i) => (
               <Reveal key={s.num} delay={i * 0.05}>
-                <li className="flex flex-col gap-3 rounded-2xl border border-white/5 bg-white/[0.02] p-6 sm:flex-row sm:items-start sm:gap-6">
-                  <span className="font-mono text-sm text-violet-400">{s.num}</span>
+                <li className="flex flex-col gap-3 rounded-2xl border border-line bg-panel p-6 shadow-sm sm:flex-row sm:items-start sm:gap-6">
+                  <span className="font-mono text-sm text-accent">{s.num}</span>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">{s.title}</h3>
-                    <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-zinc-500">{s.desc}</p>
+                    <h3 className="text-lg font-semibold text-heading">{s.title}</h3>
+                    <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">{s.desc}</p>
                   </div>
                 </li>
               </Reveal>
@@ -145,23 +142,20 @@ export default function MigratePage() {
       {/* Почему это выгодно */}
       <section className="py-20">
         <Container>
-          <SectionHeading
-            kicker="Результат"
-            title="Что вы получаете"
-          />
+          <SectionHeading kicker="Результат" title="Что вы получаете" />
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {why.map((w, i) => (
               <Reveal key={w.title} delay={i * 0.06}>
-                <div className="h-full rounded-2xl border border-white/5 bg-white/[0.02] p-6">
-                  <h3 className="text-base font-semibold text-white">{w.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-500">{w.desc}</p>
+                <div className="h-full rounded-2xl border border-line bg-panel p-6 shadow-sm">
+                  <h3 className="text-base font-semibold text-heading">{w.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{w.desc}</p>
                 </div>
               </Reveal>
             ))}
           </div>
           <Reveal className="mt-10">
-            <div className="rounded-2xl border border-violet-500/20 bg-violet-500/5 p-6 sm:p-8">
-              <p className="text-base leading-relaxed text-zinc-300 sm:text-lg">
+            <div className="rounded-2xl border border-violet-200 bg-violet-50 p-6 sm:p-8">
+              <p className="text-base leading-relaxed text-zinc-700 sm:text-lg">
                 Начните с аудита: посмотрим ваш ассортимент, посчитаем маржу и предложим схему
                 перехода под ваш случай — без обязательств.
               </p>

@@ -14,7 +14,7 @@ export function BtnLink({ href, children, variant = "primary", external = false,
   const styles =
     variant === "primary"
       ? "bg-violet-600 text-white hover:bg-violet-500"
-      : "border border-white/15 text-zinc-200 hover:bg-white/5";
+      : "border border-line-strong text-body hover:bg-panel-soft";
   const cls = `${base} ${styles} ${className}`;
   if (external) {
     return (

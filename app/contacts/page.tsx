@@ -43,9 +43,9 @@ export default function ContactsPage() {
       <section className="pb-20 pt-10">
         <Container className="grid gap-10 lg:grid-cols-5">
           <Reveal className="lg:col-span-3">
-            <div className="rounded-3xl border border-white/5 bg-white/[0.02] p-6 sm:p-8">
-              <h2 className="text-xl font-semibold text-white">Форма заявки</h2>
-              <p className="mt-2 text-sm text-zinc-500">
+            <div className="rounded-3xl border border-line bg-panel p-6 shadow-sm sm:p-8">
+              <h2 className="text-xl font-semibold text-heading">Форма заявки</h2>
+              <p className="mt-2 text-sm text-muted">
                 Заявка приходит мне в Telegram — отвечу в ближайшее время.
               </p>
               <div className="mt-6">
@@ -60,14 +60,14 @@ export default function ContactsPage() {
                 href={site.tg}
                 target="_blank"
                 rel="noopener"
-                className="group block rounded-3xl border border-white/5 bg-white/[0.02] p-6 transition-colors hover:bg-white/[0.04]"
+                className="group block rounded-3xl border border-line bg-panel p-6 shadow-sm transition-colors hover:bg-panel-soft"
               >
-                <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500">Быстрее всего</p>
-                <p className="mt-3 text-lg font-semibold text-white group-hover:text-violet-300">
+                <p className="font-mono text-xs uppercase tracking-[0.2em] text-faint">Быстрее всего</p>
+                <p className="mt-3 text-lg font-semibold text-heading group-hover:text-accent">
                   Telegram
                 </p>
-                <p className="mt-1 text-sm text-zinc-400">{site.tgHandle}</p>
-                <p className="mt-3 text-sm text-violet-300">Написать →</p>
+                <p className="mt-1 text-sm text-muted">{site.tgHandle}</p>
+                <p className="mt-3 text-sm text-accent">Написать →</p>
               </a>
             </Reveal>
 
@@ -76,19 +76,19 @@ export default function ContactsPage() {
                 href={site.max}
                 target="_blank"
                 rel="noopener"
-                className="group block rounded-3xl border border-white/5 bg-white/[0.02] p-6 transition-colors hover:bg-white/[0.04]"
+                className="group block rounded-3xl border border-line bg-panel p-6 shadow-sm transition-colors hover:bg-panel-soft"
               >
-                <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500">Мессенджер</p>
-                <p className="mt-3 text-lg font-semibold text-white group-hover:text-violet-300">Max</p>
-                <p className="mt-1 text-sm text-zinc-400">написать в Max</p>
-                <p className="mt-3 text-sm text-violet-300">Открыть →</p>
+                <p className="font-mono text-xs uppercase tracking-[0.2em] text-faint">Мессенджер</p>
+                <p className="mt-3 text-lg font-semibold text-heading group-hover:text-accent">Max</p>
+                <p className="mt-1 text-sm text-muted">написать в Max</p>
+                <p className="mt-3 text-sm text-accent">Открыть →</p>
               </a>
             </Reveal>
 
             <Reveal delay={0.15}>
-              <div className="rounded-3xl border border-white/5 bg-white/[0.02] p-6">
-                <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500">О проекте</p>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+              <div className="rounded-3xl border border-line bg-panel p-6 shadow-sm">
+                <p className="font-mono text-xs uppercase tracking-[0.2em] text-faint">О проекте</p>
+                <p className="mt-3 text-sm leading-relaxed text-body">
                   Чем больше деталей — тем точнее смета: тип сайта, количество товаров, нужны ли
                   интеграции с маркетплейсами и учётными системами.
                 </p>
