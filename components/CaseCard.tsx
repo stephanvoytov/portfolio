@@ -72,7 +72,7 @@ export default function CaseCard({ item }: CaseCardProps) {
               href={item.url}
               target="_blank"
               rel="noopener"
-              className="text-sm font-medium text-white/50 transition-colors hover:text-white"
+              className="text-sm font-medium text-white/50 transition-colors hover:text-white hover:underline underline-offset-4"
             >
               {item.urlLabel}
             </a>

@@ -53,7 +53,7 @@ export default function HomePage() {
               Реальные проекты, которые я разработал для бизнеса.
             </p>
           </Reveal>
-          <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
             {cases.map((c) => (
               <CaseCard key={c.id} item={c} />
             ))}
@@ -67,12 +67,19 @@ export default function HomePage() {
           <SectionHeading
             kicker="Услуги"
             title="Что я делаю"
-            sub="Три категории сайтов: от визитки до магазина с интеграциями. Сравните по составу, цене и сроку — и выберите свою. Ниже — дополнительные услуги."
+            sub="Три категории сайтов: от визитки до магазина с интеграциями. Сравните по составу, цене и сроку — и выберите свою."
           />
           <div className="mt-12">
             <SiteCategories />
           </div>
-          <p className="mt-10 font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">
+        </Container>
+      </section>
+
+      {/* ===== Дополнительные услуги ===== */}
+      <section className="border-y border-line bg-panel-soft py-24">
+        <Container>
+          <p className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">
+            <span className="h-2 w-2 rounded-full bg-accent" />
             Дополнительно
           </p>
           <div className="mt-4">
@@ -104,7 +111,7 @@ export default function HomePage() {
                 </li>
               </ul>
             </div>
-            <div className="rounded-2xl border border-line bg-panel-soft p-5 sm:p-6">
+            <div className="rounded-2xl border border-line bg-white p-5 shadow-sm sm:p-6">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">
                 Что потребуется от вас
               </p>
@@ -143,7 +150,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Как я работаю ===== */}
-      <section className="border-y border-line bg-panel-soft py-24">
+      <section className="py-24">
         <Container>
           <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
             <Reveal>
@@ -197,7 +204,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Процесс ===== */}
-      <section className="py-24" id="process">
+      <section className="border-y border-line bg-panel-soft py-24" id="process">
         <Container>
           <SectionHeading
             kicker="Как я работаю"

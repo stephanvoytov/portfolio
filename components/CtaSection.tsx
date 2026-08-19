@@ -34,7 +34,7 @@ export default function CtaSection({ hideMigrate = false }: { hideMigrate?: bool
               <button
                 type="button"
                 onClick={open}
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-black bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink shadow-[4px_4px_0_0_#0a0a0a] transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-black bg-accent-ink px-7 py-3.5 text-sm font-semibold text-white shadow-[4px_4px_0_0_#0a0a0a] transition-all duration-200 hover:-translate-y-0.5"
               >
                 Оставить заявку
               </button>

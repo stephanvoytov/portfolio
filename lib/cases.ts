@@ -50,6 +50,7 @@ export const cases: Case[] = [
     url: "https://morantibags.ru",
     urlLabel: "morantibags.ru ↗",
     tagline: "Интернет-магазин женских сумок",
+    previewDesktop: "/images/mockup-moranti-v2.jpg",
     short:
       "Каталог-витрина: 70+ позиций с ценами, скидками и рейтингами. Всё синхронизируется с Ozon и Wildberries автоматически: картинки, характеристики, цены, остатки, отзывы. Покупка пока через маркетплейсы — оплата на сайте подключится следующим этапом.",
     problem:
@@ -96,6 +97,7 @@ export const cases: Case[] = [
     url: "https://diversebrand.vercel.app",
     urlLabel: "diversebrand.vercel.app ↗",
     tagline: "Лендинг франшизы одежды",
+    previewDesktop: "/images/mockup-diverse-v2.jpg",
     short:
       "Сайт франшизы: будущие партнёры изучают условия, находят магазины рядом на карте и оставляют заявку — она сразу приходит владельцу в Telegram и на почту. Заменил сайт, собранный владельцем на Tilda.",
     problem:
