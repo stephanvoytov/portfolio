@@ -3,7 +3,7 @@ export interface Service {
   title: string;
   desc: string;
   meta: string;
-  href: string;
+  href?: string;
 }
 
 export const services: Service[] = [
@@ -12,21 +12,18 @@ export const services: Service[] = [
     title: "Лендинг",
     desc: "Продающая страница для рекламы: заявки приходят сразу, без лишних кликов.",
     meta: "около недели",
-    href: "/landing",
   },
   {
     num: "02",
     title: "Интернет-магазин",
     desc: "Каталог, корзина, оплата и кабинет управления. Под ключ, от дизайна до запуска.",
     meta: "около недели",
-    href: "/ecommerce",
   },
   {
     num: "03",
     title: "Каталог с синхронизацией Ozon и Wildberries",
     desc: "Свой каталог на данных маркетплейсов: цены, остатки, характеристики и отзывы обновляются сами.",
     meta: "1–2 недели",
-    href: "/catalog",
   },
   {
     num: "04",
@@ -40,13 +37,11 @@ export const services: Service[] = [
     title: "Боты",
     desc: "Боты для Telegram, VK и Max: заявки, запись, уведомления, рассылки.",
     meta: "около недели",
-    href: "/bots",
   },
   {
     num: "06",
     title: "Поддержка и доработка",
     desc: "Обновления, новые страницы, помощь — сайт продолжает работать и приносить клиентов.",
     meta: "по запросу",
-    href: "/support",
   },
 ];

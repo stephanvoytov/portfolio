@@ -1,26 +1,67 @@
+import { Container } from "@/components/Container";
+import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 
-interface FaqItem {
-  q: string;
-  a: string;
-}
+const faqs = [
+  {
+    q: "Не потеряю ли я продажи, если начну уходить с маркетплейса?",
+    a: "Переход спланирован так, чтобы продажи не обрывались: маркетплейсы продолжают работать, пока сайт набирает обороты. Вы сами решаете, когда и насколько снижать долю площадок — по шагам и по цифрам.",
+  },
+  {
+    q: "Кто будет обновлять цены и остатки на сайте?",
+    a: "Никто. Сайт синхронизируется с Ozon и Wildberries через API: цены, остатки, характеристики и отзывы обновляются автоматически, без ручного ввода. Двойной работы нет — ведёте карточки на маркетплейсе, сайт повторяет.",
+  },
+  {
+    q: "Сайт не будет дороже маркетплейса?",
+    a: "Посчитайте сами: суммарные удержания маркетплейса — 35–55% с каждой продажи (комиссия, логистика, реклама, эквайринг, хранение). Сайт — это один фиксированный бюджет и ~2–3% эквайринга. Уже при небольшом потоке заказов сайт окупается за пару месяцев, а дальше работает на вас.",
+  },
+  {
+    q: "А доставка? У маркетплейса склады и ПВЗ по всей стране",
+    a: "Честно: на своём сайте география и скорость доставки на старте будут скромнее. Подключаем СДЭК, Почту России и курьерские службы с расчётом стоимости на лету — для большинства ниш этого достаточно, а с ростом продаж добавляются региональные склады и свои ПВЗ. Это плата за независимость, и она окупается маржой.",
+  },
+  {
+    q: "Маркетплейс сам приводит покупателей. А на сайт кто будет приводить?",
+    a: "Реклама, SEO и соцсети — это отдельный шаг плана, плюс каждая посылка с маркетплейса несёт QR-код на ваш сайт. Да, трафик придётся приводить самим — но каждый приведённый клиент остаётся вашим и возвращается к вам, а не гуляет по полке конкурентов.",
+  },
+  {
+    q: "Сколько времени занимает переход?",
+    a: "Сам сайт — 1–2 недели. Полный переход с переносом аудитории — обычно 2–3 месяца: сайт, синхронизация, реклама, постепенное снижение доли маркетплейсов. Темп выбираете вы.",
+  },
+  {
+    q: "А если у меня ещё нет своих клиентов?",
+    a: "Для этого в плане есть шаг «Собираем аудиторию»: QR-коды в упаковке, вкладыши, соцсети, накопительные скидки. Каждая посылка с маркетплейса превращается в возможность привести покупателя на ваш сайт.",
+  },
+  {
+    q: "Мне вообще подходит уход с маркетплейсов?",
+    a: "Не всем — и это нормально. Если у вас разовые покупки без повторов и высокая конкуренция по цене, маркетплейс может оставаться основным каналом. На аудите посмотрим ваши цифры и честно скажем, что выгоднее.",
+  },
+];
 
-export default function Faq({ items }: { items: FaqItem[] }) {
+export default function Faq() {
   return (
-    <div className="divide-y divide-line rounded-2xl border border-line bg-panel shadow-sm">
-      {items.map((f, i) => (
-        <Reveal key={f.q} delay={i * 0.05}>
-          <details className="group p-5 sm:p-6">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium text-heading">
-              {f.q}
-              <span className="shrink-0 font-mono text-accent transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-body">{f.a}</p>
-          </details>
-        </Reveal>
-      ))}
-    </div>
+    <section className="border-y border-line bg-panel-soft py-24">
+      <Container>
+        <SectionHeading
+          kicker="Вопросы и ответы"
+          title="Сомнения, которые у всех"
+          sub="Отвечаю честно — в том числе на то, что может быть не в мою пользу. Если вашего вопроса нет, напишите в Telegram."
+        />
+        <div className="mx-auto mt-12 max-w-3xl space-y-3">
+          {faqs.map((f, i) => (
+            <Reveal key={f.q} delay={i * 0.04}>
+              <details className="group rounded-2xl border border-line bg-white shadow-sm transition-all duration-200 open:border-black open:shadow-[4px_4px_0_0_#ffd900]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-base font-bold text-heading [&::-webkit-details-marker]:hidden">
+                  {f.q}
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border-2 border-black bg-accent font-mono text-lg font-extrabold text-accent-ink transition-transform duration-200 group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="px-6 pb-6 text-sm leading-relaxed text-muted sm:text-base">{f.a}</p>
+              </details>
+            </Reveal>
+          ))}
+        </div>
+      </Container>
+    </section>
   );
 }

@@ -7,10 +7,7 @@ import { site } from "@/lib/site";
 
 const links = [
   { href: "/", label: "Главная" },
-  { href: "/#services", label: "Услуги" },
-  { href: "/portfolio", label: "Работы" },
-  { href: "/migrate", label: "Миграция" },
-  { href: "/contacts", label: "Контакты" },
+  { href: "/migrate", label: "Уход с маркетплейсов" },
 ];
 
 export default function Header() {
@@ -50,7 +47,7 @@ export default function Header() {
             href={site.tg}
             target="_blank"
             rel="noopener"
-            className="ml-3 rounded-full bg-violet-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-violet-500"
+            className="ml-3 rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[3px_3px_0_0_#0a0a0a]"
           >
             Telegram
           </a>
@@ -100,7 +97,7 @@ export default function Header() {
             href={site.tg}
             target="_blank"
             rel="noopener"
-            className="mt-3 block rounded-full bg-violet-600 px-4 py-3 text-center text-base font-medium text-white"
+            className="mt-3 block rounded-full bg-accent px-4 py-3 text-center text-base font-bold text-accent-ink"
           >
             Написать в Telegram
           </a>

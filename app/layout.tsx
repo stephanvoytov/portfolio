@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Golos_Text, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
 
-const inter = Inter({
+const golos = Golos_Text({
   subsets: ["latin", "cyrillic"],
-  variable: "--font-inter",
+  variable: "--font-golos",
   display: "swap",
 });
 
@@ -41,6 +41,14 @@ export const metadata: Metadata = {
     title: "Стефан — разработка сайтов на Next.js",
     description:
       "Интернет-магазины, каталоги с синхронизацией Ozon и Wildberries, лендинги под ключ.",
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Стефан — разработка сайтов на Next.js" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Стефан — разработка сайтов на Next.js",
+    description:
+      "Интернет-магазины, каталоги с синхронизацией Ozon и Wildberries, лендинги под ключ.",
+    images: ["/og.jpg"],
   },
   robots: {
     index: true,
@@ -72,7 +80,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ru"
-      className={`${inter.variable} ${jetbrains.variable} h-full antialiased`}
+      className={`${golos.variable} ${jetbrains.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <script

@@ -39,6 +39,11 @@ yarn-error.log*
 # playwright mcp artifacts
 .playwright-mcp
 
+# local dev artifacts
+dev-server*.log
+home-*.png
+/research/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

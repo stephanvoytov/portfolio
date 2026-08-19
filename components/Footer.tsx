@@ -3,14 +3,8 @@ import { Container } from "@/components/Container";
 import { site } from "@/lib/site";
 
 const nav = [
-  { href: "/landing", label: "Лендинги" },
-  { href: "/catalog", label: "Каталоги" },
-  { href: "/ecommerce", label: "Магазины" },
-  { href: "/migrate", label: "Миграция" },
-  { href: "/bots", label: "Боты" },
-  { href: "/support", label: "Поддержка" },
-  { href: "/portfolio", label: "Работы" },
-  { href: "/contacts", label: "Контакты" },
+  { href: "/", label: "Главная" },
+  { href: "/migrate", label: "Уход с маркетплейсов" },
 ];
 
 export default function Footer() {

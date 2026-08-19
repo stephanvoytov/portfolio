@@ -3,18 +3,29 @@ import Link from "next/link";
 interface BtnLinkProps {
   href: string;
   children: React.ReactNode;
-  variant?: "primary" | "ghost";
+  variant?: "primary" | "ghost" | "yellow";
   external?: boolean;
+  block?: boolean;
   className?: string;
 }
 
-export function BtnLink({ href, children, variant = "primary", external = false, className = "" }: BtnLinkProps) {
-  const base =
-    "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-colors";
+export function BtnLink({
+  href,
+  children,
+  variant = "primary",
+  external = false,
+  block = false,
+  className = "",
+}: BtnLinkProps) {
+  const base = `inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 ${
+    block ? "w-full" : ""
+  }`;
   const styles =
     variant === "primary"
-      ? "bg-violet-600 text-white hover:bg-violet-500"
-      : "border border-line-strong text-body hover:bg-panel-soft";
+      ? "bg-black text-white shadow-sm hover:shadow-lg hover:shadow-black/20"
+      : variant === "yellow"
+        ? "bg-accent text-accent-ink shadow-sm hover:shadow-lg hover:shadow-yellow-400/40"
+        : "border border-line-strong bg-white text-body hover:border-black hover:text-heading";
   const cls = `${base} ${styles} ${className}`;
   if (external) {
     return (

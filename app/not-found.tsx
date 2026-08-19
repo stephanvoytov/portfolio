@@ -9,12 +9,13 @@ export default function NotFound() {
           Такой страницы нет
         </h1>
         <p className="mx-auto mt-4 max-w-md text-muted">
-          Возможно, ссылка устарела. Загляните на главную или в портфолио.
+          Возможно, ссылка устарела. Загляните на главную или на страницу об уходе с
+          маркетплейсов.
         </p>
         <div className="mt-8 flex justify-center gap-3">
           <BtnLink href="/">На главную</BtnLink>
-          <BtnLink href="/portfolio" variant="ghost">
-            Работы
+          <BtnLink href="/migrate" variant="ghost">
+            Уход с маркетплейсов
           </BtnLink>
         </div>
       </div>

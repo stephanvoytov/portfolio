@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-golos);
   --font-mono: var(--font-jetbrains);
 
   /* Семантические цвета (светлая тема) */
@@ -15,20 +15,22 @@
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
   --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
 }
 
 :root {
   color-scheme: light;
-  --bg: #fafafa;
+  --bg: #ffffff;
   --panel: #ffffff;
   --panel-soft: #f4f4f5;
-  --heading: #18181b;
+  --heading: #0a0a0a;
   --body: #3f3f46;
   --muted: #71717a;
   --faint: #a1a1aa;
   --line: #e4e4e7;
   --line-strong: #d4d4d8;
-  --accent: #7c3aed;
+  --accent: #ffd900;
+  --accent-ink: #0a0a0a;
 }
 
 html {
@@ -38,13 +40,13 @@ html {
 body {
   background: var(--bg);
   color: var(--body);
-  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-golos), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: rgba(124, 58, 237, 0.18);
+  background: rgba(255, 217, 0, 0.55);
   color: var(--heading);
 }
 
@@ -62,19 +64,62 @@ body {
   background: #a1a1aa;
 }
 
-/* Фоновое свечение для герой-секций — только сверху, не перекрывает контент */
+/* Жёлтое свечение для hero-секций */
 .hero-glow {
   background: radial-gradient(
     ellipse 70% 45% at 50% -5%,
-    rgba(124, 58, 237, 0.08),
+    rgba(255, 217, 0, 0.22),
     transparent 70%
   );
 }
 
-/* Сетка на фоне — равномерная, без затухания к низу */
+/* Сетка на фоне */
 .grid-bg {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 0, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.045) 1px, transparent 1px);
   background-size: 44px 44px;
+}
+
+/* Жёлтый маркер под ключевыми словами */
+.hl {
+  background-image: linear-gradient(transparent 60%, var(--accent) 60%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Парение бейджей */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.float-slow {
+  animation: float 5s ease-in-out infinite;
+}
+
+.float-slower {
+  animation: float 6.5s ease-in-out 0.8s infinite;
+}
+
+/* Пульс точки-индикатора */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
 }
