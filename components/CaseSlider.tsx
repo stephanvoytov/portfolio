@@ -28,7 +28,7 @@ export default function CaseSlider({ slides, id }: { slides: CaseSlide[]; id: st
             />
           </div>
         ))}
-        <span className="absolute left-4 top-4 rounded-full border border-line-strong bg-white/85 px-3 py-1 font-mono text-xs text-zinc-700 backdrop-blur">
+        <span className="absolute left-4 top-4 rounded-full border border-line-strong bg-white/85 px-3 py-1 font-mono text-xs text-heading backdrop-blur">
           {slides[i].label}
         </span>
       </div>
@@ -40,14 +40,14 @@ export default function CaseSlider({ slides, id }: { slides: CaseSlide[]; id: st
           <button
             onClick={() => go(-1)}
             aria-label="Предыдущий скриншот"
-            className="grid h-9 w-9 place-items-center rounded-full border border-line-strong text-zinc-600 transition-colors hover:bg-panel-soft"
+            className="grid h-9 w-9 place-items-center rounded-full border border-line-strong text-muted transition-colors hover:bg-panel-soft"
           >
             ←
           </button>
           <button
             onClick={() => go(1)}
             aria-label="Следующий скриншот"
-            className="grid h-9 w-9 place-items-center rounded-full border border-line-strong text-zinc-600 transition-colors hover:bg-panel-soft"
+            className="grid h-9 w-9 place-items-center rounded-full border border-line-strong text-muted transition-colors hover:bg-panel-soft"
           >
             →
           </button>

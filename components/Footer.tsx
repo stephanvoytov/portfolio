@@ -4,7 +4,10 @@ import { site } from "@/lib/site";
 
 const nav = [
   { href: "/", label: "Главная" },
-  { href: "/migrate", label: "Уход с маркетплейсов" },
+  { href: "/cases", label: "Кейсы" },
+  { href: "/#services", label: "Услуги" },
+  { href: "/#work", label: "Работы" },
+  { href: "/#process", label: "Процесс" },
 ];
 
 export default function Footer() {
@@ -23,13 +26,16 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-faint">Услуги</p>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-faint">Навигация</p>
             <nav className="mt-4 grid grid-cols-1 gap-2">
               {nav.map((l) => (
                 <Link key={l.href} href={l.href} className="text-sm text-muted hover:text-heading">
                   {l.label}
                 </Link>
               ))}
+              <Link href="/migrate" className="text-sm text-muted hover:text-heading">
+                Уход с маркетплейсов
+              </Link>
             </nav>
           </div>
 
@@ -46,6 +52,9 @@ export default function Footer() {
               </a>
               <a href={site.max} target="_blank" rel="noopener" className="text-muted hover:text-heading">
                 Max
+              </a>
+              <a href={`mailto:${site.email}`} className="text-muted hover:text-heading">
+                {site.email}
               </a>
             </div>
           </div>

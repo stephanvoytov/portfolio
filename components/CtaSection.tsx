@@ -1,9 +1,13 @@
-import { BtnLink } from "@/components/BtnLink";
+"use client";
+
+import Link from "next/link";
 import { Container } from "@/components/Container";
 import Reveal from "@/components/Reveal";
-import { site } from "@/lib/site";
+import { useContactModal } from "@/components/ContactModal";
 
 export default function CtaSection({ hideMigrate = false }: { hideMigrate?: boolean }) {
+  const { open } = useContactModal();
+
   return (
     <section className="pb-24 pt-4">
       <Container>
@@ -27,15 +31,21 @@ export default function CtaSection({ hideMigrate = false }: { hideMigrate?: bool
               обязывает.
             </p>
             <div className="relative mt-9 flex flex-wrap justify-center gap-3">
-              <BtnLink href={site.tg} external>
-                Написать в Telegram
-              </BtnLink>
-              {!hideMigrate && (
-                <BtnLink href="/migrate" variant="yellow">
-                  Уход с маркетплейсов
-                </BtnLink>
-              )}
+              <button
+                type="button"
+                onClick={open}
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-black bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink shadow-[4px_4px_0_0_#0a0a0a] transition-all duration-200 hover:-translate-y-0.5"
+              >
+                Оставить заявку
+              </button>
             </div>
+            {!hideMigrate && (
+              <p className="relative mt-5 text-sm text-muted">
+                <Link href="/migrate" className="font-semibold text-accent-ink hover:underline">
+                  Нужен сайт вместо маркетплейса? →
+                </Link>
+              </p>
+            )}
           </div>
         </Reveal>
       </Container>

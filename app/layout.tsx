@@ -3,6 +3,7 @@ import { Golos_Text, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ContactModalProvider } from "@/components/ContactModal";
 import { site } from "@/lib/site";
 
 const golos = Golos_Text({
@@ -87,9 +88,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <ContactModalProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ContactModalProvider>
       </body>
     </html>
   );

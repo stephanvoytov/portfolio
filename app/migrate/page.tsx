@@ -371,7 +371,7 @@ export default function MigratePage() {
               <BrowserFrame
                 src="/images/moranti-catalog.jpg"
                 alt="Интернет-магазин Moranti — каталог с синхронизацией Ozon и Wildberries"
-                url="morbantibags.ru"
+                url="morantibags.ru"
               />
             </Reveal>
             <div>
@@ -384,9 +384,10 @@ export default function MigratePage() {
                   Уже работает: Moranti
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg">
-                  Бренд женских сумок. Магазин на собственном сайте с корзиной и оплатой —
+                  Бренд женских сумок. Каталог-витрина на собственном сайте —
                   и всё это синхронизировано с Ozon и Wildberries: картинки, характеристики,
-                  цены, остатки и отзывы обновляются автоматически. Маркетплейсы остались,
+                  цены, остатки и отзывы обновляются автоматически. Покупка пока через
+                  маркетплейсы, оплата на сайте — следующим этапом. Маркетплейсы остались,
                   но перестали быть единственным каналом.
                 </p>
               </Reveal>

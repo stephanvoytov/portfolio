@@ -3,17 +3,18 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { site } from "@/lib/site";
-import FlameBadge from "@/components/FlameBadge";
+import { useContactModal } from "@/components/ContactModal";
 
 const links = [
-  { href: "/", label: "Главная" },
-  { href: "/migrate", label: "Уход с маркетплейсов", hot: true },
+  { href: "/#services", label: "Услуги" },
+  { href: "/#work", label: "Работы" },
+  { href: "/#process", label: "Процесс" },
 ];
 
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const { open: openContact } = useContactModal();
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -42,17 +43,15 @@ export default function Header() {
               }`}
             >
               {l.label}
-              {l.hot ? <FlameBadge /> : null}
             </Link>
           ))}
-          <a
-            href={site.tg}
-            target="_blank"
-            rel="noopener"
+          <button
+            type="button"
+            onClick={openContact}
             className="ml-3 rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[3px_3px_0_0_#0a0a0a]"
           >
-            Telegram
-          </a>
+            Обсудить проект →
+          </button>
         </nav>
 
         <button
@@ -93,17 +92,18 @@ export default function Header() {
               }`}
             >
               {l.label}
-              {l.hot ? <FlameBadge /> : null}
             </Link>
           ))}
-          <a
-            href={site.tg}
-            target="_blank"
-            rel="noopener"
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(false);
+              openContact();
+            }}
             className="mt-3 block rounded-full bg-accent px-4 py-3 text-center text-base font-bold text-accent-ink"
           >
-            Написать в Telegram
-          </a>
+            Оставить заявку
+          </button>
         </nav>
       )}
     </header>

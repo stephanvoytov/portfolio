@@ -2,11 +2,11 @@ import { Container } from "@/components/Container";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import ServicesList from "@/components/ServicesList";
+import SiteCategories from "@/components/SiteCategories";
 import CaseCard from "@/components/CaseCard";
 import ProcessSteps from "@/components/ProcessSteps";
 import CtaSection from "@/components/CtaSection";
 import BrowserFrame from "@/components/BrowserFrame";
-import Quiz from "@/components/Quiz";
 import Hero from "@/components/Hero";
 import ComparisonTable from "@/components/ComparisonTable";
 import { cases } from "@/lib/cases";
@@ -38,16 +38,106 @@ export default function HomePage() {
 
       <Hero />
 
+      {/* ===== Работы ===== */}
+      <section className="bg-black py-24 text-white" id="work">
+        <Container>
+          <Reveal>
+            <p className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
+              <span className="h-2 w-2 rounded-full bg-accent" />
+              Работы
+            </p>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-5xl">
+              Живые проекты
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
+              Реальные проекты, которые я разработал для бизнеса.
+            </p>
+          </Reveal>
+          <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+            {cases.map((c) => (
+              <CaseCard key={c.id} item={c} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* ===== Услуги ===== */}
       <section className="py-24" id="services">
         <Container>
           <SectionHeading
             kicker="Услуги"
             title="Что я делаю"
-            sub="Любой проект делаю с нуля — до полностью рабочего результата: больше клиентов, проще продажи, меньше рутины."
+            sub="Три категории сайтов: от визитки до магазина с интеграциями. Сравните по составу, цене и сроку — и выберите свою. Ниже — дополнительные услуги."
           />
           <div className="mt-12">
+            <SiteCategories />
+          </div>
+          <p className="mt-10 font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">
+            Дополнительно
+          </p>
+          <div className="mt-4">
             <ServicesList />
+          </div>
+          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <div className="rounded-2xl border border-line bg-white p-5 shadow-sm sm:p-6">
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">
+                Что я не делаю
+              </p>
+              <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-muted sm:text-base">
+                <li className="flex items-start gap-3">
+                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-black bg-white font-mono text-xs font-extrabold text-heading">
+                    ✕
+                  </span>
+                  <span>
+                    <span className="font-semibold text-heading">Реклама и ссылочная масса.</span>{" "}
+                    Таргет, Директ и наращивание ссылок — отдельные задачи, их настраивают специалисты по продвижению.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-black bg-white font-mono text-xs font-extrabold text-heading">
+                    ✕
+                  </span>
+                  <span>
+                    <span className="font-semibold text-heading">Гарантии позиций в поиске.</span>{" "}
+                    Их не даёт никто — SEO-настройку делаю, но продвижение в выдаче это отдельная работа.
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-line bg-panel-soft p-5 sm:p-6">
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">
+                Что потребуется от вас
+              </p>
+              <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-muted sm:text-base">
+                <li className="flex items-start gap-3">
+                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent font-mono text-xs font-extrabold text-accent-ink">
+                    →
+                  </span>
+                  <span>
+                    <span className="font-semibold text-heading">Тексты и фотографии — ваши.</span>{" "}
+                    Свой текст и свои фото дают лучший результат — структуру и подачу доведу до ума.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent font-mono text-xs font-extrabold text-accent-ink">
+                    →
+                  </span>
+                  <span>
+                    <span className="font-semibold text-heading">Домен и хостинг — на вас.</span>{" "}
+                    Зарегистрирую и настрою всё сам — оплату аренды берёте вы.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent font-mono text-xs font-extrabold text-accent-ink">
+                    →
+                  </span>
+                  <span>
+                    <span className="font-semibold text-heading">Юридические тексты.</span>{" "}
+                    Оферту и политику подготовлю, но при сомнениях проверьте с юристом.
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </Container>
       </section>
@@ -55,7 +145,7 @@ export default function HomePage() {
       {/* ===== Как я работаю ===== */}
       <section className="border-y border-line bg-panel-soft py-24">
         <Container>
-          <div className="grid items-center gap-14 lg:grid-cols-2">
+          <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
             <Reveal>
               <BrowserFrame
                 src="/images/diverse-hero.jpg"
@@ -67,22 +157,25 @@ export default function HomePage() {
               <Reveal>
                 <SectionHeading
                   kicker="Подход"
-                  title="Сайт, который решает задачу бизнеса"
+                  title="Не начинаю с дизайна. Начинаю с задачи."
                 />
+                <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+                  Сначала разбираюсь, зачем бизнесу нужен сайт, и только потом проектирую решение.
+                </p>
               </Reveal>
               <div className="mt-8 space-y-6">
                 {[
                   {
                     t: "Разбираю задачу",
-                    d: "Сначала — вопросы о бизнесе и цели сайта, а не «какой вам цвет». Понимаю, кого и к чему сайт должен вести, и уже потом предлагаю решение.",
+                    d: "Вопросы о бизнесе и цели, а не «какой вам цвет». Понял, кого и к чему сайт должен вести, — предлагаю решение.",
                   },
                   {
                     t: "Делаю с нуля",
-                    d: "Дизайн, структура, тексты, разработка — всё своими руками. Никаких конструкторов и шаблонов: сайт получается под вашу задачу, а не «как у всех».",
+                    d: "Дизайн, структура, тексты, разработка — своими руками. Без конструкторов и шаблонов.",
                   },
                   {
                     t: "Запускаю и остаюсь рядом",
-                    d: "Учу пользоваться сайтом, отвечаю на вопросы, делаю правки. После запуска — поддержка и развитие, когда понадобится.",
+                    d: "Учу пользоваться сайтом, отвечаю на вопросы, делаю правки. После запуска — поддержка и развитие.",
                   },
                 ].map((s, i) => (
                   <Reveal key={s.t} delay={i * 0.06}>
@@ -103,33 +196,8 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <ComparisonTable />
-
-      {/* ===== Работы ===== */}
-      <section className="bg-black py-24 text-white">
-        <Container>
-          <Reveal>
-            <p className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
-              <span className="h-2 w-2 rounded-full bg-accent" />
-              Работы
-            </p>
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-5xl">
-              Живые проекты
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
-              За каждым кейсом — реальный бизнес и его задачи. Сайты работают, клиенты приходят.
-            </p>
-          </Reveal>
-          <div className="mt-12 space-y-10">
-            {cases.map((c) => (
-              <CaseCard key={c.id} item={c} />
-            ))}
-          </div>
-        </Container>
-      </section>
-
       {/* ===== Процесс ===== */}
-      <section className="py-24">
+      <section className="py-24" id="process">
         <Container>
           <SectionHeading
             kicker="Как я работаю"
@@ -142,39 +210,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* ===== Квиз ===== */}
-      <section className="bg-panel-soft py-24">
-        <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
-            <Reveal>
-              <SectionHeading
-                kicker="Стоимость"
-                title="Узнайте цену за 2 минуты"
-                sub="Четыре вопроса — и я сразу пойму вашу задачу. Без звонков и длинных брифингов: ответы пришлёте в Telegram, и я предложу решение под ваш случай."
-              />
-              <div className="mt-8 space-y-4">
-                {[
-                  "Ответы не обязывают к заказу",
-                  "Смета — после короткого обсуждения",
-                  "Срок и цена фиксируются до старта",
-                ].map((t, i) => (
-                  <Reveal key={t} delay={i * 0.06}>
-                    <div className="flex items-center gap-3 text-sm font-semibold text-heading sm:text-base">
-                      <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent font-mono text-xs font-extrabold text-accent-ink">
-                        ✓
-                      </span>
-                      {t}
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
-            </Reveal>
-            <Reveal delay={0.15}>
-              <Quiz />
-            </Reveal>
-          </div>
-        </Container>
-      </section>
+      <ComparisonTable />
 
       <CtaSection />
     </>

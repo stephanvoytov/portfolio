@@ -1,37 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BtnLink } from "@/components/BtnLink";
-import { Container } from "@/components/Container";
-import Stats from "@/components/Stats";
-import BrowserFrame from "@/components/BrowserFrame";
-import { site } from "@/lib/site";
+import Image from "next/image";
+import { useContactModal } from "@/components/ContactModal";
 
 const heroWords = ["Делаю", "сайты,", "которые", "продают"];
 
+const metrics = [
+  { value: "от 10 000 ₽", label: "цена" },
+  { value: "от 5 дней", label: "срок" },
+  { value: "под ключ", label: "формат" },
+];
+
 export default function Hero() {
+  const { open: openContact } = useContactModal();
+
   return (
-    <section className="hero-glow grid-bg relative overflow-hidden pb-20 pt-32 sm:pt-40">
-      <Container>
-        <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_1fr]">
-          <div>
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-2 rounded-full border border-line-strong bg-white px-4 py-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-heading"
-            >
-              <span className="pulse-dot h-2 w-2 rounded-full bg-accent" />
-              Next.js · React · TypeScript
-            </motion.p>
-            <h1 className="mt-7 text-5xl font-extrabold leading-[1.04] tracking-tight text-heading sm:text-7xl lg:text-[5.2rem]">
+    <section className="relative overflow-hidden pb-20 pt-28 sm:pt-36 lg:pb-24">
+      <div className="mx-auto w-full max-w-[1500px] px-4 sm:px-8">
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight text-heading sm:text-7xl lg:text-[4.8rem]">
               {heroWords.map((w, i) =>
                 i === heroWords.length - 1 ? (
                   <span key={w} className="relative inline-block">
                     <motion.span
-                      initial={{ opacity: 0, y: 28 }}
+                      initial={{ opacity: 0, y: 24 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.55, delay: 0.25 + i * 0.1, ease: "easeOut" }}
+                      transition={{ duration: 0.5, delay: 0.1 + i * 0.08, ease: "easeOut" }}
                       className="relative z-10"
                     >
                       {w}
@@ -42,9 +42,9 @@ export default function Hero() {
                   <span key={w} className="mr-3 inline-block sm:mr-4">
                     <motion.span
                       className="inline-block"
-                      initial={{ opacity: 0, y: 28 }}
+                      initial={{ opacity: 0, y: 24 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.55, delay: 0.15 + i * 0.1, ease: "easeOut" }}
+                      transition={{ duration: 0.5, delay: 0.08 + i * 0.08, ease: "easeOut" }}
                     >
                       {w}
                     </motion.span>
@@ -52,63 +52,78 @@ export default function Hero() {
                 ),
               )}
             </h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              className="mt-8 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl"
-            >
-              Интернет-магазины, каталоги и лендинги под ключ: быстрые, понятные и заточенные
-              под результат. От идеи до запуска — с поддержкой после.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.85 }}
-              className="mt-10 flex flex-wrap gap-3"
-            >
-              <BtnLink href={site.tg} external>
-                Написать в Telegram
-              </BtnLink>
-              <BtnLink href="/migrate" variant="yellow">
-                Уход с маркетплейсов
-              </BtnLink>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1 }}
-              className="mt-14"
-            >
-              <Stats />
-            </motion.div>
-          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-            className="relative hidden lg:block"
-          >
-            <BrowserFrame
-              src="/images/moranti-home.jpg"
-              alt="Интернет-магазин Moranti — главная страница"
-              url="morbantibags.ru"
-              priority
-            />
-            <div className="float-slow absolute -left-7 -top-6 rounded-2xl border-2 border-black bg-accent px-5 py-4 shadow-[5px_5px_0_0_#0a0a0a]">
-              <p className="font-mono text-xl font-extrabold text-accent-ink">Ozon + WB</p>
-              <p className="mt-1 text-xs font-semibold text-accent-ink/70">
-                синхронизация цен и остатков
-              </p>
-            </div>
-            <div className="float-slower absolute -bottom-6 -right-4 rounded-2xl border-2 border-black bg-white px-5 py-4 shadow-[5px_5px_0_0_#ffd900]">
-              <p className="font-mono text-xl font-extrabold text-heading">24/7</p>
-              <p className="mt-1 text-xs font-semibold text-muted">работает без ручного ведения</p>
-            </div>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-7 max-w-xl text-lg leading-relaxed text-muted sm:text-xl"
+            >
+              Делаю сайты для бизнеса: структура, дизайн, разработка,
+              интеграции и запуск. Сайт должен приносить заявки — это его работа.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="mt-12 flex flex-wrap gap-y-6 sm:divide-x sm:divide-line-strong"
+            >
+              {metrics.map((m) => (
+                <div key={m.label} className="sm:px-8 sm:first:pl-0">
+                  <p className="text-2xl font-extrabold leading-none text-heading">{m.value}</p>
+                  <p className="mt-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-faint">
+                    {m.label}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
+
+          <motion.figure
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
+            className="m-0"
+          >
+            <div className="relative mx-auto mb-8 w-72 sm:w-96 lg:w-[26rem]">
+              <div className="relative aspect-square w-full overflow-hidden rounded-2xl border-2 border-black bg-white">
+                <Image
+                  src="/images/photo-hero.webp"
+                  alt="Стефан — разработчик сайтов на Next.js"
+                  fill
+                  priority
+                  className="object-cover object-top"
+                />
+              </div>
+              <figcaption className="absolute inset-x-0 bottom-0 mx-auto w-[calc(100%-7rem)] translate-y-1/2 rounded-2xl border border-white/60 bg-white/40 p-4 text-left shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl">
+                <p className="font-extrabold leading-tight text-heading">Стефан</p>
+                <p className="font-mono text-xs text-muted">Full-stack разработчик</p>
+              </figcaption>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.55 }}
+              className="mt-14 flex flex-wrap items-center justify-center gap-3"
+            >
+              <button
+                type="button"
+                onClick={openContact}
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-black bg-accent px-8 py-4 text-base font-bold text-accent-ink shadow-[4px_4px_0_0_#0a0a0a] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#0a0a0a] active:translate-y-0"
+              >
+                Обсудить проект
+              </button>
+              <a
+                href="#work"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-line-strong bg-white px-8 py-4 text-base font-bold text-body transition-all duration-200 hover:-translate-y-0.5 hover:border-black hover:text-heading active:translate-y-0"
+              >
+                Смотреть работы
+              </a>
+            </motion.div>
+          </motion.figure>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

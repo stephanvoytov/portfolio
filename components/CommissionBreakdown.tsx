@@ -78,7 +78,7 @@ export default function CommissionBreakdown() {
           sub="С каждой продажи: комиссия, логистика, реклама, эквайринг, хранение."
         />
 
-        <div className="mt-12 grid items-start gap-6 lg:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
           <Reveal>
             <div className="overflow-hidden rounded-3xl border-2 border-black bg-white shadow-[8px_8px_0_0_#0a0a0a]">
               <div className="border-b-2 border-black bg-black px-4 py-4 text-white sm:px-6">
