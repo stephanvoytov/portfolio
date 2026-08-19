@@ -12,10 +12,9 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { value: 5, suffix: "+", label: "проектов запущено" },
-  { value: 3, suffix: "", label: "года опыта в разработке" },
-  { value: 5, suffix: "+", label: "интеграций с API" },
-  { value: 1, suffix: "", prefix: "~", label: "неделя — средний срок запуска" },
+  { value: 10, prefix: "от ", suffix: " тыс. ₽", label: "за сайт под ключ" },
+  { value: 10, suffix: "+", label: "проектов в портфеле" },
+  { value: 5, suffix: "", label: "дней — экспресс-запуск" },
 ];
 
 function Counter({ stat, start }: { stat: Stat; start: boolean }) {
@@ -50,10 +49,14 @@ export default function Stats() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <div ref={ref} className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+    <div ref={ref} className="grid grid-cols-2 gap-4 sm:grid-cols-3">
       {stats.map((s, i) => (
         <Reveal key={s.label} delay={i * 0.08}>
-          <div className="rounded-2xl border border-line bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[4px_4px_0_0_#ffd900]">
+          <div
+            className={`rounded-2xl border border-line bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[4px_4px_0_0_#ffd900] ${
+              i === 2 ? "col-span-2 sm:col-span-1" : ""
+            }`}
+          >
             <Counter stat={s} start={inView} />
             <p className="mt-2 text-sm text-muted">{s.label}</p>
           </div>
