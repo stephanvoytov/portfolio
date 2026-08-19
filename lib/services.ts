@@ -4,7 +4,7 @@ export interface Service {
   desc: string;
   meta: string;
   href?: string;
-  badge?: string;
+  hot?: boolean;
 }
 
 export const services: Service[] = [
@@ -32,7 +32,7 @@ export const services: Service[] = [
     desc: "Постепенный переход с Ozon и Wildberries на свой сайт — без резких обрывов продаж.",
     meta: "по задаче",
     href: "/migrate",
-    badge: "🔥",
+    hot: true,
   },
   {
     num: "05",

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { site } from "@/lib/site";
+import FlameBadge from "@/components/FlameBadge";
 
 const links = [
   { href: "/", label: "Главная" },
@@ -41,11 +42,7 @@ export default function Header() {
               }`}
             >
               {l.label}
-              {l.hot ? (
-                <span className="text-base leading-none" title="Популярная услуга">
-                  🔥
-                </span>
-              ) : null}
+              {l.hot ? <FlameBadge /> : null}
             </Link>
           ))}
           <a
@@ -96,11 +93,7 @@ export default function Header() {
               }`}
             >
               {l.label}
-              {l.hot ? (
-                <span className="text-base leading-none" title="Популярная услуга">
-                  🔥
-                </span>
-              ) : null}
+              {l.hot ? <FlameBadge /> : null}
             </Link>
           ))}
           <a
