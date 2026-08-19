@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
+import Logo from "@/components/Logo";
 import { site } from "@/lib/site";
 
 const nav = [
@@ -16,7 +17,8 @@ export default function Footer() {
       <Container className="py-12">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-xs">
-            <p className="text-lg font-semibold text-heading">
+            <p className="flex items-center gap-2.5 text-lg font-semibold text-heading">
+              <Logo />
               Стефан<span className="text-accent">.</span>
             </p>
             <p className="mt-3 text-sm leading-relaxed text-muted">

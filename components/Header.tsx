@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useContactModal } from "@/components/ContactModal";
+import Logo from "@/components/Logo";
 
 const links = [
   { href: "/#services", label: "Услуги" },
@@ -27,9 +28,10 @@ export default function Header() {
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link
           href="/"
-          className="text-lg font-semibold tracking-tight text-heading"
+          className="flex items-center gap-2.5 text-lg font-semibold tracking-tight text-heading"
           onClick={() => setOpen(false)}
         >
+          <Logo />
           Стефан<span className="text-accent">.</span>
         </Link>
 
