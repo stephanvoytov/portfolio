@@ -51,7 +51,7 @@ export default function ComparisonTable() {
           sub="Конструктор, WordPress или кастомная разработка — у каждого варианта своя задача. Смотрите по строкам, которые важны именно вам."
         />
         <Reveal className="mt-12">
-          <div className="overflow-x-auto rounded-3xl border-2 border-black shadow-[8px_8px_0_0_#c9a227]">
+          <div className="overflow-x-auto rounded-3xl border-2 border-black shadow-[8px_8px_0_0_#d4af37]">
             <table className="w-full min-w-[760px] border-collapse bg-white text-left">
               <thead>
                 <tr className="border-b-2 border-black">

@@ -14,7 +14,7 @@ const colors = [
   { token: "faint", value: "#a1a1aa", name: "Едва заметный" },
   { token: "line", value: "#e4e4e7", name: "Граница" },
   { token: "line-strong", value: "#d4d4d8", name: "Граница сильная" },
-  { token: "accent", value: "#c9a227", name: "Акцент" },
+  { token: "accent", value: "#d4af37", name: "Акцент" },
   { token: "accent-ink", value: "#0a0a0a", name: "Текст на акценте" },
 ];
 
@@ -37,7 +37,7 @@ const buttons = [
   },
   {
     label: "Yellow",
-    cls: "bg-accent text-accent-ink shadow-sm hover:shadow-lg hover:shadow-[4px_4px_0_0_rgba(201,162,39,0.4)]",
+    cls: "bg-accent text-accent-ink shadow-sm hover:shadow-lg hover:shadow-[4px_4px_0_0_rgba(212,175,55,0.4)]",
   },
   {
     label: "Ghost",
@@ -99,7 +99,7 @@ export default function DesignSystemPage() {
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
-              <div className="h-24 border-b border-line" style={{ background: "rgba(201,162,39,0.55)" }} />
+              <div className="h-24 border-b border-line" style={{ background: "rgba(212,175,55,0.55)" }} />
               <div className="p-4">
                 <p className="font-mono text-xs font-bold text-heading">selection</p>
                 <p className="mt-0.5 text-xs text-muted">Жёлтое выделение текста</p>
@@ -258,7 +258,7 @@ export default function DesignSystemPage() {
             </div>
             <div className="rounded-2xl border-2 border-black bg-accent p-6">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">Акцентная плашка</p>
-              <p className="mt-3 text-sm font-semibold text-accent-ink">Модалка: border-2 border-black + жёсткая тень shadow-[8px_8px_0_0_#c9a227].</p>
+              <p className="mt-3 text-sm font-semibold text-accent-ink">Модалка: border-2 border-black + жёсткая тень shadow-[8px_8px_0_0_#d4af37].</p>
             </div>
             <div className="rounded-2xl border border-line bg-white p-6 shadow-sm">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">Список-пункт</p>
@@ -305,7 +305,7 @@ export default function DesignSystemPage() {
               <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">Жёсткая тень</p>
               <div className="mt-5 flex gap-4">
                 <div className="h-16 w-16 rounded-2xl bg-accent shadow-[4px_4px_0_0_#0a0a0a]" />
-                <div className="h-16 w-16 rounded-2xl border-2 border-black bg-white shadow-[8px_8px_0_0_#c9a227]" />
+                <div className="h-16 w-16 rounded-2xl border-2 border-black bg-white shadow-[8px_8px_0_0_#d4af37]" />
               </div>
             </div>
             <div className="overflow-hidden rounded-3xl border border-line bg-white p-6 shadow-sm">

@@ -100,7 +100,7 @@ export default function CommissionBreakdown() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <div className="overflow-hidden rounded-3xl border-2 border-black bg-white shadow-[8px_8px_0_0_#c9a227]">
+            <div className="overflow-hidden rounded-3xl border-2 border-black bg-white shadow-[8px_8px_0_0_#d4af37]">
               <div className="border-b-2 border-black bg-accent px-4 py-4 sm:px-6">
                 <h3 className="text-base font-extrabold text-accent-ink sm:text-xl">
                   Кастомный сайт

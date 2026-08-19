@@ -12,12 +12,12 @@ export default function CtaSection({ hideMigrate = false }: { hideMigrate?: bool
     <section className="pb-24 pt-4">
       <Container>
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl border-2 border-black bg-white px-6 py-16 text-center shadow-[10px_10px_0_0_#c9a227] sm:px-12">
+          <div className="relative overflow-hidden rounded-3xl border-2 border-black bg-white px-6 py-16 text-center shadow-[10px_10px_0_0_#d4af37] sm:px-12">
             <div
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "radial-gradient(ellipse 60% 90% at 50% 0%, rgba(201,162,39,0.28), transparent 70%)",
+                  "radial-gradient(ellipse 60% 90% at 50% 0%, rgba(212,175,55,0.28), transparent 70%)",
               }}
             />
             <p className="relative font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">

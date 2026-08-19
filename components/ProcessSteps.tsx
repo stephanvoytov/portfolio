@@ -29,7 +29,7 @@ export default function ProcessSteps() {
       <ol className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {steps.map((s, i) => (
           <Reveal key={s.num} delay={i * 0.07}>
-            <li className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[6px_6px_0_0_#c9a227]">
+            <li className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[6px_6px_0_0_#d4af37]">
               <span className="text-sm font-bold text-accent-ink">{s.num}</span>
               <h3 className="mt-3 text-lg font-bold text-heading">{s.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
