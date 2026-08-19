@@ -132,7 +132,7 @@ export default function HomePage() {
       <section className="py-24">
         <Container>
           <SectionHeading
-            kicker="Как работаю"
+            kicker="Как я работаю"
             title="Простой процесс без сюрпризов"
             sub="Вы всегда знаете, что будет дальше — и что уже сделано. Цена и срок фиксируются до старта и не меняются."
           />
