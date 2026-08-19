@@ -66,7 +66,7 @@ export default function HomePage() {
             <div>
               <Reveal>
                 <SectionHeading
-                  kicker="Как я работаю"
+                  kicker="Подход"
                   title="Сайт, который решает задачу бизнеса"
                 />
               </Reveal>
