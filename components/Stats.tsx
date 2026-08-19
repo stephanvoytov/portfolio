@@ -51,12 +51,8 @@ export default function Stats() {
   return (
     <div ref={ref} className="grid grid-cols-2 gap-4 sm:grid-cols-3">
       {stats.map((s, i) => (
-        <Reveal key={s.label} delay={i * 0.08}>
-          <div
-            className={`rounded-2xl border border-line bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[4px_4px_0_0_#ffd900] ${
-              i === 2 ? "col-span-2 sm:col-span-1" : ""
-            }`}
-          >
+        <Reveal key={s.label} delay={i * 0.08} className={i === 0 ? "col-span-2 sm:col-span-1" : ""}>
+          <div className="rounded-2xl border border-line bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[4px_4px_0_0_#ffd900]">
             <Counter stat={s} start={inView} />
             <p className="mt-2 text-sm text-muted">{s.label}</p>
           </div>
