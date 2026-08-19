@@ -6,9 +6,9 @@ import SiteCategories from "@/components/SiteCategories";
 import CaseCard from "@/components/CaseCard";
 import ProcessSteps from "@/components/ProcessSteps";
 import CtaSection from "@/components/CtaSection";
-import BrowserFrame from "@/components/BrowserFrame";
 import Hero from "@/components/Hero";
 import ComparisonTable from "@/components/ComparisonTable";
+import Image from "next/image";
 import { cases } from "@/lib/cases";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
@@ -42,7 +42,8 @@ export default function HomePage() {
       <section className="bg-black py-24 text-white" id="work">
         <Container>
           <Reveal>
-            <p className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
+            <p className="font-mono text-sm font-bold tracking-[0.35em] text-accent">01</p>
+            <p className="mt-2 inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
               <span className="h-2 w-2 rounded-full bg-accent" />
               Работы
             </p>
@@ -65,6 +66,7 @@ export default function HomePage() {
       <section className="py-24" id="services">
         <Container>
           <SectionHeading
+            num="02"
             kicker="Услуги"
             title="Что я делаю"
             sub="Три категории сайтов: от визитки до магазина с интеграциями. Сравните по составу, цене и сроку — и выберите свою."
@@ -76,13 +78,15 @@ export default function HomePage() {
       </section>
 
       {/* ===== Дополнительные услуги ===== */}
-      <section className="border-y border-line bg-panel-soft py-24">
+      <section className="py-24">
         <Container>
-          <p className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">
-            <span className="h-2 w-2 rounded-full bg-accent" />
-            Дополнительно
-          </p>
-          <div className="mt-4">
+          <SectionHeading
+            num="03"
+            kicker="Дополнительно"
+            title="Услуги под задачу"
+            sub="Не только сайты с нуля: доведу до ума существующий проект или решу узкую задачу."
+          />
+          <div className="mt-10">
             <ServicesList />
           </div>
           <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -152,61 +156,61 @@ export default function HomePage() {
       {/* ===== Как я работаю ===== */}
       <section className="py-24">
         <Container>
-          <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
+          <SectionHeading
+            num="04"
+            kicker="Подход"
+            title="Не начинаю с дизайна. Начинаю с задачи."
+            sub="Сначала разбираюсь, зачем бизнесу нужен сайт, и только потом проектирую решение."
+          />
+          <div className="mt-12 grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
             <Reveal>
-              <BrowserFrame
-                src="/images/diverse-hero.jpg"
-                alt="Лендинг франшизы Diverse — главная страница"
-                url="diversebrand.vercel.app"
-              />
-            </Reveal>
-            <div>
-              <Reveal>
-                <SectionHeading
-                  kicker="Подход"
-                  title="Не начинаю с дизайна. Начинаю с задачи."
+              <div className="overflow-hidden rounded-3xl border border-line bg-panel shadow-2xl shadow-black/10">
+                <Image
+                  src="/images/workspace-v2.jpg"
+                  alt="Рабочий стол разработчика — стоковое фото"
+                  width={1600}
+                  height={1065}
+                  className="h-auto w-full"
                 />
-                <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-                  Сначала разбираюсь, зачем бизнесу нужен сайт, и только потом проектирую решение.
-                </p>
-              </Reveal>
-              <div className="mt-8 space-y-6">
-                {[
-                  {
-                    t: "Разбираю задачу",
-                    d: "Вопросы о бизнесе и цели, а не «какой вам цвет». Понял, кого и к чему сайт должен вести, — предлагаю решение.",
-                  },
-                  {
-                    t: "Делаю с нуля",
-                    d: "Дизайн, структура, тексты, разработка — своими руками. Без конструкторов и шаблонов.",
-                  },
-                  {
-                    t: "Запускаю и остаюсь рядом",
-                    d: "Учу пользоваться сайтом, отвечаю на вопросы, делаю правки. После запуска — поддержка и развитие.",
-                  },
-                ].map((s, i) => (
-                  <Reveal key={s.t} delay={i * 0.06}>
-                    <div className="group flex gap-4">
-                      <span className="mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-full border-2 border-black bg-accent text-sm font-extrabold text-accent-ink shadow-[3px_3px_0_0_#0a0a0a] transition-transform duration-200 group-hover:-translate-y-0.5">
-                        {i + 1}
-                      </span>
-                      <div>
-                        <h3 className="text-lg font-bold text-heading">{s.t}</h3>
-                        <p className="mt-1.5 text-sm leading-relaxed text-muted sm:text-base">{s.d}</p>
-                      </div>
-                    </div>
-                  </Reveal>
-                ))}
               </div>
+            </Reveal>
+            <div className="space-y-6">
+              {[
+                {
+                  t: "Разбираю задачу",
+                  d: "Вопросы о бизнесе и цели, а не «какой вам цвет». Понял, кого и к чему сайт должен вести, — предлагаю решение.",
+                },
+                {
+                  t: "Делаю с нуля",
+                  d: "Дизайн, структура, тексты, разработка — своими руками. Без конструкторов и шаблонов.",
+                },
+                {
+                  t: "Запускаю и остаюсь рядом",
+                  d: "Учу пользоваться сайтом, отвечаю на вопросы, делаю правки. После запуска — поддержка и развитие.",
+                },
+              ].map((s, i) => (
+                <Reveal key={s.t} delay={i * 0.06}>
+                  <div className="group flex gap-4">
+                    <span className="mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-full border-2 border-black bg-accent text-sm font-extrabold text-accent-ink shadow-[3px_3px_0_0_#0a0a0a] transition-transform duration-200 group-hover:-translate-y-0.5">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-lg font-bold text-heading">{s.t}</h3>
+                      <p className="mt-1.5 text-sm leading-relaxed text-muted sm:text-base">{s.d}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </div>
         </Container>
       </section>
 
       {/* ===== Процесс ===== */}
-      <section className="border-y border-line bg-panel-soft py-24" id="process">
+      <section className="py-24" id="process">
         <Container>
           <SectionHeading
+            num="05"
             kicker="Как я работаю"
             title="Простой процесс без сюрпризов"
             sub="Вы всегда знаете, что будет дальше — и что уже сделано. Цена и срок фиксируются до старта и не меняются."

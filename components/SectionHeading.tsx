@@ -16,6 +16,7 @@ interface SectionHeadingProps {
   kicker?: string;
   title: string;
   sub?: string;
+  num?: string;
   align?: "left" | "center";
   dark?: boolean;
 }
@@ -24,12 +25,18 @@ export default function SectionHeading({
   kicker,
   title,
   sub,
+  num,
   align = "left",
   dark = false,
 }: SectionHeadingProps) {
   const centered = align === "center";
   return (
     <Reveal className={`max-w-3xl ${centered ? "mx-auto text-center" : ""}`}>
+      {num && (
+        <p className="font-mono text-sm font-bold tracking-[0.35em] text-accent">
+          {withGolosDigits(num)}
+        </p>
+      )}
       {kicker && (
         <p
           className={`inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] ${
@@ -41,7 +48,7 @@ export default function SectionHeading({
         </p>
       )}
       <h2
-        className={`mt-4 text-3xl font-extrabold tracking-tight sm:text-5xl ${
+        className={`mt-4 text-4xl font-extrabold tracking-tight sm:text-6xl ${
           dark ? "text-white" : "text-heading"
         }`}
       >

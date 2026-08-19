@@ -46,6 +46,7 @@ export default function ComparisonTable() {
     <section className="py-24">
       <Container>
         <SectionHeading
+          num="06"
           kicker="Сравнение"
           title="На чём сделать сайт"
           sub="Конструктор, WordPress или кастомная разработка — у каждого варианта своя задача. Смотрите по строкам, которые важны именно вам."
