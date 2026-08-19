@@ -12,7 +12,7 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { value: 10, prefix: "от ", suffix: " тыс. ₽", label: "за сайт под ключ" },
+  { value: 10, prefix: "от ", suffix: "к", label: "за сайт под ключ" },
   { value: 10, suffix: "+", label: "проектов в портфеле" },
   { value: 5, suffix: "", label: "дней — экспресс-запуск" },
 ];
@@ -36,7 +36,7 @@ function Counter({ stat, start }: { stat: Stat; start: boolean }) {
   }, [start, stat.value]);
 
   return (
-    <p className="whitespace-nowrap text-2xl font-extrabold tracking-tight text-heading sm:text-xl">
+    <p className="whitespace-nowrap text-3xl font-extrabold tracking-tight text-heading sm:text-4xl">
       {stat.prefix}
       {n}
       {stat.suffix}
