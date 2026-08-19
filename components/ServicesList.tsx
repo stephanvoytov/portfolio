@@ -15,9 +15,16 @@ export default function ServicesList() {
               >
                 <span className="font-mono text-sm font-bold text-accent-ink">{s.num}</span>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-heading group-hover:text-accent-ink">
-                    {s.title}
-                  </h3>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h3 className="text-lg font-bold text-heading group-hover:text-accent-ink">
+                      {s.title}
+                    </h3>
+                    {s.badge ? (
+                      <span className="rounded-full border-2 border-black bg-accent px-2 py-0.5 font-mono text-[11px] font-extrabold uppercase tracking-wider text-accent-ink">
+                        {s.badge}
+                      </span>
+                    ) : null}
+                  </div>
                   <p className="mt-1 text-sm leading-relaxed text-muted group-hover:text-accent-ink/70">
                     {s.desc}
                   </p>

@@ -4,6 +4,7 @@ export interface Service {
   desc: string;
   meta: string;
   href?: string;
+  badge?: string;
 }
 
 export const services: Service[] = [
@@ -27,10 +28,11 @@ export const services: Service[] = [
   },
   {
     num: "04",
-    title: "Миграция с маркетплейсов",
+    title: "Уход с маркетплейсов",
     desc: "Постепенный переход с Ozon и Wildberries на свой сайт — без резких обрывов продаж.",
     meta: "по задаче",
     href: "/migrate",
+    badge: "🔥",
   },
   {
     num: "05",

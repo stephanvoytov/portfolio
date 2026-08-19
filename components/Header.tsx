@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 
 const links = [
   { href: "/", label: "Главная" },
-  { href: "/migrate", label: "Уход с маркетплейсов" },
+  { href: "/migrate", label: "Уход с маркетплейсов", hot: true },
 ];
 
 export default function Header() {
@@ -36,11 +36,16 @@ export default function Header() {
             <Link
               key={l.href}
               href={l.href}
-              className={`rounded-full px-3 py-2 text-sm transition-colors ${
+              className={`flex items-center gap-1.5 rounded-full px-3 py-2 text-sm transition-colors ${
                 isActive(l.href) ? "text-heading" : "text-muted hover:text-heading"
               }`}
             >
               {l.label}
+              {l.hot ? (
+                <span className="text-base leading-none" title="Популярная услуга">
+                  🔥
+                </span>
+              ) : null}
             </Link>
           ))}
           <a
@@ -86,11 +91,16 @@ export default function Header() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className={`block rounded-xl px-3 py-3 text-base ${
+              className={`flex items-center gap-2 rounded-xl px-3 py-3 text-base ${
                 isActive(l.href) ? "text-heading" : "text-muted"
               }`}
             >
               {l.label}
+              {l.hot ? (
+                <span className="text-base leading-none" title="Популярная услуга">
+                  🔥
+                </span>
+              ) : null}
             </Link>
           ))}
           <a
