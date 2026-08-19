@@ -36,7 +36,7 @@ function Counter({ stat, start }: { stat: Stat; start: boolean }) {
   }, [start, stat.value]);
 
   return (
-    <p className="font-mono text-3xl font-bold text-heading sm:text-4xl">
+    <p className="text-3xl font-extrabold tracking-tight text-heading sm:text-4xl">
       {stat.prefix}
       {n}
       {stat.suffix}
