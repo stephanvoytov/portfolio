@@ -23,6 +23,8 @@ export interface Case {
   problem: string;
   problemPoints: string[];
   solution: string[];
+  features: string[];
+  integrations: string[];
   results: CaseResult[];
   nextSteps?: string;
   stack: string[];
@@ -42,12 +44,12 @@ export const cases: Case[] = [
   {
     id: "moranti",
     index: "01",
-    title: "Moranti — бренд женских сумок",
+    title: "Moranti",
     types: ["ecommerce", "catalog"],
     typeLabel: "Интернет-магазин · Синхронизация с Ozon и Wildberries",
     url: "https://morantibags.ru",
     urlLabel: "morantibags.ru ↗",
-    tagline: "Интернет-магазин женских сумок с синхронизацией с Ozon и Wildberries",
+    tagline: "Интернет-магазин женских сумок",
     short:
       "Каталог-витрина: 70+ позиций с ценами, скидками и рейтингами. Всё синхронизируется с Ozon и Wildberries автоматически: картинки, характеристики, цены, остатки, отзывы. Покупка пока через маркетплейсы — оплата на сайте подключится следующим этапом.",
     problem:
@@ -63,6 +65,13 @@ export const cases: Case[] = [
       "Фильтры по категориям и площадкам, страницы товаров, избранное",
       "Покупка пока через Ozon и Wildberries: кнопки ведут на карточки площадок — сайт работает на тех же данных, что и маркетплейсы",
     ],
+    features: [
+      "Каталог на 70+ позиций с ценами, скидками и рейтингами",
+      "Фильтры по категориям и площадкам",
+      "Страницы товаров и избранное",
+      "Кнопки покупки ведут на карточки Ozon и Wildberries",
+    ],
+    integrations: ["Ozon API", "Wildberries API", "Админ-панель"],
     results: [
       { value: "0 мин/день", label: "на ручное ведение каталога — цены и остатки тянутся сами" },
       { value: "70+", label: "позиций на одних данных с маркетплейсами" },
@@ -81,12 +90,12 @@ export const cases: Case[] = [
   {
     id: "diverse",
     index: "02",
-    title: "Diverse — франшиза бренда одежды",
+    title: "Diverse",
     types: ["landing"],
     typeLabel: "Лендинг",
     url: "https://diversebrand.vercel.app",
     urlLabel: "diversebrand.vercel.app ↗",
-    tagline: "Лендинг франшизы бренда одежды с формой заявки в Telegram",
+    tagline: "Лендинг франшизы одежды",
     short:
       "Сайт франшизы: будущие партнёры изучают условия, находят магазины рядом на карте и оставляют заявку — она сразу приходит владельцу в Telegram и на почту. Заменил сайт, собранный владельцем на Tilda.",
     problem:
@@ -105,6 +114,13 @@ export const cases: Case[] = [
       "Карта 11 магазинов, кейсы действующих партнёров",
       "Хостинг на Vercel — 0 ₽/год",
     ],
+    features: [
+      "Условия франшизы в первом экране",
+      "Форма заявки — приходит в Telegram и на почту",
+      "Карта 11 магазинов",
+      "Кейсы действующих партнёров",
+    ],
+    integrations: ["Telegram Bot API", "Карты", "Формы заявок", "CMS для текстов"],
     results: [
       { value: "0 ₽/год", label: "хостинг на Vercel вместо 6 000 ₽ на Tilda" },
       { value: "1 форма", label: "заявок вместо 0 — заявка приходит в Telegram и на почту" },

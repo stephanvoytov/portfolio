@@ -43,7 +43,7 @@ export default async function CasePage({ params }: CasePageProps) {
       <section className="relative overflow-hidden bg-black pb-20 pt-28 text-white sm:pb-24 sm:pt-32">
         <span
           aria-hidden
-          className="pointer-events-none absolute -right-8 -top-16 select-none font-mono text-[16rem] font-extrabold leading-none text-white/[0.04] sm:text-[22rem]"
+          className="pointer-events-none absolute -right-8 -top-16 select-none text-[16rem] font-extrabold leading-none text-white/[0.04] sm:text-[22rem]"
         >
           {item.index}
         </span>
@@ -55,17 +55,17 @@ export default async function CasePage({ params }: CasePageProps) {
             >
               <span aria-hidden>←</span> Все кейсы
             </Link>
-            <p className="mt-10 inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
+            <div className="mt-16 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
               <span className="h-2 w-2 rounded-full bg-accent" />
-              Кейс {item.index} · {item.typeLabel}
-            </p>
+              Кейс <span className="font-sans">{item.index}</span> · {item.typeLabel}
+            </div>
             <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl">
               {item.title}
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
               {item.short}
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            <div className="mt-10">
               <a
                 href={item.url}
                 target="_blank"
@@ -75,9 +75,6 @@ export default async function CasePage({ params }: CasePageProps) {
                 Открыть сайт
                 <span aria-hidden>↗</span>
               </a>
-              <span className="font-mono text-xs uppercase tracking-wider text-white/40">
-                {item.stack.join(" · ")}
-              </span>
             </div>
           </Reveal>
         </Container>
@@ -140,7 +137,7 @@ export default async function CasePage({ params }: CasePageProps) {
                     key={p}
                     className="flex gap-4 rounded-2xl border border-line bg-panel p-5 text-sm leading-relaxed text-body sm:text-base"
                   >
-                    <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-red-500/10 font-mono text-xs font-extrabold text-red-500">
+                    <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-red-500/10 text-xs font-extrabold text-red-500">
                       {i + 1}
                     </span>
                     {p}
@@ -164,7 +161,7 @@ export default async function CasePage({ params }: CasePageProps) {
               <ul className="mt-8 space-y-4">
                 {item.solution.map((s, i) => (
                   <li key={s} className="flex gap-4 text-sm leading-relaxed text-body sm:text-base">
-                    <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-accent/15 font-mono text-xs font-extrabold text-accent-ink">
+                    <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-accent/15 text-xs font-extrabold text-accent-ink">
                       {i + 1}
                     </span>
                     {s}
@@ -243,7 +240,7 @@ export default async function CasePage({ params }: CasePageProps) {
                   <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
                     Следующий кейс
                   </p>
-                  <p className="mt-3 font-mono text-3xl font-extrabold text-white/90">
+                  <p className="mt-3 text-3xl font-extrabold text-white/90">
                     {next.index}
                   </p>
                 </div>

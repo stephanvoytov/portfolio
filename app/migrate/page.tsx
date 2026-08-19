@@ -230,7 +230,7 @@ export default function MigratePage() {
             {numbers.map((n, i) => (
               <Reveal key={n.label} delay={i * 0.08}>
                 <div className="text-center sm:text-left">
-                  <p className="font-mono text-3xl font-extrabold tracking-tight text-accent sm:text-4xl">
+                  <p className="text-3xl font-extrabold tracking-tight text-accent sm:text-4xl">
                     {n.value}
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-white/60">{n.label}</p>
@@ -239,7 +239,7 @@ export default function MigratePage() {
             ))}
           </div>
           <p className="mt-10 text-center font-mono text-xs text-white/40 sm:text-left">
-            Источники: разборы комиссий продавцов, 2026; INFOLine/Forbes, август 2026; новости июля 2026
+            Источники: разборы комиссий продавцов, <span className="font-sans">2026</span>; INFOLine/Forbes, август <span className="font-sans">2026</span>; новости июля <span className="font-sans">2026</span>
             (пожары и оферта WB).
           </p>
         </Container>
@@ -256,8 +256,8 @@ export default function MigratePage() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {problems.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.05}>
-                <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_#ffd900]">
-                  <span className="inline-block rounded-full border-2 border-black bg-accent px-3 py-1 font-mono text-xs font-extrabold text-accent-ink">
+                <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_#c9a227]">
+                  <span className="inline-block rounded-full border-2 border-black bg-accent px-3 py-1 text-xs font-extrabold text-accent-ink">
                     {i + 1}
                   </span>
                   <h3 className="mt-4 text-lg font-bold text-heading">{p.title}</h3>
@@ -280,8 +280,8 @@ export default function MigratePage() {
           <ol className="mt-10 space-y-4">
             {checklist.map((s, i) => (
               <Reveal key={s.num} delay={i * 0.05}>
-                <li className="group flex flex-col gap-3 rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-black hover:shadow-[5px_5px_0_0_#ffd900] sm:flex-row sm:items-start sm:gap-6">
-                  <span className="font-mono text-sm font-bold text-accent-ink">{s.num}</span>
+                <li className="group flex flex-col gap-3 rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-black hover:shadow-[5px_5px_0_0_#c9a227] sm:flex-row sm:items-start sm:gap-6">
+                  <span className="text-sm font-bold text-accent-ink">{s.num}</span>
                   <div>
                     <h3 className="text-lg font-bold text-heading">{s.title}</h3>
                     <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">{s.desc}</p>
@@ -308,7 +308,7 @@ export default function MigratePage() {
                   className={`relative flex h-full flex-col rounded-3xl border-2 p-7 transition-all duration-200 hover:-translate-y-1 ${
                     p.hot
                       ? "border-black bg-accent shadow-[8px_8px_0_0_#0a0a0a]"
-                      : "border-line bg-white shadow-sm hover:border-black hover:shadow-[6px_6px_0_0_#ffd900]"
+                      : "border-line bg-white shadow-sm hover:border-black hover:shadow-[6px_6px_0_0_#c9a227]"
                   }`}
                 >
                   {p.hot && (
@@ -320,7 +320,7 @@ export default function MigratePage() {
                     {p.name}
                   </h3>
                   <p
-                    className={`mt-3 font-mono text-3xl font-extrabold ${
+                    className={`mt-3 text-3xl font-extrabold ${
                       p.hot ? "text-accent-ink" : "text-heading"
                     }`}
                   >
@@ -396,7 +396,7 @@ export default function MigratePage() {
                   href="https://morantibags.ru"
                   target="_blank"
                   rel="noopener"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgba(255,217,0,0.4)]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgba(201,162,39,0.4)]"
                 >
                   Посмотреть сайт ↗
                 </a>
@@ -418,7 +418,7 @@ export default function MigratePage() {
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {why.map((w, i) => (
               <Reveal key={w.title} delay={i * 0.06}>
-                <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_#ffd900]">
+                <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_#c9a227]">
                   <h3 className="text-lg font-bold text-heading">{w.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{w.desc}</p>
                 </div>
@@ -426,12 +426,12 @@ export default function MigratePage() {
             ))}
           </div>
           <Reveal className="mt-10">
-            <div className="relative overflow-hidden rounded-3xl border-2 border-black bg-white p-7 shadow-[8px_8px_0_0_#ffd900] sm:p-10">
+            <div className="relative overflow-hidden rounded-3xl border-2 border-black bg-white p-7 shadow-[8px_8px_0_0_#c9a227] sm:p-10">
               <div
                 className="pointer-events-none absolute inset-0"
                 style={{
                   background:
-                    "radial-gradient(ellipse 60% 90% at 100% 0%, rgba(255,217,0,0.3), transparent 70%)",
+                    "radial-gradient(ellipse 60% 90% at 100% 0%, rgba(201,162,39,0.3), transparent 70%)",
                 }}
               />
               <p className="relative max-w-3xl text-base font-medium leading-relaxed text-body sm:text-lg">

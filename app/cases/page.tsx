@@ -36,7 +36,7 @@ export default function CasesPage() {
                   className="group block rounded-3xl border border-line bg-panel p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-line-strong hover:shadow-md sm:p-8"
                 >
                   <div className="grid grid-cols-1 gap-6 sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-8">
-                    <span className="font-mono text-2xl font-extrabold text-accent">{c.index}</span>
+                    <span className="text-2xl font-extrabold text-accent">{c.index}</span>
                     <div>
                       <p className="font-mono text-xs uppercase tracking-wider text-muted">
                         {c.typeLabel}

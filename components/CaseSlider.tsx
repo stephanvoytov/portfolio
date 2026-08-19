@@ -33,7 +33,7 @@ export default function CaseSlider({ slides, id }: { slides: CaseSlide[]; id: st
         </span>
       </div>
       <div className="mt-4 flex items-center justify-between">
-        <span className="font-mono text-sm text-faint">
+        <span className="text-sm text-faint">
           {String(i + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
         </span>
         <div className="flex gap-2">

@@ -28,10 +28,10 @@ function TotalRow({ label, pct, rub }: { label: string; pct: string; rub: string
       <td className="px-4 py-3.5 text-sm font-extrabold text-accent-ink sm:px-6 sm:text-base">
         {label}
       </td>
-      <td className="px-3 py-3.5 text-right font-mono text-sm font-extrabold text-accent-ink sm:text-base">
+      <td className="px-3 py-3.5 text-right text-sm font-extrabold text-accent-ink sm:text-base">
         {pct}
       </td>
-      <td className="px-4 py-3.5 text-right font-mono text-sm font-extrabold text-accent-ink sm:px-6 sm:text-base">
+      <td className="px-4 py-3.5 text-right text-sm font-extrabold text-accent-ink sm:px-6 sm:text-base">
         {rub}
       </td>
     </tr>
@@ -44,10 +44,10 @@ function RemainRow({ label, pct, rub }: { label: string; pct: string; rub: strin
       <td className="px-4 py-3.5 text-sm font-extrabold text-heading sm:px-6 sm:text-base">
         {label}
       </td>
-      <td className="px-3 py-3.5 text-right font-mono text-sm font-extrabold text-heading sm:text-base">
+      <td className="px-3 py-3.5 text-right text-sm font-extrabold text-heading sm:text-base">
         {pct}
       </td>
-      <td className="px-4 py-3.5 text-right font-mono text-sm font-extrabold text-heading sm:px-6 sm:text-base">
+      <td className="px-4 py-3.5 text-right text-sm font-extrabold text-heading sm:px-6 sm:text-base">
         {rub}
       </td>
     </tr>
@@ -58,10 +58,10 @@ function BodyRow({ name, pct, rub }: { name: string; pct: string; rub: string })
   return (
     <tr className="border-b border-line">
       <td className="px-4 py-3 text-sm font-medium text-body sm:px-6 sm:text-base">{name}</td>
-      <td className="px-3 py-3 text-right font-mono text-sm font-bold text-heading sm:text-base">
+      <td className="px-3 py-3 text-right text-sm font-bold text-heading sm:text-base">
         {pct}
       </td>
-      <td className="px-4 py-3 text-right font-mono text-sm font-bold text-heading sm:px-6 sm:text-base">
+      <td className="px-4 py-3 text-right text-sm font-bold text-heading sm:px-6 sm:text-base">
         {rub}
       </td>
     </tr>
@@ -100,7 +100,7 @@ export default function CommissionBreakdown() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <div className="overflow-hidden rounded-3xl border-2 border-black bg-white shadow-[8px_8px_0_0_#ffd900]">
+            <div className="overflow-hidden rounded-3xl border-2 border-black bg-white shadow-[8px_8px_0_0_#c9a227]">
               <div className="border-b-2 border-black bg-accent px-4 py-4 sm:px-6">
                 <h3 className="text-base font-extrabold text-accent-ink sm:text-xl">
                   Кастомный сайт

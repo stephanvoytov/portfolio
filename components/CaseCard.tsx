@@ -7,13 +7,13 @@ interface CaseCardProps {
   item: Case;
 }
 
-/** Карточка кейса: крупное фото-мокап, номер, заголовок, описание, KPI и ссылки. */
+/** Карточка кейса: номер, заголовок, описание, фото-мокап и ссылки — как в архиве WebValley. */
 export default function CaseCard({ item }: CaseCardProps) {
   const preview = item.previewDesktop ?? item.previewMobile ?? item.slides[0]?.src;
 
   return (
     <Reveal>
-      <article className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] transition-colors duration-200 hover:border-white/20">
+      <article className="group overflow-hidden rounded-3xl border border-white/10 bg-black transition-colors duration-200 hover:border-white/25">
         <Link href={`/cases/${item.id}`} className="block">
           <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10">
             {preview && (
@@ -27,9 +27,10 @@ export default function CaseCard({ item }: CaseCardProps) {
             )}
           </div>
         </Link>
+
         <div className="p-6 sm:p-8">
           <div className="flex flex-wrap items-center gap-3">
-            <p className="font-mono text-sm text-accent">{item.index}</p>
+            <p className="text-sm text-accent">{item.index}</p>
             <p className="rounded-full border border-white/20 bg-white/5 px-3 py-1 font-mono text-xs text-white/60">
               {item.typeLabel}
             </p>
@@ -37,24 +38,34 @@ export default function CaseCard({ item }: CaseCardProps) {
           <h3 className="mt-3 text-2xl font-bold tracking-tight text-white">{item.title}</h3>
           <p className="mt-3 text-sm leading-relaxed text-white/60 sm:text-base">{item.tagline}</p>
 
-          <div className="mt-6 grid grid-cols-3 gap-3">
-            {item.results.slice(0, 3).map((r) => (
-              <div
-                key={r.label}
-                className="rounded-xl border border-white/10 bg-white/[0.04] p-3"
+          <ul className="mt-6 space-y-2">
+            {item.features.map((f) => (
+              <li key={f} className="flex gap-2.5 text-sm leading-relaxed text-white/70">
+                <span aria-hidden className="mt-0.5 shrink-0 text-accent">
+                  →
+                </span>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            {item.integrations.map((i) => (
+              <span
+                key={i}
+                className="rounded-full border border-white/15 bg-white/5 px-3 py-1 font-mono text-xs text-white/60"
               >
-                <p className="text-lg font-extrabold leading-none text-accent">{r.value}</p>
-                <p className="mt-1.5 text-[11px] leading-tight text-white/50">{r.label}</p>
-              </div>
+                {i}
+              </span>
             ))}
           </div>
 
-          <div className="mt-6 flex flex-wrap items-center gap-5 border-t border-white/10 pt-6">
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6">
             <Link
               href={`/cases/${item.id}`}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-accent-ink"
+              className="inline-flex items-center gap-1.5 rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-accent-ink transition-colors duration-200 hover:bg-black hover:text-white"
             >
-              Подробнее о кейсе
+              Посмотреть кейс
               <span aria-hidden>→</span>
             </Link>
             <a

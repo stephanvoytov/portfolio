@@ -1,5 +1,17 @@
 import Reveal from "@/components/Reveal";
 
+function withGolosDigits(text: string) {
+  return text.split(/(\d+)/).map((part, i) =>
+    /^\d+$/.test(part) ? (
+      <span key={i} className="font-sans">
+        {part}
+      </span>
+    ) : (
+      part
+    ),
+  );
+}
+
 interface SectionHeadingProps {
   kicker?: string;
   title: string;
@@ -25,7 +37,7 @@ export default function SectionHeading({
           }`}
         >
           <span className="h-2 w-2 rounded-full bg-accent" />
-          {kicker}
+          {withGolosDigits(kicker)}
         </p>
       )}
       <h2

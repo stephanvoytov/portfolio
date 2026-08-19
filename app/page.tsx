@@ -180,7 +180,7 @@ export default function HomePage() {
                 ].map((s, i) => (
                   <Reveal key={s.t} delay={i * 0.06}>
                     <div className="group flex gap-4">
-                      <span className="mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-full border-2 border-black bg-accent font-mono text-sm font-extrabold text-accent-ink shadow-[3px_3px_0_0_#0a0a0a] transition-transform duration-200 group-hover:-translate-y-0.5">
+                      <span className="mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-full border-2 border-black bg-accent text-sm font-extrabold text-accent-ink shadow-[3px_3px_0_0_#0a0a0a] transition-transform duration-200 group-hover:-translate-y-0.5">
                         {i + 1}
                       </span>
                       <div>

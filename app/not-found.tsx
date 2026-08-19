@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <section className="hero-glow grid-bg flex min-h-[70vh] items-center justify-center px-4 pt-16">
       <div className="text-center">
-        <p className="font-mono text-sm uppercase tracking-[0.25em] text-accent">404</p>
+        <p className="text-sm uppercase tracking-[0.25em] text-accent">404</p>
         <h1 className="mt-4 text-4xl font-bold tracking-tight text-heading sm:text-5xl">
           Такой страницы нет
         </h1>
