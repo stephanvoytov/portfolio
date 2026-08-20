@@ -36,14 +36,14 @@ const rows = [
 ];
 
 const columns = [
-  { key: "builder", title: "Конструктор" },
-  { key: "wp", title: "WordPress" },
-  { key: "next", title: "Кастомный Next.js", hot: true },
+  { key: "builder" as const, title: "Конструктор" },
+  { key: "wp" as const, title: "WordPress" },
+  { key: "next" as const, title: "Кастомный Next.js", hot: true },
 ];
 
 export default function ComparisonTable() {
   return (
-    <section className="py-24">
+    <section className="py-20 sm:py-24">
       <Container>
         <SectionHeading
           num="06"
@@ -52,7 +52,44 @@ export default function ComparisonTable() {
           sub="Конструктор, WordPress или кастомная разработка — у каждого варианта своя задача. Смотрите по строкам, которые важны именно вам."
         />
         <Reveal className="mt-12">
-          <div className="overflow-x-auto rounded-3xl border-2 border-black shadow-[8px_8px_0_0_#d4af37]">
+          <div className="space-y-4 sm:hidden">
+            {rows.map((r) => (
+              <div key={r.label} className="rounded-2xl border border-line bg-white p-5 shadow-sm">
+                <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-muted">
+                  {r.label}
+                </p>
+                <div className="mt-3 space-y-2">
+                  {columns.map((c) => (
+                    <div
+                      key={c.key}
+                      className={c.hot ? "rounded-xl bg-accent px-3 py-2.5" : "px-1 py-1"}
+                    >
+                      <p
+                        className={`font-mono text-[11px] font-bold uppercase tracking-wider ${
+                          c.hot ? "text-accent-ink/70" : "text-faint"
+                        }`}
+                      >
+                        {c.title}
+                        {c.hot && (
+                          <span className="ml-1.5 rounded-full bg-accent-ink px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-accent">
+                            Мой стек
+                          </span>
+                        )}
+                      </p>
+                      <p
+                        className={`mt-1 text-sm leading-snug ${
+                          c.hot ? "font-semibold text-accent-ink" : "text-muted"
+                        }`}
+                      >
+                        {r[c.key]}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="hidden overflow-x-auto rounded-3xl border-2 border-black shadow-[8px_8px_0_0_#d4af37] sm:block">
             <table className="w-full min-w-[760px] border-collapse bg-white text-left">
               <thead>
                 <tr className="border-b-2 border-black">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
@@ -7,8 +8,30 @@ import SectionHeading from "@/components/SectionHeading";
 import BrowserFrame from "@/components/BrowserFrame";
 import CaseSlider from "@/components/CaseSlider";
 import CtaSection from "@/components/CtaSection";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ArrowUpRight,
+  Clock,
+  Coins,
+  Gauge,
+  Package,
+  Send,
+  Sparkles,
+  Timer,
+} from "@/components/icons";
 import { cases } from "@/lib/cases";
 import { pageMeta } from "@/lib/seo";
+
+const resultIcons: Record<string, React.ReactNode> = {
+  coins: <Coins className="h-5 w-5" />,
+  package: <Package className="h-5 w-5" />,
+  gauge: <Gauge className="h-5 w-5" />,
+  timer: <Timer className="h-5 w-5" />,
+  clock: <Clock className="h-5 w-5" />,
+  send: <Send className="h-5 w-5" />,
+  sparkles: <Sparkles className="h-5 w-5" />,
+};
 
 interface CasePageProps {
   params: Promise<{ id: string }>;
@@ -36,6 +59,15 @@ export default async function CasePage({ params }: CasePageProps) {
 
   const idx = cases.findIndex((c) => c.id === id);
   const next = cases[(idx + 1) % cases.length];
+  const preview = item.previewDesktop ?? item.slides[0]?.src;
+  const time = item.results.find((r) => r.icon === "clock")?.value;
+  const perf = item.results.find((r) => r.icon === "gauge")?.value;
+
+  const heroMetrics = [
+    { value: item.typeLabel, label: "Тип проекта" },
+    ...(time ? [{ value: time, label: "Время разработки" }] : []),
+    ...(perf ? [{ value: perf, label: "PageSpeed на десктопе" }] : []),
+  ];
 
   return (
     <>
@@ -48,41 +80,76 @@ export default async function CasePage({ params }: CasePageProps) {
           {item.index}
         </span>
         <Container className="relative">
-          <Reveal>
-            <Link
-              href="/cases"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-white/60 transition-colors hover:text-white"
-            >
-              <span aria-hidden>←</span> Все кейсы
-            </Link>
-            <div className="mt-16 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
-              <span className="h-2 w-2 rounded-full bg-accent" />
-              Кейс <span className="font-sans">{item.index}</span> · {item.typeLabel}
+          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+            <div>
+              <Reveal>
+                <Link
+                  href="/cases"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-white/60 transition-colors hover:text-white"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  Все кейсы
+                </Link>
+                <div className="mt-10 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
+                  <span className="h-2 w-2 rounded-full bg-accent" />
+                  Кейс <span className="font-sans">{item.index}</span> · {item.typeLabel}
+                </div>
+                <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl">
+                  {item.title}
+                </h1>
+                <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
+                  {item.short}
+                </p>
+                <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-bold text-accent-ink shadow-[4px_4px_0_0_rgba(255,255,255,0.18)] transition-all duration-200 hover:-translate-y-0.5"
+                  >
+                    Открыть сайт
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                  <Link
+                    href={`/cases/${next.id}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-bold text-white/70 transition-colors hover:border-white hover:text-white"
+                  >
+                    Следующий кейс
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </Reveal>
             </div>
-            <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl">
-              {item.title}
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
-              {item.short}
-            </p>
-            <div className="mt-10">
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener"
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-bold text-accent-ink shadow-[4px_4px_0_0_rgba(255,255,255,0.18)] transition-all duration-200 hover:-translate-y-0.5"
-              >
-                Открыть сайт
-                <span aria-hidden>↗</span>
-              </a>
-            </div>
-          </Reveal>
+            <Reveal delay={0.15}>
+              {preview && (
+                <BrowserFrame
+                  src={preview}
+                  alt={`${item.title} — главная страница сайта`}
+                  url={item.urlLabel}
+                  priority
+                />
+              )}
+            </Reveal>
+          </div>
+
+          <div className="mt-14 flex flex-col gap-y-2.5 border-t border-white/15 pt-6 sm:mt-16 sm:flex-row sm:gap-y-0 sm:divide-x sm:divide-white/15">
+            {heroMetrics.map((m) => (
+              <div key={m.label} className="sm:px-8 sm:first:pl-0">
+                <p className="text-lg font-extrabold leading-none text-white sm:text-2xl">
+                  {m.value}
+                </p>
+                <p className="mt-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 sm:text-xs">
+                  {m.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </Container>
       </section>
 
       {/* ===== Было / Стало ===== */}
       {item.compare && (
-        <section className="bg-black pb-24 text-white">
+        <section className="bg-black pb-20 text-white sm:pb-24">
           <Container>
             <SectionHeading
               dark
@@ -125,7 +192,7 @@ export default async function CasePage({ params }: CasePageProps) {
       )}
 
       {/* ===== Проблема ===== */}
-      <section className="py-24 sm:py-28">
+      <section className="py-20 sm:py-28">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
             <SectionHeading kicker="Проблема" title="С чего всё началось" />
@@ -150,11 +217,11 @@ export default async function CasePage({ params }: CasePageProps) {
       </section>
 
       {/* ===== Решение ===== */}
-      <section className="border-y border-line bg-panel/50 py-24 sm:py-28">
+      <section className="border-y border-line bg-panel/50 py-20 sm:py-28">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="lg:order-2 lg:self-center">
-              <CaseSlider slides={item.slides} id={item.id} />
+              <CaseSlider slides={item.slides} id={item.id} url={item.urlLabel} />
             </div>
             <div className="lg:order-1">
               <SectionHeading kicker="Решение" title="Что сделано" />
@@ -174,7 +241,7 @@ export default async function CasePage({ params }: CasePageProps) {
       </section>
 
       {/* ===== Результат ===== */}
-      <section className="bg-black py-24 text-white sm:py-28">
+      <section className="bg-black py-20 text-white sm:py-28">
         <Container>
           <SectionHeading
             dark
@@ -183,11 +250,14 @@ export default async function CasePage({ params }: CasePageProps) {
             sub="Цифры — без догадок: всё, что здесь написано, проверяется на живом сайте."
             align="center"
           />
-          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {item.results.map((r, i) => (
               <Reveal key={r.label} delay={i * 0.08}>
-                <div className="group h-full rounded-3xl border border-white/10 bg-white/[0.04] p-8 text-center transition-colors duration-200 hover:border-accent/40">
-                  <p className="text-4xl font-extrabold tracking-tight text-accent sm:text-5xl">
+                <div className="group h-full rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-center transition-colors duration-200 hover:border-accent/40 sm:p-8">
+                  <span className="mx-auto grid h-11 w-11 place-items-center rounded-xl bg-accent/15 text-accent">
+                    {resultIcons[r.icon]}
+                  </span>
+                  <p className="mt-4 text-3xl font-extrabold tracking-tight text-accent sm:text-4xl">
                     {r.value}
                   </p>
                   <p className="mt-4 text-sm leading-relaxed text-white/60">{r.label}</p>
@@ -199,7 +269,7 @@ export default async function CasePage({ params }: CasePageProps) {
       </section>
 
       {/* ===== Стек и план ===== */}
-      <section className="py-24 sm:py-28">
+      <section className="py-20 sm:py-28">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
             <div>
@@ -228,14 +298,14 @@ export default async function CasePage({ params }: CasePageProps) {
       </section>
 
       {/* ===== Следующий кейс ===== */}
-      <section className="pb-24 sm:pb-28">
+      <section className="pb-20 sm:pb-28">
         <Container>
           <Reveal>
             <Link
               href={`/cases/${next.id}`}
               className="group block overflow-hidden rounded-3xl border border-line bg-panel shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-line-strong hover:shadow-md"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-10">
+              <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr_auto_auto] sm:items-center sm:gap-10">
                 <div className="bg-black px-8 py-10 text-white sm:py-12">
                   <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
                     Следующий кейс
@@ -253,11 +323,24 @@ export default async function CasePage({ params }: CasePageProps) {
                   </h2>
                   <p className="mt-3 max-w-xl text-sm leading-relaxed text-body">{next.short}</p>
                 </div>
+                {next.previewDesktop && (
+                  <div className="hidden w-44 self-center sm:block">
+                    <div className="overflow-hidden rounded-xl border border-line-strong">
+                      <Image
+                        src={next.previewDesktop}
+                        alt={`${next.title} — превью`}
+                        width={480}
+                        height={300}
+                        className="aspect-[16/10] h-auto w-full object-cover object-top"
+                      />
+                    </div>
+                  </div>
+                )}
                 <span
                   aria-hidden
-                  className="hidden px-8 text-3xl text-accent transition-transform duration-200 group-hover:translate-x-1.5 sm:block"
+                  className="hidden px-8 text-accent transition-transform duration-200 group-hover:translate-x-1.5 sm:block"
                 >
-                  →
+                  <ArrowRight className="h-7 w-7" />
                 </span>
               </div>
             </Link>

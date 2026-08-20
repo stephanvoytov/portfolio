@@ -57,7 +57,7 @@ export default function Header() {
         </nav>
 
         <button
-          className="grid h-10 w-10 place-items-center rounded-full border border-line-strong md:hidden"
+          className="grid h-11 w-11 place-items-center rounded-full border border-line-strong md:hidden"
           aria-label={open ? "Закрыть меню" : "Открыть меню"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -83,7 +83,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-line bg-panel px-4 pb-6 pt-2 md:hidden">
+        <nav className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-panel px-4 pb-6 pt-2 md:hidden">
           {links.map((l) => (
             <Link
               key={l.href}

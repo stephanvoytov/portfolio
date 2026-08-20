@@ -17,7 +17,8 @@ export default function SiteCategories() {
             <button
               type="button"
               onClick={open}
-              className="group flex h-full w-full flex-col rounded-2xl border border-line bg-white p-6 text-left shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[4px_4px_0_0_#0a0a0a] sm:p-7"
+              className="group flex h-full w-full flex-col rounded-2xl border border-line-strong bg-white p-6 text-left shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-[4px_4px_0_0_#0a0a0a] sm:p-7"
+              style={{ borderWidth: "1.5px" }}
             >
               <div className="flex items-baseline justify-between gap-3">
                 <span className="text-sm font-bold text-accent-ink">{c.num}</span>
@@ -29,12 +30,13 @@ export default function SiteCategories() {
               <p className="mt-2 text-sm font-semibold text-accent-ink">{c.goal}</p>
               <p className="mt-3 text-sm leading-relaxed text-muted">{c.desc}</p>
 
-              <p className="mt-6 text-lg font-bold text-heading">{c.price}</p>
-
-              <span className="mt-6 inline-flex items-center gap-2 pt-1 font-mono text-xs font-bold uppercase tracking-wider text-accent-ink">
-                Обсудить
-                <span className="transition-transform duration-200 group-hover:translate-x-1.5">→</span>
-              </span>
+              <div className="mt-auto pt-6">
+                <p className="text-lg font-bold text-heading">{c.price}</p>
+                <span className="mt-3 inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-accent-ink">
+                  Обсудить
+                  <span className="transition-transform duration-200 group-hover:translate-x-1.5">→</span>
+                </span>
+              </div>
             </button>
           </Reveal>
         ))}

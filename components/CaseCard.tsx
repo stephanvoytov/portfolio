@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import { ArrowRight, ArrowUpRight } from "@/components/icons";
 import type { Case } from "@/lib/cases";
 
 interface CaseCardProps {
@@ -12,10 +13,10 @@ export default function CaseCard({ item }: CaseCardProps) {
   const preview = item.previewDesktop ?? item.previewMobile ?? item.slides[0]?.src;
 
   return (
-    <Reveal>
-      <article className="group overflow-hidden rounded-3xl border border-white/10 bg-black transition-colors duration-200 hover:border-white/25">
+    <Reveal className="h-full">
+      <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/25 bg-black transition-colors duration-200 hover:border-white/40">
         <Link href={`/cases/${item.id}`} className="block">
-          <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10">
+          <div className="relative aspect-[16/10] overflow-hidden border-b border-white/25">
             {preview && (
               <Image
                 src={preview}
@@ -28,7 +29,7 @@ export default function CaseCard({ item }: CaseCardProps) {
           </div>
         </Link>
 
-        <div className="p-6 sm:p-8">
+        <div className="flex flex-1 flex-col p-6 sm:p-8">
           <div className="flex flex-wrap items-center gap-3">
             <p className="text-sm text-accent">{item.index}</p>
             <p className="rounded-full border border-white/20 bg-white/5 px-3 py-1 font-mono text-xs text-white/60">
@@ -60,21 +61,24 @@ export default function CaseCard({ item }: CaseCardProps) {
             ))}
           </div>
 
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6">
+          <div className="flex-1" />
+
+          <div className="mt-6 flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
             <Link
               href={`/cases/${item.id}`}
-              className="inline-flex items-center gap-1.5 rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-accent-ink transition-colors duration-200 hover:bg-black hover:text-white"
+              className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-accent-ink transition-colors duration-200 hover:bg-black hover:text-white sm:w-auto"
             >
               Посмотреть кейс
-              <span aria-hidden>→</span>
+              <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href={item.url}
               target="_blank"
               rel="noopener"
-              className="text-sm font-medium text-white/50 transition-colors hover:text-white hover:underline underline-offset-4"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-white/50 transition-colors hover:text-white hover:underline underline-offset-4"
             >
               {item.urlLabel}
+              <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
           </div>
         </div>

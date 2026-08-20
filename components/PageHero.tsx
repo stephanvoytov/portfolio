@@ -22,7 +22,11 @@ export default function PageHero({ kicker, title, sub, children }: PageHeroProps
         {sub && (
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">{sub}</p>
         )}
-        {children && <div className="mt-8 flex flex-wrap gap-3">{children}</div>}
+        {children && (
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-3">
+            {children}
+          </div>
+        )}
       </Container>
     </section>
   );

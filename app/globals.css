@@ -37,6 +37,12 @@ html {
   scroll-behavior: smooth;
 }
 
+a,
+button,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   background: var(--bg);
   color: var(--body);

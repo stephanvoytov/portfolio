@@ -3,14 +3,34 @@
 import Image from "next/image";
 import { useState } from "react";
 import type { CaseSlide } from "@/lib/cases";
+import { ChevronLeft, ChevronRight } from "@/components/icons";
 
-export default function CaseSlider({ slides, id }: { slides: CaseSlide[]; id: string }) {
+export default function CaseSlider({
+  slides,
+  id,
+  url,
+}: {
+  slides: CaseSlide[];
+  id: string;
+  url?: string;
+}) {
   const [i, setI] = useState(0);
   const go = (d: number) => setI((i + d + slides.length) % slides.length);
 
   return (
     <div>
-      <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-line bg-panel-soft shadow-sm">
+      <div className="overflow-hidden rounded-2xl border border-line bg-panel-soft shadow-sm">
+        {url && (
+          <div className="flex items-center gap-2 border-b border-line bg-panel px-5 py-3.5">
+            <span className="h-3 w-3 rounded-full bg-line-strong" />
+            <span className="h-3 w-3 rounded-full bg-line-strong" />
+            <span className="h-3 w-3 rounded-full bg-line-strong" />
+            <span className="ml-4 truncate rounded-lg bg-white px-4 py-1.5 font-mono text-xs text-faint ring-1 ring-line-strong">
+              {url}
+            </span>
+          </div>
+        )}
+        <div className="relative aspect-[16/10]">
         {slides.map((s, idx) => (
           <div
             key={s.src}
@@ -32,6 +52,7 @@ export default function CaseSlider({ slides, id }: { slides: CaseSlide[]; id: st
           {slides[i].label}
         </span>
       </div>
+      </div>
       <div className="mt-4 flex items-center justify-between">
         <span className="text-sm text-faint">
           {String(i + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
@@ -40,16 +61,16 @@ export default function CaseSlider({ slides, id }: { slides: CaseSlide[]; id: st
           <button
             onClick={() => go(-1)}
             aria-label="Предыдущий скриншот"
-            className="grid h-9 w-9 place-items-center rounded-full border border-line-strong text-muted transition-colors hover:bg-panel-soft"
+            className="grid h-11 w-11 place-items-center rounded-full border border-line-strong text-muted transition-colors hover:bg-panel-soft"
           >
-            ←
+            <ChevronLeft className="h-5 w-5" />
           </button>
           <button
             onClick={() => go(1)}
             aria-label="Следующий скриншот"
-            className="grid h-9 w-9 place-items-center rounded-full border border-line-strong text-muted transition-colors hover:bg-panel-soft"
+            className="grid h-11 w-11 place-items-center rounded-full border border-line-strong text-muted transition-colors hover:bg-panel-soft"
           >
-            →
+            <ChevronRight className="h-5 w-5" />
           </button>
         </div>
       </div>

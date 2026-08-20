@@ -39,7 +39,7 @@ export default function HomePage() {
       <Hero />
 
       {/* ===== Работы ===== */}
-      <section className="bg-black py-24 text-white" id="work">
+      <section className="bg-black py-20 text-white sm:py-24" id="work">
         <Container>
           <Reveal>
             <p className="font-mono text-sm font-bold tracking-[0.35em] text-accent">01</p>
@@ -63,7 +63,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Услуги ===== */}
-      <section className="py-24" id="services">
+      <section className="py-20 sm:py-24" id="services">
         <Container>
           <SectionHeading
             num="02"
@@ -78,7 +78,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Дополнительные услуги ===== */}
-      <section className="py-24">
+      <section className="py-20 sm:py-24">
         <Container>
           <SectionHeading
             num="03"
@@ -154,7 +154,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Как я работаю ===== */}
-      <section className="py-24">
+      <section className="py-20 sm:py-24">
         <Container>
           <SectionHeading
             num="04"
@@ -207,7 +207,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Процесс ===== */}
-      <section className="py-24" id="process">
+      <section className="py-20 sm:py-24" id="process">
         <Container>
           <SectionHeading
             num="05"

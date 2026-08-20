@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import Logo from "@/components/Logo";
 import { site } from "@/lib/site";
+import { Mail, MessageCircle, Send } from "@/components/icons";
 
 const nav = [
   { href: "/", label: "Главная" },
@@ -43,19 +44,28 @@ export default function Footer() {
 
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-faint">Связаться</p>
-            <div className="mt-4 flex flex-col gap-2 text-sm">
+            <div className="mt-4 flex flex-col gap-3 text-sm">
               <a
                 href={site.tg}
                 target="_blank"
                 rel="noopener"
-                className="text-muted hover:text-heading"
+                className="group inline-flex items-center gap-2.5 text-muted transition-colors hover:text-heading"
               >
+                <span className="grid h-8 w-8 place-items-center rounded-lg border border-line bg-panel-soft text-heading transition-colors group-hover:border-accent group-hover:bg-accent">
+                  <Send className="h-3.5 w-3.5" />
+                </span>
                 Telegram {site.tgHandle}
               </a>
-              <a href={site.max} target="_blank" rel="noopener" className="text-muted hover:text-heading">
+              <a href={site.max} target="_blank" rel="noopener" className="group inline-flex items-center gap-2.5 text-muted transition-colors hover:text-heading">
+                <span className="grid h-8 w-8 place-items-center rounded-lg border border-line bg-panel-soft text-heading transition-colors group-hover:border-accent group-hover:bg-accent">
+                  <MessageCircle className="h-3.5 w-3.5" />
+                </span>
                 Max
               </a>
-              <a href={`mailto:${site.email}`} className="text-muted hover:text-heading">
+              <a href={`mailto:${site.email}`} className="group inline-flex items-center gap-2.5 text-muted transition-colors hover:text-heading">
+                <span className="grid h-8 w-8 place-items-center rounded-lg border border-line bg-panel-soft text-heading transition-colors group-hover:border-accent group-hover:bg-accent">
+                  <Mail className="h-3.5 w-3.5" />
+                </span>
                 {site.email}
               </a>
             </div>

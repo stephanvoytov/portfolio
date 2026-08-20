@@ -39,7 +39,7 @@ const faqs = [
 
 export default function Faq() {
   return (
-    <section className="border-y border-line bg-panel-soft py-24">
+    <section className="border-y border-line bg-panel-soft py-20 sm:py-24">
       <Container>
         <SectionHeading
           kicker="Вопросы и ответы"

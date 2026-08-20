@@ -9,7 +9,7 @@ export default function CtaSection({ hideMigrate = false }: { hideMigrate?: bool
   const { open } = useContactModal();
 
   return (
-    <section className="pb-24 pt-4">
+    <section className="pb-20 pt-4 sm:pb-24">
       <Container>
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl border-2 border-black bg-white px-6 py-16 text-center shadow-[10px_10px_0_0_#d4af37] sm:px-12">

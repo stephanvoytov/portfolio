@@ -218,7 +218,7 @@ export default function MigratePage() {
         }
         sub="Маркетплейсы удобны, но дороги и непредсказуемы. Поэтапный переход на собственный сайт возвращает вам клиентов, маржу и независимость — с минимальными рисками."
       >
-        <BtnLink href={site.tg} external>
+        <BtnLink href={site.tg} external className="w-full sm:w-auto">
           Обсудить переход
         </BtnLink>
       </PageHero>
@@ -250,7 +250,7 @@ export default function MigratePage() {
       <CommissionBreakdown />
 
       {/* Проблема */}
-      <section className="border-y border-line bg-panel-soft py-24">
+      <section className="border-y border-line bg-panel-soft py-20 sm:py-24">
         <Container>
           <SectionHeading kicker="Проблема" title="Почему бизнес уходит с маркетплейсов" />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -270,7 +270,7 @@ export default function MigratePage() {
       </section>
 
       {/* Чек-лист */}
-      <section className="py-24">
+      <section className="py-20 sm:py-24">
         <Container>
           <SectionHeading
             kicker="План из 5 шагов"
@@ -294,7 +294,7 @@ export default function MigratePage() {
       </section>
 
       {/* Тарифы */}
-      <section className="border-y border-line bg-panel-soft py-24">
+      <section className="border-y border-line bg-panel-soft py-20 sm:py-24">
         <Container>
           <SectionHeading
             kicker="Стоимость"
@@ -364,7 +364,7 @@ export default function MigratePage() {
       </section>
 
       {/* Кейс */}
-      <section className="bg-black py-24 text-white">
+      <section className="bg-black py-20 text-white sm:py-24">
         <Container>
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <Reveal>
@@ -391,16 +391,16 @@ export default function MigratePage() {
                   но перестали быть единственным каналом.
                 </p>
               </Reveal>
-              <Reveal delay={0.1} className="mt-8 flex flex-wrap gap-3">
+              <Reveal delay={0.1} className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
                   href="https://morantibags.ru"
                   target="_blank"
                   rel="noopener"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgba(212,175,55,0.4)]"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgba(212,175,55,0.4)] sm:w-auto"
                 >
                   Посмотреть сайт ↗
                 </a>
-                <BtnLink href={site.tg} external variant="ghost">
+                <BtnLink href={site.tg} external variant="ghost" className="w-full sm:w-auto">
                   Сделать так же
                 </BtnLink>
               </Reveal>
@@ -412,7 +412,7 @@ export default function MigratePage() {
       <Faq />
 
       {/* Почему это выгодно */}
-      <section className="py-24">
+      <section className="py-20 sm:py-24">
         <Container>
           <SectionHeading kicker="Результат" title="Что вы получаете" />
           <div className="mt-10 grid gap-4 md:grid-cols-3">

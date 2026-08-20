@@ -12,6 +12,7 @@ import {
 } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { site } from "@/lib/site";
+import { Mail, MessageCircle, Phone, Send, Users } from "@/components/icons";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -24,6 +25,14 @@ const channels = [
 ] as const;
 
 type ChannelId = (typeof channels)[number]["id"];
+
+const channelIcons: Record<ChannelId, React.ReactNode> = {
+  telegram: <Send className="h-3.5 w-3.5" />,
+  max: <MessageCircle className="h-3.5 w-3.5" />,
+  whatsapp: <Phone className="h-3.5 w-3.5" />,
+  vk: <Users className="h-3.5 w-3.5" />,
+  email: <Mail className="h-3.5 w-3.5" />,
+};
 
 const ContactModalContext = createContext<{ open: () => void }>({ open: () => {} });
 
@@ -100,8 +109,8 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
             aria-modal="true"
             aria-label="Форма заявки"
           >
-            <motion.div
-              className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-3xl border-2 border-black bg-white p-6 shadow-[8px_8px_0_0_#d4af37] sm:p-8"
+<motion.div
+            className="max-h-[92dvh] w-full max-w-md overflow-y-auto rounded-t-3xl border-2 border-black bg-white p-6 shadow-[8px_8px_0_0_#d4af37] sm:max-h-[90vh] sm:rounded-3xl sm:p-8"
               initial={{ opacity: 0, y: 32, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 32, scale: 0.98 }}
@@ -121,7 +130,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                   type="button"
                   onClick={close}
                   aria-label="Закрыть"
-                  className="grid h-9 w-9 shrink-0 place-items-center rounded-full border-2 border-black bg-white text-lg font-bold text-heading transition-colors hover:bg-accent"
+                  className="grid h-10 w-10 shrink-0 place-items-center rounded-full border-2 border-black bg-white text-lg font-bold text-heading transition-colors hover:bg-accent"
                 >
                   ✕
                 </button>
@@ -171,20 +180,23 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                     </label>
                     <div className="mt-1.5 flex flex-wrap gap-2" role="radiogroup" aria-label="Куда удобнее ответить">
                       {channels.map((c) => (
-                        <button
-                          key={c.id}
-                          type="button"
-                          role="radio"
-                          aria-checked={channel === c.id}
-                          onClick={() => setChannel(c.id)}
-                          className={`rounded-full border-2 border-black px-4 py-2 text-sm font-semibold transition-colors ${
-                            channel === c.id
-                              ? "bg-accent-ink text-white"
-                              : "bg-white text-heading hover:bg-accent"
-                          }`}
-                        >
-                          {c.label}
-                        </button>
+<button
+                            key={c.id}
+                            type="button"
+                            role="radio"
+                            aria-checked={channel === c.id}
+                            onClick={() => setChannel(c.id)}
+                            className={`inline-flex items-center gap-1.5 rounded-full border-2 border-black px-4 py-2 text-sm font-semibold transition-colors ${
+                              channel === c.id
+                                ? "bg-accent-ink text-white"
+                                : "bg-white text-heading hover:bg-accent"
+                            }`}
+                          >
+                            <span className={channel === c.id ? "text-accent" : "text-accent-ink"}>
+                              {channelIcons[c.id]}
+                            </span>
+                            {c.label}
+                          </button>
                       ))}
                     </div>
                     <input

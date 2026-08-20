@@ -70,7 +70,7 @@ function BodyRow({ name, pct, rub }: { name: string; pct: string; rub: string })
 
 export default function CommissionBreakdown() {
   return (
-    <section className="border-y border-line bg-panel-soft py-24">
+    <section className="border-y border-line bg-panel-soft py-20 sm:py-24">
       <Container>
         <SectionHeading
           kicker="Сколько реально забирает площадка"
