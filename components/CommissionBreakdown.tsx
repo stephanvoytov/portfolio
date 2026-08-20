@@ -69,8 +69,8 @@ export default function CommissionBreakdown() {
       <Container>
         <SectionHeading
           kicker="Расчёт"
-          title="Посчитайте на своём заказе"
-          sub="Двигайте ползунки — посмотрите, сколько забирает площадка и сколько останется вам на своём сайте. По умолчанию: товар за 2 000 ₽, удержания 25%."
+          title="Посчитайте на своём товаре"
+          sub="Двигайте ползунки — посмотрите, сколько забирает площадка с товара и сколько останется вам на своём сайте. По умолчанию: товар за 2 000 ₽, удержания 25%."
         />
 
         <div className="mx-auto mt-12 max-w-4xl">
@@ -199,7 +199,7 @@ export default function CommissionBreakdown() {
           <Reveal className="mt-6">
             <div className="rounded-2xl border-2 border-black bg-accent px-5 py-6 text-center shadow-[5px_5px_0_0_#0a0a0a] sm:px-8">
               <p className="text-xs font-bold uppercase tracking-wider text-accent-ink/70 sm:text-sm">
-                Разница с каждого заказа
+                Разница с каждого товара
               </p>
               <p className="mt-1 text-2xl font-extrabold text-accent-ink sm:text-4xl">
                 +{fmt(diff)} ₽ вам на своём сайте
