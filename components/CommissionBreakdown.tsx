@@ -14,28 +14,28 @@ const fmtPct = (n: number) =>
 type Cat = { label: string; pct: number | null };
 
 const WB_CATEGORIES: Cat[] = [
-  { label: "Футболки (одежда)", pct: 34.5 },
-  { label: "Джинсы (одежда)", pct: 43.5 },
-  { label: "CC-кремы (красота)", pct: 41.5 },
-  { label: "Вода для утюгов (бытовая химия)", pct: 38.5 },
-  { label: "Медицинские перчатки", pct: 40.5 },
-  { label: "Кружки (посуда)", pct: 29.5 },
-  { label: "Корзины для белья (хозтовары)", pct: 29.5 },
-  { label: "Аквариумы", pct: 30.5 },
-  { label: "Кубики для охлаждения (посуда)", pct: 21.5 },
-  { label: "Электронные сертификаты", pct: 5 },
+  { label: "Одежда, бельё, часы", pct: 43.5 },
+  { label: "Косметика и парфюмерия", pct: 40.5 },
+  { label: "Декор, бытовая химия", pct: 38.5 },
+  { label: "Обувь", pct: 37.5 },
+  { label: "Дом, посуда, игрушки", pct: 34.5 },
+  { label: "Автотовары, стройматериалы", pct: 31.5 },
+  { label: "Зоотовары", pct: 26.5 },
+  { label: "Смартфоны", pct: 25.5 },
+  { label: "Крупная бытовая техника", pct: 24.5 },
   { label: "Свой процент", pct: null },
 ];
 
 const OZON_CATEGORIES: Cat[] = [
-  { label: "Одежда и обувь (от 1 500 ₽)", pct: 46 },
-  { label: "Товары для дома (1 500–5 000 ₽)", pct: 40 },
-  { label: "Чехлы и стёкла для телефонов", pct: 24 },
-  { label: "Товары 100–300 ₽", pct: 20 },
-  { label: "Товары до 100 ₽", pct: 14 },
-  { label: "Наушники и аудио", pct: 12 },
-  { label: "Электроника", pct: 10 },
-  { label: "Лекарства и БАДы", pct: 4 },
+  { label: "Детская обувь", pct: 52 },
+  { label: "Детские товары, игрушки", pct: 52 },
+  { label: "Обувь", pct: 49 },
+  { label: "Одежда", pct: 48 },
+  { label: "Книги", pct: 44 },
+  { label: "Товары для дома", pct: 32 },
+  { label: "Косметика", pct: 29 },
+  { label: "Электроника", pct: 23 },
+  { label: "Продукты питания", pct: 19 },
   { label: "Свой процент", pct: null },
 ];
 
@@ -313,13 +313,14 @@ export default function CommissionBreakdown() {
             <ul className="space-y-2">
               <li className="flex items-start gap-2 text-xs leading-relaxed text-muted">
                 <span className="mt-0.5 shrink-0 font-mono font-bold text-accent-ink">—</span>
-                Wildberries: ставки по таблице КВВ от 7 июля 2026 (схема FBW, склад площадки).
-                FBS дороже на 4,5 п.п., медиана — 33,5–38%.
+                Wildberries: медианы по категориям из таблицы КВВ от 7 июля 2026 (схема FBW).
+                FBS дороже на 4,5 п.п., а у некоторых товаров комиссия доходит до 48%.
               </li>
               <li className="flex items-start gap-2 text-xs leading-relaxed text-muted">
                 <span className="mt-0.5 shrink-0 font-mono font-bold text-accent-ink">—</span>
-                Ozon: прогрессивная шкала с 6 апреля 2026 — чем дороже товар, тем выше процент;
-                в одежде и обуви от 1 500 ₽ — 46%, до 55% с 28 августа 2026.
+                Ozon: с 1 июля 2026 — единая ставка для товаров дороже 300 ₽; дешёвые товары
+                защищены порогами — до 100 ₽ не ниже 14%, 100–300 ₽ не ниже 20%. В детской
+                обуви и чемоданах комиссия доходит до 55–60%.
               </li>
               <li className="flex items-start gap-2 text-xs leading-relaxed text-muted">
                 <span className="mt-0.5 shrink-0 font-mono font-bold text-accent-ink">—</span>
