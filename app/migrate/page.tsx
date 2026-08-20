@@ -1,4 +1,4 @@
-import { BtnLink } from "@/components/BtnLink";
+﻿import { BtnLink } from "@/components/BtnLink";
 import { Container } from "@/components/Container";
 import Reveal from "@/components/Reveal";
 import PageHero from "@/components/PageHero";
@@ -8,7 +8,6 @@ import BrowserFrame from "@/components/BrowserFrame";
 import MarketplaceVsSite from "@/components/MarketplaceVsSite";
 import CommissionBreakdown from "@/components/CommissionBreakdown";
 import Faq from "@/components/Faq";
-import { ArrowUpRight } from "@/components/icons";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 
@@ -127,47 +126,8 @@ const problems = [
     desc: "Ваш товар стоит рядом с дешёвыми аналогами — борьба за клик идёт ценой.",
   },
   {
-    title: "Нестабильная ситуация со складами",
-    desc: "18 июля 2026 два склада Wildberries выгорели: ущерб — от 100 млрд ₽, восстановление — 1–1,5 года, а новая оферта снимает с площадки ответственность за сгоревший товар.",
-  },
-];
-
-const news = [
-  {
-    date: "18 июля 2026",
-    tag: "Пожары",
-    img: "/images/migrate/news-fire.jpg",
-    title: "Сгорели склады в Электростали и Котовске: ущерб — от 100 млрд ₽",
-    desc: "Пожары на логистических центрах Wildberries уничтожили товары селлеров на сотни миллиардов рублей. Из строя выведено около 7% мощностей компании.",
-    src: "dp.ru, фото — Донат Сорокин / ТАСС",
-    href: "https://www.dp.ru/a/2026/07/20/pozhari-na-skladah-wildberries",
-  },
-  {
-    date: "с 7 июля 2026",
-    tag: "Оферта",
-    img: "/images/migrate/worker.jpg",
-    title: "Сгоревший товар — «непреодолимая сила»: компенсации не будет",
-    desc: "Wildberries обновил оферту: утрата товара из-за пожаров на складах больше не возмещается. Селлеры, потерявшие товар, юридически остаются без компенсации.",
-    src: "Т-Бизнес / secrets.tbank.ru",
-    href: "https://secrets.tbank.ru/trendy/ataki-bpla-wildberries-chto-delayut-sellery",
-  },
-  {
-    date: "с 7 июля 2026",
-    tag: "Комиссии",
-    img: "/images/migrate/boxes.jpg",
-    title: "Комиссии выросли почти во всех категориях",
-    desc: "Wildberries повысил комиссии в 98% категорий: на дешёвых позициях удержания достигают 60–70% от цены товара. Маржа селлеров сжимается дальше.",
-    src: "сводки продавцов и отраслевые разборы, 2026",
-    href: "https://mercora.ru/news/ushcherb-skladam-wildberries-ot-atak-bpla-2026-08-09",
-  },
-  {
-    date: "9 августа 2026",
-    tag: "Масштаб",
-    img: "/images/migrate/news-fire2.jpg",
-    title: "Уже 19 пострадавших складов, ущерб — 239,4 млрд ₽",
-    desc: "За месяц волна пожаров затронула 19 логистических центров Wildberries, 12 из них повреждены или уничтожены. За то же время спрос на собственные интернет-магазины вырос на 50%.",
-    src: "mercora.ru, обзор рынка",
-    href: "https://mercora.ru/news/ushcherb-skladam-wildberries-ot-atak-bpla-2026-08-09",
+    title: "Штрафы и списания",
+    desc: "Штрафы за срывы сроков, списания за потерянные посылки, платные возвраты — решения принимает площадка, а платите вы.",
   },
 ];
 
@@ -311,52 +271,6 @@ export default function MigratePage() {
       <MarketplaceVsSite />
 
       <CommissionBreakdown />
-
-      {/* Хроника */}
-      <section className="py-20 sm:py-24">
-        <Container>
-          <SectionHeading
-            kicker="Хроника"
-            title="Что происходит с маркетплейсами прямо сейчас"
-            sub="Это не абстрактные риски, а события этого лета. Цифры ниже — из открытых публикаций, ссылки на источники в карточках."
-          />
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {news.map((n, i) => (
-              <Reveal key={n.title} delay={i * 0.06}>
-                <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[6px_6px_0_0_#d4af37]">
-                  <div className="relative aspect-[16/10] overflow-hidden bg-black">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={n.img}
-                      alt={n.title}
-                      className="h-full w-full object-cover opacity-90 transition-transform duration-300 group-hover:scale-[1.03]"
-                      loading="lazy"
-                    />
-                    <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-red-600 px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-white">
-                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white" />
-                      {n.tag}
-                    </span>
-                  </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <p className="font-mono text-xs font-bold text-muted">{n.date}</p>
-                    <h3 className="mt-2 text-lg font-bold leading-snug text-heading">{n.title}</h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{n.desc}</p>
-                    <a
-                      href={n.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-ink underline-offset-4 transition-colors hover:underline"
-                    >
-                      <ArrowUpRight className="h-4 w-4" />
-                      {n.src}
-                    </a>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
 
       {/* Проблема */}
       <section className="border-y border-line bg-panel-soft py-20 sm:py-24">
