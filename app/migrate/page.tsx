@@ -1,10 +1,10 @@
 ﻿import { BtnLink } from "@/components/BtnLink";
 import { Container } from "@/components/Container";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import CtaSection from "@/components/CtaSection";
-import BrowserFrame from "@/components/BrowserFrame";
 import MarketplaceVsSite from "@/components/MarketplaceVsSite";
 import CommissionBreakdown from "@/components/CommissionBreakdown";
 import Faq from "@/components/Faq";
@@ -446,11 +446,15 @@ export default function MigratePage() {
         <Container>
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <Reveal>
-              <BrowserFrame
-                src="/images/moranti-catalog.jpg"
-                alt="Интернет-магазин Moranti — каталог с синхронизацией Ozon и Wildberries"
-                url="morantibags.ru"
-              />
+              <div className="overflow-hidden rounded-3xl shadow-2xl shadow-black/50">
+                <Image
+                  src="/images/mockup-moranti-v2.jpg"
+                  alt="Интернет-магазин Moranti — главная страница сайта"
+                  width={1600}
+                  height={1000}
+                  className="h-auto w-full"
+                />
+              </div>
             </Reveal>
             <div>
               <Reveal>
