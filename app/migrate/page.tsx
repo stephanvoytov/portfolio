@@ -92,15 +92,15 @@ const faqJsonLd = {
 const numbers = [
   {
     value: "35–55%",
-    label: "реальная суммарная комиссия с продажи",
+    label: "реальная комиссия с продажи",
   },
   {
     value: "98%",
-    label: "категорий Wildberries — комиссии выросли с 7 июля 2026",
+    label: "категорий Wildberries — комиссии выросли",
   },
   {
     value: "+50%",
-    label: "спрос на запуск собственных интернет-магазинов — к IV кварталу 2026",
+    label: "спрос на запуск своих магазинов",
   },
 ];
 
@@ -262,17 +262,17 @@ export default function MigratePage() {
             {numbers.map((n, i) => (
               <Reveal key={n.label} delay={i * 0.08}>
                 <div className="text-center sm:text-left">
-                  <p className="text-2xl font-extrabold tracking-tight text-accent sm:text-4xl">
+                  <p className="text-[22px] font-extrabold tracking-tight text-accent sm:text-4xl">
                     {n.value}
                   </p>
-                  <p className="mt-1 text-[11px] leading-tight text-white/60 sm:mt-2 sm:text-sm sm:leading-relaxed">
+                  <p className="mt-1 line-clamp-2 text-[10px] leading-tight text-white/60 sm:mt-2 sm:text-sm sm:leading-relaxed">
                     {n.label}
                   </p>
                 </div>
               </Reveal>
             ))}
           </div>
-          <p className="mt-8 text-center font-mono text-xs text-white/40 sm:text-left">
+          <p className="mx-auto mt-6 max-w-[260px] text-center font-mono text-[9px] leading-snug text-white/35 sm:mx-0 sm:mt-8 sm:max-w-none sm:text-left sm:text-xs">
             Источники: таблица комиссий Wildberries (июль <span className="font-sans">2026</span>),
             комиссии Ozon (<span className="font-sans">2026</span>), разборы удержаний продавцов; INFOLine/Forbes, август <span className="font-sans">2026</span>
           </p>
