@@ -344,23 +344,13 @@ export default function CommissionBreakdown() {
             <ul className="space-y-2">
               <li className="flex items-start gap-2 text-xs leading-relaxed text-muted">
                 <span className="mt-0.5 shrink-0 font-mono font-bold text-accent-ink">—</span>
-                Wildberries: медианы по категориям из таблицы КВВ от 7 июля 2026 (схема FBW).
-                FBS дороже на 4,5 п.п., а у некоторых товаров комиссия доходит до 48%.
+                Ставки: таблица Wildberries от 7 июля 2026 и тарифы Ozon 2026. Точную ставку
+                вашей категории покажет кабинет продавца.
               </li>
               <li className="flex items-start gap-2 text-xs leading-relaxed text-muted">
                 <span className="mt-0.5 shrink-0 font-mono font-bold text-accent-ink">—</span>
-                Ozon: с 1 июля 2026 — единая ставка для товаров дороже 300 ₽; дешёвые товары
-                защищены порогами — до 100 ₽ не ниже 14%, 100–300 ₽ не ниже 20%. В детской
-                обуви и чемоданах комиссия доходит до 55–60%.
-              </li>
-              <li className="flex items-start gap-2 text-xs leading-relaxed text-muted">
-                <span className="mt-0.5 shrink-0 font-mono font-bold text-accent-ink">—</span>
-                Эквайринг: интернет-тарифы 2026, зависят от оборота — при 1 млн ₽ в месяц банки
-                снижают ставку до 0,8–1,2%. СБП дешевле карт.
-              </li>
-              <li className="flex items-start gap-2 text-xs leading-relaxed text-muted">
-                <span className="mt-0.5 shrink-0 font-mono font-bold text-accent-ink">—</span>
-                На сайте к этой марже добавляются повторные продажи: клиенты остаются вашими.
+                Эквайринг зависит от оборота: при 1 млн ₽ в месяц ставки снижаются до
+                0,8–1,2%, СБП дешевле карт.
               </li>
             </ul>
           </Reveal>
