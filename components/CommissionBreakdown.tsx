@@ -118,7 +118,6 @@ export default function CommissionBreakdown() {
   const [customPct, setCustomPct] = useState(25);
   const [acqIdx, setAcqIdx] = useState(0);
   const [sales, setSales] = useState(100);
-  const [showResult, setShowResult] = useState(false);
 
   const cats = mp === "wb" ? WB_CATEGORIES : OZON_CATEGORIES;
   const cat = cats[catIdx] ?? cats[0];
@@ -132,7 +131,7 @@ export default function CommissionBreakdown() {
   const diff = siteLeft - mpLeft;
 
   return (
-    <section className="border-y border-line bg-panel-soft py-20 sm:py-24">
+    <section id="calc" className="scroll-mt-24 border-y border-line bg-panel-soft py-20 sm:py-24">
       <Container>
         <SectionHeading
           kicker="Расчёт"
@@ -241,19 +240,9 @@ export default function CommissionBreakdown() {
                 step={10}
                 onChange={setSales}
               />
-
-              <button
-                type="button"
-                onClick={() => setShowResult(true)}
-                className="mt-7 w-full rounded-full border-2 border-black bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_#0a0a0a]"
-              >
-                {showResult ? "Пересчитать разницу" : "Посчитать разницу"}
-              </button>
             </div>
           </Reveal>
 
-          {showResult && (
-            <>
           <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-5">
             <Reveal>
               <div className="h-full overflow-hidden rounded-3xl border-2 border-black bg-white shadow-[6px_6px_0_0_#0a0a0a] sm:shadow-[8px_8px_0_0_#0a0a0a]">
@@ -374,8 +363,6 @@ export default function CommissionBreakdown() {
               </li>
             </ul>
           </Reveal>
-            </>
-          )}
         </div>
       </Container>
     </section>

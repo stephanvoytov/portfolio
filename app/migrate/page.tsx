@@ -250,6 +250,9 @@ export default function MigratePage() {
         <BtnLink href={site.tg} external className="w-full sm:w-auto">
           Обсудить переход
         </BtnLink>
+        <BtnLink href="#calc" variant="ghost" className="w-full sm:w-auto">
+          Посчитать разницу
+        </BtnLink>
       </PageHero>
 
       {/* Цифры */}
