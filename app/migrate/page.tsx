@@ -95,8 +95,13 @@ const numbers = [
     label: "от цены товара забирают маркетплейсы",
   },
   {
+    value: "×2,8",
+    label: "больше выручки с заказа остаётся на своём сайте",
+  },
+  {
     value: "+50%",
     label: "запусков своих магазинов селлерами к IV кварталу 2026",
+    desktopOnly: true,
   },
 ];
 
@@ -254,10 +259,10 @@ export default function MigratePage() {
       {/* Цифры */}
       <section className="bg-black py-12 text-white sm:py-16">
         <Container>
-          <div className="mx-auto grid max-w-3xl grid-cols-2 gap-2 sm:gap-8">
+          <div className="mx-auto grid max-w-3xl grid-cols-2 gap-2 sm:max-w-none sm:grid-cols-3 sm:gap-8">
             {numbers.map((n, i) => (
               <Reveal key={n.label} delay={i * 0.08}>
-                <div className="text-center sm:text-left">
+                <div className={n.desktopOnly ? "hidden text-center sm:block sm:text-left" : "text-center sm:text-left"}>
                   <p className="text-[22px] font-extrabold tracking-tight text-accent sm:text-4xl">
                     {n.value}
                   </p>
