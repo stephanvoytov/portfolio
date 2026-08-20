@@ -505,14 +505,14 @@ export default function MigratePage() {
                 }}
               />
               <p className="relative max-w-3xl text-base font-medium leading-relaxed text-body sm:text-lg">
-                Начните с аудита: посмотрим ваш ассортимент, посчитаем маржу и предложим схему
-                перехода под ваш случай —{" "}
+                Посчитаем экономию под ваш магазин: посмотрим ассортимент, маржу и удержания —
+                получите цифру «сколько останется вам» на своём сайте.{" "}
                 <span className="bg-accent px-1 font-bold text-accent-ink">бесплатно</span> и без
                 обязательств.
               </p>
               <div className="relative mt-6">
                 <BtnLink href={site.tg} external>
-                  Получить аудит бесплатно
+                  Рассчитать мою экономию
                 </BtnLink>
               </div>
             </div>
