@@ -8,6 +8,7 @@ import BrowserFrame from "@/components/BrowserFrame";
 import MarketplaceVsSite from "@/components/MarketplaceVsSite";
 import CommissionBreakdown from "@/components/CommissionBreakdown";
 import Faq from "@/components/Faq";
+import { ArrowUpRight } from "@/components/icons";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 
@@ -110,6 +111,10 @@ const problems = [
     desc: "Суммарные удержания — комиссия, логистика, реклама, эквайринг, хранение — достигают 35–55% от цены товара, а на дешёвых позициях — до 60–70%.",
   },
   {
+    title: "Комиссии растут",
+    desc: "С 7 июля 2026 Wildberries повысил комиссии в 98% категорий. Планировать маржу на площадке становится всё сложнее.",
+  },
+  {
     title: "Зависимость от правил",
     desc: "Витрина, рейтинг и видимость управляются алгоритмами площадки — не вами.",
   },
@@ -124,6 +129,45 @@ const problems = [
   {
     title: "Нестабильная ситуация со складами",
     desc: "18 июля 2026 два склада Wildberries выгорели после атак БПЛА: ущерб от 100 млрд ₽, восстановление — 1–1,5 года, а новая оферта снимает с площадки ответственность за сгоревший товар.",
+  },
+];
+
+const news = [
+  {
+    date: "18 июля 2026",
+    tag: "Пожары",
+    img: "/images/migrate/news-fire.jpg",
+    title: "Сгорели склады в Электростали и Котовске: ущерб — от 100 млрд ₽",
+    desc: "Атаки БПЛА на логистические центры Wildberries: 8 погибших, 86 раненых, уничтожены товары селлеров. Выведено из строя около 7% мощностей компании.",
+    src: "dp.ru, фото — Донат Сорокин / ТАСС",
+    href: "https://www.dp.ru/a/2026/07/20/pozhari-na-skladah-wildberries",
+  },
+  {
+    date: "с 7 июля 2026",
+    tag: "Оферта",
+    img: "/images/migrate/worker.jpg",
+    title: "Сгоревший товар — «непреодолимая сила»: компенсации не будет",
+    desc: "Wildberries обновил оферту: утрата товара из-за атак БПЛА больше не возмещается. Селлеры, потерявшие товар, юридически остаются без компенсации.",
+    src: "Т-Бизнес / secrets.tbank.ru",
+    href: "https://secrets.tbank.ru/trendy/ataki-bpla-wildberries-chto-delayut-sellery",
+  },
+  {
+    date: "с 7 июля 2026",
+    tag: "Комиссии",
+    img: "/images/migrate/boxes.jpg",
+    title: "Комиссии выросли почти во всех категориях",
+    desc: "Wildberries повысил комиссии в 98% категорий: на дешёвых позициях удержания достигают 60–70% от цены товара. Маржа селлеров сжимается дальше.",
+    src: "сводки продавцов и отраслевые разборы, 2026",
+    href: "https://mercora.ru/news/ushcherb-skladam-wildberries-ot-atak-bpla-2026-08-09",
+  },
+  {
+    date: "9 августа 2026",
+    tag: "Масштаб",
+    img: "/images/migrate/news-fire2.jpg",
+    title: "Уже 19 атакованных складов, ущерб — 239,4 млрд ₽",
+    desc: "За месяц беспилотники поразили 19 логистических центров Wildberries, 12 из них повреждены или уничтожены. За то же время спрос на собственные интернет-магазины вырос на 50%.",
+    src: "mercora.ru, обзор рынка",
+    href: "https://mercora.ru/news/ushcherb-skladam-wildberries-ot-atak-bpla-2026-08-09",
   },
 ];
 
@@ -169,6 +213,21 @@ const why = [
     desc: "Никаких резких решений: маркетплейсы продолжают работать, пока сайт набирает обороты.",
   },
 ];
+
+const fit = {
+  yes: [
+    "Продажи повторяются: товар покупают снова и снова",
+    "Есть бренд или ниша, которую можно отстроить от конкурентов",
+    "Маржа позволяет платить за рекламу и оставаться в плюсе",
+    "Хотите знать своих покупателей и собирать свою базу",
+  ],
+  no: [
+    "Разовые покупки без повторов: клиент пришёл — и больше не вернётся",
+    "Высокая ценовая конкуренция: выигрывает только самый дешёвый",
+    "Нет времени на рекламу и работу с трафиком",
+    "Маркетплейс даёт основной поток — и текущая ситуация вас устраивает",
+  ],
+};
 
 const plans = [
   {
@@ -217,6 +276,10 @@ export default function MigratePage() {
           </>
         }
         sub="Маркетплейсы удобны, но дороги и непредсказуемы. Поэтапный переход на собственный сайт возвращает вам клиентов, маржу и независимость — с минимальными рисками."
+        image={{
+          src: "/images/migrate/warehouse.jpg",
+          alt: "Склад логистического центра Wildberries",
+        }}
       >
         <BtnLink href={site.tg} external className="w-full sm:w-auto">
           Обсудить переход
@@ -248,6 +311,52 @@ export default function MigratePage() {
       <MarketplaceVsSite />
 
       <CommissionBreakdown />
+
+      {/* Хроника */}
+      <section className="py-20 sm:py-24">
+        <Container>
+          <SectionHeading
+            kicker="Хроника"
+            title="Что происходит с маркетплейсами прямо сейчас"
+            sub="Это не абстрактные риски, а события этого лета. Цифры ниже — из открытых публикаций, ссылки на источники в карточках."
+          />
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {news.map((n, i) => (
+              <Reveal key={n.title} delay={i * 0.06}>
+                <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[6px_6px_0_0_#d4af37]">
+                  <div className="relative aspect-[16/10] overflow-hidden bg-black">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={n.img}
+                      alt={n.title}
+                      className="h-full w-full object-cover opacity-90 transition-transform duration-300 group-hover:scale-[1.03]"
+                      loading="lazy"
+                    />
+                    <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-red-600 px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-white">
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white" />
+                      {n.tag}
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <p className="font-mono text-xs font-bold text-muted">{n.date}</p>
+                    <h3 className="mt-2 text-lg font-bold leading-snug text-heading">{n.title}</h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{n.desc}</p>
+                    <a
+                      href={n.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-ink underline-offset-4 transition-colors hover:underline"
+                    >
+                      <ArrowUpRight className="h-4 w-4" />
+                      {n.src}
+                    </a>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       {/* Проблема */}
       <section className="border-y border-line bg-panel-soft py-20 sm:py-24">
@@ -290,6 +399,53 @@ export default function MigratePage() {
               </Reveal>
             ))}
           </ol>
+        </Container>
+      </section>
+
+      {/* Кому подходит */}
+      <section className="py-20 sm:py-24">
+        <Container>
+          <SectionHeading
+            kicker="Честно"
+            title="Подходит ли это вашему магазину"
+            sub="Уход с маркетплейсов — не догма. Он выгоден не всем: решайте по своим цифрам, а не по трендам."
+          />
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            <Reveal>
+              <div className="h-full rounded-2xl border-2 border-black bg-white p-7 shadow-[6px_6px_0_0_#d4af37] sm:p-8">
+                <h3 className="text-xl font-extrabold text-heading">Переходить — да, если</h3>
+                <ul className="mt-5 space-y-3.5">
+                  {fit.yes.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-body">
+                      <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent text-[11px] font-extrabold text-accent-ink">
+                        ✓
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <div className="h-full rounded-2xl border border-line bg-panel-soft p-7 sm:p-8">
+                <h3 className="text-xl font-extrabold text-heading">Пока рано, если</h3>
+                <ul className="mt-5 space-y-3.5">
+                  {fit.no.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+                      <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full border border-line text-[11px] font-extrabold text-muted">
+                        ✕
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 text-sm leading-relaxed text-muted">
+                  Не уверены, где ваш случай? На аудите посмотрим цифры и скажем честно — без
+                  навязывания переезда.
+                </p>
+              </div>
+            </Reveal>
+          </div>
         </Container>
       </section>
 
