@@ -92,7 +92,7 @@ const faqJsonLd = {
 const numbers = [
   {
     value: "35–55%",
-    label: "реальная суммарная комиссия: комиссия, логистика, реклама, эквайринг, хранение",
+    label: "реальная суммарная комиссия с продажи",
   },
   {
     value: "98%",
@@ -258,14 +258,16 @@ export default function MigratePage() {
       {/* Цифры */}
       <section className="bg-black py-12 text-white sm:py-16">
         <Container>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-3 gap-2 sm:gap-8">
             {numbers.map((n, i) => (
               <Reveal key={n.label} delay={i * 0.08}>
                 <div className="text-center sm:text-left">
-                  <p className="text-3xl font-extrabold tracking-tight text-accent sm:text-4xl">
+                  <p className="text-2xl font-extrabold tracking-tight text-accent sm:text-4xl">
                     {n.value}
                   </p>
-                  <p className="mt-1.5 text-sm leading-relaxed text-white/60">{n.label}</p>
+                  <p className="mt-1 text-[11px] leading-tight text-white/60 sm:mt-2 sm:text-sm sm:leading-relaxed">
+                    {n.label}
+                  </p>
                 </div>
               </Reveal>
             ))}
