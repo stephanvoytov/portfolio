@@ -96,8 +96,8 @@ export const cases: Case[] = [
     title: "Diverse",
     types: ["landing"],
     typeLabel: "Лендинг",
-    url: "https://diversebrand.vercel.app",
-    urlLabel: "diversebrand.vercel.app",
+    url: "https://diversebrand.ru",
+    urlLabel: "diversebrand.ru",
     tagline: "Лендинг франшизы одежды",
     previewDesktop: "/images/mockup-diverse-v2.jpg",
     short:
@@ -133,7 +133,7 @@ export const cases: Case[] = [
       { value: "≈49 ч", label: "часов работы над проектом — от идеи до запуска", icon: "clock" },
     ],
     nextSteps:
-      "Сайт уже запущен для презентации франшизы. После полноценного запуска посчитаем первые заявки от партнёров и подключим аналитику по воронке.",
+      "Сайт перенесён с временного адреса на собственный домен diversebrand.ru и уже запущен для презентации франшизы. После полноценного запуска посчитаем первые заявки от партнёров и подключим аналитику по воронке.",
     stack: ["Next.js", "Карты", "Telegram Bot API", "Формы заявок"],
     compare: {
       before: { src: "/images/diverse-old.webp", label: "Старый сайт на Tilda" },

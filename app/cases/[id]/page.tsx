@@ -183,7 +183,7 @@ export default async function CasePage({ params }: CasePageProps) {
                 <BrowserFrame
                   src={item.compare.after.src}
                   alt={item.compare.after.label}
-                  url="diversebrand.vercel.app"
+                  url="diversebrand.ru"
                 />
               </Reveal>
             </div>
