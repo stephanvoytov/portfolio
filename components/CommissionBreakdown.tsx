@@ -304,7 +304,10 @@ export default function CommissionBreakdown() {
                 Разница с каждого товара
               </p>
               <p className="mt-1 text-2xl font-extrabold text-accent-ink sm:text-4xl">
-                +{fmt(diff)} ₽ — {fmtPct((diff / order) * 100)}% цены товара
+                +{fmt(diff)} ₽
+              </p>
+              <p className="mt-1 text-xs font-bold text-accent-ink/70 sm:text-sm">
+                {fmtPct((diff / order) * 100)}% от цены товара
               </p>
             </div>
           </Reveal>
