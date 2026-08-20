@@ -117,7 +117,8 @@ export default function CommissionBreakdown() {
   const [catIdx, setCatIdx] = useState(0);
   const [customPct, setCustomPct] = useState(25);
   const [acqIdx, setAcqIdx] = useState(0);
-  const [sales, setSales] = useState(100);
+  const [salesT, setSalesT] = useState(33.33);
+  const sales = Math.round(10 ** (1 + 3 * (salesT / 100)));
 
   const cats = mp === "wb" ? WB_CATEGORIES : OZON_CATEGORIES;
   const cat = cats[catIdx] ?? cats[0];
@@ -233,12 +234,12 @@ export default function CommissionBreakdown() {
 
               <RangeControl
                 label="Продаж в месяц"
-                value={sales}
+                value={salesT}
                 display={`${fmt(sales)}`}
-                min={10}
-                max={10000}
-                step={10}
-                onChange={setSales}
+                min={0}
+                max={100}
+                step={0.5}
+                onChange={setSalesT}
               />
             </div>
           </Reveal>
