@@ -95,8 +95,8 @@ const numbers = [
     label: "от цены товара забирают маркетплейсы",
   },
   {
-    value: "2–3%",
-    label: "стоит приём платежей на своём сайте",
+    value: "+50%",
+    label: "спрос на запуск своих магазинов",
   },
 ];
 
@@ -268,9 +268,6 @@ export default function MigratePage() {
               </Reveal>
             ))}
           </div>
-          <p className="mx-auto mt-8 max-w-xl text-center text-sm leading-relaxed text-white/60">
-            Разница — ваша маржа, а клиенты и их данные остаются вашими.
-          </p>
         </Container>
       </section>
 
