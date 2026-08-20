@@ -117,6 +117,8 @@ export default function CommissionBreakdown() {
   const [catIdx, setCatIdx] = useState(0);
   const [customPct, setCustomPct] = useState(25);
   const [acqIdx, setAcqIdx] = useState(0);
+  const [sales, setSales] = useState(100);
+  const [showResult, setShowResult] = useState(false);
 
   const cats = mp === "wb" ? WB_CATEGORIES : OZON_CATEGORIES;
   const cat = cats[catIdx] ?? cats[0];
@@ -227,9 +229,31 @@ export default function CommissionBreakdown() {
                   onChange={(v) => setAcqIdx(ACQUIRERS.findIndex((a) => String(a.pct) === v))}
                 />
               </div>
+
+              <div className="my-6 h-px bg-black/10" />
+
+              <RangeControl
+                label="Продаж в месяц"
+                value={sales}
+                display={`${fmt(sales)}`}
+                min={10}
+                max={10000}
+                step={10}
+                onChange={setSales}
+              />
+
+              <button
+                type="button"
+                onClick={() => setShowResult(true)}
+                className="mt-7 w-full rounded-full border-2 border-black bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_#0a0a0a]"
+              >
+                {showResult ? "Пересчитать разницу" : "Посчитать разницу"}
+              </button>
             </div>
           </Reveal>
 
+          {showResult && (
+            <>
           <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-5">
             <Reveal>
               <div className="h-full overflow-hidden rounded-3xl border-2 border-black bg-white shadow-[6px_6px_0_0_#0a0a0a] sm:shadow-[8px_8px_0_0_#0a0a0a]">
@@ -313,6 +337,20 @@ export default function CommissionBreakdown() {
           </Reveal>
 
           <Reveal className="mt-6">
+            <div className="rounded-3xl border-2 border-black bg-black px-5 py-7 text-center text-white shadow-[8px_8px_0_0_#d4af37] sm:px-8 sm:py-8">
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
+                Выгода в месяц
+              </p>
+              <p className="mt-2 text-3xl font-extrabold tracking-tight sm:text-5xl">
+                +{fmt(diff * sales)} ₽
+              </p>
+              <p className="mt-2 text-sm font-medium text-white/60">
+                при {fmt(sales)} продажах в месяц
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal className="mt-6">
             <ul className="space-y-2">
               <li className="flex items-start gap-2 text-xs leading-relaxed text-muted">
                 <span className="mt-0.5 shrink-0 font-mono font-bold text-accent-ink">—</span>
@@ -336,6 +374,8 @@ export default function CommissionBreakdown() {
               </li>
             </ul>
           </Reveal>
+            </>
+          )}
         </div>
       </Container>
     </section>
