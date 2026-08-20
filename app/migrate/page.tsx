@@ -256,21 +256,21 @@ export default function MigratePage() {
       </PageHero>
 
       {/* Цифры */}
-      <section className="bg-black py-16 text-white">
+      <section className="bg-black py-12 text-white sm:py-16">
         <Container>
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {numbers.map((n, i) => (
               <Reveal key={n.label} delay={i * 0.08}>
                 <div className="text-center sm:text-left">
                   <p className="text-3xl font-extrabold tracking-tight text-accent sm:text-4xl">
                     {n.value}
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-white/60">{n.label}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-white/60">{n.label}</p>
                 </div>
               </Reveal>
             ))}
           </div>
-          <p className="mt-10 text-center font-mono text-xs text-white/40 sm:text-left">
+          <p className="mt-8 text-center font-mono text-xs text-white/40 sm:text-left">
             Источники: таблица комиссий Wildberries (июль <span className="font-sans">2026</span>),
             комиссии Ozon (<span className="font-sans">2026</span>), разборы удержаний продавцов; INFOLine/Forbes, август <span className="font-sans">2026</span>
           </p>
