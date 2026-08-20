@@ -43,7 +43,7 @@ const faqJsonLd = {
       name: "Сайт не будет дороже маркетплейса?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Суммарные удержания маркетплейса — 35–55% с каждой продажи (комиссия, логистика, реклама, эквайринг, хранение). Сайт — это один фиксированный бюджет и ~2–3% эквайринга. Уже при небольшом потоке заказов сайт окупается за пару месяцев.",
+        text: "Суммарные удержания маркетплейса — 50–70% с каждой продажи (комиссия, логистика, реклама, эквайринг, хранение). Сайт — это один фиксированный бюджет и ~2–3% эквайринга. Уже при небольшом потоке заказов сайт окупается за пару месяцев.",
       },
     },
     {
@@ -91,12 +91,8 @@ const faqJsonLd = {
 
 const numbers = [
   {
-    value: "35–55%",
-    label: "реальная комиссия с продажи",
-  },
-  {
-    value: "98%",
-    label: "категорий Wildberries — комиссии выросли",
+    value: "50–70%",
+    label: "от цены товара забирают маркетплейсы",
   },
   {
     value: "+50%",
@@ -107,7 +103,7 @@ const numbers = [
 const problems = [
   {
     title: "Комиссия — только верхушка",
-    desc: "За «25% комиссии» прячутся логистика, хранение, реклама и возвраты. Реальная нагрузка — 35–55%, в одежде на Ozon уходит до 65% выручки.",
+    desc: "За «25% комиссии» прячутся логистика, хранение, реклама и возвраты. Суммарно площадки забирают 50–70% от цены товара.",
   },
   {
     title: "Комиссии растут — вы не можете это остановить",
@@ -258,7 +254,7 @@ export default function MigratePage() {
       {/* Цифры */}
       <section className="bg-black py-12 text-white sm:py-16">
         <Container>
-          <div className="grid grid-cols-3 gap-2 sm:gap-8">
+          <div className="mx-auto grid max-w-3xl grid-cols-2 gap-2 sm:gap-8">
             {numbers.map((n, i) => (
               <Reveal key={n.label} delay={i * 0.08}>
                 <div className="text-center sm:text-left">
@@ -272,9 +268,9 @@ export default function MigratePage() {
               </Reveal>
             ))}
           </div>
-          <p className="mx-auto mt-6 max-w-[260px] text-center font-mono text-[9px] leading-snug text-white/35 sm:mx-0 sm:mt-8 sm:max-w-none sm:text-left sm:text-xs">
-            Источники: таблица комиссий Wildberries (июль <span className="font-sans">2026</span>),
-            комиссии Ozon (<span className="font-sans">2026</span>), разборы удержаний продавцов; INFOLine/Forbes, август <span className="font-sans">2026</span>
+          <p className="mx-auto mt-8 max-w-xl text-center text-sm leading-relaxed text-white/60">
+            Остальное — ваша маржа. На своём сайте с продажи уходит только ~2–3% за приём
+            платежей, и клиенты остаются вашими.
           </p>
         </Container>
       </section>
