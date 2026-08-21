@@ -7,6 +7,7 @@ import SectionHeading from "@/components/SectionHeading";
 import CtaSection from "@/components/CtaSection";
 import MarketplaceVsSite from "@/components/MarketplaceVsSite";
 import CommissionBreakdown from "@/components/CommissionBreakdown";
+import ShareShift from "@/components/ShareShift";
 import ScrollRow from "@/components/ScrollRow";
 import Faq, { faqs } from "@/components/Faq";
 import { site } from "@/lib/site";
@@ -35,7 +36,7 @@ const faqJsonLd = {
 const numbers = [
   {
     value: "50–70%",
-    label: "от цены товара забирают маркетплейсы",
+    label: "от цены товара могут уходить площадке: комиссия, логистика, реклама, возвраты",
   },
   {
     value: "до ×3",
@@ -207,7 +208,7 @@ export default function MigratePage() {
             от Ozon и Wildberries — без потери продаж
           </>
         }
-        sub="Маркетплейсы удобны, но дороги и непредсказуемы. Поэтапный переход на собственный сайт возвращает вам клиентов, маржу и независимость — с минимальными рисками."
+        sub="Никаких резких движений: маркетплейсы продолжают работать, а доля продаж на вашем сайте растёт постепенно. Клиенты, маржа и контроль — возвращаются к вам."
         image={{
           src: "/images/migrate/warehouse.jpg",
           alt: "Склад логистического центра Wildberries",
@@ -290,6 +291,8 @@ export default function MigratePage() {
           </div>
         </Container>
       </section>
+
+      <ShareShift />
 
       {/* Кому подходит */}
       <section className="py-20 sm:py-24">
