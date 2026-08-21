@@ -24,7 +24,7 @@ export function BtnLink({
     variant === "primary"
       ? "bg-black text-white shadow-sm hover:shadow-lg hover:shadow-black/20"
       : variant === "yellow"
-        ? "bg-accent text-accent-ink shadow-sm hover:shadow-lg hover:shadow-[4px_4px_0_0_rgba(212,175,55,0.4)]"
+        ? "bg-accent text-accent-ink shadow-sm hover:shadow-lg hover:shadow-[4px_4px_0_0_rgb(var(--accent-rgb)_/_0.4)]"
         : "border border-line-strong bg-white text-body hover:border-black hover:text-heading";
   const cls = `${base} ${styles} ${className}`;
   if (external) {

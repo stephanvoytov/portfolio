@@ -42,7 +42,7 @@ export default function PageHero({ kicker, title, sub, children, image }: PageHe
                 height={1200}
                 preload
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="relative aspect-[4/3] w-full rounded-3xl border-2 border-black object-cover shadow-[10px_10px_0_0_#d4af37]"
+                className="relative aspect-[4/3] w-full rounded-3xl border-2 border-black object-cover shadow-[10px_10px_0_0_var(--accent)]"
               />
             </div>
           )}

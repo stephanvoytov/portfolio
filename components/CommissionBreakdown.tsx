@@ -142,7 +142,7 @@ export default function CommissionBreakdown() {
 
         <div className="mx-auto mt-12 max-w-4xl">
           <Reveal>
-            <div className="rounded-3xl border-2 border-black bg-white p-6 shadow-[8px_8px_0_0_#d4af37] sm:p-8">
+            <div className="rounded-3xl border-2 border-black bg-white p-6 shadow-[8px_8px_0_0_var(--accent)] sm:p-8">
               <RangeControl
                 label="Сумма заказа"
                 value={order}
@@ -181,7 +181,7 @@ export default function CommissionBreakdown() {
                     id="category"
                     value={catIdx}
                     onChange={(e) => setCatIdx(Number(e.target.value))}
-                    className="w-full appearance-none rounded-2xl border-2 border-black bg-white px-4 py-3 text-sm font-bold text-heading outline-none transition-all focus:shadow-[3px_3px_0_0_#d4af37]"
+                    className="w-full appearance-none rounded-2xl border-2 border-black bg-white px-4 py-3 text-sm font-bold text-heading outline-none transition-all focus:shadow-[3px_3px_0_0_var(--accent)]"
                   >
                     {cats.map((c, i) => (
                       <option key={c.label} value={i}>
@@ -212,7 +212,7 @@ export default function CommissionBreakdown() {
                       step={0.5}
                       value={customPct}
                       onChange={(e) => setCustomPct(Number(e.target.value))}
-                      className="w-24 rounded-xl border-2 border-black bg-white px-3 py-2 text-sm font-bold text-heading outline-none focus:shadow-[3px_3px_0_0_#d4af37]"
+                      className="w-24 rounded-xl border-2 border-black bg-white px-3 py-2 text-sm font-bold text-heading outline-none focus:shadow-[3px_3px_0_0_var(--accent)]"
                     />
                     <span className="text-sm font-bold text-muted">% — возьмите из кабинета продавца</span>
                   </div>
@@ -279,7 +279,7 @@ export default function CommissionBreakdown() {
             </Reveal>
 
             <Reveal delay={0.05}>
-              <div className="h-full overflow-hidden rounded-3xl border-2 border-black bg-white shadow-[6px_6px_0_0_#d4af37] sm:shadow-[8px_8px_0_0_#d4af37]">
+              <div className="h-full overflow-hidden rounded-3xl border-2 border-black bg-white shadow-[6px_6px_0_0_var(--accent)] sm:shadow-[8px_8px_0_0_var(--accent)]">
                 <div className="border-b-2 border-black bg-accent px-4 py-3 sm:px-5 sm:py-4">
                   <h3 className="text-sm font-extrabold text-accent-ink sm:text-lg">Свой сайт</h3>
                   <p className="mt-0.5 text-[11px] font-medium text-accent-ink/70 sm:text-sm">
@@ -327,7 +327,7 @@ export default function CommissionBreakdown() {
           </Reveal>
 
           <Reveal className="mt-6">
-            <div className="rounded-3xl border-2 border-black bg-black px-5 py-7 text-center text-white shadow-[8px_8px_0_0_#d4af37] sm:px-8 sm:py-8">
+            <div className="rounded-3xl border-2 border-black bg-black px-5 py-7 text-center text-white shadow-[8px_8px_0_0_var(--accent)] sm:px-8 sm:py-8">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
                 Выгода в месяц
               </p>

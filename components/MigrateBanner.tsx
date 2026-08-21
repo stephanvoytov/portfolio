@@ -7,12 +7,12 @@ export default function MigrateBanner() {
     <section className="pb-20 sm:pb-24">
       <Container>
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl border-2 border-black bg-black px-6 py-12 text-white shadow-[10px_10px_0_0_#d4af37] sm:px-12 sm:py-14">
+          <div className="relative overflow-hidden rounded-3xl border-2 border-black bg-black px-6 py-12 text-white shadow-[10px_10px_0_0_var(--accent)] sm:px-12 sm:py-14">
             <div
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "radial-gradient(ellipse 60% 100% at 85% 0%, rgba(212,175,55,0.22), transparent 70%)",
+                  "radial-gradient(ellipse 60% 100% at 85% 0%, rgb(var(--accent-rgb) / 0.22), transparent 70%)",
               }}
             />
             <div className="relative grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-12">

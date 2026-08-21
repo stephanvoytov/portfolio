@@ -110,7 +110,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
             aria-label="Форма заявки"
           >
 <motion.div
-            className="max-h-[92dvh] w-full max-w-md overflow-y-auto rounded-t-3xl border-2 border-black bg-white p-6 shadow-[8px_8px_0_0_#d4af37] sm:max-h-[90vh] sm:rounded-3xl sm:p-8"
+            className="max-h-[92dvh] w-full max-w-md overflow-y-auto rounded-t-3xl border-2 border-black bg-white p-6 shadow-[8px_8px_0_0_var(--accent)] sm:max-h-[90vh] sm:rounded-3xl sm:p-8"
               initial={{ opacity: 0, y: 32, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 32, scale: 0.98 }}

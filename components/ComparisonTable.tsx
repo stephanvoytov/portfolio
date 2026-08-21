@@ -89,7 +89,7 @@ export default function ComparisonTable() {
               </div>
             ))}
           </div>
-          <div className="hidden overflow-x-auto rounded-3xl border-2 border-black shadow-[8px_8px_0_0_#d4af37] sm:block">
+          <div className="hidden overflow-x-auto rounded-3xl border-2 border-black shadow-[8px_8px_0_0_var(--accent)] sm:block">
             <table className="w-full min-w-[760px] border-collapse bg-white text-left">
               <thead>
                 <tr className="border-b-2 border-black">

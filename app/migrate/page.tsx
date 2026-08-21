@@ -1,4 +1,4 @@
-﻿import { BtnLink } from "@/components/BtnLink";
+import { BtnLink } from "@/components/BtnLink";
 import { Container } from "@/components/Container";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
@@ -253,7 +253,7 @@ export default function MigratePage() {
             <ScrollRow label="Причины ухода с маркетплейсов">
               {problems.map((p, i) => (
                 <Reveal key={p.title} delay={i * 0.05} className="w-[80%] shrink-0 snap-start sm:w-[330px]">
-                  <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_#d4af37]">
+                  <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_var(--accent)]">
                     <span className="inline-block rounded-full border-2 border-black bg-accent px-3 py-1 text-xs font-extrabold text-accent-ink">
                       {i + 1}
                     </span>
@@ -279,7 +279,7 @@ export default function MigratePage() {
             <ScrollRow label="План перехода по шагам">
               {checklist.map((s, i) => (
                 <Reveal key={s.num} delay={i * 0.05} className="w-[80%] shrink-0 snap-start sm:w-[310px]">
-                  <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_#d4af37]">
+                  <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_var(--accent)]">
                     <span className="inline-block rounded-full border-2 border-black bg-accent px-3 py-1 text-xs font-extrabold text-accent-ink">{s.num}</span>
                     <h3 className="mt-4 text-lg font-bold text-heading">{s.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
@@ -356,7 +356,7 @@ export default function MigratePage() {
                   className={`relative flex h-full flex-col rounded-3xl border-2 p-7 transition-all duration-200 hover:-translate-y-1 ${
                     p.hot
                       ? "border-black bg-accent shadow-[8px_8px_0_0_#0a0a0a]"
-                      : "border-line bg-white shadow-sm hover:border-black hover:shadow-[6px_6px_0_0_#d4af37]"
+                      : "border-line bg-white shadow-sm hover:border-black hover:shadow-[6px_6px_0_0_var(--accent)]"
                   }`}
                 >
                   {p.hot && (
@@ -448,7 +448,7 @@ export default function MigratePage() {
                   href="https://morantibags.ru"
                   target="_blank"
                   rel="noopener"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgba(212,175,55,0.4)] sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgb(var(--accent-rgb)_/_0.4)] sm:w-auto"
                 >
                   Посмотреть сайт ↗
                 </a>
@@ -470,7 +470,7 @@ export default function MigratePage() {
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {why.map((w, i) => (
               <Reveal key={w.title} delay={i * 0.06}>
-                <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_#d4af37]">
+                <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_var(--accent)]">
                   <h3 className="text-lg font-bold text-heading">{w.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{w.desc}</p>
                 </div>
@@ -478,12 +478,12 @@ export default function MigratePage() {
             ))}
           </div>
           <Reveal className="mt-10">
-            <div className="relative overflow-hidden rounded-3xl border-2 border-black bg-white p-7 shadow-[8px_8px_0_0_#d4af37] sm:p-10">
+            <div className="relative overflow-hidden rounded-3xl border-2 border-black bg-white p-7 shadow-[8px_8px_0_0_var(--accent)] sm:p-10">
               <div
                 className="pointer-events-none absolute inset-0"
                 style={{
                   background:
-                    "radial-gradient(ellipse 60% 90% at 100% 0%, rgba(212,175,55,0.3), transparent 70%)",
+                    "radial-gradient(ellipse 60% 90% at 100% 0%, rgb(var(--accent-rgb) / 0.3), transparent 70%)",
                 }}
               />
               <p className="relative max-w-3xl text-base font-medium leading-relaxed text-body sm:text-lg">

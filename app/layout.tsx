@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { ContactModalProvider } from "@/components/ContactModal";
 import YandexMetrika from "@/components/YandexMetrika";
 import { site } from "@/lib/site";
+import { theme } from "@/lib/theme";
 
 const golos = Golos_Text({
   subsets: ["latin", "cyrillic"],
@@ -56,6 +57,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-icon",
+  },
 };
 
 const personJsonLd = {
@@ -88,6 +93,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        {/* Акцентный цвет задаётся в lib/theme.ts и прокидывается сюда как CSS-переменные */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `:root{--accent:${theme.accent};--accent-rgb:${theme.accentRgb};}`,
+          }}
         />
         <YandexMetrika />
         <ContactModalProvider>
