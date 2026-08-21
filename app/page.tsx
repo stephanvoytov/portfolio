@@ -8,6 +8,7 @@ import ProcessSteps from "@/components/ProcessSteps";
 import CtaSection from "@/components/CtaSection";
 import Hero from "@/components/Hero";
 import ComparisonTable from "@/components/ComparisonTable";
+import MigrateBanner from "@/components/MigrateBanner";
 import Image from "next/image";
 import { cases } from "@/lib/cases";
 import { site } from "@/lib/site";
@@ -222,6 +223,8 @@ export default function HomePage() {
       </section>
 
       <ComparisonTable />
+
+      <MigrateBanner />
 
       <CtaSection />
     </>

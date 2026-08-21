@@ -10,6 +10,7 @@ const links = [
   { href: "/#services", label: "Услуги" },
   { href: "/#work", label: "Работы" },
   { href: "/#process", label: "Процесс" },
+  { href: "/migrate", label: "Уход с маркетплейсов" },
 ];
 
 export default function Header() {

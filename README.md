@@ -9,12 +9,10 @@
 | Страница | URL | О чём |
 |---|---|---|
 | Главная | `/` | Услуги, кейсы, процесс работы |
-| Лендинги | `/landing` | Продающие лендинги, кейс франшизы Diverse |
-| Каталог | `/catalog` | Каталог с синхронизацией Ozon/WB, кейс Moranti |
-| Интернет-магазин | `/ecommerce` | Магазин под ключ: корзина, оплата, кабинет |
+| Кейсы | `/cases` | Все кейсы; отдельные страницы `/cases/[id]` |
+| Дизайн | `/design` | Про подход к дизайну сайтов |
 | Миграция | `/migrate` | Переход с маркетплейсов на свой сайт |
-| Портфолио | `/portfolio` | Все кейсы с фильтром по типу |
-| Контакты | `/contacts` | Форма заявки → Telegram |
+| Заявка в Telegram | `/api/telegram` | API-роут приёма заявок |
 
 ## Запуск
 
@@ -27,7 +25,7 @@ npm run start    # запуск собранной версии
 
 ## Форма заявок → Telegram
 
-Форма на странице `/contacts` отправляет заявку в Telegram через API-роут `app/api/contact/route.ts`.
+Заявки с сайта отправляются в Telegram через API-роут `app/api/telegram/route.ts`.
 
 Для работы формы задайте переменные окружения (на Vercel — в Project Settings → Environment Variables):
 
@@ -49,14 +47,14 @@ npm run start    # запуск собранной версии
 
 ```
 app/
-  layout.tsx          — корневой layout: шрифты, мета, JSON-LD (Person), Header/Footer
+  layout.tsx          — корневой layout: шрифты, мета, JSON-LD, Header/Footer
   page.tsx            — главная
-  landing|.../        — страницы услуг
-  portfolio/          — кейсы с фильтром
-  contacts/           — форма + контакты
-  api/contact/        — отправка заявки в Telegram
+  cases/              — список кейсов + страницы /cases/[id]
+  design/             — страница про дизайн
+  migrate/            — лендинг «Уход с маркетплейсов»
+  api/telegram/       — отправка заявок в Telegram
   sitemap.ts, robots.ts
-components/           — Header, Footer, CaseSlider, ContactForm и др.
+components/           — Header, Footer, Hero, CaseCard, MigrateBanner и др.
 lib/                  — данные кейсов, услуг, SEO-хелпер
 public/images/        — скриншоты проектов
 legacy/               — старый статический сайт (архив)
