@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/Container";
 
 interface PageHeroProps {
@@ -34,9 +35,13 @@ export default function PageHero({ kicker, title, sub, children, image }: PageHe
           {image && (
             <div className="relative">
               <div className="absolute -inset-4 rounded-[2.5rem] bg-accent/30 blur-3xl" />
-              <img
+              <Image
                 src={image.src}
                 alt={image.alt}
+                width={1600}
+                height={1200}
+                preload
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="relative aspect-[4/3] w-full rounded-3xl border-2 border-black object-cover shadow-[10px_10px_0_0_#d4af37]"
               />
             </div>

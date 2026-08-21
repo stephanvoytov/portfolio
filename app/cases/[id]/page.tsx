@@ -221,7 +221,7 @@ export default async function CasePage({ params }: CasePageProps) {
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="lg:order-2 lg:self-center">
-              <CaseSlider slides={item.slides} id={item.id} url={item.urlLabel} />
+              <CaseSlider slides={item.slides} url={item.urlLabel} />
             </div>
             <div className="lg:order-1">
               <SectionHeading kicker="Решение" title="Что сделано" />

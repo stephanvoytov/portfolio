@@ -30,13 +30,13 @@ export default function Footer() {
 
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-faint">Навигация</p>
-            <nav className="mt-4 grid grid-cols-1 gap-2">
+            <nav className="mt-4 grid grid-cols-1 gap-1">
               {nav.map((l) => (
-                <Link key={l.href} href={l.href} className="text-sm text-muted hover:text-heading">
+                <Link key={l.href} href={l.href} className="-mx-2 rounded-lg px-2 py-2 text-sm text-muted hover:text-heading">
                   {l.label}
                 </Link>
               ))}
-              <Link href="/migrate" className="text-sm text-muted hover:text-heading">
+              <Link href="/migrate" className="-mx-2 rounded-lg px-2 py-2 text-sm text-muted hover:text-heading">
                 Уход с маркетплейсов
               </Link>
             </nav>
@@ -49,20 +49,20 @@ export default function Footer() {
                 href={site.tg}
                 target="_blank"
                 rel="noopener"
-                className="group inline-flex items-center gap-2.5 text-muted transition-colors hover:text-heading"
+                className="group inline-flex items-center gap-2.5 py-1.5 text-muted transition-colors hover:text-heading"
               >
                 <span className="grid h-8 w-8 place-items-center rounded-lg border border-line bg-panel-soft text-heading transition-colors group-hover:border-accent group-hover:bg-accent">
                   <Send className="h-3.5 w-3.5" />
                 </span>
                 Telegram {site.tgHandle}
               </a>
-              <a href={site.max} target="_blank" rel="noopener" className="group inline-flex items-center gap-2.5 text-muted transition-colors hover:text-heading">
+              <a href={site.max} target="_blank" rel="noopener" className="group inline-flex items-center gap-2.5 py-1.5 text-muted transition-colors hover:text-heading">
                 <span className="grid h-8 w-8 place-items-center rounded-lg border border-line bg-panel-soft text-heading transition-colors group-hover:border-accent group-hover:bg-accent">
                   <MessageCircle className="h-3.5 w-3.5" />
                 </span>
                 Max
               </a>
-              <a href={`mailto:${site.email}`} className="group inline-flex items-center gap-2.5 text-muted transition-colors hover:text-heading">
+              <a href={`mailto:${site.email}`} className="group inline-flex items-center gap-2.5 py-1.5 text-muted transition-colors hover:text-heading">
                 <span className="grid h-8 w-8 place-items-center rounded-lg border border-line bg-panel-soft text-heading transition-colors group-hover:border-accent group-hover:bg-accent">
                   <Mail className="h-3.5 w-3.5" />
                 </span>

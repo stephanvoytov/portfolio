@@ -7,11 +7,9 @@ import { ChevronLeft, ChevronRight } from "@/components/icons";
 
 export default function CaseSlider({
   slides,
-  id,
   url,
 }: {
   slides: CaseSlide[];
-  id: string;
   url?: string;
 }) {
   const [i, setI] = useState(0);
@@ -44,7 +42,7 @@ export default function CaseSlider({
               fill
               sizes="(max-width: 768px) 100vw, 900px"
               className="object-cover object-top"
-              priority={idx === 0}
+              preload={idx === 0}
             />
           </div>
         ))}

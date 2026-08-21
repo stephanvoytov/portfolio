@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface RevealProps {
   children: React.ReactNode;
@@ -8,8 +8,14 @@ interface RevealProps {
   className?: string;
 }
 
-/** Плавное появление блока при скролле. */
+/** Плавное появление блока при скролле. Уважает prefers-reduced-motion. */
 export default function Reveal({ children, delay = 0, className }: RevealProps) {
+  const reduceMotion = useReducedMotion();
+
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}

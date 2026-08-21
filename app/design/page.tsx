@@ -1,4 +1,5 @@
 import { Container } from "@/components/Container";
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
@@ -132,7 +133,7 @@ export default function DesignSystemPage() {
               </p>
               <p className="mt-3 text-sm text-faint">Едва заметный текст — вспомогательное.</p>
               <p className="mt-6 font-mono text-sm text-heading">
-                <span className="text-accent-ink">//</span> mono-строка для меток
+                <span className="text-accent-ink">{"//"}</span> mono-строка для меток
               </p>
             </div>
 
@@ -176,10 +177,10 @@ export default function DesignSystemPage() {
                 <BtnLink href="/" variant="ghost">Ghost-ссылка ←</BtnLink>
               </div>
               <p className="mt-6 font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">Текстовая ссылка</p>
-              <a href="/" className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-accent-ink">
+              <Link href="/" className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-ink transition-colors hover:text-accent">
                 Подробнее о кейсе
                 <span aria-hidden>→</span>
-              </a>
+              </Link>
             </div>
 
             <div className="rounded-3xl border border-white/10 bg-black p-6 shadow-sm sm:p-8">

@@ -98,7 +98,7 @@ function ChipGroup<T extends string | number>({
           key={String(o.value)}
           type="button"
           onClick={() => onChange(o.value)}
-          className={`rounded-full border-2 px-3 py-1.5 text-xs font-bold transition-all duration-200 ${
+          className={`inline-flex min-h-[40px] items-center rounded-full border-2 px-4 py-1.5 text-xs font-bold transition-all duration-200 ${
             value === o.value
               ? "border-black bg-black text-white"
               : "border-line bg-panel-soft text-muted hover:border-black"

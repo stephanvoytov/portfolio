@@ -231,7 +231,7 @@ export default function MigratePage() {
                   <p className="text-[22px] font-extrabold tracking-tight text-accent sm:text-4xl">
                     {n.value}
                   </p>
-                  <p className="mt-1 line-clamp-2 text-[10px] leading-tight text-white/60 sm:mt-2 sm:text-sm sm:leading-relaxed">
+                  <p className="mt-1 line-clamp-2 text-xs leading-tight text-white/60 sm:mt-2 sm:text-sm sm:leading-relaxed">
                     {n.label}
                   </p>
                 </div>
@@ -280,8 +280,8 @@ export default function MigratePage() {
               {checklist.map((s, i) => (
                 <Reveal key={s.num} delay={i * 0.05} className="w-[80%] shrink-0 snap-start sm:w-[310px]">
                   <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_#d4af37]">
-                    <span className="text-sm font-extrabold text-accent">{s.num}</span>
-                    <h3 className="mt-2 text-lg font-bold text-heading">{s.title}</h3>
+                    <span className="inline-block rounded-full border-2 border-black bg-accent px-3 py-1 text-xs font-extrabold text-accent-ink">{s.num}</span>
+                    <h3 className="mt-4 text-lg font-bold text-heading">{s.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
                   </div>
                 </Reveal>
