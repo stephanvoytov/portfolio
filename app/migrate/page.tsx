@@ -210,6 +210,13 @@ const fit = [
   },
 ];
 
+const noFit = [
+  "Разовые покупки при невысоком чеке: клиент купил один раз — и всё",
+  "Чистый ценовой конкурент: товар как у всех, бренда нет",
+  "До ~200 заказов в месяц и нет времени на маркетинг",
+  "Тестируете нишу: площадка проверяет спрос чужим трафиком",
+];
+
 const plans = [
   {
     name: "Витрина",
@@ -374,6 +381,25 @@ export default function MigratePage() {
             ))}
           </div>
           <Reveal delay={0.2}>
+            <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-line bg-panel-soft p-7 sm:p-8">
+              <h3 className="text-lg font-extrabold text-heading">Перенос точно не нужен, если</h3>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                {noFit.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+                    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full border border-line text-[11px] font-extrabold text-muted">
+                      ✕
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-sm leading-relaxed text-muted">
+                Исключение — дорогие разовые ниши вроде мебели: там работают SEO и контент, но это
+                другая модель запуска.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={0.28}>
             <p className="mx-auto mt-8 max-w-2xl text-center text-sm leading-relaxed text-muted">
               Не уверены, где ваш случай? Напишите в Telegram — посмотрим ваши цифры и скажем
               честно, без навязывания переезда.
