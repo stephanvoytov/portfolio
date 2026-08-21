@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ContactModalProvider } from "@/components/ContactModal";
+import YandexMetrika from "@/components/YandexMetrika";
 import { site } from "@/lib/site";
 
 const golos = Golos_Text({
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
+        <YandexMetrika />
         <ContactModalProvider>
           <Header />
           <main className="flex-1">{children}</main>
