@@ -7,6 +7,7 @@ import SectionHeading from "@/components/SectionHeading";
 import CtaSection from "@/components/CtaSection";
 import MarketplaceVsSite from "@/components/MarketplaceVsSite";
 import CommissionBreakdown from "@/components/CommissionBreakdown";
+import ScrollRow from "@/components/ScrollRow";
 import Faq, { faqs } from "@/components/Faq";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
@@ -248,18 +249,20 @@ export default function MigratePage() {
       <section className="border-y border-line bg-panel-soft py-20 sm:py-24">
         <Container>
           <SectionHeading kicker="Проблема" title="Почему бизнес уходит с маркетплейсов" />
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {problems.map((p, i) => (
-              <Reveal key={p.title} delay={i * 0.05}>
-                <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_#d4af37]">
-                  <span className="inline-block rounded-full border-2 border-black bg-accent px-3 py-1 text-xs font-extrabold text-accent-ink">
-                    {i + 1}
-                  </span>
-                  <h3 className="mt-4 text-lg font-bold text-heading">{p.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{p.desc}</p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="mt-10">
+            <ScrollRow label="Причины ухода с маркетплейсов">
+              {problems.map((p, i) => (
+                <Reveal key={p.title} delay={i * 0.05} className="w-[80%] shrink-0 snap-start sm:w-[330px]">
+                  <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_#d4af37]">
+                    <span className="inline-block rounded-full border-2 border-black bg-accent px-3 py-1 text-xs font-extrabold text-accent-ink">
+                      {i + 1}
+                    </span>
+                    <h3 className="mt-4 text-lg font-bold text-heading">{p.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted">{p.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </ScrollRow>
           </div>
         </Container>
       </section>
@@ -272,19 +275,19 @@ export default function MigratePage() {
             title="Как проходит переход"
             sub="Никаких резких движений: каждый шаг понятен, измерим и не ломает текущие продажи."
           />
-          <ol className="mt-10 space-y-4">
-            {checklist.map((s, i) => (
-              <Reveal key={s.num} delay={i * 0.05}>
-                <li className="group flex flex-col gap-3 rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-black hover:shadow-[5px_5px_0_0_#d4af37] sm:flex-row sm:items-start sm:gap-6">
-                  <span className="text-sm font-bold text-accent-ink">{s.num}</span>
-                  <div>
-                    <h3 className="text-lg font-bold text-heading">{s.title}</h3>
-                    <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">{s.desc}</p>
+          <div className="mt-10">
+            <ScrollRow label="План перехода по шагам">
+              {checklist.map((s, i) => (
+                <Reveal key={s.num} delay={i * 0.05} className="w-[80%] shrink-0 snap-start sm:w-[310px]">
+                  <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_#d4af37]">
+                    <span className="text-sm font-extrabold text-accent">{s.num}</span>
+                    <h3 className="mt-2 text-lg font-bold text-heading">{s.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
                   </div>
-                </li>
-              </Reveal>
-            ))}
-          </ol>
+                </Reveal>
+              ))}
+            </ScrollRow>
+          </div>
         </Container>
       </section>
 
