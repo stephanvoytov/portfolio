@@ -51,7 +51,7 @@ app/
   page.tsx            — главная
   cases/              — список кейсов + страницы /cases/[id]
   design/             — страница про дизайн
-  migrate/            — лендинг «Уход с маркетплейсов»
+  migrate/            — лендинг «Сайт вместо маркетплейса»
   api/telegram/       — отправка заявок в Telegram
   sitemap.ts, robots.ts
 components/           — Header, Footer, Hero, CaseCard, MigrateBanner и др.
