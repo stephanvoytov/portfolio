@@ -144,7 +144,7 @@ const checklist = [
   {
     num: "01",
     title: "Разбор",
-    desc: "Одна встреча. Смотрим ассортимент, маржу и повторные покупки — и выбираем формат: витрина, полноценный магазин или гибрид, где часть товаров продаётся на сайте, а часть на площадках.",
+    desc: "Переписываемся, смотрим ваши цифры: ассортимент, маржу, повторные покупки — и выбираем формат: витрина, полноценный магазин или гибрид, где часть товаров продаётся на сайте, а часть на площадках.",
   },
   {
     num: "02",
@@ -183,20 +183,32 @@ const why = [
   },
 ];
 
-const fit = {
-  yes: [
-    "Продажи повторяются: товар покупают снова и снова",
-    "Есть бренд или ниша, которую можно отстроить от конкурентов",
-    "Маржа позволяет платить за рекламу и оставаться в плюсе",
-    "Хотите знать своих покупателей и собирать свою базу",
-  ],
-  no: [
-    "Разовые покупки без повторов: клиент пришёл — и больше не вернётся",
-    "Высокая ценовая конкуренция: выигрывает только самый дешёвый",
-    "Нет времени на рекламу и работу с трафиком",
-    "Маркетплейс даёт основной поток — и текущая ситуация вас устраивает",
-  ],
-};
+const fit = [
+  {
+    level: "Частичный",
+    title: "Витрина",
+    desc: "Массовый товар без бренда — покупают по цене и рейтингу. Заказов мало, повторных почти нет.",
+    point: "Сайт — лицо и заявки, продажи остаются на площадках",
+  },
+  {
+    level: "Средний",
+    title: "Гибрид",
+    desc: "От ~200 заказов в месяц. Есть маржинальные товары с повторным спросом рядом с массовыми.",
+    point: "Повторное — на сайт с ценой ниже, остальное на площадках",
+  },
+  {
+    level: "Почти полный",
+    title: "Сайт основной",
+    desc: "Вас ищут по названию, экономика держится на повторных покупках, комиссии съедают прибыль.",
+    point: "Постоянные клиенты — на сайте, площадки приводят новых",
+  },
+  {
+    level: "Полный",
+    title: "Только свой канал",
+    desc: "Сильный бренд или уникальный продукт, на площадке работаете в ноль. Свой трафик уже есть.",
+    point: "Самый рискованный уровень — оправдан, когда второй контур работает",
+  },
+];
 
 const plans = [
   {
@@ -341,44 +353,32 @@ export default function MigratePage() {
           <SectionHeading
             kicker="Честно"
             title="Подходит ли это вашему магазину"
-            sub="Уход с маркетплейсов — не догма. Он выгоден не всем: решайте по своим цифрам, а не по трендам."
+            sub="Решают два вопроса: покупают ли у вас повторно и сможем ли мы привести трафик. От ответа зависит глубина перехода."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-2">
-            <Reveal>
-              <div className="h-full rounded-2xl border-2 border-black bg-white p-7 shadow-[6px_6px_0_0_#d4af37] sm:p-8">
-                <h3 className="text-xl font-extrabold text-heading">Переходить — да, если</h3>
-                <ul className="mt-5 space-y-3.5">
-                  {fit.yes.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-body">
-                      <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent text-[11px] font-extrabold text-accent-ink">
-                        ✓
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <div className="h-full rounded-2xl border border-line bg-panel-soft p-7 sm:p-8">
-                <h3 className="text-xl font-extrabold text-heading">Пока рано, если</h3>
-                <ul className="mt-5 space-y-3.5">
-                  {fit.no.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-                      <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full border border-line text-[11px] font-extrabold text-muted">
-                        ✕
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-6 text-sm leading-relaxed text-muted">
-                  Не уверены, где ваш случай? На аудите посмотрим цифры и скажем честно — без
-                  навязывания переезда.
-                </p>
-              </div>
-            </Reveal>
+            {fit.map((f, i) => (
+              <Reveal key={f.level} delay={i * 0.06}>
+                <div className="h-full rounded-2xl border border-line bg-white p-7 shadow-sm sm:p-8">
+                  <div className="flex items-center gap-3">
+                    <span className="rounded-full bg-accent px-3 py-1 font-mono text-xs font-extrabold uppercase tracking-wide text-accent-ink">
+                      {f.level}
+                    </span>
+                    <h3 className="text-lg font-extrabold text-heading">{f.title}</h3>
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-body">{f.desc}</p>
+                  <p className="mt-4 border-t border-line pt-4 text-sm font-bold leading-relaxed text-heading">
+                    {f.point}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
           </div>
+          <Reveal delay={0.2}>
+            <p className="mx-auto mt-8 max-w-2xl text-center text-sm leading-relaxed text-muted">
+              Не уверены, где ваш случай? Напишите в Telegram — посмотрим ваши цифры и скажем
+              честно, без навязывания переезда.
+            </p>
+          </Reveal>
         </Container>
       </section>
 
