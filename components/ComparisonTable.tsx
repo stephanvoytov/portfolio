@@ -7,7 +7,7 @@ const rows = [
     label: "Стоимость разработки",
     builder: "Самому — бесплатно, но с ограничениями; со специалистом от 10 000 ₽",
     wp: "От 30 000 ₽",
-    next: "От 10 000 ₽",
+    next: "От 15 000 ₽",
   },
   {
     label: "Скорость загрузки",
@@ -41,6 +41,14 @@ const columns = [
   { key: "next" as const, title: "Кастомный Next.js", hot: true },
 ];
 
+function HotBadge() {
+  return (
+    <span className="ml-1.5 align-middle rounded-full bg-accent-ink px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-accent">
+      Для магазинов
+    </span>
+  );
+}
+
 export default function ComparisonTable() {
   return (
     <section className="py-20 sm:py-24">
@@ -70,11 +78,7 @@ export default function ComparisonTable() {
                         }`}
                       >
                         {c.title}
-                        {c.hot && (
-                          <span className="ml-1.5 rounded-full bg-accent-ink px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-accent">
-                            Мой стек
-                          </span>
-                        )}
+                        {c.hot && <HotBadge />}
                       </p>
                       <p
                         className={`mt-1 text-sm leading-snug ${
@@ -104,11 +108,7 @@ export default function ComparisonTable() {
                       }`}
                     >
                       {c.title}
-                      {c.hot && (
-                        <span className="ml-2 align-middle rounded-full bg-accent-ink px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-accent">
-                          Мой стек
-                        </span>
-                      )}
+                      {c.hot && <HotBadge />}
                     </th>
                   ))}
                 </tr>
@@ -137,8 +137,8 @@ export default function ComparisonTable() {
             </table>
           </div>
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted">
-            Честно: каждому варианту — своё место. Если сомневаетесь — напишите,
-            подскажу, что подходит под вашу задачу и бюджет.
+            Честно: каждому варианту — своё место. Я разрабатываю и на WordPress, и на
+            Next.js — посоветую стек под вашу задачу и бюджет, а не под свой удобный шаблон.
           </p>
         </Reveal>
       </Container>
