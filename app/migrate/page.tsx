@@ -9,6 +9,7 @@ import MarketplaceVsSite from "@/components/MarketplaceVsSite";
 import CommissionBreakdown from "@/components/CommissionBreakdown";
 import ShareShift from "@/components/ShareShift";
 import ServiceCalculator from "@/components/ServiceCalculator";
+import WhyNotFreelance from "@/components/WhyNotFreelance";
 import ScrollRow from "@/components/ScrollRow";
 import Faq, { faqs } from "@/components/Faq";
 import { site } from "@/lib/site";
@@ -451,6 +452,8 @@ export default function MigratePage() {
           </Reveal>
         </Container>
       </section>
+
+      <WhyNotFreelance />
 
       {/* Тарифы */}
       <section className="border-y border-line bg-panel-soft py-20 sm:py-24">
