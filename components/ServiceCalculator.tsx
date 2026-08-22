@@ -29,7 +29,7 @@ const TYPES: { id: TypeId; name: string; base: number; days: string; desc: strin
   {
     id: "full",
     name: "Переход под ключ",
-    base: 130000,
+    base: 110000,
     days: "около 3 недель",
     desc: "Магазин плюс перевод клиентов с площадок",
   },
