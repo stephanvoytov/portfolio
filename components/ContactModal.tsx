@@ -34,7 +34,9 @@ const channelIcons: Record<ChannelId, React.ReactNode> = {
   email: <Mail className="h-3.5 w-3.5" />,
 };
 
-const ContactModalContext = createContext<{ open: () => void }>({ open: () => {} });
+const ContactModalContext = createContext<{ open: (subject?: string) => void }>({
+  open: () => {},
+});
 
 export function useContactModal() {
   return useContext(ContactModalContext);
@@ -50,10 +52,11 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
   const [errorText, setErrorText] = useState("");
   const nameRef = useRef<HTMLInputElement>(null);
 
-  const open = useCallback(() => {
+  const open = useCallback((subject?: string) => {
     setIsOpen(true);
     setStatus("idle");
     setErrorText("");
+    if (subject) setMessage(subject);
   }, []);
 
   const close = useCallback(() => setIsOpen(false), []);

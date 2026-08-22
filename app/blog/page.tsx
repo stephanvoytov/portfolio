@@ -4,9 +4,9 @@ import { Container } from "@/components/Container";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta({
-  title: "Блог — гайды для селлеров маркетплейсов",
+  title: "Блог — разработка сайтов, e-commerce и переход с маркетплейсов",
   description:
-    "Практические гайды: переход с Ozon и Wildberries на свой сайт, разделение продаж, QR-воронки, экономика прямых продаж.",
+    "Заметки и гайды от практика: разработка на Next.js, интернет-магазины, интеграции с Ozon и Wildberries, переход с маркетплейсов на свой сайт.",
   path: "/blog",
 });
 
@@ -28,10 +28,11 @@ export default function BlogPage() {
             Блог
           </p>
           <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-heading sm:text-5xl">
-            Гайды для селлеров
+            Блог
           </h1>
           <p className="mt-4 text-lg leading-relaxed text-muted">
-            Практика перехода с маркетплейсов на свой канал продаж — без воды.
+            Заметки о разработке сайтов, e-commerce и переходе с маркетплейсов — из реальных
+            проектов.
           </p>
         </div>
 

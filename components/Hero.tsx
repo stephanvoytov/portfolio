@@ -101,7 +101,7 @@ return (
             >
               <button
                 type="button"
-                onClick={openContact}
+                onClick={() => openContact()}
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-black bg-accent px-8 py-2.5 text-base font-bold text-accent-ink shadow-[4px_4px_0_0_#0a0a0a] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#0a0a0a] active:translate-y-0 sm:w-auto sm:py-4"
               >
                 Обсудить проект

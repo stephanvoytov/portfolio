@@ -9,6 +9,8 @@ import MarketplaceVsSite from "@/components/MarketplaceVsSite";
 import CommissionBreakdown from "@/components/CommissionBreakdown";
 import ShareShift from "@/components/ShareShift";
 import ServiceCalculator from "@/components/ServiceCalculator";
+import ClientsSources from "@/components/ClientsSources";
+import { ModalCta } from "@/components/ModalCta";
 import ScrollRow from "@/components/ScrollRow";
 import Faq, { faqs } from "@/components/Faq";
 import { site } from "@/lib/site";
@@ -291,9 +293,13 @@ function PlanCard({ p, delay }: { p: Plan; delay: number }) {
           ))}
         </ul>
         <div className="mt-7">
-          <BtnLink href={site.tg} external variant={p.hot ? "primary" : "yellow"} block>
+          <ModalCta
+            variant={p.hot ? "primary" : "yellow"}
+            block
+            subject={`Тариф «${p.name}» (${p.price}) — переход с маркетплейсов`}
+          >
             Обсудить задачу
-          </BtnLink>
+          </ModalCta>
         </div>
       </div>
     </Reveal>
@@ -322,9 +328,9 @@ export default function MigratePage() {
           alt: "Склад логистического центра Wildberries",
         }}
       >
-        <BtnLink href={site.tg} external className="w-full sm:w-auto">
+        <ModalCta className="w-full sm:w-auto" subject="Переход с маркетплейсов на свой сайт">
           Обсудить переход
-        </BtnLink>
+        </ModalCta>
         <BtnLink href="#calc" variant="ghost" className="w-full sm:w-auto">
           Посчитать разницу
         </BtnLink>
@@ -346,6 +352,25 @@ export default function MigratePage() {
                 </div>
               </Reveal>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Цены рано — для горячего трафика */}
+      <section className="border-b border-line bg-panel-soft py-5">
+        <Container>
+          <div className="flex flex-col items-center justify-center gap-2 text-center sm:flex-row sm:gap-6">
+            <p className="text-sm font-semibold text-body">
+              Тарифы от{" "}
+              <span className="font-extrabold text-heading">25 000 ₽</span> · витрина за неделю,
+              магазин за две
+            </p>
+            <a
+              href="#tariffs"
+              className="font-mono text-xs font-bold uppercase tracking-wider text-accent-ink underline decoration-accent decoration-2 underline-offset-4 hover:text-heading"
+            >
+              Смотреть тарифы →
+            </a>
           </div>
         </Container>
       </section>
@@ -375,6 +400,8 @@ export default function MigratePage() {
           </div>
         </Container>
       </section>
+
+      <ClientsSources />
 
       {/* Чек-лист */}
       <section className="py-20 sm:py-24">
@@ -453,7 +480,7 @@ export default function MigratePage() {
       </section>
 
       {/* Тарифы */}
-      <section className="border-y border-line bg-panel-soft py-20 sm:py-24">
+      <section id="tariffs" className="scroll-mt-24 border-y border-line bg-panel-soft py-20 sm:py-24">
         <Container>
           <SectionHeading
             kicker="Стоимость"
@@ -571,9 +598,9 @@ export default function MigratePage() {
                 обязательств.
               </p>
               <div className="relative mt-6">
-                <BtnLink href={site.tg} external>
+                <ModalCta subject="Расчёт экономии для моего магазина">
                   Рассчитать мою экономию
-                </BtnLink>
+                </ModalCta>
               </div>
             </div>
           </Reveal>

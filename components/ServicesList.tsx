@@ -52,7 +52,7 @@ export default function ServicesList() {
             ) : (
               <button
                 type="button"
-                onClick={open}
+                onClick={() => open()}
                 className="group flex w-full flex-col gap-4 p-5 text-left transition-colors hover:bg-panel-soft sm:flex-row sm:items-center sm:gap-6 sm:p-6"
               >
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border-2 border-black bg-panel-soft text-heading transition-colors group-hover:bg-accent group-hover:text-accent-ink">

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Container } from "@/components/Container";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
-import { site } from "@/lib/site";
+import { useContactModal } from "@/components/ContactModal";
 
 const fmt = (n: number) =>
   new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 0 }).format(n);
@@ -65,6 +65,7 @@ export default function ServiceCalculator() {
   const [typeId, setTypeId] = useState<TypeId>("shop");
   const [goodsIdx, setGoodsIdx] = useState(0);
   const [opts, setOpts] = useState<number[]>([]);
+  const { open } = useContactModal();
 
   const type = TYPES.find((t) => t.id === typeId) ?? TYPES[1];
   const goods = GOODS_BY_TYPE[typeId];
@@ -205,14 +206,22 @@ export default function ServiceCalculator() {
               </div>
 
               <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                <a
-                  href={site.tg}
-                  target="_blank"
-                  rel="noopener"
+                <button
+                  type="button"
+                  onClick={() =>
+                    open(
+                      [
+                        `Смета: ${type.name}`,
+                        goodsItem.label,
+                        ...(opts.length ? [`опции: ${opts.map((i) => OPTIONS[i].label).join("; ")}`] : []),
+                        `ориентировочно ${fmt(low)}–${fmt(high)} ₽`,
+                      ].join(", ")
+                    )
+                  }
                   className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-black bg-accent px-7 py-3.5 text-sm font-bold text-accent-ink shadow-[4px_4px_0_0_rgba(255,255,255,0.9)] transition-all duration-200 hover:-translate-y-0.5"
                 >
                   Обсудить точную смету →
-                </a>
+                </button>
                 <p className="text-xs leading-relaxed text-white/50 sm:max-w-[220px] sm:text-left">
                   Цена фиксируется в договоре до старта и не меняется по ходу работы.
                 </p>

@@ -16,7 +16,7 @@ export default function SiteCategories() {
           <Reveal key={c.id} delay={i * 0.08}>
             <button
               type="button"
-              onClick={open}
+              onClick={() => open()}
               className="group flex h-full w-full flex-col rounded-2xl border border-line-strong bg-white p-6 text-left shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-[4px_4px_0_0_#0a0a0a] sm:p-7"
               style={{ borderWidth: "1.5px" }}
             >

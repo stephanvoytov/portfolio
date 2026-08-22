@@ -51,7 +51,7 @@ export default function Header() {
           ))}
           <button
             type="button"
-            onClick={openContact}
+            onClick={() => openContact()}
             className="ml-3 rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[3px_3px_0_0_#0a0a0a]"
           >
             Обсудить проект →

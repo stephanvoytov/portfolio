@@ -340,6 +340,23 @@ export default function CommissionBreakdown() {
             </div>
           </Reveal>
 
+          {diff > 0 && (
+            <Reveal className="mt-4">
+              <a
+                href="#tariffs"
+                className="block rounded-2xl border-2 border-black bg-accent px-5 py-5 text-center shadow-[5px_5px_0_0_#0a0a0a] transition-all duration-200 hover:-translate-y-0.5 sm:px-8"
+              >
+                <p className="text-sm font-extrabold text-accent-ink sm:text-base">
+                  Магазин за 49 000 ₽ при таких цифрах окупается за{" "}
+                  {fmt(Math.max(1, Math.ceil(49000 / (diff * sales))))} мес.
+                </p>
+                <p className="mt-1 text-xs font-semibold text-accent-ink/70">
+                  и дальше каждый месяц приносит вам +{fmt(diff * sales)} ₽ · смотреть тарифы →
+                </p>
+              </a>
+            </Reveal>
+          )}
+
           <Reveal className="mt-6">
             <ul className="space-y-2">
               <li className="flex items-start gap-2 text-xs leading-relaxed text-muted">

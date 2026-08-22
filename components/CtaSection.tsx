@@ -33,7 +33,7 @@ export default function CtaSection({ hideMigrate = false }: { hideMigrate?: bool
             <div className="relative mt-9 flex flex-wrap justify-center gap-3">
               <button
                 type="button"
-                onClick={open}
+                onClick={() => open()}
                 className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-black bg-accent-ink px-7 py-3.5 text-sm font-semibold text-white shadow-[4px_4px_0_0_#0a0a0a] transition-all duration-200 hover:-translate-y-0.5"
               >
                 Оставить заявку
