@@ -61,8 +61,8 @@ return (
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-3 max-w-xl text-base leading-relaxed text-muted sm:mt-7 sm:text-xl"
             >
-              Делаю сайты для бизнеса: структура, дизайн, разработка,
-              интеграции и запуск. Сайт должен приносить заявки — это его работа.
+              Делаю сайты для бизнеса на Next.js и WordPress: структура, дизайн,
+              разработка, интеграции и запуск. Сайт должен приносить заявки — это его работа.
             </motion.p>
 
             <motion.div

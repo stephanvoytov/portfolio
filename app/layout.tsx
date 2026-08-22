@@ -27,10 +27,13 @@ export const metadata: Metadata = {
     template: "%s — Стефан",
   },
   description:
-    "Кастомная разработка на Next.js: интернет-магазины, каталоги с синхронизацией Ozon и Wildberries, лендинги и миграция с маркетплейсов. Под ключ, от идеи до запуска и поддержки.",
+    "Разработка сайтов на Next.js и WordPress: интернет-магазины, каталоги с синхронизацией Ozon и Wildberries, лендинги под ключ. От идеи до запуска и поддержки.",
   keywords: [
     "разработка сайтов",
     "next.js разработчик",
+    "разработка сайтов на wordpress",
+    "сайт на wordpress под ключ",
+    "поддержка сайта wordpress",
     "интернет-магазин под ключ",
     "синхронизация с ozon",
     "синхронизация с wildberries",
@@ -83,6 +86,8 @@ const personJsonLd = {
     "Next.js",
     "React",
     "TypeScript",
+    "WordPress",
+    "WooCommerce",
     "Ozon API",
     "Wildberries API",
     "E-commerce",

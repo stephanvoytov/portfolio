@@ -23,8 +23,9 @@ export default function Footer() {
               Стефан<span className="text-accent">.</span>
             </p>
             <p className="mt-3 text-sm leading-relaxed text-muted">
-              Разработка сайтов на Next.js: интернет-магазины, каталоги с синхронизацией Ozon и
-              Wildberries, лендинги. Под ключ — от идеи до запуска и поддержки.
+              Разработка сайтов на Next.js и WordPress: интернет-магазины, каталоги с
+              синхронизацией Ozon и Wildberries, лендинги. Под ключ — от идеи до запуска и
+              поддержки.
             </p>
           </div>
 
