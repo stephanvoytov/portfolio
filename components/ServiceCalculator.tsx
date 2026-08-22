@@ -55,7 +55,7 @@ const GOODS_BY_TYPE: Record<TypeId, { label: string; add: number }[]> = {
 };
 
 const OPTIONS = [
-  { label: "Синхронизация остатков с Ozon/WB (параллельные продажи)", price: 15000 },
+  { label: "Синхронизация остатков с Ozon/WB (параллельные продажи)", price: 10000 },
   { label: "Яндекс.Директ и SEO: настройка и ведение 2 мес.", price: 50000 },
   { label: "Дизайн вкладышей с QR для посылок", price: 10000 },
   { label: "Интеграция с CRM или 1С", price: 40000 },
