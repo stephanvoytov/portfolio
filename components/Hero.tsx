@@ -9,7 +9,7 @@ import { ArrowRight, Clock, Coins, Package } from "@/components/icons";
 const heroWords = ["Делаю", "сайты,", "которые", "продают"];
 
 const metrics = [
-  { value: "от 10 000 ₽", label: "цена", icon: <Coins className="h-4 w-4 sm:h-5 sm:w-5" /> },
+  { value: "от 15 000 ₽", label: "цена", icon: <Coins className="h-4 w-4 sm:h-5 sm:w-5" /> },
   { value: "от 5 дней", label: "срок", icon: <Clock className="h-4 w-4 sm:h-5 sm:w-5" /> },
   { value: "под ключ", label: "формат", icon: <Package className="h-4 w-4 sm:h-5 sm:w-5" /> },
 ];
