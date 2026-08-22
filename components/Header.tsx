@@ -11,6 +11,7 @@ const links = [
   { href: "/#work", label: "Работы" },
   { href: "/#process", label: "Процесс" },
   { href: "/migrate", label: "Сайт вместо маркетплейса" },
+  { href: "/blog", label: "Блог" },
 ];
 
 export default function Header() {

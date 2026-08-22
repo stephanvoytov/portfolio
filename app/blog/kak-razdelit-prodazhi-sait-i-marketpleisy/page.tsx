@@ -330,11 +330,6 @@ export default function BlogPost() {
             ))}
           </div>
 
-          <p className={`${p} mt-6`}>
-            Благодаря ИИ-агентам я снижаю стоимость разработки, не жертвуя качеством: получается
-            уровень кастомной разработки по цене ниже студийной.
-          </p>
-
           <div className="mt-12 rounded-3xl border-2 border-black bg-black px-6 py-8 text-center text-white shadow-[8px_8px_0_0_var(--accent)] sm:px-10">
             <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
               Разберём ваш кейс?
