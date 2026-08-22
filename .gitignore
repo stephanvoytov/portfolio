@@ -49,3 +49,5 @@ home-*.png
 next-env.d.ts
 
 .vercel
+
+.tmp/
