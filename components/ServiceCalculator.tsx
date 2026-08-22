@@ -15,7 +15,7 @@ const TYPES: { id: TypeId; name: string; base: number; days: string; desc: strin
   {
     id: "vitrina",
     name: "Витрина",
-    base: 45000,
+    base: 35000,
     days: "3–7 дней",
     desc: "Лендинг бренда с кнопкой «Купить» на маркетплейсе",
   },
