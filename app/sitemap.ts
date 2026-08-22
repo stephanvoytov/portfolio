@@ -4,6 +4,8 @@ import { site } from "@/lib/site";
 const paths = [
   { path: "", priority: 1 },
   { path: "/migrate", priority: 0.9 },
+  { path: "/blog", priority: 0.6 },
+  { path: "/blog/kak-razdelit-prodazhi-sait-i-marketpleisy", priority: 0.7 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
