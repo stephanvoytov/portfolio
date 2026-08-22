@@ -22,15 +22,15 @@ const TYPES: { id: TypeId; name: string; base: number; days: string; desc: strin
   {
     id: "shop",
     name: "Магазин",
-    base: 90000,
-    days: "2–3 недели",
-    desc: "Корзина, оплата, доставка — продажи на сайте",
+    base: 65000,
+    days: "10–15 дней",
+    desc: "Оплата, доставка и синхронизация остатков включены",
   },
   {
     id: "full",
     name: "Переход под ключ",
-    base: 150000,
-    days: "3–4 недели",
+    base: 130000,
+    days: "около 3 недель",
     desc: "Магазин плюс перевод клиентов с площадок",
   },
 ];
@@ -43,19 +43,18 @@ const GOODS_BY_TYPE: Record<TypeId, { label: string; add: number }[]> = {
   ],
   shop: [
     { label: "до 300 товаров", add: 0 },
-    { label: "до 500", add: 15000 },
-    { label: "до 1 000", add: 25000 },
-    { label: "больше 1 000", add: 40000 },
+    { label: "до 500", add: 10000 },
+    { label: "до 1 000", add: 18000 },
+    { label: "больше 1 000", add: 30000 },
   ],
   full: [
     { label: "до 300 товаров", add: 0 },
-    { label: "до 1 000", add: 25000 },
-    { label: "без лимита", add: 40000 },
+    { label: "до 1 000", add: 20000 },
+    { label: "без лимита", add: 35000 },
   ],
 };
 
 const OPTIONS = [
-  { label: "Синхронизация остатков и цен с Ozon/WB", price: 30000 },
   { label: "Яндекс.Директ и SEO: настройка и ведение 2 мес.", price: 50000 },
   { label: "Дизайн вкладышей с QR для посылок", price: 10000 },
   { label: "Интеграция с CRM или 1С", price: 40000 },
