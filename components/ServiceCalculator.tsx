@@ -35,12 +35,24 @@ const TYPES: { id: TypeId; name: string; base: number; days: string; desc: strin
   },
 ];
 
-const GOODS = [
-  { label: "до 200 товаров", add: 0 },
-  { label: "до 500", add: 15000 },
-  { label: "до 1 000", add: 25000 },
-  { label: "больше 1 000", add: 40000 },
-];
+const GOODS_BY_TYPE: Record<TypeId, { label: string; add: number }[]> = {
+  vitrina: [
+    { label: "до 20 товаров", add: 0 },
+    { label: "до 50", add: 12000 },
+    { label: "до 100", add: 20000 },
+  ],
+  shop: [
+    { label: "до 300 товаров", add: 0 },
+    { label: "до 500", add: 15000 },
+    { label: "до 1 000", add: 25000 },
+    { label: "больше 1 000", add: 40000 },
+  ],
+  full: [
+    { label: "до 300 товаров", add: 0 },
+    { label: "до 1 000", add: 25000 },
+    { label: "без лимита", add: 40000 },
+  ],
+};
 
 const OPTIONS = [
   { label: "Синхронизация остатков и цен с Ozon/WB", price: 30000 },
@@ -55,8 +67,10 @@ export default function ServiceCalculator() {
   const [opts, setOpts] = useState<number[]>([]);
 
   const type = TYPES.find((t) => t.id === typeId) ?? TYPES[1];
+  const goods = GOODS_BY_TYPE[typeId];
+  const goodsItem = goods[Math.min(goodsIdx, goods.length - 1)];
   const optsSum = opts.reduce((acc, i) => acc + OPTIONS[i].price, 0);
-  const low = type.base + GOODS[goodsIdx].add + optsSum;
+  const low = type.base + goodsItem.add + optsSum;
   const high = Math.round((low * 1.35) / 1000) * 1000;
   const days =
     optsSum >= 30000 ? `${type.days} + неделя на интеграции` : type.days;
@@ -82,7 +96,10 @@ export default function ServiceCalculator() {
                   <button
                     key={t.id}
                     type="button"
-                    onClick={() => setTypeId(t.id)}
+                    onClick={() => {
+                      setTypeId(t.id);
+                      setGoodsIdx(0);
+                    }}
                     className={`rounded-2xl border-2 p-4 text-left transition-all duration-200 ${
                       typeId === t.id
                         ? "border-black bg-black text-white"
@@ -103,13 +120,13 @@ export default function ServiceCalculator() {
 
               <p className="text-sm font-bold text-heading">Товаров в каталоге</p>
               <div className="mt-3 flex flex-wrap gap-2">
-                {GOODS.map((g, i) => (
+                {goods.map((g, i) => (
                   <button
                     key={g.label}
                     type="button"
                     onClick={() => setGoodsIdx(i)}
                     className={`inline-flex min-h-[40px] items-center rounded-full border-2 px-4 py-1.5 text-xs font-bold transition-all duration-200 ${
-                      goodsIdx === i
+                      Math.min(goodsIdx, goods.length - 1) === i
                         ? "border-black bg-black text-white"
                         : "border-line bg-panel-soft text-muted hover:border-black"
                     }`}
@@ -167,6 +184,26 @@ export default function ServiceCalculator() {
                 {fmt(low)} – {fmt(high)} ₽
               </p>
               <p className="mt-2 text-sm font-medium text-white/60">срок: {days}</p>
+
+              <div className="mx-auto mt-6 max-w-sm space-y-1.5 border-t border-white/15 pt-5 text-left">
+                <p className="flex justify-between gap-4 text-sm text-white/70">
+                  <span>{type.name}</span>
+                  <span className="font-mono">{fmt(type.base)} ₽</span>
+                </p>
+                {goodsItem.add > 0 && (
+                  <p className="flex justify-between gap-4 text-sm text-white/70">
+                    <span>Каталог: {goodsItem.label}</span>
+                    <span className="font-mono">+{fmt(goodsItem.add)} ₽</span>
+                  </p>
+                )}
+                {optsSum > 0 && (
+                  <p className="flex justify-between gap-4 text-sm text-white/70">
+                    <span>Доп. опции ({opts.length})</span>
+                    <span className="font-mono">+{fmt(optsSum)} ₽</span>
+                  </p>
+                )}
+              </div>
+
               <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <a
                   href={site.tg}

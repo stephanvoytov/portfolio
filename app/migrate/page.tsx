@@ -154,22 +154,24 @@ const noFit = [
   "Тестируете нишу: площадка проверяет спрос чужим трафиком",
 ];
 
-const plans = [
+const basePlans = [
   {
     name: "Витрина",
     price: "от 45 000 ₽",
-    desc: "3–7 дней. Лендинг бренда с каталогом: продаёте через маркетплейс, но клиенты запоминают вас, а не площадку.",
+    days: "3–7 дней",
+    desc: "Лендинг бренда с каталогом до 20 товаров. Продаёте через маркетплейс — клиенты запоминают вас, а не площадку.",
     items: [
       "Лендинг бренда + каталог до 20 товаров",
       "Кнопка «Купить» ведёт на WB или Ozon",
-      "Заявки вам в Telegram: вопросы о товаре, опт, наличие",
       "Домен, хостинг, Яндекс.Метрика, базовое SEO",
+      "Заявки вам в Telegram: вопросы, опт, наличие",
     ],
   },
   {
     name: "Магазин",
     price: "от 90 000 ₽",
-    desc: "2–3 недели. Полноценный магазин со своей корзиной и оплатой: продажи идут на сайте, маржа остаётся у вас.",
+    days: "2–3 недели",
+    desc: "Полноценный магазин со своей корзиной и оплатой: продажи идут на сайте, маржа остаётся у вас.",
     items: [
       "Каталог до 300 товаров",
       "Корзина, онлайн-оплата ЮKassa и СБП",
@@ -179,18 +181,124 @@ const plans = [
     ],
     hot: true,
   },
+];
+
+const growthPlans = [
   {
-    name: "Переход под ключ",
+    name: "Старт",
     price: "от 150 000 ₽",
-    desc: "3–4 недели. Магазин плюс первый контур перевода клиентов с площадок на свой канал.",
+    days: "3–4 недели",
+    desc: "Магазин плюс первый контур перевода клиентов с площадок на свой канал.",
     items: [
       "Всё из «Магазина»",
       "Посадочные страницы под QR для посылок",
       "Форма сбора контактов покупателей",
-      "Базовая стратегия перевода клиентов с WB/Ozon",
+      "Базовая стратегия перевода клиентов",
+    ],
+  },
+  {
+    name: "Рост",
+    price: "от 290 000 ₽",
+    days: "5–7 недель",
+    desc: "Для магазинов с повторными покупками: строим системный приток клиентов на сайт.",
+    items: [
+      "Всё из «Старта»",
+      "Яндекс.Директ и ретаргетинг под ключ",
+      "Дизайн вкладышей и баннеров",
+      "Программа лояльности, интеграция с CRM",
+    ],
+  },
+  {
+    name: "Масштаб",
+    price: "от 600 000 ₽",
+    days: "8–10 недель",
+    desc: "Кастомная платформа для брендов, которые делают сайт основным каналом продаж.",
+    items: [
+      "Кастомная архитектура под задачи бизнеса",
+      "Двусторонняя синхронизация с Ozon/WB через API",
+      "Несколько служб доставки",
+      "Продвинутая аналитика и контент-стратегия",
     ],
   },
 ];
+
+type Plan = {
+  name: string;
+  price: string;
+  days: string;
+  desc: string;
+  items: string[];
+  hot?: boolean;
+};
+
+function PlanCard({ p, delay }: { p: Plan; delay: number }) {
+  return (
+    <Reveal delay={delay} className="h-full">
+      <div
+        className={`relative flex h-full flex-col rounded-3xl border-2 p-7 transition-all duration-200 hover:-translate-y-1 ${
+          p.hot
+            ? "border-black bg-accent shadow-[8px_8px_0_0_#0a0a0a]"
+            : "border-line bg-white shadow-sm hover:border-black hover:shadow-[6px_6px_0_0_var(--accent)]"
+        }`}
+      >
+        {p.hot && (
+          <span className="absolute -top-3 left-6 rounded-full bg-accent-ink px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-accent">
+            Чаще всего выбирают
+          </span>
+        )}
+        <div className="flex items-baseline justify-between gap-3">
+          <h3 className={`text-lg font-bold ${p.hot ? "text-accent-ink" : "text-heading"}`}>
+            {p.name}
+          </h3>
+          <span
+            className={`shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-bold ${
+              p.hot ? "border-accent-ink/30 text-accent-ink/80" : "border-line text-muted"
+            }`}
+          >
+            {p.days}
+          </span>
+        </div>
+        <p
+          className={`mt-3 text-3xl font-extrabold ${
+            p.hot ? "text-accent-ink" : "text-heading"
+          }`}
+        >
+          {p.price}
+        </p>
+        <p
+          className={`mt-3 text-sm leading-relaxed ${
+            p.hot ? "text-accent-ink/70" : "text-muted"
+          }`}
+        >
+          {p.desc}
+        </p>
+        <ul
+          className={`mt-6 flex-1 space-y-2.5 text-sm font-semibold ${
+            p.hot ? "text-accent-ink" : "text-heading"
+          }`}
+        >
+          {p.items.map((item) => (
+            <li key={item} className="flex items-start gap-2.5">
+              <span
+                className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] font-extrabold ${
+                  p.hot ? "bg-white text-accent-ink" : "bg-accent text-accent-ink"
+                }`}
+              >
+                ✓
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div className="mt-7">
+          <BtnLink href={site.tg} external variant={p.hot ? "primary" : "yellow"} block>
+            Обсудить задачу
+          </BtnLink>
+        </div>
+      </div>
+    </Reveal>
+  );
+}
 
 export default function MigratePage() {
   return (
@@ -352,72 +460,28 @@ export default function MigratePage() {
             title="Что во что обходится"
             sub="Цена фиксируется до старта и не меняется по ходу работы. Точную оценку даю после короткого разговора о задаче."
           />
-          <div className="mt-12 grid gap-5 lg:grid-cols-3">
-            {plans.map((p, i) => (
-              <Reveal key={p.name} delay={i * 0.08}>
-                <div
-                  className={`relative flex h-full flex-col rounded-3xl border-2 p-7 transition-all duration-200 hover:-translate-y-1 ${
-                    p.hot
-                      ? "border-black bg-accent shadow-[8px_8px_0_0_#0a0a0a]"
-                      : "border-line bg-white shadow-sm hover:border-black hover:shadow-[6px_6px_0_0_var(--accent)]"
-                  }`}
-                >
-                  {p.hot && (
-                    <span className="absolute -top-3 left-6 rounded-full bg-accent-ink px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-accent">
-                      Чаще всего выбирают
-                    </span>
-                  )}
-                  <h3 className={`text-lg font-bold ${p.hot ? "text-accent-ink" : "text-heading"}`}>
-                    {p.name}
-                  </h3>
-                  <p
-                    className={`mt-3 text-3xl font-extrabold ${
-                      p.hot ? "text-accent-ink" : "text-heading"
-                    }`}
-                  >
-                    {p.price}
-                  </p>
-                  <p
-                    className={`mt-3 text-sm leading-relaxed ${
-                      p.hot ? "text-accent-ink/70" : "text-muted"
-                    }`}
-                  >
-                    {p.desc}
-                  </p>
-                  <ul
-                    className={`mt-6 flex-1 space-y-2.5 text-sm font-semibold ${
-                      p.hot ? "text-accent-ink" : "text-heading"
-                    }`}
-                  >
-                    {p.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5">
-                        <span
-                          className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] font-extrabold ${
-                            p.hot ? "bg-white text-accent-ink" : "bg-accent text-accent-ink"
-                          }`}
-                        >
-                          ✓
-                        </span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-7">
-                    <BtnLink href={site.tg} external variant={p.hot ? "primary" : "yellow"} block>
-                      Обсудить задачу
-                    </BtnLink>
-                  </div>
-                </div>
-              </Reveal>
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">
+            Базовые форматы
+          </p>
+          <div className="mt-5 grid gap-5 md:grid-cols-2">
+            {basePlans.map((p, i) => (
+              <PlanCard key={p.name} p={p} delay={i * 0.08} />
             ))}
           </div>
+
+          <p className="mt-14 font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">
+            Магазин + стратегия и логистика
+          </p>
+          <div className="mt-5 grid gap-5 lg:grid-cols-3">
+            {growthPlans.map((p, i) => (
+              <PlanCard key={p.name} p={p} delay={i * 0.08} />
+            ))}
+          </div>
+
           <Reveal delay={0.2}>
-            <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-relaxed text-muted">
-              Дальше — по результатам: пакет <span className="font-bold text-heading">«Рост»</span>{" "}
-              (от 290 000 ₽ — Директ и ретаргетинг, программа лояльности, CRM) и{" "}
-              <span className="font-bold text-heading">«Масштаб»</span> (от 600 000 ₽ —
-              синхронизация с маркетплейсами, несколько служб доставки, продвинутая аналитика).
-              Собираем под ваши цифры, когда сайт уже приносит первые заказы.
+            <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-muted">
+              В любой тариф входит: договор и ТЗ с фиксированной ценой, адаптив под телефоны,
+              SSL, обучение работе с сайтом и поддержка первый месяц.
             </p>
           </Reveal>
         </Container>
