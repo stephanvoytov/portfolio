@@ -479,17 +479,10 @@ export default function MigratePage() {
           </div>
 
           <Reveal delay={0.2}>
-            <div className="mx-auto mt-10 max-w-3xl text-center">
-              <p className="text-sm leading-relaxed text-muted">
-                В любой тариф входит: договор и ТЗ с фиксированной ценой, адаптив под телефоны,
-                SSL, обучение работе с сайтом и поддержка первый месяц.
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                <span className="font-bold text-heading">Почему цены ниже рынка:</span> ниша для
-                меня новая — собираю кейсы и отзывы первых клиентов. Качество, договор и сроки от
-                этого не меняются; меняется только цена.
-              </p>
-            </div>
+            <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-muted">
+              В любой тариф входит: договор и ТЗ с фиксированной ценой, адаптив под телефоны,
+              SSL, обучение работе с сайтом и поддержка первый месяц.
+            </p>
           </Reveal>
         </Container>
       </section>
