@@ -24,7 +24,7 @@ const TYPES: { id: TypeId; name: string; base: number; days: string; desc: strin
     name: "Магазин",
     base: 49000,
     days: "10–15 дней",
-    desc: "Оплата, доставка и синхронизация остатков включены",
+    desc: "Корзина, оплата, доставка — продажи на сайте",
   },
   {
     id: "full",
@@ -55,6 +55,7 @@ const GOODS_BY_TYPE: Record<TypeId, { label: string; add: number }[]> = {
 };
 
 const OPTIONS = [
+  { label: "Синхронизация остатков с Ozon/WB (параллельные продажи)", price: 15000 },
   { label: "Яндекс.Директ и SEO: настройка и ведение 2 мес.", price: 50000 },
   { label: "Дизайн вкладышей с QR для посылок", price: 10000 },
   { label: "Интеграция с CRM или 1С", price: 40000 },
