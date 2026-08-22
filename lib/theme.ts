@@ -21,3 +21,8 @@ export function buildIconSvg(): string {
     `</svg>`,
   ].join("\n");
 }
+
+/** Тот же логотип как data-URI — для вставки <img> внутри ImageResponse */
+export function iconImgDataUri(): string {
+  return `data:image/svg+xml;base64,${Buffer.from(buildIconSvg()).toString("base64")}`;
+}

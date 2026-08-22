@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Golos_Text, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -58,9 +58,17 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/icon.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon/192", sizes: "192x192", type: "image/png" },
+    ],
     apple: "/apple-icon",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: theme.accent,
 };
 
 const personJsonLd = {
