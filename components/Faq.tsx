@@ -1,4 +1,4 @@
-import { Container } from "@/components/Container";
+﻿import { Container } from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 
@@ -61,10 +61,10 @@ export default function Faq() {
         <div className="mx-auto mt-12 max-w-3xl space-y-3">
           {faqs.map((f, i) => (
             <Reveal key={f.q} delay={i * 0.04}>
-              <details className="group rounded-2xl border border-line bg-white shadow-sm transition-all duration-200 open:border-black open:shadow-[4px_4px_0_0_var(--accent)]">
+              <details className="group rounded-2xl border border-line bg-panel shadow-sm transition-all duration-200 open:border-ink open:shadow-brutal-accent">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-base font-bold text-heading [&::-webkit-details-marker]:hidden">
                   {f.q}
-                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border-2 border-black bg-accent font-mono text-lg font-extrabold text-accent-ink transition-transform duration-200 group-open:rotate-45">
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border-2 border-ink bg-accent font-mono text-lg font-extrabold text-accent-ink transition-transform duration-200 group-open:rotate-45">
                     +
                   </span>
                 </summary>

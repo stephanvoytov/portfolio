@@ -1,4 +1,4 @@
-import { Container } from "@/components/Container";
+﻿import { Container } from "@/components/Container";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -47,9 +47,9 @@ export default function ClientsSources() {
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {sources.map((s, i) => (
             <Reveal key={s.num} delay={i * 0.06} className={i === 0 ? "md:col-span-2 lg:col-span-1" : ""}>
-              <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_var(--accent)]">
+              <div className="group h-full rounded-2xl border border-line bg-panel p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-ink hover:shadow-brutal-accent-md">
                 <div className="flex items-center justify-between gap-3">
-                  <span className="inline-block rounded-full border-2 border-black bg-accent px-3 py-1 text-xs font-extrabold text-accent-ink">
+                  <span className="inline-block rounded-full border-2 border-ink bg-accent px-3 py-1 text-xs font-extrabold text-accent-ink">
                     {s.num}
                   </span>
                   <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-faint">

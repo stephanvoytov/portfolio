@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { reachGoal } from "@/lib/analytics";
@@ -28,10 +28,10 @@ export function BtnLink({
   }`;
   const styles =
     variant === "primary"
-      ? "bg-black text-white shadow-sm hover:shadow-lg hover:shadow-black/20"
+      ? "bg-ink text-white shadow-sm hover:shadow-lg hover:shadow-black/20"
       : variant === "yellow"
-        ? "bg-accent text-accent-ink shadow-sm hover:shadow-lg hover:shadow-[4px_4px_0_0_rgb(var(--accent-rgb)_/_0.4)]"
-        : "border border-line-strong bg-white text-body hover:border-black hover:text-heading";
+        ? "bg-accent text-accent-ink shadow-sm hover:shadow-lg hover:shadow-brutal-accent-soft"
+        : "border border-line-strong bg-panel text-body hover:border-ink hover:text-heading";
   const cls = `${base} ${styles} ${className}`;
   const onClick = goal ? () => reachGoal(goal) : undefined;
   if (external) {

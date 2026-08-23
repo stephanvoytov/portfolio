@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import Reveal from "@/components/Reveal";
@@ -52,7 +52,7 @@ export default function CasesPage() {
                   <div className="flex flex-col p-6 sm:p-8">
                     <div className="flex flex-wrap items-center gap-3">
                       <span className="text-sm font-bold text-accent-ink">{c.index}</span>
-                      <span className="rounded-full border border-line-strong bg-white px-3 py-1 font-mono text-xs text-muted">
+                      <span className="rounded-full border border-line-strong bg-panel px-3 py-1 font-mono text-xs text-muted">
                         {c.typeLabel}
                       </span>
                     </div>
@@ -76,7 +76,7 @@ export default function CasesPage() {
                       {c.integrations.slice(0, 3).map((t) => (
                         <span
                           key={t}
-                          className="rounded-full border border-line-strong bg-white px-3 py-1 font-mono text-xs text-muted"
+                          className="rounded-full border border-line-strong bg-panel px-3 py-1 font-mono text-xs text-muted"
                         >
                           {t}
                         </span>
@@ -86,7 +86,7 @@ export default function CasesPage() {
                     <div className="mt-auto flex flex-col gap-3 border-t border-line pt-6 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
                       <Link
                         href={`/cases/${c.id}`}
-                        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-accent-ink shadow-[3px_3px_0_0_#0a0a0a] transition-all duration-200 hover:-translate-y-0.5 sm:w-auto"
+                        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-accent-ink shadow-brutal-sm transition-all duration-200 hover:-translate-y-0.5 sm:w-auto"
                       >
                         Подробнее
                         <ArrowRight className="h-4 w-4" />

@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 
 interface BrowserFrameProps {
   src: string;
@@ -15,7 +15,7 @@ export default function BrowserFrame({ src, alt, url, priority = false }: Browse
         <span className="h-3 w-3 rounded-full bg-line-strong" />
         <span className="h-3 w-3 rounded-full bg-line-strong" />
         <span className="h-3 w-3 rounded-full bg-line-strong" />
-        <span className="ml-4 rounded-lg bg-white px-4 py-1.5 font-mono text-xs text-faint ring-1 ring-line-strong">
+        <span className="ml-4 rounded-lg bg-panel px-4 py-1.5 font-mono text-xs text-faint ring-1 ring-line-strong">
           {url}
         </span>
       </div>

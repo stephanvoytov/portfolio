@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   createContext,
@@ -106,7 +106,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
       <AnimatePresence>
         {isOpen ? (
           <motion.div
-            className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 p-4 sm:items-center"
+            className="fixed inset-0 z-50 flex items-end justify-center bg-ink/60 p-4 sm:items-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -116,7 +116,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
             aria-label="Форма заявки"
           >
 <motion.div
-            className="max-h-[92dvh] w-full max-w-md overflow-y-auto rounded-t-3xl border-2 border-black bg-white p-6 shadow-[8px_8px_0_0_var(--accent)] sm:max-h-[90vh] sm:rounded-3xl sm:p-8"
+            className="max-h-[92dvh] w-full max-w-md overflow-y-auto rounded-t-3xl border-2 border-ink bg-panel p-6 shadow-brutal-accent-lg sm:max-h-[90vh] sm:rounded-3xl sm:p-8"
               initial={{ opacity: 0, y: 32, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 32, scale: 0.98 }}
@@ -136,14 +136,14 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                   type="button"
                   onClick={close}
                   aria-label="Закрыть"
-                  className="grid h-10 w-10 shrink-0 place-items-center rounded-full border-2 border-black bg-white text-lg font-bold text-heading transition-colors hover:bg-accent"
+                  className="grid h-10 w-10 shrink-0 place-items-center rounded-full border-2 border-ink bg-panel text-lg font-bold text-heading transition-colors hover:bg-accent"
                 >
                   ✕
                 </button>
               </div>
 
               {status === "success" ? (
-                <div className="mt-6 rounded-2xl border-2 border-black bg-accent p-6 text-center">
+                <div className="mt-6 rounded-2xl border-2 border-ink bg-accent p-6 text-center">
                   <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">
                     ✓ Отправлено
                   </p>
@@ -175,7 +175,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Как к вам обращаться"
                       autoComplete="name"
-                      className="mt-1.5 w-full rounded-xl border-2 border-black bg-white px-4 py-3 text-base font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
+                      className="mt-1.5 w-full rounded-xl border-2 border-ink bg-panel px-4 py-3 text-base font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
                     />
                   </div>
                   <div>
@@ -193,10 +193,10 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                             role="radio"
                             aria-checked={channel === c.id}
                             onClick={() => setChannel(c.id)}
-                            className={`inline-flex items-center gap-1.5 rounded-full border-2 border-black px-4 py-2 text-sm font-semibold transition-colors ${
+                            className={`inline-flex items-center gap-1.5 rounded-full border-2 border-ink px-4 py-2 text-sm font-semibold transition-colors ${
                               channel === c.id
                                 ? "bg-accent-ink text-white"
-                                : "bg-white text-heading hover:bg-accent"
+                                : "bg-panel text-heading hover:bg-accent"
                             }`}
                           >
                             <span className={channel === c.id ? "text-accent" : "text-accent-ink"}>
@@ -214,7 +214,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                       placeholder={channels.find((c) => c.id === channel)?.placeholder}
                       inputMode={channel === "whatsapp" || channel === "max" ? "tel" : channel === "email" ? "email" : undefined}
                       autoComplete={channel === "email" ? "email" : "off"}
-                      className="mt-2.5 w-full rounded-xl border-2 border-black bg-white px-4 py-3 text-base font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
+                      className="mt-2.5 w-full rounded-xl border-2 border-ink bg-panel px-4 py-3 text-base font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
                     />
                     <p className="mt-1.5 text-xs text-faint">Связываюсь только в этих каналах — без звонков.</p>
                   </div>
@@ -231,7 +231,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Например: нужен интернет-магазин для бренда одежды…"
                       rows={3}
-                      className="mt-1.5 w-full resize-none rounded-xl border-2 border-black bg-white px-4 py-3 text-base font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
+                      className="mt-1.5 w-full resize-none rounded-xl border-2 border-ink bg-panel px-4 py-3 text-base font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
                     />
                   </div>
 

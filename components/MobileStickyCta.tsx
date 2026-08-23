@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { useContactModal } from "@/components/ContactModal";
@@ -33,7 +33,7 @@ export default function MobileStickyCta() {
         type="button"
         tabIndex={show ? 0 : -1}
         onClick={() => { reachGoal(GOALS.stickyCta); open(); }}
-        className="w-full rounded-full bg-accent px-6 py-3.5 text-base font-bold text-accent-ink shadow-[3px_3px_0_0_#0a0a0a] transition-transform active:scale-[0.98]"
+        className="w-full rounded-full bg-accent px-6 py-3.5 text-base font-bold text-accent-ink shadow-brutal-sm transition-transform active:scale-[0.98]"
       >
         Обсудить переход
       </button>

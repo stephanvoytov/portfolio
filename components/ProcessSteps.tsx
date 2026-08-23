@@ -1,4 +1,4 @@
-import Reveal from "@/components/Reveal";
+﻿import Reveal from "@/components/Reveal";
 
 const steps = [
   {
@@ -28,7 +28,7 @@ export default function ProcessSteps() {
     <div>
       <ol className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {steps.map((s, i) => (
-          <li key={s.num} className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[6px_6px_0_0_var(--accent)]">
+          <li key={s.num} className="group h-full rounded-2xl border border-line bg-panel p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-ink hover:shadow-brutal-accent-md">
             <Reveal delay={i * 0.07}>
               <span className="text-sm font-bold text-accent-ink">{s.num}</span>
               <h3 className="mt-3 text-lg font-bold text-heading">{s.title}</h3>

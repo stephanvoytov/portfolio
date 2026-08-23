@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Reveal from "@/components/Reveal";
 import { useContactModal } from "@/components/ContactModal";
@@ -17,7 +17,7 @@ export default function SiteCategories() {
             <button
               type="button"
               onClick={() => open()}
-              className="group flex h-full w-full flex-col rounded-2xl border border-line-strong bg-white p-6 text-left shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-[4px_4px_0_0_#0a0a0a] sm:p-7"
+              className="group flex h-full w-full flex-col rounded-2xl border border-line-strong bg-panel p-6 text-left shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-brutal sm:p-7"
               style={{ borderWidth: "1.5px" }}
             >
               <div className="flex items-baseline justify-between gap-3">

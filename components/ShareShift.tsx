@@ -1,4 +1,4 @@
-import { Container } from "@/components/Container";
+﻿import { Container } from "@/components/Container";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -37,7 +37,7 @@ export default function ShareShift() {
         <div className="mx-auto mt-12 max-w-3xl space-y-4">
           {stages.map((s, i) => (
             <Reveal key={s.when} delay={i * 0.06}>
-              <div className="rounded-2xl border border-line bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-black sm:p-6">
+              <div className="rounded-2xl border border-line bg-panel p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-ink sm:p-6">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
                   <p className="text-sm font-extrabold text-heading">{s.when}</p>
                   <p className="font-mono text-xs font-bold text-muted">
@@ -49,7 +49,7 @@ export default function ShareShift() {
                   role="img"
                   aria-label={`${s.when}: маркетплейс ${100 - s.site} процентов, сайт ${s.site} процентов`}
                 >
-                  <div className="h-full bg-black" style={{ width: `${100 - s.site}%` }} />
+                  <div className="h-full bg-ink" style={{ width: `${100 - s.site}%` }} />
                   <div className="h-full bg-accent" style={{ width: `${s.site}%` }} />
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{s.note}</p>

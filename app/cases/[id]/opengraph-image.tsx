@@ -24,7 +24,7 @@ export default async function OpengraphImage({ params }: { params: Promise<{ id:
           width: "100%",
           height: "100%",
           padding: "72px",
-          backgroundColor: "#0a0a0a",
+          backgroundColor: theme.ink,
           color: "#ffffff",
           fontFamily: "sans-serif",
         }}
@@ -39,7 +39,7 @@ export default async function OpengraphImage({ params }: { params: Promise<{ id:
               height: 64,
               borderRadius: 16,
               backgroundColor: theme.accent,
-              color: "#0a0a0a",
+              color: theme.ink,
               fontSize: 34,
               fontWeight: 800,
             }}

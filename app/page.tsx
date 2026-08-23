@@ -1,4 +1,4 @@
-import { Container } from "@/components/Container";
+﻿import { Container } from "@/components/Container";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import ServicesList from "@/components/ServicesList";
@@ -40,7 +40,7 @@ export default function HomePage() {
       <Hero />
 
       {/* ===== Работы ===== */}
-      <section className="bg-black py-20 text-white sm:py-24" id="work">
+      <section className="bg-ink py-20 text-white sm:py-24" id="work">
         <Container>
           <Reveal>
             <p className="font-mono text-sm font-bold tracking-[0.35em] text-accent">01</p>
@@ -91,22 +91,22 @@ export default function HomePage() {
             <ServicesList />
           </div>
           <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-            <div className="rounded-2xl border border-line bg-white p-5 shadow-sm sm:p-6">
+            <div className="rounded-2xl border border-line bg-panel p-5 shadow-sm sm:p-6">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">
                 Что я не делаю
               </p>
               <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-muted sm:text-base">
                 <li className="flex items-start gap-3">
-                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-black bg-white font-mono text-xs font-extrabold text-heading">
+                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-ink bg-panel font-mono text-xs font-extrabold text-heading">
                     ✕
                   </span>
                   <span>
-                    <span className="font-semibold text-heading">Реклама и ссылочная масса.</span>{" "}
-                    Таргет, Директ и наращивание ссылок — отдельные задачи, их настраивают специалисты по продвижению.
+                    <span className="font-semibold text-heading">Ссылочная масса и таргет в соцсетях.</span>{" "}
+                    Отдельные задачи — их ведут специалисты по продвижению. А Яндекс.Директ и ретаргетинг настраиваю сам.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-black bg-white font-mono text-xs font-extrabold text-heading">
+                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-ink bg-panel font-mono text-xs font-extrabold text-heading">
                     ✕
                   </span>
                   <span>
@@ -116,7 +116,7 @@ export default function HomePage() {
                 </li>
               </ul>
             </div>
-            <div className="rounded-2xl border border-line bg-white p-5 shadow-sm sm:p-6">
+            <div className="rounded-2xl border border-line bg-panel p-5 shadow-sm sm:p-6">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">
                 Что потребуется от вас
               </p>
@@ -183,7 +183,7 @@ export default function HomePage() {
                 },
                 {
                   t: "Делаю под задачу",
-                  d: "Магазины и сервисы — на Next.js: скорость и любая логика. Нужны привычная админка и готовые плагины — сделаю на WordPress. Оба варианта пишу сам, без конструкторов.",
+                  d: "Магазины и сервисы — на Next.js: скорость и любая логика. Нужны привычная админка и готовые плагины — сделаю на WordPress. Оба варианта пишу сам — без Tilda, Wix и конструкторов.",
                 },
                 {
                   t: "Запускаю и остаюсь рядом",
@@ -192,7 +192,7 @@ export default function HomePage() {
               ].map((s, i) => (
                 <Reveal key={s.t} delay={i * 0.06}>
                   <div className="group flex gap-4">
-                    <span className="mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-full border-2 border-black bg-accent text-sm font-extrabold text-accent-ink shadow-[3px_3px_0_0_#0a0a0a] transition-transform duration-200 group-hover:-translate-y-0.5">
+                    <span className="mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-full border-2 border-ink bg-accent text-sm font-extrabold text-accent-ink shadow-brutal-sm transition-transform duration-200 group-hover:-translate-y-0.5">
                       {i + 1}
                     </span>
                     <div>

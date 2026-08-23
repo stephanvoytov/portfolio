@@ -6,6 +6,7 @@ import { Mail, MessageCircle, Send } from "@/components/icons";
 
 const nav = [
   { href: "/", label: "Главная" },
+  { href: "/about", label: "Обо мне" },
   { href: "/cases", label: "Кейсы" },
   { href: "/#services", label: "Услуги" },
   { href: "/#work", label: "Работы" },

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { Container } from "@/components/Container";
@@ -42,7 +42,7 @@ function RangeControl({
         step={step}
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
-        className="mt-2 w-full accent-[#0a0a0a]"
+        className="mt-2 w-full accent-ink"
       />
     </div>
   );
@@ -67,7 +67,7 @@ export default function CommissionBreakdown() {
         />
 
         <Reveal className="mx-auto mt-10 max-w-xl">
-          <div className="rounded-3xl border-2 border-black bg-white p-6 shadow-[8px_8px_0_0_#d4af37]">
+          <div className="rounded-3xl border-2 border-ink bg-panel p-6 shadow-brutal-accent-lg">
             <RangeControl
               label="Сумма заказа"
               value={order}
@@ -77,7 +77,7 @@ export default function CommissionBreakdown() {
               step={100}
               onChange={setOrder}
             />
-            <div className="my-5 h-px bg-black/10" />
+            <div className="my-5 h-px bg-ink/10" />
             <RangeControl
               label="Продаж в месяц"
               value={sales}
@@ -100,8 +100,8 @@ export default function CommissionBreakdown() {
                   onClick={() => setMp(o.id)}
                   className={`inline-flex min-h-[40px] flex-1 items-center justify-center rounded-full border-2 px-4 py-1.5 text-xs font-bold transition-all duration-200 ${
                     mp === o.id
-                      ? "border-black bg-black text-white"
-                      : "border-line bg-panel-soft text-muted hover:border-black"
+                      ? "border-ink bg-ink text-white"
+                      : "border-line bg-panel-soft text-muted hover:border-ink"
                   }`}
                 >
                   {o.label}
@@ -112,7 +112,7 @@ export default function CommissionBreakdown() {
         </Reveal>
 
         <Reveal className="mt-6">
-          <div className="mx-auto max-w-xl rounded-3xl border-2 border-black bg-black px-6 py-6 text-center text-white shadow-[8px_8px_0_0_#d4af37]">
+          <div className="mx-auto max-w-xl rounded-3xl border-2 border-ink bg-ink px-6 py-6 text-center text-white shadow-brutal-accent-lg">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
               Экономия в месяц
             </p>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Reveal from "@/components/Reveal";
 import HotBadge from "@/components/HotBadge";
@@ -19,14 +19,14 @@ export default function ServicesList() {
   return (
     <ol className="flex flex-col gap-4">
       {services.map((s, i) => (
-        <li key={s.num} className="overflow-hidden rounded-2xl border border-line-strong bg-white shadow-sm" style={{ borderWidth: "1.5px" }}>
+        <li key={s.num} className="overflow-hidden rounded-2xl border border-line-strong bg-panel shadow-sm" style={{ borderWidth: "1.5px" }}>
           <Reveal delay={i * 0.05}>
             {s.href ? (
               <a
                 href={s.href}
                 className="group flex flex-col gap-4 p-5 transition-colors hover:bg-accent sm:flex-row sm:items-center sm:gap-6 sm:p-6"
               >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border-2 border-black bg-panel-soft text-heading transition-colors group-hover:bg-accent-ink group-hover:text-accent">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border-2 border-ink bg-panel-soft text-heading transition-colors group-hover:bg-accent-ink group-hover:text-accent">
                   {serviceIcons[s.num]}
                 </span>
                 <div className="flex-1">
@@ -55,7 +55,7 @@ export default function ServicesList() {
                 onClick={() => open()}
                 className="group flex w-full flex-col gap-4 p-5 text-left transition-colors hover:bg-panel-soft sm:flex-row sm:items-center sm:gap-6 sm:p-6"
               >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border-2 border-black bg-panel-soft text-heading transition-colors group-hover:bg-accent group-hover:text-accent-ink">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border-2 border-ink bg-panel-soft text-heading transition-colors group-hover:bg-accent group-hover:text-accent-ink">
                   {serviceIcons[s.num]}
                 </span>
                 <div className="flex-1">

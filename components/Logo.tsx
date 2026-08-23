@@ -1,7 +1,7 @@
-export default function Logo({ className = "" }: { className?: string }) {
+﻿export default function Logo({ className = "" }: { className?: string }) {
   return (
     <span
-      className={`grid h-8 w-8 shrink-0 place-items-center rounded-[10px] border-2 border-black bg-accent text-base font-extrabold leading-none text-accent-ink shadow-[2px_2px_0_0_#0a0a0a] ${className}`}
+      className={`grid h-8 w-8 shrink-0 place-items-center rounded-[10px] border-2 border-ink bg-accent text-base font-extrabold leading-none text-accent-ink shadow-brutal-xs ${className}`}
       aria-hidden
     >
       С

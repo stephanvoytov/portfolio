@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { Container } from "@/components/Container";
@@ -12,7 +12,7 @@ export default function CtaSection({ hideMigrate = false }: { hideMigrate?: bool
     <section className="pb-20 pt-4 sm:pb-24">
       <Container>
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl border-2 border-black bg-white px-6 py-16 text-center shadow-[10px_10px_0_0_var(--accent)] sm:px-12">
+          <div className="relative overflow-hidden rounded-3xl border-2 border-ink bg-panel px-6 py-16 text-center shadow-brutal-accent-xl sm:px-12">
             <div
               className="pointer-events-none absolute inset-0"
               style={{
@@ -34,7 +34,7 @@ export default function CtaSection({ hideMigrate = false }: { hideMigrate?: bool
               <button
                 type="button"
                 onClick={() => open()}
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-black bg-accent-ink px-7 py-3.5 text-sm font-semibold text-white shadow-[4px_4px_0_0_#0a0a0a] transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink bg-accent-ink px-7 py-3.5 text-sm font-semibold text-white shadow-brutal transition-all duration-200 hover:-translate-y-0.5"
               >
                 Оставить заявку
               </button>

@@ -1,6 +1,7 @@
-import { BtnLink } from "@/components/BtnLink";
+﻿import { BtnLink } from "@/components/BtnLink";
 import { Container } from "@/components/Container";
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
@@ -161,8 +162,8 @@ function PlanCard({ p, delay }: { p: Plan; delay: number }) {
       <div
         className={`relative flex h-full flex-col rounded-3xl border-2 p-6 sm:p-7 transition-all duration-200 hover:-translate-y-1 ${
           p.hot
-            ? "border-black bg-accent shadow-[8px_8px_0_0_#0a0a0a]"
-            : "border-line bg-white shadow-sm hover:border-black hover:shadow-[6px_6px_0_0_var(--accent)]"
+            ? "border-ink bg-accent shadow-brutal-lg"
+            : "border-line bg-panel shadow-sm hover:border-ink hover:shadow-brutal-accent-md"
         }`}
       >
         {p.hot && (
@@ -205,7 +206,7 @@ function PlanCard({ p, delay }: { p: Plan; delay: number }) {
             <li key={item} className="flex items-start gap-2.5">
               <span
                 className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] font-extrabold ${
-                  p.hot ? "bg-white text-accent-ink" : "bg-accent text-accent-ink"
+                  p.hot ? "bg-panel text-accent-ink" : "bg-accent text-accent-ink"
                 }`}
               >
                 ✓
@@ -264,7 +265,7 @@ export default function MigratePage() {
       </PageHero>
 
       {/* Цифры */}
-      <section className="bg-black py-12 text-white sm:py-16">
+      <section className="bg-ink py-12 text-white sm:py-16">
         <Container>
           <div className="mx-auto grid max-w-3xl grid-cols-2 gap-2 sm:max-w-none sm:grid-cols-3 sm:gap-8">
             {numbers.map((n, i) => (
@@ -284,7 +285,7 @@ export default function MigratePage() {
       </section>
 
       {/* Суть — крупный цепляющий текст */}
-      <section className="border-b border-line bg-white py-14 sm:py-20">
+      <section className="border-b border-line bg-panel py-14 sm:py-20">
         <Container>
           <Reveal>
             <p className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">
@@ -381,8 +382,8 @@ export default function MigratePage() {
             <ScrollRow label="План перехода по шагам">
               {checklist.map((s, i) => (
                 <Reveal key={s.num} delay={i * 0.05} className="w-[80%] shrink-0 snap-start sm:w-[310px]">
-                  <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_var(--accent)]">
-                    <span className="inline-block rounded-full border-2 border-black bg-accent px-3 py-1 text-xs font-extrabold text-accent-ink">{s.num}</span>
+                  <div className="group h-full rounded-2xl border border-line bg-panel p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-ink hover:shadow-brutal-accent-md">
+                    <span className="inline-block rounded-full border-2 border-ink bg-accent px-3 py-1 text-xs font-extrabold text-accent-ink">{s.num}</span>
                     <h3 className="mt-4 text-lg font-bold text-heading">{s.title}</h3>
                     <p className="mt-2 text-[15px] leading-relaxed text-muted">{s.desc}</p>
                   </div>
@@ -394,7 +395,7 @@ export default function MigratePage() {
       </section>
 
       {/* Кейс */}
-      <section className="bg-black py-20 text-white sm:py-24">
+      <section className="bg-ink py-20 text-white sm:py-24">
         <Container>
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <Reveal>
@@ -429,7 +430,7 @@ export default function MigratePage() {
                   href="https://morantibags.ru"
                   target="_blank"
                   rel="noopener"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_rgb(var(--accent-rgb)_/_0.4)] sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-brutal-accent-soft sm:w-auto"
                 >
                   Посмотреть сайт ↗
                 </a>
@@ -437,7 +438,76 @@ export default function MigratePage() {
                   Сделать так же
                 </BtnLink>
               </Reveal>
+              <Reveal delay={0.15} className="mt-7">
+                <Link
+                  href="/cases"
+                  className="inline-flex items-center gap-2 font-semibold text-accent-ink transition-colors hover:underline"
+                >
+                  Смотреть все кейсы →
+                </Link>
+              </Reveal>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Лицо — кто делает переход */}
+      <section className="border-t border-line bg-panel-soft py-14 sm:py-24">
+        <Container>
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+            <Reveal>
+              <div className="relative mx-auto w-full max-w-xs overflow-hidden rounded-3xl border-2 border-ink bg-panel shadow-brutal-lg">
+                <div className="relative aspect-square w-full">
+                  <Image
+                    src="/images/photo-hero.webp"
+                    alt="Стефан — разработчик сайтов на Next.js и WordPress"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+              </div>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
+                Кто делает переход
+              </p>
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-heading sm:text-4xl">
+                Переход ведёт живой человек, а не агентство
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
+                Я — Стефан, разработчик на Next.js и WordPress. Делаю сайт своими руками,
+                настраиваю интеграции с Ozon и Wildberries и остаюсь на связи после запуска —
+                правки и поддержка входят в работу.
+              </p>
+              <ul className="mt-6 space-y-3">
+                {[
+                  "Кастомная разработка на Next.js или WordPress — под вашу задачу, без конструкторов вроде Tilda и Wix",
+                  "Интеграции с Ozon и Wildberries: перенос карточек и синхронизация остатков по API",
+                  "После запуска — обучение, правки и поддержка первый месяц",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-[15px] leading-relaxed text-body">
+                    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent text-[11px] font-extrabold text-accent-ink">
+                      ✓
+                    </span>
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <ModalCta
+                  variant="primary"
+                  subject="Вопрос с migrate — познакомиться / обсудить проект"
+                >
+                  Обсудить проект
+                </ModalCta>
+                <Link
+                  href="/about"
+                  className="inline-flex items-center justify-center rounded-full border border-line-strong bg-panel px-7 py-3.5 text-sm font-semibold text-body transition-all duration-200 hover:-translate-y-0.5 hover:border-ink hover:text-heading"
+                >
+                  Подробнее обо мне →
+                </Link>
+              </div>
+            </Reveal>
           </div>
         </Container>
       </section>
@@ -445,6 +515,34 @@ export default function MigratePage() {
       <Faq />
 
       <MobileStickyCta />
+
+      {/* Полезное — внутренняя перелинковка */}
+      <section className="py-10 sm:py-14">
+        <Container>
+          <Reveal>
+            <div className="flex flex-col gap-5 rounded-3xl border border-line bg-panel p-6 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-8">
+              <div>
+                <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
+                  Полезное
+                </p>
+                <p className="mt-2 text-lg font-extrabold text-heading sm:text-xl">
+                  Как разделить продажи между сайтом и маркетплейсом
+                </p>
+                <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-muted">
+                  Пошаговый гайд: что переводить на сайт, как легально перенаправлять клиентов,
+                  реклама и цели на 3–6 месяцев.
+                </p>
+              </div>
+              <Link
+                href="/blog/kak-razdelit-prodazhi-sait-i-marketpleisy"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-brutal-accent-soft"
+              >
+                Читать статью →
+              </Link>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
 
       <CtaSection hideMigrate />
     </>

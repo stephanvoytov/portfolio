@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,6 +10,7 @@ const links = [
   { href: "/#services", label: "Услуги" },
   { href: "/#work", label: "Работы" },
   { href: "/#process", label: "Процесс" },
+  { href: "/about", label: "Обо мне" },
   { href: "/migrate", label: "Сайт вместо маркетплейса" },
   { href: "/blog", label: "Блог" },
 ];
@@ -52,7 +53,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => openContact()}
-            className="ml-3 rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[3px_3px_0_0_#0a0a0a]"
+            className="ml-3 rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-brutal-sm"
           >
             Обсудить проект →
           </button>

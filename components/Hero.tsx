@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -73,7 +73,7 @@ return (
             >
               {metrics.map((m) => (
                 <div key={m.label} className="flex items-center gap-2.5 sm:flex-col sm:items-start sm:gap-2 sm:px-8 sm:first:pl-0">
-                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border-2 border-black bg-white text-accent-ink sm:h-10 sm:w-10 sm:rounded-xl">
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border-2 border-ink bg-panel text-accent-ink sm:h-10 sm:w-10 sm:rounded-xl">
                     {m.icon}
                   </span>
                   <p className="text-lg font-extrabold leading-none text-heading sm:text-2xl">
@@ -102,20 +102,20 @@ return (
               <button
                 type="button"
                 onClick={() => openContact()}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-black bg-accent px-8 py-2.5 text-base font-bold text-accent-ink shadow-[4px_4px_0_0_#0a0a0a] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#0a0a0a] active:translate-y-0 sm:w-auto sm:py-4"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-ink bg-accent px-8 py-2.5 text-base font-bold text-accent-ink shadow-brutal transition-all duration-200 hover:-translate-y-0.5 hover:shadow-brutal-md active:translate-y-0 sm:w-auto sm:py-4"
               >
                 Обсудить проект
               </button>
               <Link
                 href="/cases"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-line-strong bg-white px-8 py-2.5 text-base font-bold text-body transition-all duration-200 hover:-translate-y-0.5 hover:border-black hover:text-heading active:translate-y-0 sm:w-auto sm:py-4"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-line-strong bg-panel px-8 py-2.5 text-base font-bold text-body transition-all duration-200 hover:-translate-y-0.5 hover:border-ink hover:text-heading active:translate-y-0 sm:w-auto sm:py-4"
               >
                 Посмотреть кейсы
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </motion.div>
             <div className="relative order-2 mx-auto w-full max-w-[18.5rem] sm:order-1 sm:w-96 sm:max-w-none lg:w-[26rem]">
-              <div className="relative aspect-square w-full overflow-hidden rounded-2xl border-2 border-black bg-white">
+              <div className="relative aspect-square w-full overflow-hidden rounded-2xl border-2 border-ink bg-panel">
                 <Image
                   src="/images/photo-hero.webp"
                   alt="Стефан — разработчик сайтов на Next.js"
@@ -124,7 +124,7 @@ return (
                   className="object-cover object-top"
                 />
               </div>
-              <figcaption className="absolute inset-x-3 bottom-3 mx-auto rounded-2xl border border-white/60 bg-white/40 p-3.5 text-left shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl sm:inset-x-0 sm:bottom-0 sm:w-[calc(100%-7rem)] sm:translate-y-1/2 sm:p-4">
+              <figcaption className="absolute inset-x-3 bottom-3 mx-auto rounded-2xl border border-white/60 bg-panel/40 p-3.5 text-left shadow-soft backdrop-blur-xl sm:inset-x-0 sm:bottom-0 sm:w-[calc(100%-7rem)] sm:translate-y-1/2 sm:p-4">
                 <p className="font-extrabold leading-tight text-heading">Стефан</p>
                 <p className="font-mono text-xs text-body">Full-stack разработчик</p>
               </figcaption>

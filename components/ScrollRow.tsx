@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, type ReactNode } from "react";
 
@@ -32,7 +32,7 @@ export default function ScrollRow({ label, children }: ScrollRowProps) {
           type="button"
           onClick={() => nudge(-1)}
           aria-label="Прокрутить назад"
-          className="grid h-10 w-10 place-items-center rounded-full border-2 border-black bg-white text-lg font-extrabold transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent"
+          className="grid h-10 w-10 place-items-center rounded-full border-2 border-ink bg-panel text-lg font-extrabold transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent"
         >
           ←
         </button>
@@ -40,7 +40,7 @@ export default function ScrollRow({ label, children }: ScrollRowProps) {
           type="button"
           onClick={() => nudge(1)}
           aria-label="Прокрутить вперёд"
-          className="grid h-10 w-10 place-items-center rounded-full border-2 border-black bg-accent text-lg font-extrabold text-accent-ink transition-all duration-200 hover:-translate-y-0.5"
+          className="grid h-10 w-10 place-items-center rounded-full border-2 border-ink bg-accent text-lg font-extrabold text-accent-ink transition-all duration-200 hover:-translate-y-0.5"
         >
           →
         </button>

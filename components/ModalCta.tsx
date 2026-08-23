@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useContactModal } from "@/components/ContactModal";
 import { GOALS, reachGoal } from "@/lib/analytics";
@@ -27,10 +27,10 @@ export function ModalCta({
   }`;
   const styles =
     variant === "primary"
-      ? "bg-black text-white shadow-sm hover:shadow-lg hover:shadow-black/20"
+      ? "bg-ink text-white shadow-sm hover:shadow-lg hover:shadow-black/20"
       : variant === "yellow"
-        ? "bg-accent text-accent-ink shadow-sm hover:shadow-lg hover:shadow-[4px_4px_0_0_rgb(var(--accent-rgb)_/_0.4)]"
-        : "border border-line-strong bg-white text-body hover:border-black hover:text-heading";
+        ? "bg-accent text-accent-ink shadow-sm hover:shadow-lg hover:shadow-brutal-accent-soft"
+        : "border border-line-strong bg-panel text-body hover:border-ink hover:text-heading";
 
   return (
     <button type="button" onClick={() => { reachGoal(GOALS.modalOpen); open(subject); }} className={`${base} ${styles} ${className}`}>

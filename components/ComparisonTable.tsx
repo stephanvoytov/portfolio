@@ -1,4 +1,4 @@
-import { Container } from "@/components/Container";
+﻿import { Container } from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 
@@ -62,7 +62,7 @@ export default function ComparisonTable() {
         <Reveal className="mt-12">
           <div className="space-y-4 sm:hidden">
             {rows.map((r) => (
-              <div key={r.label} className="rounded-2xl border border-line bg-white p-5 shadow-sm">
+              <div key={r.label} className="rounded-2xl border border-line bg-panel p-5 shadow-sm">
                 <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-muted">
                   {r.label}
                 </p>
@@ -93,10 +93,10 @@ export default function ComparisonTable() {
               </div>
             ))}
           </div>
-          <div className="hidden overflow-x-auto rounded-3xl border-2 border-black shadow-[8px_8px_0_0_var(--accent)] sm:block">
-            <table className="w-full min-w-[760px] border-collapse bg-white text-left">
+          <div className="hidden overflow-x-auto rounded-3xl border-2 border-ink shadow-brutal-accent-lg sm:block">
+            <table className="w-full min-w-[760px] border-collapse bg-panel text-left">
               <thead>
-                <tr className="border-b-2 border-black">
+                <tr className="border-b-2 border-ink">
                   <th className="w-[22%] px-5 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-muted sm:px-7">
                     Критерий
                   </th>

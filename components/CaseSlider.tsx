@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { useState } from "react";
@@ -23,7 +23,7 @@ export default function CaseSlider({
             <span className="h-3 w-3 rounded-full bg-line-strong" />
             <span className="h-3 w-3 rounded-full bg-line-strong" />
             <span className="h-3 w-3 rounded-full bg-line-strong" />
-            <span className="ml-4 truncate rounded-lg bg-white px-4 py-1.5 font-mono text-xs text-faint ring-1 ring-line-strong">
+            <span className="ml-4 truncate rounded-lg bg-panel px-4 py-1.5 font-mono text-xs text-faint ring-1 ring-line-strong">
               {url}
             </span>
           </div>
@@ -46,7 +46,7 @@ export default function CaseSlider({
             />
           </div>
         ))}
-        <span className="absolute left-4 top-4 rounded-full border border-line-strong bg-white/85 px-3 py-1 font-mono text-xs text-heading backdrop-blur">
+        <span className="absolute left-4 top-4 rounded-full border border-line-strong bg-panel/85 px-3 py-1 font-mono text-xs text-heading backdrop-blur">
           {slides[i].label}
         </span>
       </div>

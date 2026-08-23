@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { pageMeta } from "@/lib/seo";
@@ -41,7 +41,7 @@ export default function BlogPage() {
             <Link
               key={post.href}
               href={post.href}
-              className="group flex h-full flex-col rounded-3xl border border-line bg-white p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[6px_6px_0_0_var(--accent)]"
+              className="group flex h-full flex-col rounded-3xl border border-line bg-panel p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-ink hover:shadow-brutal-accent-md"
             >
               <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
                 {post.kicker}

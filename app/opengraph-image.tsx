@@ -18,7 +18,7 @@ export default function OpengraphImage() {
           width: "100%",
           height: "100%",
           padding: "72px",
-          backgroundColor: "#0a0a0a",
+          backgroundColor: theme.ink,
           color: "#ffffff",
           fontFamily: "sans-serif",
         }}
@@ -33,7 +33,7 @@ export default function OpengraphImage() {
               height: 72,
               borderRadius: 18,
               backgroundColor: theme.accent,
-              color: "#0a0a0a",
+              color: theme.ink,
               fontSize: 40,
               fontWeight: 800,
             }}

@@ -1,4 +1,4 @@
-import { Container } from "@/components/Container";
+﻿import { Container } from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 
@@ -50,11 +50,11 @@ export default function MarketplaceVsSite() {
           sub="Честно, без прикрас: обе стороны имеют смысл. Сайт не отменяет маркетплейс — он делает вас от него независимым."
         />
         <Reveal className="mt-12">
-          <div className="overflow-x-auto rounded-3xl border-2 border-black bg-white shadow-[8px_8px_0_0_var(--accent)]">
+          <div className="overflow-x-auto rounded-3xl border-2 border-ink bg-panel shadow-brutal-accent-lg">
             <table className="w-full min-w-[560px] border-collapse text-left">
               <thead>
-                <tr className="border-b-2 border-black">
-                  <th className="sticky left-0 z-10 w-[22%] border-r border-line bg-white px-4 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-muted sm:px-7">
+                <tr className="border-b-2 border-ink">
+                  <th className="sticky left-0 z-10 w-[22%] border-r border-line bg-panel px-4 py-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-muted sm:px-7">
                     Критерий
                   </th>
                   <th className="px-4 py-4 text-base font-extrabold text-heading sm:px-7">
@@ -68,7 +68,7 @@ export default function MarketplaceVsSite() {
               <tbody>
                 {rows.map((r, i) => (
                   <tr key={r.label} className={i !== rows.length - 1 ? "border-b border-line" : ""}>
-                    <th className="sticky left-0 z-10 border-r border-line bg-white px-4 py-4 align-top text-sm font-bold text-heading sm:px-7 sm:text-base">
+                    <th className="sticky left-0 z-10 border-r border-line bg-panel px-4 py-4 align-top text-sm font-bold text-heading sm:px-7 sm:text-base">
                       {r.label}
                     </th>
                     <td className="px-4 py-4 align-top text-sm leading-relaxed text-muted sm:px-7">

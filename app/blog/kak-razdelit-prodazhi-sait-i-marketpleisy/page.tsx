@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { BtnLink } from "@/components/BtnLink";
@@ -318,7 +318,7 @@ export default function BlogPost() {
             ].map((t) => (
               <div
                 key={t.name}
-                className="rounded-2xl border border-line bg-white p-5 shadow-sm sm:p-6"
+                className="rounded-2xl border border-line bg-panel p-5 shadow-sm sm:p-6"
               >
                 <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
                   <h3 className="text-base font-extrabold text-heading">{t.name}</h3>
@@ -330,7 +330,7 @@ export default function BlogPost() {
             ))}
           </div>
 
-          <div className="mt-12 rounded-3xl border-2 border-black bg-black px-6 py-8 text-center text-white shadow-[8px_8px_0_0_var(--accent)] sm:px-10">
+          <div className="mt-12 rounded-3xl border-2 border-ink bg-ink px-6 py-8 text-center text-white shadow-brutal-accent-lg sm:px-10">
             <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
               Разберём ваш кейс?
             </h2>

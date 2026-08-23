@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -72,7 +72,7 @@ export default async function CasePage({ params }: CasePageProps) {
   return (
     <>
       {/* ===== Hero кейса ===== */}
-      <section className="relative overflow-hidden bg-black pb-20 pt-28 text-white sm:pb-24 sm:pt-32">
+      <section className="relative overflow-hidden bg-ink pb-20 pt-28 text-white sm:pb-24 sm:pt-32">
         <span
           aria-hidden
           className="pointer-events-none absolute -right-8 -top-16 select-none text-[16rem] font-extrabold leading-none text-white/[0.04] sm:text-[22rem]"
@@ -105,7 +105,7 @@ export default async function CasePage({ params }: CasePageProps) {
                     href={item.url}
                     target="_blank"
                     rel="noopener"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-bold text-accent-ink shadow-[4px_4px_0_0_rgba(255,255,255,0.18)] transition-all duration-200 hover:-translate-y-0.5"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-bold text-accent-ink shadow-glow transition-all duration-200 hover:-translate-y-0.5"
                   >
                     Открыть сайт
                     <ArrowUpRight className="h-4 w-4" />
@@ -149,7 +149,7 @@ export default async function CasePage({ params }: CasePageProps) {
 
       {/* ===== Было / Стало ===== */}
       {item.compare && (
-        <section className="bg-black pb-20 text-white sm:pb-24">
+        <section className="bg-ink pb-20 text-white sm:pb-24">
           <Container>
             <SectionHeading
               dark
@@ -160,12 +160,12 @@ export default async function CasePage({ params }: CasePageProps) {
             <div className="relative mt-12 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
               <span
                 aria-hidden
-                className="absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-black bg-accent px-4 py-2 font-mono text-sm font-extrabold text-accent-ink shadow-[3px_3px_0_0_rgba(255,255,255,0.25)] lg:block"
+                className="absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-ink bg-accent px-4 py-2 font-mono text-sm font-extrabold text-accent-ink shadow-glow-sm lg:block"
               >
                 →
               </span>
               <Reveal>
-                <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-white/70">
+                <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-panel/5 px-4 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-white/70">
                   <span className="h-2 w-2 rounded-full bg-red-500" />
                   Было · старый сайт на Tilda
                 </p>
@@ -176,7 +176,7 @@ export default async function CasePage({ params }: CasePageProps) {
                 />
               </Reveal>
               <Reveal delay={0.12}>
-                <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-accent">
+                <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-panel/5 px-4 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-accent">
                   <span className="h-2 w-2 rounded-full bg-accent" />
                   Стало · новый сайт
                 </p>
@@ -241,7 +241,7 @@ export default async function CasePage({ params }: CasePageProps) {
       </section>
 
       {/* ===== Результат ===== */}
-      <section className="bg-black py-20 text-white sm:py-28">
+      <section className="bg-ink py-20 text-white sm:py-28">
         <Container>
           <SectionHeading
             dark
@@ -253,7 +253,7 @@ export default async function CasePage({ params }: CasePageProps) {
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {item.results.map((r, i) => (
               <Reveal key={r.label} delay={i * 0.08}>
-                <div className="group h-full rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-center transition-colors duration-200 hover:border-accent/40 sm:p-8">
+                <div className="group h-full rounded-3xl border border-white/10 bg-panel/[0.04] p-6 text-center transition-colors duration-200 hover:border-accent/40 sm:p-8">
                   <span className="mx-auto grid h-11 w-11 place-items-center rounded-xl bg-accent/15 text-accent">
                     {resultIcons[r.icon]}
                   </span>
@@ -306,7 +306,7 @@ export default async function CasePage({ params }: CasePageProps) {
               className="group block overflow-hidden rounded-3xl border border-line bg-panel shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-line-strong hover:shadow-md"
             >
               <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr_auto_auto] sm:items-center sm:gap-10">
-                <div className="bg-black px-8 py-10 text-white sm:py-12">
+                <div className="bg-ink px-8 py-10 text-white sm:py-12">
                   <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
                     Следующий кейс
                   </p>

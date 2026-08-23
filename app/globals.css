@@ -16,6 +16,33 @@
   --color-line-strong: var(--line-strong);
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
+
+  /* Фирменная «чернильная» рамка/заливка (== #0a0a0a, как accent-ink) */
+  --color-ink: var(--accent-ink);
+}
+
+@theme {
+  /* === Дизайн-токены: фирменная жёсткая тень (neo-brutalism) === */
+  /* на светлом фоне — тень цветом ink (#0a0a0a) */
+  --shadow-brutal-xs: 2px 2px 0 0 var(--accent-ink);
+  --shadow-brutal-sm: 3px 3px 0 0 var(--accent-ink);
+  --shadow-brutal: 4px 4px 0 0 var(--accent-ink);
+  --shadow-brutal-md: 6px 6px 0 0 var(--accent-ink);
+  --shadow-brutal-lg: 8px 8px 0 0 var(--accent-ink);
+  --shadow-brutal-xl: 10px 10px 0 0 var(--accent-ink);
+  /* на тёмном фоне — цветная тень акцентом */
+  --shadow-brutal-accent: 4px 4px 0 0 var(--accent);
+  --shadow-brutal-accent-md: 6px 6px 0 0 var(--accent);
+  --shadow-brutal-accent-lg: 8px 8px 0 0 var(--accent);
+  --shadow-brutal-accent-xl: 10px 10px 0 0 var(--accent);
+  --shadow-brutal-accent-soft: 4px 4px 0 0 rgb(var(--accent-rgb) / 0.4);
+  /* светлая тень-свечение на тёмном фоне */
+  --shadow-glow-sm: 3px 3px 0 0 rgba(255, 255, 255, 0.25);
+  --shadow-glow: 4px 4px 0 0 rgba(255, 255, 255, 0.18);
+  --shadow-glow-strong: 4px 4px 0 0 rgba(255, 255, 255, 0.9);
+  --shadow-glow-strong-md: 6px 6px 0 0 rgba(255, 255, 255, 0.9);
+  /* мягкая стеклянная тень */
+  --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
 :root {

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Container } from "@/components/Container";
 import Reveal from "@/components/Reveal";
 
@@ -7,7 +7,7 @@ export default function MigrateBanner() {
     <section className="pb-20 sm:pb-24">
       <Container>
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl border-2 border-black bg-black px-6 py-12 text-white shadow-[10px_10px_0_0_var(--accent)] sm:px-12 sm:py-14">
+          <div className="relative overflow-hidden rounded-3xl border-2 border-ink bg-ink px-6 py-12 text-white shadow-brutal-accent-xl sm:px-12 sm:py-14">
             <div
               className="pointer-events-none absolute inset-0"
               style={{
@@ -33,7 +33,7 @@ export default function MigrateBanner() {
               <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center lg:justify-end">
                 <Link
                   href="/migrate"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-black bg-accent px-7 py-3.5 text-sm font-bold text-accent-ink shadow-[4px_4px_0_0_rgba(255,255,255,0.9)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(255,255,255,0.9)] active:translate-y-0"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink bg-accent px-7 py-3.5 text-sm font-bold text-accent-ink shadow-glow-strong transition-all duration-200 hover:-translate-y-0.5 hover:shadow-glow-strong-md active:translate-y-0"
                 >
                   Как переехать без потерь →
                 </Link>
