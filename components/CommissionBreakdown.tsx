@@ -124,7 +124,7 @@ export default function CommissionBreakdown() {
   const diff = mpTake - siteTake;
 
   return (
-    <section id="calc" className="scroll-mt-24 border-y border-line bg-panel-soft py-20 sm:py-24">
+    <section id="calc" className="scroll-mt-24 border-y border-line bg-panel-soft py-14 sm:py-24">
       <Container>
         <SectionHeading
           kicker="Расчёт"
@@ -133,23 +133,8 @@ export default function CommissionBreakdown() {
         />
 
         <div className="mx-auto mt-12 max-w-4xl">
-          {/* Живой итог — виден сразу, без прокрутки к карточкам */}
-          <Reveal>
-            <div className="flex flex-col items-center justify-between gap-3 rounded-3xl border-2 border-black bg-accent px-5 py-4 text-center shadow-[6px_6px_0_0_#0a0a0a] sm:flex-row sm:px-8">
-              <p className="text-sm font-bold text-accent-ink sm:text-base">
-                Экономия с заказа:{" "}
-                <span className="font-extrabold whitespace-nowrap">+{fmt(diff)} ₽</span>
-                {" "}· в месяц:{" "}
-                <span className="font-extrabold whitespace-nowrap">+{fmt(diff * sales)} ₽</span>
-              </p>
-              <p className="font-mono text-xs font-bold text-accent-ink/70">
-                при {fmt(sales)} продажах · чек {fmt(order)} ₽
-              </p>
-            </div>
-          </Reveal>
-
           <Reveal className="mt-4">
-            <div className="rounded-3xl border-2 border-black bg-white p-6 shadow-[8px_8px_0_0_#d4af37] sm:p-8">
+            <div className="rounded-3xl border-2 border-black bg-white p-5 shadow-[8px_8px_0_0_#d4af37] sm:p-6">
               <RangeControl
                 label="Сумма заказа"
                 value={order}
@@ -247,13 +232,13 @@ export default function CommissionBreakdown() {
           <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-5">
             <Reveal>
               <div className="h-full overflow-hidden rounded-3xl border-2 border-black bg-white shadow-[6px_6px_0_0_#0a0a0a] sm:shadow-[8px_8px_0_0_#0a0a0a]">
-                <div className="border-b-2 border-black bg-black px-4 py-3 sm:px-5 sm:py-4">
+                <div className="border-b-2 border-black bg-black px-4 py-3 sm:px-5">
                   <h3 className="text-sm font-extrabold text-white sm:text-lg">Маркетплейс</h3>
                   <p className="mt-0.5 text-[11px] font-medium text-white/60 sm:text-sm">
                     {mp === "wb" ? "Wildberries" : "Ozon"} · комиссия
                   </p>
                 </div>
-                <div className="px-4 py-5 sm:px-6 sm:py-6">
+                <div className="px-4 py-4 sm:px-5 sm:py-5">
                   <p className="text-xs font-medium text-muted sm:text-sm">Забирает с заказа</p>
                   <p className="mt-1 whitespace-nowrap text-xl font-extrabold text-heading sm:text-4xl">
                     −{fmt(mpTake)} ₽
@@ -286,7 +271,7 @@ export default function CommissionBreakdown() {
                     ЮKassa · только эквайринг
                   </p>
                 </div>
-                <div className="px-4 py-5 sm:px-6 sm:py-6">
+                <div className="px-4 py-4 sm:px-5 sm:py-5">
                   <p className="text-xs font-medium text-muted sm:text-sm">Забирает с заказа</p>
                   <p className="mt-1 text-xl font-extrabold text-heading sm:text-4xl">
                     −{fmt(siteTake)} ₽
@@ -313,7 +298,7 @@ export default function CommissionBreakdown() {
           </div>
 
           <Reveal className="mt-6">
-            <div className="rounded-3xl border-2 border-black bg-black px-5 py-7 text-center text-white shadow-[8px_8px_0_0_#d4af37] sm:px-8 sm:py-8">
+            <div className="rounded-3xl border-2 border-black bg-black px-5 py-5 text-center text-white shadow-[8px_8px_0_0_#d4af37] sm:px-8">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
                 Выгода в месяц
               </p>
@@ -332,21 +317,6 @@ export default function CommissionBreakdown() {
                 </ModalCta>
               </div>
             </div>
-          </Reveal>
-
-          <Reveal className="mt-6">
-            <ul className="space-y-2">
-              <li className="flex items-start gap-2 text-xs leading-relaxed text-muted">
-                <span className="mt-0.5 shrink-0 font-mono font-bold text-accent-ink">—</span>
-                Ставки: таблица Wildberries от 7 июля 2026 и тарифы Ozon 2026. Точную ставку
-                вашей категории покажет кабинет продавца.
-              </li>
-              <li className="flex items-start gap-2 text-xs leading-relaxed text-muted">
-                <span className="mt-0.5 shrink-0 font-mono font-bold text-accent-ink">—</span>
-                На сайте учтён только эквайринг ЮKassa (2,8%). Логистика и реклама зависят от
-                ниши — посчитаем отдельно под ваш магазин.
-              </li>
-            </ul>
           </Reveal>
         </div>
       </Container>

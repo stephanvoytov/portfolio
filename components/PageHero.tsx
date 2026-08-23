@@ -1,10 +1,11 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import { Container } from "@/components/Container";
 
 interface PageHeroProps {
   kicker: string;
   title: React.ReactNode;
-  sub?: string;
+  sub?: ReactNode;
   children?: React.ReactNode;
   image?: { src: string; alt: string };
   imageCaption?: string;

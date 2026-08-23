@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Reveal from "@/components/Reveal";
 
 function withGolosDigits(text: string) {
@@ -15,7 +16,7 @@ function withGolosDigits(text: string) {
 interface SectionHeadingProps {
   kicker?: string;
   title: string;
-  sub?: string;
+  sub?: ReactNode;
   num?: string;
   align?: "left" | "center";
   dark?: boolean;

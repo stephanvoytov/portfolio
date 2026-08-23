@@ -244,7 +244,14 @@ export default function MigratePage() {
             с Wildberries и Ozon на свой сайт за 14 дней
           </>
         }
-        sub="Соберите базу клиентов, поднимите маржу и получите синхронизацию остатков с площадками. Продажи на маркетплейсах продолжают работать — текущие заказы не останавливаются."
+        sub={
+          <>
+            Соберите <strong className="font-bold text-heading">базу клиентов</strong>, поднимите{" "}
+            <strong className="font-bold text-heading">маржу</strong> и получите синхронизацию
+            остатков с площадками. Продажи на маркетплейсах продолжают работать — текущие заказы{" "}
+            <strong className="font-bold text-heading">не останавливаются</strong>.
+          </>
+        }
         image={{
           src: "/images/mockup-moranti-v2.jpg",
           alt: "Интернет-магазин Moranti — витрина бренда, перенесённая с маркетплейсов",
@@ -285,12 +292,18 @@ export default function MigratePage() {
               Суть
             </p>
             <h2 className="mt-4 max-w-4xl text-3xl font-extrabold leading-[1.12] tracking-tight text-heading sm:text-5xl">
-              Маркетплейс — это аренда витрины у конкурента. Свой сайт — магазин, клиенты и
-              маржа, которые остаются у вас.
+              Маркетплейс <strong className="text-accent-ink">забирает ваших покупателей</strong>{" "}
+              и <strong className="text-accent-ink">половину выручки</strong>. Свой сайт — это{" "}
+              <strong className="text-accent-ink">ваш магазин</strong>: клиенты, маржа и данные
+              остаются у вас.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-              Площадка забирает 50–70% с каждого заказа и владеет вашими покупателями. Мы
-              переносим продажи на сайт постепенно — без потери текущего потока заказов.
+              Площадка берёт <strong className="font-bold text-heading">50–70%</strong> с каждого
+              заказа и{" "}
+              <strong className="font-bold text-heading">владеет вашими покупателями</strong>. Мы
+              переносим продажи на сайт{" "}
+              <strong className="font-bold text-heading">постепенно</strong> — без потери текущего
+              потока заказов.
             </p>
           </Reveal>
         </Container>
@@ -302,7 +315,12 @@ export default function MigratePage() {
           <SectionHeading
             kicker="Стоимость"
             title="Что во что обходится"
-            sub="Цена фиксируется до старта и не меняется по ходу работы. Точную оценку даю после короткого разговора о задаче."
+            sub={
+              <>
+                Цена <strong className="font-semibold text-heading">фиксируется до старта</strong>{" "}
+                и не меняется по ходу работы. Точную оценку даю после короткого разговора о задаче.
+              </>
+            }
           />
           <p className="mt-10 font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint sm:mt-12">
             Базовые форматы
@@ -327,7 +345,7 @@ export default function MigratePage() {
           </p>
           <ul className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
             {addServices.map((s) => (
-              <li key={s.name} className="flex items-start gap-3 text-sm leading-relaxed text-body">
+              <li key={s.name} className="flex items-start gap-3 text-[15px] leading-relaxed text-body">
                 <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent text-[11px] font-extrabold text-accent-ink">
                   ✓
                 </span>
@@ -339,9 +357,10 @@ export default function MigratePage() {
           </ul>
 
           <Reveal delay={0.2}>
-            <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-muted">
-              В любой тариф входит: договор и ТЗ с фиксированной ценой, адаптив под телефоны,
-              SSL, обучение работе с сайтом и поддержка первый месяц.
+            <p className="mx-auto mt-10 max-w-3xl text-center text-[15px] leading-relaxed text-muted">
+              В любой тариф входит: договор и ТЗ с{" "}
+              <strong className="font-semibold text-heading">фиксированной ценой</strong>, адаптив
+              под телефоны, SSL, обучение работе с сайтом и поддержка первый месяц.
             </p>
           </Reveal>
         </Container>
@@ -355,7 +374,12 @@ export default function MigratePage() {
           <SectionHeading
             kicker="План из 5 шагов"
             title="Как проходит переход"
-            sub="Никаких резких движений: каждый шаг понятен, измерим и не ломает текущие продажи."
+            sub={
+              <>
+                Никаких резких движений: каждый шаг понятен, измерим и{" "}
+                <strong className="font-semibold text-heading">не ломает текущие продажи</strong>.
+              </>
+            }
           />
           <div className="mt-10">
             <ScrollRow label="План перехода по шагам">
@@ -364,7 +388,7 @@ export default function MigratePage() {
                   <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_var(--accent)]">
                     <span className="inline-block rounded-full border-2 border-black bg-accent px-3 py-1 text-xs font-extrabold text-accent-ink">{s.num}</span>
                     <h3 className="mt-4 text-lg font-bold text-heading">{s.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
+                    <p className="mt-2 text-[15px] leading-relaxed text-muted">{s.desc}</p>
                   </div>
                 </Reveal>
               ))}
@@ -397,7 +421,7 @@ export default function MigratePage() {
                 <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-5xl">
                   Уже работает: Moranti
                 </h2>
-                <p className="mt-5 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg">
+                <p className="mt-5 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
                   Бренд женских сумок. Сайт готов и синхронизирован с Ozon и Wildberries —
                   карточки, цены и остатки обновляются сами. Ждём поставку товара клиенту и
                   начинаем продавать прямо на сайте. Площадки остаются, но перестают быть
