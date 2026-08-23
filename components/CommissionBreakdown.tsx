@@ -137,9 +137,10 @@ export default function CommissionBreakdown() {
           <Reveal>
             <div className="flex flex-col items-center justify-between gap-3 rounded-3xl border-2 border-black bg-accent px-5 py-4 text-center shadow-[6px_6px_0_0_#0a0a0a] sm:flex-row sm:px-8">
               <p className="text-sm font-bold text-accent-ink sm:text-base">
-                Экономия с заказа: <span className="font-extrabold">+{fmt(diff)} ₽</span>
+                Экономия с заказа:{" "}
+                <span className="font-extrabold whitespace-nowrap">+{fmt(diff)} ₽</span>
                 {" "}· в месяц:{" "}
-                <span className="font-extrabold">+{fmt(diff * sales)} ₽</span>
+                <span className="font-extrabold whitespace-nowrap">+{fmt(diff * sales)} ₽</span>
               </p>
               <p className="font-mono text-xs font-bold text-accent-ink/70">
                 при {fmt(sales)} продажах · чек {fmt(order)} ₽
@@ -254,7 +255,7 @@ export default function CommissionBreakdown() {
                 </div>
                 <div className="px-4 py-5 sm:px-6 sm:py-6">
                   <p className="text-xs font-medium text-muted sm:text-sm">Забирает с заказа</p>
-                  <p className="mt-1 text-xl font-extrabold text-heading sm:text-4xl">
+                  <p className="mt-1 whitespace-nowrap text-xl font-extrabold text-heading sm:text-4xl">
                     −{fmt(mpTake)} ₽
                   </p>
                   <p className="mt-1 text-[11px] font-bold text-muted sm:text-xs">
@@ -267,7 +268,7 @@ export default function CommissionBreakdown() {
                     />
                   </div>
                   <p className="text-xs font-medium text-muted sm:text-sm">Остаётся вам</p>
-                  <p className="mt-1 text-xl font-extrabold text-heading sm:text-4xl">
+                  <p className="mt-1 whitespace-nowrap text-xl font-extrabold text-heading sm:text-4xl">
                     {fmt(order - mpTake)} ₽
                   </p>
                   <p className="mt-1 text-[11px] font-bold text-muted sm:text-xs">
@@ -300,7 +301,7 @@ export default function CommissionBreakdown() {
                     />
                   </div>
                   <p className="text-xs font-medium text-muted sm:text-sm">Остаётся вам</p>
-                  <p className="mt-1 text-xl font-extrabold text-heading sm:text-4xl">
+                  <p className="mt-1 whitespace-nowrap text-xl font-extrabold text-heading sm:text-4xl">
                     {fmt(order - siteTake)} ₽
                   </p>
                   <p className="mt-1 text-[11px] font-bold text-muted sm:text-xs">
@@ -316,7 +317,7 @@ export default function CommissionBreakdown() {
               <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
                 Выгода в месяц
               </p>
-              <p className="mt-2 text-3xl font-extrabold tracking-tight sm:text-5xl">
+              <p className="mt-2 text-2xl font-extrabold leading-tight tracking-tight sm:text-5xl">
                 +{fmt(diff * sales)} ₽
               </p>
               <p className="mt-2 text-sm font-medium text-white/60">

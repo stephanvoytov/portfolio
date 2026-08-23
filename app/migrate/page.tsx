@@ -5,11 +5,7 @@ import Reveal from "@/components/Reveal";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import CtaSection from "@/components/CtaSection";
-import MarketplaceVsSite from "@/components/MarketplaceVsSite";
 import CommissionBreakdown from "@/components/CommissionBreakdown";
-import ShareShift from "@/components/ShareShift";
-import ServiceCalculator from "@/components/ServiceCalculator";
-import ClientsSources from "@/components/ClientsSources";
 import { ModalCta } from "@/components/ModalCta";
 import MobileStickyCta from "@/components/MobileStickyCta";
 import ScrollRow from "@/components/ScrollRow";
@@ -54,108 +50,32 @@ const numbers = [
   },
 ];
 
-const problems = [
-  {
-    title: "Комиссия — только верхушка",
-    desc: "За «25%» прячутся логистика, реклама и возвраты. Итого 50–70% от цены товара.",
-  },
-  {
-    title: "Комиссии растут",
-    desc: "Июль: WB поднял в 98% категорий. Август: Ozon — до 55% на одежду.",
-  },
-  {
-    title: "Штрафы — с вашего счёта",
-    desc: "Просрочка отгрузки — 50% цены. Брак — до 5 000 ₽. И всё это без суда.",
-  },
-  {
-    title: "Возвраты съедают маржу",
-    desc: "В одежде возвращается до 40% заказов. На сайте — единицы.",
-  },
-  {
-    title: "Клиент не ваш",
-    desc: "Контактов нет. Каждая повторная продажа — снова через платную рекламу.",
-  },
-  {
-    title: "Правила меняет площадка",
-    desc: "Вчера — наценки до 12%, сегодня — новая выдача. Завтра будет хуже.",
-  },
-];
-
 const checklist = [
   {
     num: "01",
     title: "Разбор",
-    desc: "Переписываемся, смотрим ваши цифры: ассортимент, маржу, повторные покупки — и выбираем формат: витрина, полноценный магазин или гибрид, где часть товаров продаётся на сайте, а часть на площадках.",
+    desc: "Переписываемся о вашем магазине: ассортимент, маржа, повторные покупки. По цифрам выбираем формат — витрина, магазин или гибрид.",
   },
   {
     num: "02",
     title: "Данные",
-    desc: "Товар на складах маркетплейса — единоразовый перенос карточек. Отправляете заказы сами — синхронизация остатков и цен через API: на сайте автоматически цена ниже, чем на площадке.",
+    desc: "Переношу карточки товаров с WB и Ozon. Если торгуете параллельно — подключаю синхронизацию остатков и цен по API.",
   },
   {
     num: "03",
     title: "Дизайн",
-    desc: "Изучаем конкурентов, выбираем референсы и согласовываем макет главной и карточки товара — до того, как написан код.",
+    desc: "Изучаю конкурентов и согласовываю макет главной и карточки товара до кода, чтобы не переделывать потом.",
   },
   {
     num: "04",
     title: "Запуск",
-    desc: "Вёрстка, перенос каталога, оплата ЮKassa и СБП, доставка СДЭК и Почты России, оферта и 152-ФЗ. Финальная точка — первый тестовый заказ.",
+    desc: "Вёрстка, оплата ЮKassa и СБП, доставка СДЭК и Почта, оферта и 152-ФЗ. Финал — первый тестовый заказ у вас в руках.",
   },
   {
     num: "05",
     title: "Клиенты и адаптация",
-    desc: "Рекламные каналы под вашу нишу, QR со скидкой в своих заказах, соцсети. Через несколько месяцев сверяем цифры и перераспределяем товары между сайтом и площадками.",
+    desc: "Подключаю каналы под нишу: QR-скидки в посылках, соцсети, реклама. Через 2–3 месяца сверяем цифры и перераспределяем товары между сайтом и площадками.",
   },
-];
-
-const why = [
-  {
-    title: "Клиенты — ваши",
-    desc: "Контакты и повторные покупки остаются у вас: письма, боты, накопительные программы.",
-  },
-  {
-    title: "Комиссия — только за приём платежей",
-    desc: "Вместо комиссии маркетплейса — небольшая плата за эквайринг. Остальное остаётся вам.",
-  },
-  {
-    title: "Постепенно, без обрывов",
-    desc: "Никаких резких решений: маркетплейсы продолжают работать, пока сайт набирает обороты.",
-  },
-];
-
-const fit = [
-  {
-    level: "Частичный",
-    title: "Витрина",
-    desc: "Массовый товар без бренда — покупают по цене и рейтингу. Заказов мало, повторных почти нет.",
-    point: "Сайт — лицо и заявки, продажи остаются на площадках",
-  },
-  {
-    level: "Средний",
-    title: "Гибрид",
-    desc: "От ~200 заказов в месяц. Есть маржинальные товары с повторным спросом рядом с массовыми.",
-    point: "Повторное — на сайт с ценой ниже, остальное на площадках",
-  },
-  {
-    level: "Почти полный",
-    title: "Сайт основной",
-    desc: "Вас ищут по названию, экономика держится на повторных покупках, комиссии съедают прибыль.",
-    point: "Постоянные клиенты — на сайте, площадки приводят новых",
-  },
-  {
-    level: "Полный",
-    title: "Только свой канал",
-    desc: "Сильный бренд или уникальный продукт, на площадке работаете в ноль. Свой трафик уже есть.",
-    point: "Самый рискованный уровень — оправдан, когда второй контур работает",
-  },
-];
-
-const noFit = [
-  "Разовые покупки при невысоком чеке: клиент купил один раз — и всё",
-  "Чистый ценовой конкурент: товар как у всех, бренда нет",
-  "Оборот мал, а база клиентов пуста: каждый заказ через рекламу обходится дороже комиссии площадки",
-  "Тестируете нишу: площадка проверяет спрос чужим трафиком",
 ];
 
 const basePlans = [
@@ -191,7 +111,7 @@ const basePlans = [
 const growthPlans = [
   {
     name: "Старт перехода",
-    price: "от 89 000 ₽",
+    price: "от 69 000 ₽",
     days: "около 3 недель",
     desc: "Магазин плюс первый контур перевода клиентов с площадок на свой канал.",
     items: [
@@ -201,29 +121,28 @@ const growthPlans = [
       "Базовая стратегия перевода клиентов",
     ],
   },
+];
+
+const addServices = [
   {
-    name: "Рост",
-    price: "от 160 000 ₽",
-    days: "4–6 недель",
-    desc: "Для магазинов с повторными покупками: строим системный приток клиентов на сайт.",
-    items: [
-      "Всё из «Старта перехода»",
-      "Яндекс.Директ и ретаргетинг под ключ",
-      "Дизайн вкладышей и баннеров",
-      "Программа лояльности, интеграция с CRM",
-    ],
+    name: "Синхронизация остатков с Ozon/WB",
+    desc: "Параллельные продажи без расхождений по наличию.",
   },
   {
-    name: "Масштаб",
-    price: "от 350 000 ₽",
-    days: "8–10 недель",
-    desc: "Кастомная платформа для брендов, которые делают сайт основным каналом продаж.",
-    items: [
-      "Кастомная архитектура под задачи бизнеса",
-      "Двусторонняя синхронизация с Ozon/WB через API",
-      "Несколько служб доставки",
-      "Продвинутая аналитика и контент-стратегия",
-    ],
+    name: "Яндекс.Директ и SEO",
+    desc: "Настройка и ведение рекламы — 2 месяца.",
+  },
+  {
+    name: "Страница под QR в посылках",
+    desc: "Сбор контактов, промокод, дизайн вкладыша.",
+  },
+  {
+    name: "Программа лояльности",
+    desc: "Баллы, уровни, персональные скидки.",
+  },
+  {
+    name: "Интеграция с CRM или 1С",
+    desc: "Передача заказов и остатков в вашу систему.",
   },
 ];
 
@@ -240,7 +159,7 @@ function PlanCard({ p, delay }: { p: Plan; delay: number }) {
   return (
     <Reveal delay={delay} className="h-full">
       <div
-        className={`relative flex h-full flex-col rounded-3xl border-2 p-7 transition-all duration-200 hover:-translate-y-1 ${
+        className={`relative flex h-full flex-col rounded-3xl border-2 p-6 sm:p-7 transition-all duration-200 hover:-translate-y-1 ${
           p.hot
             ? "border-black bg-accent shadow-[8px_8px_0_0_#0a0a0a]"
             : "border-line bg-white shadow-sm hover:border-black hover:shadow-[6px_6px_0_0_var(--accent)]"
@@ -325,7 +244,7 @@ export default function MigratePage() {
             с Wildberries и Ozon на свой сайт за 14 дней
           </>
         }
-        sub="Соберите свою базу клиентов, поднимите маржу на 20–30% и получите синхронизацию остатков с площадками. Маркетплейсы работают параллельно — текущие продажи не останавливаются."
+        sub="Соберите базу клиентов, поднимите маржу и получите синхронизацию остатков с площадками. Продажи на маркетплейсах продолжают работать — текущие заказы не останавливаются."
         image={{
           src: "/images/mockup-moranti-v2.jpg",
           alt: "Интернет-магазин Moranti — витрина бренда, перенесённая с маркетплейсов",
@@ -333,7 +252,7 @@ export default function MigratePage() {
         imageCaption="Реальный пример: витрина бренда Moranti, синхронизированная с Ozon и Wildberries"
       >
         <BtnLink href="#calc" className="w-full sm:w-auto" goal={GOALS.heroCalc}>
-          Посчитать экономию и стоимость
+          Посчитать экономию
         </BtnLink>
       </PageHero>
 
@@ -357,76 +276,81 @@ export default function MigratePage() {
         </Container>
       </section>
 
-      {/* Цены рано — для горячего трафика */}
-      <section className="border-b border-line bg-panel-soft py-5">
-        <Container>
-          <div className="flex flex-col items-center justify-center gap-2 text-center sm:flex-row sm:gap-6">
-            <p className="text-sm font-semibold text-body">
-              Тарифы от{" "}
-              <span className="font-extrabold text-heading">25 000 ₽</span> · витрина за неделю,
-              магазин за две
-            </p>
-            <a
-              href="#tariffs"
-              className="font-mono text-xs font-bold uppercase tracking-wider text-accent-ink underline decoration-accent decoration-2 underline-offset-4 hover:text-heading"
-            >
-              Смотреть тарифы →
-            </a>
-          </div>
-        </Container>
-      </section>
-
-      <MarketplaceVsSite />
-
-      <CommissionBreakdown />
-
-      {/* Проблема */}
-      <section className="border-y border-line bg-panel-soft py-20 sm:py-24">
-        <Container>
-          <SectionHeading kicker="Проблема" title="Почему бизнес уходит с маркетплейсов" />
-          <div className="mt-10">
-            <ScrollRow label="Причины ухода с маркетплейсов">
-              {problems.map((p, i) => (
-                <Reveal key={p.title} delay={i * 0.05} className="w-[80%] shrink-0 snap-start sm:w-[330px]">
-                  <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_var(--accent)]">
-                    <span className="inline-block rounded-full border-2 border-black bg-accent px-3 py-1 text-xs font-extrabold text-accent-ink">
-                      {i + 1}
-                    </span>
-                    <h3 className="mt-4 text-lg font-bold text-heading">{p.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted">{p.desc}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </ScrollRow>
-          </div>
-        </Container>
-      </section>
-
-      <ClientsSources />
-
-      {/* CTA в середине страницы — мёртвая зона без кнопок */}
-      <section className="py-10 sm:py-14">
+      {/* Суть — крупный цепляющий текст */}
+      <section className="border-b border-line bg-white py-14 sm:py-20">
         <Container>
           <Reveal>
-            <div className="rounded-3xl border-2 border-black bg-accent p-7 text-center sm:p-10">
-              <h2 className="text-2xl font-extrabold tracking-tight text-accent-ink sm:text-3xl">
-                Прикинули свою выгоду?
-              </h2>
-              <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-accent-ink/80 sm:text-base">
-                Расскажите о вашем магазине — покажу, как перевести эти цифры в работающий сайт без резких движений.
-              </p>
-              <div className="mt-6 flex justify-center">
-                <ModalCta variant="primary" subject="Миграция: обсудить переход после калькулятора">
-                  Обсудить переход
-                </ModalCta>
-              </div>
-            </div>
+            <p className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">
+              <span className="h-2 w-2 rounded-full bg-accent" />
+              Суть
+            </p>
+            <h2 className="mt-4 max-w-4xl text-3xl font-extrabold leading-[1.12] tracking-tight text-heading sm:text-5xl">
+              Маркетплейс — это аренда витрины у конкурента. Свой сайт — магазин, клиенты и
+              маржа, которые остаются у вас.
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+              Площадка забирает 50–70% с каждого заказа и владеет вашими покупателями. Мы
+              переносим продажи на сайт постепенно — без потери текущего потока заказов.
+            </p>
           </Reveal>
         </Container>
       </section>
 
+      {/* Тарифы — подняты наверх */}
+      <section id="tariffs" className="scroll-mt-24 border-y border-line bg-panel-soft py-14 sm:py-24">
+        <Container>
+          <SectionHeading
+            kicker="Стоимость"
+            title="Что во что обходится"
+            sub="Цена фиксируется до старта и не меняется по ходу работы. Точную оценку даю после короткого разговора о задаче."
+          />
+          <p className="mt-10 font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint sm:mt-12">
+            Базовые форматы
+          </p>
+          <div className="mt-5 grid gap-5 md:grid-cols-2">
+            {basePlans.map((p, i) => (
+              <PlanCard key={p.name} p={p} delay={i * 0.08} />
+            ))}
+          </div>
+
+          <p className="mt-10 sm:mt-14 font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">
+            Переход под ключ
+          </p>
+          <div className="mx-auto mt-5 max-w-2xl">
+            {growthPlans.map((p, i) => (
+              <PlanCard key={p.name} p={p} delay={i * 0.08} />
+            ))}
+          </div>
+
+          <p className="mt-10 sm:mt-14 font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">
+            Дополнительные услуги — добавляю к любому тарифу
+          </p>
+          <ul className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+            {addServices.map((s) => (
+              <li key={s.name} className="flex items-start gap-3 text-sm leading-relaxed text-body">
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent text-[11px] font-extrabold text-accent-ink">
+                  ✓
+                </span>
+                <span>
+                  <span className="font-bold text-heading">{s.name}.</span> {s.desc}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <Reveal delay={0.2}>
+            <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-muted">
+              В любой тариф входит: договор и ТЗ с фиксированной ценой, адаптив под телефоны,
+              SSL, обучение работе с сайтом и поддержка первый месяц.
+            </p>
+          </Reveal>
+        </Container>
+      </section>
+
+      <CommissionBreakdown />
+
       {/* Чек-лист */}
-      <section className="py-20 sm:py-24">
+      <section className="py-14 sm:py-24">
         <Container>
           <SectionHeading
             kicker="План из 5 шагов"
@@ -448,116 +372,6 @@ export default function MigratePage() {
           </div>
         </Container>
       </section>
-
-      <ShareShift />
-
-      {/* Кому подходит */}
-      <section className="py-20 sm:py-24">
-        <Container>
-          <SectionHeading
-            kicker="Честно"
-            title="Подходит ли это вашему магазину"
-            sub="Решают два вопроса: покупают ли у вас повторно и сможем ли мы привести трафик. От ответа зависит глубина перехода."
-          />
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {fit.map((f, i) => (
-              <Reveal key={f.level} delay={i * 0.06}>
-                <div className="h-full rounded-2xl border border-line bg-white p-7 shadow-sm sm:p-8">
-                  <div className="flex items-center gap-3">
-                    <span className="rounded-full bg-accent px-3 py-1 font-mono text-xs font-extrabold uppercase tracking-wide text-accent-ink">
-                      {f.level}
-                    </span>
-                    <h3 className="text-lg font-extrabold text-heading">{f.title}</h3>
-                  </div>
-                  <p className="mt-4 text-sm leading-relaxed text-body">{f.desc}</p>
-                  <p className="mt-4 border-t border-line pt-4 text-sm font-bold leading-relaxed text-heading">
-                    {f.point}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal delay={0.2}>
-            <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-line bg-panel-soft p-7 sm:p-8">
-              <h3 className="text-lg font-extrabold text-heading">Перенос точно не нужен, если</h3>
-              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-                {noFit.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-                    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full border border-line text-[11px] font-extrabold text-muted">
-                      ✕
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-          <Reveal delay={0.28}>
-            <p className="mx-auto mt-8 max-w-2xl text-center text-sm leading-relaxed text-muted">
-              Не уверены, где ваш случай? Напишите в Telegram — посмотрим ваши цифры и скажем
-              честно, без навязывания переезда.
-            </p>
-          </Reveal>
-        </Container>
-      </section>
-
-      {/* CTA перед тарифами */}
-      <section className="py-10 sm:py-14">
-        <Container>
-          <Reveal>
-            <div className="mx-auto max-w-3xl rounded-3xl border border-line bg-panel-soft p-7 text-center sm:p-10">
-              <h2 className="text-2xl font-extrabold tracking-tight text-heading sm:text-3xl">
-                Разберём ваш магазин
-              </h2>
-              <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
-                Посмотрим ассортимент, маржу и повторные покупки — предложим формат перехода без лишних трат.
-              </p>
-              <div className="mt-6 flex justify-center">
-                <ModalCta subject="Миграция: разбор магазина перед выбором тарифа">
-                  Обсудить мой случай
-                </ModalCta>
-              </div>
-            </div>
-          </Reveal>
-        </Container>
-      </section>
-
-      {/* Тарифы */}
-      <section id="tariffs" className="scroll-mt-24 border-y border-line bg-panel-soft py-20 sm:py-24">
-        <Container>
-          <SectionHeading
-            kicker="Стоимость"
-            title="Что во что обходится"
-            sub="Цена фиксируется до старта и не меняется по ходу работы. Точную оценку даю после короткого разговора о задаче."
-          />
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">
-            Базовые форматы
-          </p>
-          <div className="mt-5 grid gap-5 md:grid-cols-2">
-            {basePlans.map((p, i) => (
-              <PlanCard key={p.name} p={p} delay={i * 0.08} />
-            ))}
-          </div>
-
-          <p className="mt-14 font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">
-            Магазин + стратегия и логистика
-          </p>
-          <div className="mt-5 grid gap-5 lg:grid-cols-3">
-            {growthPlans.map((p, i) => (
-              <PlanCard key={p.name} p={p} delay={i * 0.08} />
-            ))}
-          </div>
-
-          <Reveal delay={0.2}>
-            <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-muted">
-              В любой тариф входит: договор и ТЗ с фиксированной ценой, адаптив под телефоны,
-              SSL, обучение работе с сайтом и поддержка первый месяц.
-            </p>
-          </Reveal>
-        </Container>
-      </section>
-
-      <ServiceCalculator />
 
       {/* Кейс */}
       <section className="bg-black py-20 text-white sm:py-24">
@@ -584,11 +398,10 @@ export default function MigratePage() {
                   Уже работает: Moranti
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg">
-                  Бренд женских сумок. Каталог-витрина на собственном сайте —
-                  и всё это синхронизировано с Ozon и Wildberries: картинки, характеристики,
-                  цены, остатки и отзывы обновляются автоматически. Покупка пока через
-                  маркетплейсы, оплата на сайте — следующим этапом. Маркетплейсы остались,
-                  но перестали быть единственным каналом.
+                  Бренд женских сумок. Сайт готов и синхронизирован с Ozon и Wildberries —
+                  карточки, цены и остатки обновляются сами. Ждём поставку товара клиенту и
+                  начинаем продавать прямо на сайте. Площадки остаются, но перестают быть
+                  единственным каналом продаж.
                 </p>
               </Reveal>
               <Reveal delay={0.1} className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -610,45 +423,6 @@ export default function MigratePage() {
       </section>
 
       <Faq />
-
-      {/* Почему это выгодно */}
-      <section className="py-20 sm:py-24">
-        <Container>
-          <SectionHeading kicker="Результат" title="Что вы получаете" />
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {why.map((w, i) => (
-              <Reveal key={w.title} delay={i * 0.06}>
-                <div className="group h-full rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-black hover:shadow-[5px_5px_0_0_var(--accent)]">
-                  <h3 className="text-lg font-bold text-heading">{w.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{w.desc}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal className="mt-10">
-            <div className="relative overflow-hidden rounded-3xl border-2 border-black bg-white p-7 shadow-[8px_8px_0_0_var(--accent)] sm:p-10">
-              <div
-                className="pointer-events-none absolute inset-0"
-                style={{
-                  background:
-                    "radial-gradient(ellipse 60% 90% at 100% 0%, rgb(var(--accent-rgb) / 0.3), transparent 70%)",
-                }}
-              />
-              <p className="relative max-w-3xl text-base font-medium leading-relaxed text-body sm:text-lg">
-                Посчитаем экономию под ваш магазин: посмотрим ассортимент, маржу и удержания —
-                получите цифру «сколько останется вам» на своём сайте.{" "}
-                <span className="bg-accent px-1 font-bold text-accent-ink">бесплатно</span> и без
-                обязательств.
-              </p>
-              <div className="relative mt-6">
-                <ModalCta subject="Расчёт экономии для моего магазина">
-                  Рассчитать мою экономию
-                </ModalCta>
-              </div>
-            </div>
-          </Reveal>
-        </Container>
-      </section>
 
       <MobileStickyCta />
 
