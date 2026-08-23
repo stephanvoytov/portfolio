@@ -7,6 +7,9 @@ const STATIC_PATHS: { path: string; priority: number }[] = [
   { path: "/migrate", priority: 0.9 },
   { path: "/blog", priority: 0.6 },
   { path: "/blog/kak-razdelit-prodazhi-sait-i-marketpleisy", priority: 0.7 },
+  { path: "/blog/skolko-stoit-svoj-magazin-vmesto-marketpleisa", priority: 0.7 },
+  { path: "/blog/kak-perevesti-klientov-s-marketpleisa-na-svoj-sait", priority: 0.7 },
+  { path: "/blog/marketpleis-ili-svoj-sait-chto-vygodnee", priority: 0.7 },
   { path: "/cases", priority: 0.8 },
   { path: "/design", priority: 0.5 },
 ];
