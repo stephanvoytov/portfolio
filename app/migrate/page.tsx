@@ -246,17 +246,17 @@ export default function MigratePage() {
         }
         sub={
           <>
-            Соберите <strong className="font-bold text-heading">базу клиентов</strong>, поднимите{" "}
-            <strong className="font-bold text-heading">маржу</strong> и получите синхронизацию
-            остатков с площадками. Продажи на маркетплейсах продолжают работать — текущие заказы{" "}
-            <strong className="font-bold text-heading">не останавливаются</strong>.
+            Соберите <strong className="font-bold text-heading">базу клиентов</strong>, увеличьте{" "}
+            <strong className="font-bold text-heading">маржу</strong> и синхронизируйте остатки с
+            площадками. Продажи на маркетплейсах при этом продолжают работать — текущие заказы{" "}
+            <strong className="font-bold text-heading">не остановятся</strong>.
           </>
         }
         image={{
           src: "/images/mockup-moranti-v2.jpg",
           alt: "Интернет-магазин Moranti — витрина бренда, перенесённая с маркетплейсов",
         }}
-        imageCaption="Реальный пример: витрина бренда Moranti, синхронизированная с Ozon и Wildberries"
+        imageCaption="Реальный пример: витрина бренда Moranti синхронизирована с Ozon и Wildberries"
       >
         <BtnLink href="#calc" className="w-full sm:w-auto" goal={GOALS.heroCalc}>
           Посчитать экономию
@@ -289,21 +289,17 @@ export default function MigratePage() {
           <Reveal>
             <p className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">
               <span className="h-2 w-2 rounded-full bg-accent" />
-              Суть
+              Почему это важно
             </p>
             <h2 className="mt-4 max-w-4xl text-3xl font-extrabold leading-[1.12] tracking-tight text-heading sm:text-5xl">
-              Маркетплейс <strong className="text-accent-ink">забирает ваших покупателей</strong>{" "}
-              и <strong className="text-accent-ink">половину выручки</strong>. Свой сайт — это{" "}
-              <strong className="text-accent-ink">ваш магазин</strong>: клиенты, маржа и данные
-              остаются у вас.
+              Маркетплейс меняет правила и комиссии — и вы на это не влияете. Свой сайт{" "}
+              <strong className="text-accent-ink">даёт полный контроль</strong>: цены, бренд и канал
+              продаж <strong className="text-accent-ink">принадлежат вам</strong>.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-              Площадка берёт <strong className="font-bold text-heading">50–70%</strong> с каждого
-              заказа и{" "}
-              <strong className="font-bold text-heading">владеет вашими покупателями</strong>. Мы
-              переносим продажи на сайт{" "}
-              <strong className="font-bold text-heading">постепенно</strong> — без потери текущего
-              потока заказов.
+              На маркетплейсе трафик и алгоритмы принадлежат площадке, а не вам. На своём сайте вы{" "}
+              <strong className="font-bold text-heading">сами решаете</strong>, как продавать и с
+              кем общаться, — и это остаётся с вами на годы.
             </p>
           </Reveal>
         </Container>
@@ -419,7 +415,7 @@ export default function MigratePage() {
                   Пример
                 </p>
                 <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-5xl">
-                  Уже работает: Moranti
+                  Кейс Moranti — витрина бренда, переехавшая с маркетплейсов
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
                   Бренд женских сумок. Сайт готов и синхронизирован с Ozon и Wildberries —
