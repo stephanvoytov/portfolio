@@ -11,6 +11,7 @@ import ShareShift from "@/components/ShareShift";
 import ServiceCalculator from "@/components/ServiceCalculator";
 import ClientsSources from "@/components/ClientsSources";
 import { ModalCta } from "@/components/ModalCta";
+import MobileStickyCta from "@/components/MobileStickyCta";
 import ScrollRow from "@/components/ScrollRow";
 import Faq, { faqs } from "@/components/Faq";
 import { site } from "@/lib/site";
@@ -404,6 +405,27 @@ export default function MigratePage() {
 
       <ClientsSources />
 
+      {/* CTA в середине страницы — мёртвая зона без кнопок */}
+      <section className="py-10 sm:py-14">
+        <Container>
+          <Reveal>
+            <div className="rounded-3xl border-2 border-black bg-accent p-7 text-center sm:p-10">
+              <h2 className="text-2xl font-extrabold tracking-tight text-accent-ink sm:text-3xl">
+                Прикинули свою выгоду?
+              </h2>
+              <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-accent-ink/80 sm:text-base">
+                Расскажите о вашем магазине — покажу, как перевести эти цифры в работающий сайт без резких движений.
+              </p>
+              <div className="mt-6 flex justify-center">
+                <ModalCta variant="primary" subject="Миграция: обсудить переход после калькулятора">
+                  Обсудить переход
+                </ModalCta>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
       {/* Чек-лист */}
       <section className="py-20 sm:py-24">
         <Container>
@@ -476,6 +498,27 @@ export default function MigratePage() {
               Не уверены, где ваш случай? Напишите в Telegram — посмотрим ваши цифры и скажем
               честно, без навязывания переезда.
             </p>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* CTA перед тарифами */}
+      <section className="py-10 sm:py-14">
+        <Container>
+          <Reveal>
+            <div className="mx-auto max-w-3xl rounded-3xl border border-line bg-panel-soft p-7 text-center sm:p-10">
+              <h2 className="text-2xl font-extrabold tracking-tight text-heading sm:text-3xl">
+                Разберём ваш магазин
+              </h2>
+              <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
+                Посмотрим ассортимент, маржу и повторные покупки — предложим формат перехода без лишних трат.
+              </p>
+              <div className="mt-6 flex justify-center">
+                <ModalCta subject="Миграция: разбор магазина перед выбором тарифа">
+                  Обсудить мой случай
+                </ModalCta>
+              </div>
+            </div>
           </Reveal>
         </Container>
       </section>
@@ -607,6 +650,8 @@ export default function MigratePage() {
           </Reveal>
         </Container>
       </section>
+
+      <MobileStickyCta />
 
       <CtaSection hideMigrate />
     </>

@@ -58,30 +58,39 @@ export default function Header() {
           </button>
         </nav>
 
-        <button
-          className="grid h-11 w-11 place-items-center rounded-full border border-line-strong md:hidden"
-          aria-label={open ? "Закрыть меню" : "Открыть меню"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span className="relative block h-3 w-4">
-            <i
-              className={`absolute left-0 top-0 h-0.5 w-4 rounded bg-heading transition-transform ${
-                open ? "translate-y-1.5 rotate-45" : ""
-              }`}
-            />
-            <i
-              className={`absolute left-0 top-1.5 h-0.5 w-4 rounded bg-heading transition-opacity ${
-                open ? "opacity-0" : ""
-              }`}
-            />
-            <i
-              className={`absolute left-0 top-3 h-0.5 w-4 rounded bg-heading transition-transform ${
-                open ? "-translate-y-1.5 -rotate-45" : ""
-              }`}
-            />
-          </span>
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            type="button"
+            onClick={() => openContact()}
+            className="rounded-full bg-accent px-4 py-2.5 text-sm font-bold text-accent-ink transition-transform active:scale-[0.97]"
+          >
+            Обсудить
+          </button>
+          <button
+            className="grid h-11 w-11 place-items-center rounded-full border border-line-strong"
+            aria-label={open ? "Закрыть меню" : "Открыть меню"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span className="relative block h-3 w-4">
+              <i
+                className={`absolute left-0 top-0 h-0.5 w-4 rounded bg-heading transition-transform ${
+                  open ? "translate-y-1.5 rotate-45" : ""
+                }`}
+              />
+              <i
+                className={`absolute left-0 top-1.5 h-0.5 w-4 rounded bg-heading transition-opacity ${
+                  open ? "opacity-0" : ""
+                }`}
+              />
+              <i
+                className={`absolute left-0 top-3 h-0.5 w-4 rounded bg-heading transition-transform ${
+                  open ? "-translate-y-1.5 -rotate-45" : ""
+                }`}
+              />
+            </span>
+          </button>
+        </div>
       </div>
 
       {open && (

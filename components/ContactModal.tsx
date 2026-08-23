@@ -34,8 +34,9 @@ const channelIcons: Record<ChannelId, React.ReactNode> = {
   email: <Mail className="h-3.5 w-3.5" />,
 };
 
-const ContactModalContext = createContext<{ open: (subject?: string) => void }>({
+const ContactModalContext = createContext<{ open: (subject?: string) => void; isOpen: boolean }>({
   open: () => {},
+  isOpen: false,
 });
 
 export function useContactModal() {
@@ -98,7 +99,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <ContactModalContext.Provider value={{ open }}>
+    <ContactModalContext.Provider value={{ open, isOpen }}>
       {children}
       <AnimatePresence>
         {isOpen ? (
@@ -171,7 +172,8 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Как к вам обращаться"
-                      className="mt-1.5 w-full rounded-xl border-2 border-black bg-white px-4 py-3 text-sm font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
+                      autoComplete="name"
+                      className="mt-1.5 w-full rounded-xl border-2 border-black bg-white px-4 py-3 text-base font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
                     />
                   </div>
                   <div>
@@ -208,7 +210,9 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                       value={contact}
                       onChange={(e) => setContact(e.target.value)}
                       placeholder={channels.find((c) => c.id === channel)?.placeholder}
-                      className="mt-2.5 w-full rounded-xl border-2 border-black bg-white px-4 py-3 text-sm font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
+                      inputMode={channel === "whatsapp" || channel === "max" ? "tel" : channel === "email" ? "email" : undefined}
+                      autoComplete={channel === "email" ? "email" : "off"}
+                      className="mt-2.5 w-full rounded-xl border-2 border-black bg-white px-4 py-3 text-base font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
                     />
                     <p className="mt-1.5 text-xs text-faint">Связываюсь только в этих каналах — без звонков.</p>
                   </div>
@@ -225,7 +229,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Например: нужен интернет-магазин для бренда одежды…"
                       rows={3}
-                      className="mt-1.5 w-full resize-none rounded-xl border-2 border-black bg-white px-4 py-3 text-sm font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
+                      className="mt-1.5 w-full resize-none rounded-xl border-2 border-black bg-white px-4 py-3 text-base font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
                     />
                   </div>
 
