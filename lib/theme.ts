@@ -4,10 +4,10 @@
  * фавикон (/icon.svg) и apple-icon. Больше нигде хардкодить нельзя.
  */
 export const theme = {
-  /** Акцентный оранжевый («ало») — читается и на светлом, и на тёмном фоне */
-  accent: "#ea580c",
+  /** Акцентный жёлтый (бренд) */
+  accent: "#f6d860",
   /** Тот же цвет в RGB-триплете — для rgba()/rgb(x / alpha) в CSS */
-  accentRgb: "234, 88, 12",
+  accentRgb: "246, 216, 96",
   /** Цвет чернил (обводки логотипа, текст на акценте) */
   ink: "#0a0a0a",
 } as const;
@@ -16,8 +16,8 @@ export const theme = {
 export function buildIconSvg(): string {
   return [
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">`,
-    `  <rect x="3" y="3" width="58" height="58" rx="17" fill="${theme.accent}" stroke="${theme.ink}" stroke-width="5"/>`,
-    `  <path d="M44.5 21.5 A15.5 15.5 0 1 0 44.5 42.5" fill="none" stroke="${theme.ink}" stroke-width="8.5" stroke-linecap="round"/>`,
+    `  <rect x="4" y="4" width="56" height="56" rx="13" fill="${theme.accent}" stroke="${theme.ink}" stroke-width="4.5"/>`,
+    `  <path d="M44 18.5 A17 17 0 1 0 44 45.5" fill="none" stroke="${theme.ink}" stroke-width="9" stroke-linecap="round"/>`,
     `</svg>`,
   ].join("\n");
 }
