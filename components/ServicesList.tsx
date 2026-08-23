@@ -19,8 +19,8 @@ export default function ServicesList() {
   return (
     <ol className="flex flex-col gap-4">
       {services.map((s, i) => (
-        <Reveal key={s.num} delay={i * 0.05}>
-          <li className="overflow-hidden rounded-2xl border border-line-strong bg-white shadow-sm" style={{ borderWidth: "1.5px" }}>
+        <li key={s.num} className="overflow-hidden rounded-2xl border border-line-strong bg-white shadow-sm" style={{ borderWidth: "1.5px" }}>
+          <Reveal delay={i * 0.05}>
             {s.href ? (
               <a
                 href={s.href}
@@ -75,8 +75,8 @@ export default function ServicesList() {
                 </div>
               </button>
             )}
-          </li>
-        </Reveal>
+          </Reveal>
+        </li>
       ))}
     </ol>
   );

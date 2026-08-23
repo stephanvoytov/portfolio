@@ -47,14 +47,12 @@ export const metadata: Metadata = {
     title: "Стефан — разработка сайтов на Next.js",
     description:
       "Интернет-магазины, каталоги с синхронизацией Ozon и Wildberries, лендинги под ключ.",
-    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Стефан — разработка сайтов на Next.js" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Стефан — разработка сайтов на Next.js",
     description:
       "Интернет-магазины, каталоги с синхронизацией Ozon и Wildberries, лендинги под ключ.",
-    images: ["/og.jpg"],
   },
   robots: {
     index: true,

@@ -2,6 +2,8 @@
 
 Личный сайт-портфолио: разработка сайтов на Next.js, интеграции с Ozon и Wildberries, лендинги и миграция с маркетплейсов.
 
+Продакшен: https://stefanvoytov.ru
+
 Стек: **Next.js (App Router) · React · TypeScript · Tailwind CSS v4 · Framer Motion**.
 
 ## Страницы
@@ -33,7 +35,7 @@ npm run start    # запуск собранной версии
 |---|---|
 | `TELEGRAM_BOT_TOKEN` | Токен бота от [@BotFather](https://t.me/BotFather) |
 | `TELEGRAM_CHAT_ID` | Ваш chat_id (например, у [@userinfobot](https://t.me/userinfobot)) |
-| `NEXT_PUBLIC_SITE_URL` | Домен продакшена, используется в sitemap и Open Graph |
+| `NEXT_PUBLIC_SITE_URL` | Домен продакшена (например, `https://stefanvoytov.ru`), используется в sitemap и Open Graph |
 
 Без токена форма не падает: заявка «принимается», но в Telegram не доставляется (в логах будет предупреждение).
 
