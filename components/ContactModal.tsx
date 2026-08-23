@@ -12,6 +12,7 @@ import {
 } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { site } from "@/lib/site";
+import { GOALS, reachGoal } from "@/lib/analytics";
 import { Mail, MessageCircle, Phone, Send, Users } from "@/components/icons";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -92,6 +93,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
         body: JSON.stringify({ name, contact: `${channelLabel} — ${contact}`, message }),
       });
       if (!res.ok) throw new Error("send failed");
+      reachGoal(GOALS.leadSent);
       setStatus("success");
     } catch {
       setStatus("error");

@@ -1,6 +1,5 @@
 import Script from "next/script";
-
-const YM_ID = 111841353;
+import { YM_ID } from "@/lib/analytics";
 
 const counterJs = `
 (function(m,e,t,r,i,k,a){

@@ -1,6 +1,7 @@
 "use client";
 
 import { useContactModal } from "@/components/ContactModal";
+import { GOALS, reachGoal } from "@/lib/analytics";
 
 interface ModalCtaProps {
   children: React.ReactNode;
@@ -32,7 +33,7 @@ export function ModalCta({
         : "border border-line-strong bg-white text-body hover:border-black hover:text-heading";
 
   return (
-    <button type="button" onClick={() => open(subject)} className={`${base} ${styles} ${className}`}>
+    <button type="button" onClick={() => { reachGoal(GOALS.modalOpen); open(subject); }} className={`${base} ${styles} ${className}`}>
       {children}
     </button>
   );

@@ -7,10 +7,11 @@ interface PageHeroProps {
   sub?: string;
   children?: React.ReactNode;
   image?: { src: string; alt: string };
+  imageCaption?: string;
 }
 
 /** Шапка внутренних страниц: кикер, заголовок, подзаголовок, опциональные кнопки. */
-export default function PageHero({ kicker, title, sub, children, image }: PageHeroProps) {
+export default function PageHero({ kicker, title, sub, children, image, imageCaption }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden pb-14 pt-24 sm:pb-16 sm:pt-36">
       <Container>
@@ -24,7 +25,7 @@ export default function PageHero({ kicker, title, sub, children, image }: PageHe
               {title}
             </h1>
             {sub && (
-              <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:mt-5 sm:text-lg">{sub}</p>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-body sm:mt-5 sm:text-lg">{sub}</p>
             )}
             {children && (
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-3">
@@ -42,8 +43,13 @@ export default function PageHero({ kicker, title, sub, children, image }: PageHe
                 height={1200}
                 preload
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="relative aspect-[4/3] w-full rounded-3xl border-2 border-black object-cover shadow-[10px_10px_0_0_var(--accent)]"
+                className="relative aspect-[4/3] w-full rounded-3xl border-2 border-black object-cover shadow-[10px_10px_0_0_#d4af37]"
               />
+              {imageCaption && (
+                <p className="mt-3 text-center text-xs leading-relaxed text-muted">
+                  {imageCaption}
+                </p>
+              )}
             </div>
           )}
         </div>

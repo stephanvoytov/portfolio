@@ -5,6 +5,7 @@ import { Container } from "@/components/Container";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { useContactModal } from "@/components/ContactModal";
+import { GOALS, reachGoal } from "@/lib/analytics";
 
 const fmt = (n: number) =>
   new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 0 }).format(n);
@@ -215,7 +216,8 @@ export default function ServiceCalculator() {
               <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <button
                   type="button"
-                  onClick={() =>
+                  onClick={() => {
+                    reachGoal(GOALS.calcEstimate);
                     open(
                       [
                         `Смета: ${type.name}`,
@@ -223,8 +225,8 @@ export default function ServiceCalculator() {
                         ...(opts.length ? [`опции: ${opts.map((i) => OPTIONS[i].label).join("; ")}`] : []),
                         `ориентировочно ${fmt(low)}–${fmt(high)} ₽`,
                       ].join(", ")
-                    )
-                  }
+                    );
+                  }}
                   className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-black bg-accent px-7 py-3.5 text-sm font-bold text-accent-ink shadow-[4px_4px_0_0_rgba(255,255,255,0.9)] transition-all duration-200 hover:-translate-y-0.5"
                 >
                   Обсудить точную смету →

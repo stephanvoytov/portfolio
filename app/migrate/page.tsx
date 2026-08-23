@@ -16,6 +16,7 @@ import ScrollRow from "@/components/ScrollRow";
 import Faq, { faqs } from "@/components/Faq";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
+import { GOALS } from "@/lib/analytics";
 
 export const metadata = pageMeta({
   title: "Миграция с маркетплейсов на свой сайт без потери продаж",
@@ -319,22 +320,20 @@ export default function MigratePage() {
         kicker="Миграция с маркетплейсов"
         title={
           <>
-            Перестаём зависеть
+            Перенесём ваши продажи
             <br />
-            от Ozon и Wildberries — без потери продаж
+            с Wildberries и Ozon на свой сайт за 14 дней
           </>
         }
-        sub="Никаких резких движений: маркетплейсы продолжают работать, а доля продаж на вашем сайте растёт постепенно. Клиенты, маржа и контроль — возвращаются к вам."
+        sub="Соберите свою базу клиентов, поднимите маржу на 20–30% и получите синхронизацию остатков с площадками. Маркетплейсы работают параллельно — текущие продажи не останавливаются."
         image={{
-          src: "/images/migrate/warehouse.jpg",
-          alt: "Склад логистического центра Wildberries",
+          src: "/images/mockup-moranti-v2.jpg",
+          alt: "Интернет-магазин Moranti — витрина бренда, перенесённая с маркетплейсов",
         }}
+        imageCaption="Реальный пример: витрина бренда Moranti, синхронизированная с Ozon и Wildberries"
       >
-        <ModalCta className="w-full sm:w-auto" subject="Переход с маркетплейсов на свой сайт">
-          Обсудить переход
-        </ModalCta>
-        <BtnLink href="#calc" variant="ghost" className="w-full sm:w-auto">
-          Посчитать разницу
+        <BtnLink href="#calc" className="w-full sm:w-auto" goal={GOALS.heroCalc}>
+          Посчитать экономию и стоимость
         </BtnLink>
       </PageHero>
 
@@ -601,7 +600,7 @@ export default function MigratePage() {
                 >
                   Посмотреть сайт ↗
                 </a>
-                <BtnLink href={site.tg} external variant="ghost" className="w-full sm:w-auto">
+                <BtnLink href={site.tg} external variant="ghost" className="w-full sm:w-auto" goal={GOALS.tgClick}>
                   Сделать так же
                 </BtnLink>
               </Reveal>
