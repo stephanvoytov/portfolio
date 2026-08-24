@@ -1,38 +1,45 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { useEffect, useState, useRef } from "react";
 
 export default function PageLoader() {
-  const pathname = usePathname();
-  const [show, setShow] = useState(true);
-  const [visible, setVisible] = useState(true);
+  const [phase, setPhase] = useState<"in" | "out" | "done">("in");
+  const prevPath = useRef<string | null>(null);
 
+  // Initial load
   useEffect(() => {
-    const t = setTimeout(() => {
-      setVisible(false);
-      setTimeout(() => setShow(false), 500);
-    }, 700);
+    const t = setTimeout(() => setPhase("out"), 700);
     return () => clearTimeout(t);
   }, []);
 
+  // Route changes
   useEffect(() => {
-    setShow(true);
-    setVisible(true);
-    const t = setTimeout(() => {
-      setVisible(false);
-      setTimeout(() => setShow(false), 500);
-    }, 600);
-    return () => clearTimeout(t);
-  }, [pathname]);
+    const handler = () => {
+      if (prevPath.current !== window.location.pathname) {
+        prevPath.current = window.location.pathname;
+        setPhase("in");
+        const t = setTimeout(() => setPhase("out"), 600);
+        return () => clearTimeout(t);
+      }
+    };
+    window.addEventListener("popstate", handler);
+    return () => window.removeEventListener("popstate", handler);
+  }, []);
 
-  if (!show) return null;
+  useEffect(() => {
+    if (phase === "out") {
+      const t = setTimeout(() => setPhase("done"), 500);
+      return () => clearTimeout(t);
+    }
+  }, [phase]);
+
+  if (phase === "done") return null;
 
   return (
     <div
       aria-hidden
       className="fixed inset-0 z-[99999] flex items-center justify-center bg-[#141416] transition-opacity duration-500 ease-out"
-      style={{ opacity: visible ? 1 : 0, pointerEvents: visible ? "auto" : "none" }}
+      style={{ opacity: phase === "out" ? 0 : 1, pointerEvents: phase === "in" ? "auto" : "none" }}
     >
       <div className="flex items-center gap-3">
         <span className="grid h-12 w-12 place-items-center rounded-[14px] border-2 border-[#f4f4f5] bg-[#f6d860] text-xl font-extrabold leading-none text-[#0a0a0a]">
