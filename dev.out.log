@@ -1,0 +1,794 @@
+▲ Next.js 16.3.1 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://172.18.0.1:3001
+- Environments: .env.local
+✓ Ready in 5.3s
+✓ Running next.config.ts took 299ms
+
+ GET /example 200 in 2.8s (next.js: 1654ms, application-code: 1099ms)
+ GET /icon.svg 200 in 583ms (next.js: 552ms, application-code: 31ms)
+ GET /icon/192 200 in 5.4s (next.js: 3.8s, application-code: 1599ms)
+✓ Compiled in 2.1s
+ GET /example 200 in 375ms (next.js: 105ms, application-code: 270ms)
+ GET /example 200 in 170ms (next.js: 13ms, application-code: 157ms)
+✓ Compiled in 519ms
+ GET /example 200 in 278ms (next.js: 24ms, application-code: 253ms)
+✓ Compiled in 1058ms
+ GET /example 200 in 388ms (next.js: 55ms, application-code: 333ms)
+✓ Compiled in 234ms
+✓ Compiled in 177ms
+ GET /example 200 in 191ms (next.js: 24ms, application-code: 167ms)
+ GET /example 200 in 245ms (next.js: 22ms, application-code: 223ms)
+✓ Compiled in 837ms
+ GET /example 200 in 271ms (next.js: 17ms, application-code: 254ms)
+✓ Compiled in 427ms
+ GET /example 200 in 279ms (next.js: 23ms, application-code: 256ms)
+✓ Compiled in 2s
+ GET /example 200 in 1510ms (next.js: 102ms, application-code: 1408ms)
+ GET /example 200 in 238ms (next.js: 28ms, application-code: 210ms)
+ GET /example 200 in 387ms (next.js: 98ms, application-code: 289ms)
+✓ Compiled in 3.8s
+ GET /example 200 in 1011ms (next.js: 177ms, application-code: 834ms)
+ GET /example 200 in 288ms (next.js: 26ms, application-code: 262ms)
+ GET /example 200 in 232ms (next.js: 10ms, application-code: 222ms)
+✓ Compiled in 263ms
+ GET /example 200 in 1308ms (next.js: 53ms, application-code: 1255ms)
+ GET /example 200 in 139ms (next.js: 15ms, application-code: 124ms)
+ GET /example 200 in 4.1s (next.js: 197ms, application-code: 3.9s)
+ GET /example 200 in 334ms (next.js: 17ms, application-code: 318ms)
+ GET /example 200 in 711ms (next.js: 157ms, application-code: 554ms)
+ GET /example 200 in 401ms (next.js: 8ms, application-code: 393ms)
+ GET /example 200 in 478ms (next.js: 42ms, application-code: 437ms)
+ GET /example 200 in 115ms (next.js: 10ms, application-code: 105ms)
+ GET /example 200 in 994ms (next.js: 86ms, application-code: 907ms)
+ GET /example 200 in 143ms (next.js: 24ms, application-code: 119ms)
+ GET /example 200 in 315ms (next.js: 35ms, application-code: 280ms)
+ GET /example 200 in 110ms (next.js: 19ms, application-code: 91ms)
+ GET /example 200 in 1105ms (next.js: 22ms, application-code: 1082ms)
+ GET /example 200 in 876ms (next.js: 81ms, application-code: 795ms)
+✓ Compiled in 1302ms
+ GET /example 200 in 586ms (next.js: 208ms, application-code: 377ms)
+ GET /example 200 in 489ms (next.js: 52ms, application-code: 436ms)
+ GET /example 200 in 13.8s (next.js: 219ms, application-code: 13.6s)
+ GET /manifest.webmanifest 200 in 870ms (next.js: 617ms, application-code: 254ms)
+ GET /example 200 in 364ms (next.js: 117ms, application-code: 246ms)
+ GET /manifest.webmanifest 200 in 58ms (next.js: 27ms, application-code: 30ms)
+ GET /example 200 in 266ms (next.js: 99ms, application-code: 168ms)
+ GET /example 200 in 276ms (next.js: 35ms, application-code: 241ms)
+ GET /example 200 in 500ms (next.js: 38ms, application-code: 461ms)
+ GET /manifest.webmanifest 200 in 176ms (next.js: 125ms, application-code: 51ms)
+ GET /example 200 in 850ms (next.js: 55ms, application-code: 795ms)
+ GET /manifest.webmanifest 200 in 954ms (next.js: 827ms, application-code: 127ms)
+ GET /example 200 in 204ms (next.js: 34ms, application-code: 170ms)
+ GET /example 200 in 320ms (next.js: 110ms, application-code: 210ms)
+ GET /example 200 in 2.4s (next.js: 85ms, application-code: 2.3s)
+ GET /manifest.webmanifest 200 in 67ms (next.js: 49ms, application-code: 17ms)
+ GET /example 200 in 351ms (next.js: 28ms, application-code: 323ms)
+ GET /example 200 in 523ms (next.js: 127ms, application-code: 395ms)
+ GET /manifest.webmanifest 200 in 171ms (next.js: 155ms, application-code: 16ms)
+ GET /example 200 in 5.0s (next.js: 618ms, application-code: 4.4s)
+ GET /example 200 in 501ms (next.js: 31ms, application-code: 470ms)
+ GET /manifest.webmanifest 200 in 107ms (next.js: 95ms, application-code: 12ms)
+ GET /example 200 in 2.6s (next.js: 424ms, application-code: 2.2s)
+ GET /example 200 in 3.5s (next.js: 187ms, application-code: 3.3s)
+✓ Compiled in 1212ms
+ GET /example 200 in 693ms (next.js: 20ms, application-code: 672ms)
+ GET /example 200 in 415ms (next.js: 30ms, application-code: 385ms)
+ GET /manifest.webmanifest 200 in 49ms (next.js: 40ms, application-code: 9ms)
+ GET / 200 in 612ms (next.js: 265ms, application-code: 347ms)
+ GET /manifest.webmanifest 200 in 40ms (next.js: 24ms, application-code: 15ms)
+[browser] Image with src "/images/photo-hero.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+ GET /icon.svg 200 in 27ms (next.js: 8ms, application-code: 19ms)
+ GET /example 200 in 336ms (next.js: 26ms, application-code: 310ms)
+ GET /manifest.webmanifest 200 in 44ms (next.js: 32ms, application-code: 12ms)
+✓ Compiled in 497ms
+ GET /example 200 in 179ms (next.js: 18ms, application-code: 161ms)
+ GET /manifest.webmanifest 200 in 17ms (next.js: 10ms, application-code: 7ms)
+✓ Compiled in 446ms
+ GET /example 200 in 537ms (next.js: 15ms, application-code: 523ms)
+ GET /manifest.webmanifest 200 in 44ms (next.js: 35ms, application-code: 9ms)
+ GET /example 200 in 214ms (next.js: 11ms, application-code: 203ms)
+ GET /manifest.webmanifest 200 in 56ms (next.js: 44ms, application-code: 11ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+ GET /manifest.webmanifest 200 in 270ms (next.js: 50ms, application-code: 220ms)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+        <InnerScrollHandlerNew focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="example/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/example" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="example/pa...">
+                        <SegmentTrieNode>
+                        <ExamplePage>
+                          <ThemeDark>
+                          <CustomCursor>
+                          <CookieConsent>
++                           <div
++                             className="fixed inset-x-0 bottom-0 z-[9999] border-t-2 border-line bg-panel p-4 shadow-..."
++                           >
+-                           <style>
+                          ...
+                      ...
+                    ...
+          ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at div (<anonymous>)
+    at CookieConsent (components/CookieConsent.tsx:19:5)
+    at ExamplePage (app\example\page.tsx:186:7)
+  17 |
+  18 |   return (
+> 19 |     <div className="fixed inset-x-0 bottom-0 z-[9999] border-t-2 border-line bg-panel p-4 shadow-brutal-accent sm:p-6">
+     |     ^
+  20 |       <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+  21 |         <p className="text-sm leading-relaxed text-body sm:text-base">
+  22 |           Сайт использует файлы cookie для улучшения работы. Продолжая пользоваться сайтом, вы соглашаетесь с{" "}
+ GET /example 200 in 264ms (next.js: 13ms, application-code: 250ms)
+ GET /manifest.webmanifest 200 in 44ms (next.js: 29ms, application-code: 15ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+        <InnerScrollHandlerNew focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="example/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/example" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="example/pa...">
+                        <SegmentTrieNode>
+                        <ExamplePage>
+                          <ThemeDark>
+                          <CustomCursor>
+                          <CookieConsent>
++                           <div
++                             className="fixed inset-x-0 bottom-0 z-[9999] border-t-2 border-line bg-panel p-4 shadow-..."
++                           >
+-                           <style>
+                          ...
+                      ...
+                    ...
+          ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at div (<anonymous>)
+    at CookieConsent (components/CookieConsent.tsx:19:5)
+    at ExamplePage (app\example\page.tsx:186:7)
+  17 |
+  18 |   return (
+> 19 |     <div className="fixed inset-x-0 bottom-0 z-[9999] border-t-2 border-line bg-panel p-4 shadow-brutal-accent sm:p-6">
+     |     ^
+  20 |       <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+  21 |         <p className="text-sm leading-relaxed text-body sm:text-base">
+  22 |           Сайт использует файлы cookie для улучшения работы. Продолжая пользоваться сайтом, вы соглашаетесь с{" "}
+ GET /manifest.webmanifest 200 in 30ms (next.js: 18ms, application-code: 12ms)
+ GET / 200 in 262ms (next.js: 46ms, application-code: 216ms)
+ GET /manifest.webmanifest 200 in 141ms (next.js: 128ms, application-code: 14ms)
+[browser] Image with src "/images/photo-hero.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+ GET /example 200 in 336ms (next.js: 21ms, application-code: 315ms)
+ GET /manifest.webmanifest 200 in 76ms (next.js: 64ms, application-code: 12ms)
+ GET /example 200 in 247ms (next.js: 50ms, application-code: 196ms)
+ GET /manifest.webmanifest 200 in 18ms (next.js: 9ms, application-code: 9ms)
+ GET /example 200 in 201ms (next.js: 13ms, application-code: 188ms)
+ GET /manifest.webmanifest 200 in 19ms (next.js: 8ms, application-code: 11ms)
+ GET /example 200 in 149ms (next.js: 15ms, application-code: 134ms)
+ GET /manifest.webmanifest 200 in 21ms (next.js: 10ms, application-code: 11ms)
+ GET /example 200 in 642ms (next.js: 11ms, application-code: 631ms)
+ GET /manifest.webmanifest 200 in 41ms (next.js: 32ms, application-code: 9ms)
+✓ Compiled in 494ms
+ GET /example 200 in 148ms (next.js: 17ms, application-code: 131ms)
+ GET /manifest.webmanifest 200 in 16ms (next.js: 7ms, application-code: 9ms)
+ GET /example 200 in 481ms (next.js: 12ms, application-code: 470ms)
+ GET /manifest.webmanifest 200 in 75ms (next.js: 69ms, application-code: 7ms)
+ GET /example 200 in 293ms (next.js: 12ms, application-code: 281ms)
+ GET /manifest.webmanifest 200 in 20ms (next.js: 11ms, application-code: 10ms)
+✓ Compiled in 173ms
+ GET /example 200 in 115ms (next.js: 14ms, application-code: 101ms)
+ GET /manifest.webmanifest 200 in 21ms (next.js: 12ms, application-code: 9ms)
+ GET /example 200 in 179ms (next.js: 6ms, application-code: 173ms)
+ GET /example 200 in 190ms (next.js: 12ms, application-code: 179ms)
+ GET /manifest.webmanifest 200 in 119ms (next.js: 112ms, application-code: 7ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+ GET /manifest.webmanifest 200 in 94ms (next.js: 80ms, application-code: 14ms)
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+        <InnerScrollHandlerNew focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="example/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/example" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="example/pa...">
+                        <SegmentTrieNode>
+                        <ExamplePage>
+                          <ThemeDark>
+                          <CustomCursor>
+                          <CookieConsent>
++                           <div
++                             className="fixed inset-x-0 bottom-0 z-[9999] border-t-2 border-line bg-panel p-4 shadow-..."
++                           >
+-                           <style>
+                          ...
+                      ...
+                    ...
+          ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at div (<anonymous>)
+    at CookieConsent (components/CookieConsent.tsx:19:5)
+    at ExamplePage (app\example\page.tsx:186:7)
+  17 |
+  18 |   return (
+> 19 |     <div className="fixed inset-x-0 bottom-0 z-[9999] border-t-2 border-line bg-panel p-4 shadow-brutal-accent sm:p-6">
+     |     ^
+  20 |       <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+  21 |         <p className="text-sm leading-relaxed text-body sm:text-base">
+  22 |           Сайт использует файлы cookie для улучшения работы. Продолжая пользоваться сайтом, вы соглашаетесь с{" "}
+ GET /example 200 in 423ms (next.js: 21ms, application-code: 403ms)
+ GET /manifest.webmanifest 200 in 42ms (next.js: 32ms, application-code: 10ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+        <InnerScrollHandlerNew focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="example/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/example" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="example/pa...">
+                        <SegmentTrieNode>
+                        <ExamplePage>
+                          <ThemeDark>
+                          <CustomCursor>
+                          <CookieConsent>
++                           <div
++                             className="fixed inset-x-0 bottom-0 z-[9999] border-t-2 border-line bg-panel p-4 shadow-..."
++                           >
+-                           <style>
+                          ...
+                      ...
+                    ...
+          ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at div (<anonymous>)
+    at CookieConsent (components/CookieConsent.tsx:19:5)
+    at ExamplePage (app\example\page.tsx:186:7)
+  17 |
+  18 |   return (
+> 19 |     <div className="fixed inset-x-0 bottom-0 z-[9999] border-t-2 border-line bg-panel p-4 shadow-brutal-accent sm:p-6">
+     |     ^
+  20 |       <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+  21 |         <p className="text-sm leading-relaxed text-body sm:text-base">
+  22 |           Сайт использует файлы cookie для улучшения работы. Продолжая пользоваться сайтом, вы соглашаетесь с{" "}
+ GET /manifest.webmanifest 200 in 25ms (next.js: 15ms, application-code: 10ms)
+ GET /example 200 in 516ms (next.js: 24ms, application-code: 492ms)
+ GET /manifest.webmanifest 200 in 16ms (next.js: 7ms, application-code: 9ms)
+ GET /example 200 in 111ms (next.js: 6ms, application-code: 105ms)
+ GET /manifest.webmanifest 200 in 71ms (next.js: 63ms, application-code: 8ms)
+⨯ ReferenceError: SeoBlocks is not defined
+    at ExamplePage (app\example\page.tsx:454:12)
+  452 |       <section className="bg-bg section-light py-10 sm:py-24">
+  453 |         <Container>
+> 454 |           <SeoBlocks />
+      |            ^
+  455 |         </Container>
+  456 |       </section>
+  457 | {
+  digest: '2661826746'
+}
+ GET /example 200 in 276ms (next.js: 14ms, application-code: 261ms)
+[browser] Uncaught ReferenceError: SeoBlocks is not defined
+    at ExamplePage (app\example\page.tsx:454:12)
+  452 |       <section className="bg-bg section-light py-10 sm:py-24">
+  453 |         <Container>
+> 454 |           <SeoBlocks />
+      |            ^
+  455 |         </Container>
+  456 |       </section>
+  457 |
+⨯ ReferenceError: SeoBlocks is not defined
+    at ExamplePage (app\example\page.tsx:454:12)
+  452 |       <section className="bg-bg section-light py-10 sm:py-24">
+  453 |         <Container>
+> 454 |           <SeoBlocks />
+      |            ^
+  455 |         </Container>
+  456 |       </section>
+  457 | {
+  digest: '2661826746'
+}
+ GET /example 200 in 66ms (next.js: 8ms, application-code: 59ms)
+[browser] Uncaught ReferenceError: SeoBlocks is not defined
+    at ExamplePage (app\example\page.tsx:454:12)
+  452 |       <section className="bg-bg section-light py-10 sm:py-24">
+  453 |         <Container>
+> 454 |           <SeoBlocks />
+      |            ^
+  455 |         </Container>
+  456 |       </section>
+  457 |
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⨯ ReferenceError: SeoBlocks is not defined
+    at ExamplePage (app\example\page.tsx:454:12)
+  452 |       <section className="bg-bg section-light py-10 sm:py-24">
+  453 |         <Container>
+> 454 |           <SeoBlocks />
+      |            ^
+  455 |         </Container>
+  456 |       </section>
+  457 | {
+  digest: '2661826746'
+}
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 530ms
+⨯ ReferenceError: SeoBlocks is not defined
+    at ExamplePage (app\example\page.tsx:454:12)
+  452 |       <section className="bg-bg section-light py-10 sm:py-24">
+  453 |         <Container>
+> 454 |           <SeoBlocks />
+      |            ^
+  455 |         </Container>
+  456 |       </section>
+  457 | {
+  digest: '2661826746'
+}
+ GET /example 500 in 420ms (next.js: 45ms, application-code: 375ms)
+ GET /example 500 in 309ms (next.js: 25ms, application-code: 284ms)
+ GET /manifest.webmanifest 200 in 135ms (next.js: 120ms, application-code: 15ms)
+ GET /manifest.webmanifest 200 in 75ms (next.js: 50ms, application-code: 26ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+[browser] Uncaught ReferenceError: SeoBlocks is not defined
+    at ExamplePage (app\example\page.tsx:454:12)
+  452 |       <section className="bg-bg section-light py-10 sm:py-24">
+  453 |         <Container>
+> 454 |           <SeoBlocks />
+      |            ^
+  455 |         </Container>
+  456 |       </section>
+  457 |
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+[browser] Uncaught ReferenceError: SeoBlocks is not defined
+    at ExamplePage (app\example\page.tsx:454:12)
+  452 |       <section className="bg-bg section-light py-10 sm:py-24">
+  453 |         <Container>
+> 454 |           <SeoBlocks />
+      |            ^
+  455 |         </Container>
+  456 |       </section>
+  457 |
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 2.4s (next.js: 2.1s, application-code: 222ms)
+ GET /example 200 in 501ms (next.js: 19ms, application-code: 482ms)
+ GET /manifest.webmanifest 200 in 69ms (next.js: 60ms, application-code: 9ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+        <InnerScrollHandlerNew focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="example/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/example" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="example/pa...">
+                        <SegmentTrieNode>
+                        <ExamplePage>
+                          <ThemeDark>
+                          <CustomCursor>
+                          <CookieConsent>
++                           <div
++                             className="fixed inset-x-0 bottom-0 z-[9999] border-t-2 border-line bg-panel p-4 shadow-..."
++                           >
+-                           <style>
+                          ...
+                      ...
+                    ...
+          ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at div (<anonymous>)
+    at CookieConsent (components/CookieConsent.tsx:19:5)
+    at ExamplePage (app\example\page.tsx:187:7)
+  17 |
+  18 |   return (
+> 19 |     <div className="fixed inset-x-0 bottom-0 z-[9999] border-t-2 border-line bg-panel p-4 shadow-brutal-accent sm:p-6">
+     |     ^
+  20 |       <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+  21 |         <p className="text-sm leading-relaxed text-body sm:text-base">
+  22 |           Сайт использует файлы cookie для улучшения работы. Продолжая пользоваться сайтом, вы соглашаетесь с{" "}
+ GET /manifest.webmanifest 200 in 18ms (next.js: 6ms, application-code: 12ms)
+ GET /example 200 in 327ms (next.js: 12ms, application-code: 315ms)
+ GET /manifest.webmanifest 200 in 103ms (next.js: 94ms, application-code: 9ms)
+ GET /example 200 in 457ms (next.js: 16ms, application-code: 441ms)
+ GET /example 200 in 120ms (next.js: 9ms, application-code: 111ms)
+ GET /manifest.webmanifest 200 in 40ms (next.js: 29ms, application-code: 10ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 37ms (next.js: 21ms, application-code: 16ms)
+ GET /manifest.webmanifest 200 in 12ms (next.js: 4ms, application-code: 8ms)
+ GET /example 200 in 200ms (next.js: 9ms, application-code: 191ms)
+ GET /manifest.webmanifest 200 in 146ms (next.js: 136ms, application-code: 9ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+        <InnerScrollHandlerNew focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="example/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/example" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="example/pa...">
+                        <SegmentTrieNode>
+                        <ExamplePage>
+                          <ThemeDark>
+                          <CustomCursor>
+                          <CookieConsent>
++                           <div
++                             className="fixed inset-x-0 bottom-0 z-[9999] border-t-2 border-line bg-panel p-4 shadow-..."
++                           >
+-                           <style>
+                          ...
+                      ...
+                    ...
+          ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at div (<anonymous>)
+    at CookieConsent (components/CookieConsent.tsx:19:5)
+    at ExamplePage (app\example\page.tsx:187:7)
+  17 |
+  18 |   return (
+> 19 |     <div className="fixed inset-x-0 bottom-0 z-[9999] border-t-2 border-line bg-panel p-4 shadow-brutal-accent sm:p-6">
+     |     ^
+  20 |       <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+  21 |         <p className="text-sm leading-relaxed text-body sm:text-base">
+  22 |           Сайт использует файлы cookie для улучшения работы. Продолжая пользоваться сайтом, вы соглашаетесь с{" "}
+ GET /manifest.webmanifest 200 in 36ms (next.js: 29ms, application-code: 7ms)
+✓ Compiled in 473ms
+ GET /example 200 in 128ms (next.js: 21ms, application-code: 107ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 32ms (next.js: 15ms, application-code: 17ms)
+ GET /manifest.webmanifest 200 in 13ms (next.js: 6ms, application-code: 8ms)
+✓ Compiled in 224ms
+ GET /example 200 in 147ms (next.js: 14ms, application-code: 133ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 32ms (next.js: 14ms, application-code: 17ms)
+ GET /manifest.webmanifest 200 in 11ms (next.js: 4ms, application-code: 7ms)
+ GET /example 200 in 519ms (next.js: 37ms, application-code: 483ms)
+ GET /manifest.webmanifest 200 in 32ms (next.js: 6ms, application-code: 25ms)
+✓ Compiled in 219ms
+ GET /example 200 in 161ms (next.js: 12ms, application-code: 149ms)
+ GET /example 200 in 84ms (next.js: 7ms, application-code: 77ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 26ms (next.js: 12ms, application-code: 14ms)
+ GET /manifest.webmanifest 200 in 12ms (next.js: 4ms, application-code: 8ms)
+ GET /manifest.webmanifest 200 in 12ms (next.js: 5ms, application-code: 7ms)
+ GET /example 200 in 200ms (next.js: 21ms, application-code: 179ms)
+ GET /manifest.webmanifest 200 in 17ms (next.js: 7ms, application-code: 9ms)
+✓ Compiled in 302ms
+ GET /example 200 in 188ms (next.js: 17ms, application-code: 172ms)
+ GET /example 200 in 190ms (next.js: 94ms, application-code: 95ms)
+ GET /manifest.webmanifest 200 in 12ms (next.js: 5ms, application-code: 7ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 30ms (next.js: 13ms, application-code: 17ms)
+ GET /manifest.webmanifest 200 in 13ms (next.js: 5ms, application-code: 8ms)
+✓ Compiled in 235ms
+ GET /example 200 in 575ms (next.js: 23ms, application-code: 552ms)
+ GET /manifest.webmanifest 200 in 21ms (next.js: 10ms, application-code: 11ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 73ms (next.js: 38ms, application-code: 35ms)
+ GET /example 200 in 265ms (next.js: 12ms, application-code: 253ms)
+ GET /manifest.webmanifest 200 in 17ms (next.js: 8ms, application-code: 9ms)
+ GET /example 200 in 267ms (next.js: 8ms, application-code: 259ms)
+ GET /manifest.webmanifest 200 in 17ms (next.js: 6ms, application-code: 12ms)
+✓ Compiled in 302ms
+ GET /example 200 in 168ms (next.js: 18ms, application-code: 149ms)
+ GET /example 200 in 228ms (next.js: 61ms, application-code: 167ms)
+ GET /manifest.webmanifest 200 in 13ms (next.js: 5ms, application-code: 8ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 30ms (next.js: 15ms, application-code: 16ms)
+ GET /manifest.webmanifest 200 in 11ms (next.js: 4ms, application-code: 7ms)
+ GET /example 200 in 152ms (next.js: 8ms, application-code: 144ms)
+ GET /manifest.webmanifest 200 in 12ms (next.js: 5ms, application-code: 7ms)
+✓ Compiled in 202ms
+ GET /example 200 in 91ms (next.js: 11ms, application-code: 81ms)
+ GET /example 200 in 89ms (next.js: 7ms, application-code: 83ms)
+ GET /manifest.webmanifest 200 in 12ms (next.js: 5ms, application-code: 7ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 27ms (next.js: 13ms, application-code: 14ms)
+ GET /manifest.webmanifest 200 in 12ms (next.js: 5ms, application-code: 7ms)
+ GET /example 200 in 151ms (next.js: 11ms, application-code: 140ms)
+ GET /manifest.webmanifest 200 in 15ms (next.js: 8ms, application-code: 7ms)
+✓ Compiled in 179ms
+ GET /example 200 in 410ms (next.js: 51ms, application-code: 359ms)
+ GET /manifest.webmanifest 200 in 43ms (next.js: 27ms, application-code: 16ms)
+ GET /example 200 in 225ms (next.js: 10ms, application-code: 215ms)
+ GET /manifest.webmanifest 200 in 20ms (next.js: 8ms, application-code: 12ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 57ms (next.js: 38ms, application-code: 19ms)
+✓ Compiled in 463ms
+ GET /example 200 in 500ms (next.js: 172ms, application-code: 329ms)
+ GET /manifest.webmanifest 200 in 85ms (next.js: 46ms, application-code: 40ms)
+ GET /example 200 in 415ms (next.js: 18ms, application-code: 397ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 32ms (next.js: 15ms, application-code: 17ms)
+ GET /manifest.webmanifest 200 in 12ms (next.js: 5ms, application-code: 7ms)
+ GET /example 200 in 102ms (next.js: 11ms, application-code: 90ms)
+ GET /manifest.webmanifest 200 in 15ms (next.js: 8ms, application-code: 7ms)
+ GET /example 200 in 123ms (next.js: 8ms, application-code: 114ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 30ms (next.js: 16ms, application-code: 14ms)
+ GET /manifest.webmanifest 200 in 13ms (next.js: 5ms, application-code: 8ms)
+ GET /example 200 in 188ms (next.js: 11ms, application-code: 177ms)
+ GET /manifest.webmanifest 200 in 17ms (next.js: 9ms, application-code: 8ms)
+✓ Compiled in 913ms
+✓ Compiled in 204ms
+ GET /example 200 in 2.1s (next.js: 61ms, application-code: 2.0s)
+ GET /example 200 in 1828ms (next.js: 104ms, application-code: 1724ms)
+ GET /manifest.webmanifest 200 in 188ms (next.js: 133ms, application-code: 54ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 327ms (next.js: 299ms, application-code: 28ms)
+ GET /manifest.webmanifest 200 in 37ms (next.js: 23ms, application-code: 14ms)
+✓ Compiled in 2.6s
+ GET /example 200 in 1902ms (next.js: 217ms, application-code: 1684ms)
+ GET /example 200 in 1914ms (next.js: 429ms, application-code: 1485ms)
+ GET /manifest.webmanifest 200 in 81ms (next.js: 65ms, application-code: 16ms)
+ GET /manifest.webmanifest 200 in 107ms (next.js: 85ms, application-code: 22ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 276ms (next.js: 151ms, application-code: 125ms)
+ GET /example 200 in 734ms (next.js: 27ms, application-code: 707ms)
+ GET /manifest.webmanifest 200 in 38ms (next.js: 28ms, application-code: 10ms)
+ GET /example 200 in 401ms (next.js: 33ms, application-code: 367ms)
+ GET /manifest.webmanifest 200 in 114ms (next.js: 81ms, application-code: 33ms)
+ GET /example 200 in 2.6s (next.js: 77ms, application-code: 2.5s)
+ GET /example 200 in 2.6s (next.js: 1297ms, application-code: 1328ms)
+ GET /manifest.webmanifest 200 in 38ms (next.js: 12ms, application-code: 25ms)
+ GET /manifest.webmanifest 200 in 55ms (next.js: 38ms, application-code: 17ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 548ms (next.js: 369ms, application-code: 179ms)
+ GET /example 200 in 316ms (next.js: 109ms, application-code: 206ms)
+ GET /manifest.webmanifest 200 in 25ms (next.js: 12ms, application-code: 13ms)
+ GET /example 200 in 151ms (next.js: 15ms, application-code: 136ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 40ms (next.js: 18ms, application-code: 23ms)
+ GET /manifest.webmanifest 200 in 16ms (next.js: 5ms, application-code: 10ms)
+ GET / 200 in 1561ms (next.js: 99ms, application-code: 1462ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /manifest.webmanifest 200 in 159ms (next.js: 93ms, application-code: 67ms)
+ GET / 200 in 980ms (next.js: 157ms, application-code: 824ms)
+ GET /example 200 in 982ms (next.js: 24ms, application-code: 958ms)
+ GET /manifest.webmanifest 200 in 39ms (next.js: 26ms, application-code: 13ms)
+ GET /manifest.webmanifest 200 in 107ms (next.js: 59ms, application-code: 47ms)
+ GET / 200 in 1234ms (next.js: 15ms, application-code: 1219ms)
+ GET /example 200 in 1253ms (next.js: 159ms, application-code: 1093ms)
+ GET /manifest.webmanifest 200 in 74ms (next.js: 53ms, application-code: 21ms)
+ GET /manifest.webmanifest 200 in 29ms (next.js: 19ms, application-code: 10ms)
+ GET /migrate 200 in 1819ms (next.js: 672ms, application-code: 1147ms)
+ GET /manifest.webmanifest 200 in 1214ms (next.js: 642ms, application-code: 572ms)
+ GET /example 200 in 3.1s (next.js: 227ms, application-code: 2.9s)
+ GET /migrate 200 in 3.2s (next.js: 1115ms, application-code: 2.1s)
+ GET /manifest.webmanifest 200 in 207ms (next.js: 145ms, application-code: 62ms)
+ GET /manifest.webmanifest 200 in 155ms (next.js: 62ms, application-code: 94ms)
+ GET /example 200 in 3.3s (next.js: 269ms, application-code: 3.1s)
+ GET /migrate 200 in 3.4s (next.js: 813ms, application-code: 2.6s)
+ GET /manifest.webmanifest 200 in 136ms (next.js: 71ms, application-code: 65ms)
+ GET /manifest.webmanifest 200 in 81ms (next.js: 35ms, application-code: 45ms)
+ GET /example 200 in 2.4s (next.js: 104ms, application-code: 2.3s)
+ GET /migrate 200 in 2.5s (next.js: 502ms, application-code: 2.0s)
+ GET /manifest.webmanifest 200 in 80ms (next.js: 36ms, application-code: 43ms)
+ GET /manifest.webmanifest 200 in 84ms (next.js: 49ms, application-code: 35ms)
+ GET /example 200 in 3.1s (next.js: 38ms, application-code: 3.0s)
+ GET /migrate 200 in 2.4s (next.js: 277ms, application-code: 2.2s)
+ GET /manifest.webmanifest 200 in 146ms (next.js: 75ms, application-code: 71ms)
+ GET /manifest.webmanifest 200 in 182ms (next.js: 101ms, application-code: 81ms)
+ GET /example 200 in 2.3s (next.js: 188ms, application-code: 2.1s)
+ GET /migrate 200 in 2.3s (next.js: 548ms, application-code: 1749ms)
+ GET /manifest.webmanifest 200 in 61ms (next.js: 27ms, application-code: 34ms)
+ GET /manifest.webmanifest 200 in 164ms (next.js: 114ms, application-code: 50ms)
+ GET /example 200 in 2.4s (next.js: 1184ms, application-code: 1242ms)
+ GET /migrate 200 in 2.4s (next.js: 362ms, application-code: 2.1s)
+ GET /manifest.webmanifest 200 in 289ms (next.js: 49ms, application-code: 240ms)
+ GET /manifest.webmanifest 200 in 133ms (next.js: 85ms, application-code: 47ms)
+ GET /example 200 in 1869ms (next.js: 685ms, application-code: 1185ms)
+ GET /migrate 200 in 1872ms (next.js: 173ms, application-code: 1698ms)
+ GET /manifest.webmanifest 200 in 74ms (next.js: 31ms, application-code: 43ms)
+ GET /manifest.webmanifest 200 in 92ms (next.js: 53ms, application-code: 39ms)
+ GET /example 200 in 639ms (next.js: 69ms, application-code: 570ms)
+ GET /manifest.webmanifest 200 in 71ms (next.js: 33ms, application-code: 38ms)
+ GET /migrate 200 in 314ms (next.js: 30ms, application-code: 284ms)
+✓ Compiled in 1125ms
+ GET /example 200 in 857ms (next.js: 43ms, application-code: 815ms)
+ GET /manifest.webmanifest 200 in 96ms (next.js: 44ms, application-code: 51ms)
+ GET /migrate 200 in 275ms (next.js: 126ms, application-code: 149ms)
+ GET /manifest.webmanifest 200 in 48ms (next.js: 28ms, application-code: 21ms)
+ GET /example 200 in 376ms (next.js: 21ms, application-code: 354ms)
+ GET /manifest.webmanifest 200 in 55ms (next.js: 29ms, application-code: 26ms)
+ GET /migrate 200 in 245ms (next.js: 49ms, application-code: 196ms)
+ GET /manifest.webmanifest 200 in 13ms (next.js: 4ms, application-code: 10ms)
+ GET /example 200 in 275ms (next.js: 18ms, application-code: 257ms)
+ GET /manifest.webmanifest 200 in 43ms (next.js: 24ms, application-code: 19ms)
+ GET /migrate 200 in 136ms (next.js: 23ms, application-code: 113ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 63ms (next.js: 33ms, application-code: 30ms)
+ GET /manifest.webmanifest 200 in 22ms (next.js: 9ms, application-code: 13ms)
+ GET /example 200 in 394ms (next.js: 39ms, application-code: 355ms)
+ GET /manifest.webmanifest 200 in 58ms (next.js: 34ms, application-code: 25ms)
+ GET /migrate 200 in 190ms (next.js: 31ms, application-code: 159ms)
+ GET /manifest.webmanifest 200 in 23ms (next.js: 6ms, application-code: 17ms)
+ GET /example 200 in 107ms (next.js: 10ms, application-code: 97ms)
+ GET /manifest.webmanifest 200 in 27ms (next.js: 19ms, application-code: 8ms)
+ GET /migrate 200 in 186ms (next.js: 18ms, application-code: 168ms)
+ GET /manifest.webmanifest 200 in 13ms (next.js: 7ms, application-code: 7ms)
+ GET /example 200 in 283ms (next.js: 8ms, application-code: 275ms)
+ GET /migrate 200 in 111ms (next.js: 14ms, application-code: 97ms)
+ GET /manifest.webmanifest 200 in 31ms (next.js: 16ms, application-code: 15ms)
+ GET /manifest.webmanifest 200 in 13ms (next.js: 5ms, application-code: 8ms)
+ GET /migrate 200 in 2.9s (next.js: 101ms, application-code: 2.8s)
+ GET /example 200 in 2.9s (next.js: 717ms, application-code: 2.2s)
+ GET /manifest.webmanifest 200 in 34ms (next.js: 20ms, application-code: 15ms)
+ GET /manifest.webmanifest 200 in 28ms (next.js: 16ms, application-code: 12ms)
+ GET /migrate 200 in 3.2s (next.js: 123ms, application-code: 3.1s)
+ GET /example 200 in 3.2s (next.js: 583ms, application-code: 2.7s)
+ GET /manifest.webmanifest 200 in 37ms (next.js: 16ms, application-code: 21ms)
+ GET /manifest.webmanifest 200 in 25ms (next.js: 6ms, application-code: 19ms)
+ GET /migrate 200 in 6.3s (next.js: 239ms, application-code: 6.0s)
+ GET /example 200 in 6.0s (next.js: 956ms, application-code: 5.1s)
+ GET /manifest.webmanifest 200 in 295ms (next.js: 70ms, application-code: 225ms)
+ GET /manifest.webmanifest 200 in 273ms (next.js: 72ms, application-code: 201ms)
+ GET /migrate 200 in 2.4s (next.js: 77ms, application-code: 2.3s)
+ GET /example 200 in 2.4s (next.js: 324ms, application-code: 2.1s)
+ GET /manifest.webmanifest 200 in 618ms (next.js: 473ms, application-code: 145ms)
+ GET /manifest.webmanifest 200 in 285ms (next.js: 207ms, application-code: 78ms)
+ GET /example 200 in 2.1s (next.js: 102ms, application-code: 1952ms)
+ GET /migrate 200 in 2.0s (next.js: 503ms, application-code: 1542ms)
+ GET /manifest.webmanifest 200 in 152ms (next.js: 80ms, application-code: 72ms)
+ GET /manifest.webmanifest 200 in 169ms (next.js: 89ms, application-code: 79ms)
+✓ Compiled in 2.3s
+ GET /migrate 200 in 1291ms (next.js: 181ms, application-code: 1110ms)
+ GET /manifest.webmanifest 200 in 68ms (next.js: 30ms, application-code: 37ms)
+ GET /example 200 in 1976ms (next.js: 540ms, application-code: 1436ms)
+ GET /manifest.webmanifest 200 in 58ms (next.js: 34ms, application-code: 25ms)
+ GET /migrate 200 in 2.6s (next.js: 254ms, application-code: 2.4s)
+ GET /example 200 in 1779ms (next.js: 42ms, application-code: 1737ms)
+ GET /manifest.webmanifest 200 in 62ms (next.js: 28ms, application-code: 34ms)
+ GET /manifest.webmanifest 200 in 37ms (next.js: 8ms, application-code: 29ms)
+ GET /migrate 200 in 306ms (next.js: 41ms, application-code: 265ms)
+ GET /manifest.webmanifest 200 in 122ms (next.js: 103ms, application-code: 19ms)
+ GET /migrate 200 in 222ms (next.js: 35ms, application-code: 187ms)
+ GET /manifest.webmanifest 200 in 21ms (next.js: 11ms, application-code: 10ms)
+ GET /migrate 200 in 766ms (next.js: 68ms, application-code: 698ms)
+[browser] Uncaught Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `MigratePage`.
+    at MigratePage (app\migrate\page.tsx:286:17)
+  284 |               {/* Floating marketplace logos — around the image */}
+  285 |               <div className="pill-float-1 absolute -left-16 top-4 z-10 hidden rounded-2xl border border-line bg-panel px-4 py-2.5 shadow-lg lg:block">
+> 286 |                 <WbLogo className="h-5" />
+      |                 ^
+  287 |               </div>
+  288 |               <div className="pill-float-2 absolute -right-16 top-0 z-10 hidden rounded-2xl border border-line bg-panel px-4 py-2.5 shadow-lg lg:block">
+  289 |                 <OzonLogo className="h-5" />
+⨯ ReferenceError: WbLogo is not defined
+    at MigratePage (app\migrate\page.tsx:286:18)
+  284 |               {/* Floating marketplace logos — around the image */}
+  285 |               <div className="pill-float-1 absolute -left-16 top-4 z-10 hidden rounded-2xl border border-line bg-panel px-4 py-2.5 shadow-lg lg:block">
+> 286 |                 <WbLogo className="h-5" />
+      |                  ^
+  287 |               </div>
+  288 |               <div className="pill-float-2 absolute -right-16 top-0 z-10 hidden rounded-2xl border border-line bg-panel px-4 py-2.5 shadow-lg lg:block">
+  289 |                 <OzonLogo className="h-5" /> {
+  digest: '2975577130'
+}
+ GET /migrate 500 in 278ms (next.js: 15ms, application-code: 263ms)
+ GET /manifest.webmanifest 200 in 17ms (next.js: 6ms, application-code: 11ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+[browser] Uncaught ReferenceError: WbLogo is not defined
+    at MigratePage (app\migrate\page.tsx:286:18)
+  284 |               {/* Floating marketplace logos — around the image */}
+  285 |               <div className="pill-float-1 absolute -left-16 top-4 z-10 hidden rounded-2xl border border-line bg-panel px-4 py-2.5 shadow-lg lg:block">
+> 286 |                 <WbLogo className="h-5" />
+      |                  ^
+  287 |               </div>
+  288 |               <div className="pill-float-2 absolute -right-16 top-0 z-10 hidden rounded-2xl border border-line bg-panel px-4 py-2.5 shadow-lg lg:block">
+  289 |                 <OzonLogo className="h-5" />
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 131ms (next.js: 82ms, application-code: 49ms)
+ GET /migrate 200 in 638ms (next.js: 21ms, application-code: 617ms)
+ GET /manifest.webmanifest 200 in 23ms (next.js: 8ms, application-code: 15ms)
+ GET /migrate 200 in 799ms (next.js: 49ms, application-code: 749ms)
+ GET /manifest.webmanifest 200 in 43ms (next.js: 33ms, application-code: 11ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 178ms (next.js: 124ms, application-code: 54ms)
+✓ Compiled in 1160ms
+ GET /migrate 200 in 1105ms (next.js: 491ms, application-code: 614ms)
+ GET /manifest.webmanifest 200 in 78ms (next.js: 21ms, application-code: 57ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 301ms (next.js: 229ms, application-code: 72ms)
+ GET /migrate 200 in 968ms (next.js: 36ms, application-code: 933ms)
+ GET /manifest.webmanifest 200 in 28ms (next.js: 21ms, application-code: 7ms)
+⨯ A conflicting public file and page file was found for path /favicon.ico https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /favicon.ico 500 in 78ms (next.js: 52ms, application-code: 27ms)
