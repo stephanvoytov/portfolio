@@ -3,8 +3,8 @@ import { theme } from "@/lib/theme";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Стефан — разработка сайтов на Next.js",
-    short_name: "Стефан",
+    name: "VOYTOV STUDIO — разработка сайтов на Next.js",
+    short_name: "VOYTOV",
     description:
       "Интернет-магазины, каталоги с синхронизацией Ozon и Wildberries, лендинги. Под ключ.",
     start_url: "/",

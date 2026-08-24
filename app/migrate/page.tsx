@@ -15,10 +15,10 @@ import PageLoader from "@/components/PageLoader";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 import ThemeDark from "@/components/ThemeDark";
-import { WbIcon, OzonIcon, YmIcon } from "@/components/MarketplaceLogos";
+
 
 export const metadata: Metadata = pageMeta({
-  title: "Миграция с маркетплейсов на свой сайт — Стефан",
+  title: "Миграция с маркетплейсов на свой сайт — VOYTOV STUDIO",
   description:
     "Перенесём продажи с Wildberries и Ozon на свой сайт: комиссии ниже, клиенты ваши, продажи не обрываются. Пошаговый план перехода.",
   path: "/migrate",
@@ -210,17 +210,7 @@ export default function MigratePage() {
         />
         <div className="hero-glow pointer-events-none absolute inset-0" />
         <Container className="flex flex-1 flex-col justify-center">
-          <div className="relative grid grid-cols-1 items-center gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
-            {/* Floating marketplace pills */}
-            <div className="pill-float-1 absolute -left-4 top-8 z-10 hidden rounded-xl border border-line bg-panel p-2 shadow-lg lg:block">
-              <WbIcon className="h-8 w-8 rounded-lg" />
-            </div>
-            <div className="pill-float-2 absolute left-1/2 top-0 z-10 hidden -translate-x-1/2 rounded-xl border border-line bg-panel p-2 shadow-lg lg:block">
-              <OzonIcon className="h-8 w-8 rounded-lg" />
-            </div>
-            <div className="pill-float-3 absolute -right-4 top-12 z-10 hidden rounded-xl border border-line bg-panel p-2 shadow-lg lg:block">
-              <YmIcon className="h-8 w-8 rounded-lg" />
-            </div>
+          <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
             <div>
               <h1 className="text-4xl font-extrabold leading-[1.12] tracking-tight text-heading sm:text-6xl lg:text-7xl">
                 Миграция с маркетплейсов
@@ -281,7 +271,7 @@ export default function MigratePage() {
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-lg">
+            <div className="relative mx-auto w-full max-w-2xl">
               <div className="hero-float relative">
                 {/* eslint-disable-next-line @next/next/no-img-element -- локальный мокап */}
                 <img

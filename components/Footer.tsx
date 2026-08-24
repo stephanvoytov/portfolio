@@ -21,7 +21,10 @@ export default function Footer() {
           <div className="max-w-xs">
             <p className="flex items-center gap-2.5 text-lg font-semibold text-heading">
               <Logo />
-              Стефан<span className="text-accent">.</span>
+              <span className="flex flex-col items-start leading-none">
+                <span className="text-lg font-bold">VOYTOV</span>
+                <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted">studio</span>
+              </span>
             </p>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               Разработка сайтов на Next.js и WordPress: интернет-магазины, каталоги с
@@ -78,7 +81,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-2 border-t border-line pt-6 text-xs text-faint sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Стефан — разработка сайтов для бизнеса</p>
+          <p>© 2026 VOYTOV STUDIO — разработка сайтов для бизнеса</p>
           <p>Next.js · React · TypeScript</p>
         </div>
       </Container>

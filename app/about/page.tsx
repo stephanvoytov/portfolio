@@ -8,9 +8,9 @@ import { BtnLink } from "@/components/BtnLink";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = pageMeta({
-  title: "Обо мне — Стефан, разработка сайтов на Next.js и WordPress",
+  title: "Обо мне — VOYTOV STUDIO, разработка сайтов на Next.js и WordPress",
   description:
-    "Кто делает ваши сайты: Стефан, Next.js и WordPress разработчик. Кастомные интернет-магазины, каталоги и интеграции с Ozon и Wildberries под ключ. Пишу код сам на Next.js и WordPress — без Tilda, Wix и конструкторов, остаюсь на связи после запуска.",
+    "Кто делает ваши сайты: VOYTOV STUDIO, Next.js и WordPress разработчик. Кастомные интернет-магазины, каталоги и интеграции с Ozon и Wildberries под ключ. Пишу код сам на Next.js и WordPress — без Tilda, Wix и конструкторов, остаюсь на связи после запуска.",
   path: "/about",
 });
 

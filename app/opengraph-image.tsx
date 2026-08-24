@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Стефан — разработка сайтов на Next.js";
+export const alt = "VOYTOV STUDIO — разработка сайтов на Next.js";
 
 export default function OpengraphImage() {
   const domain = site.siteUrl.replace(/^https?:\/\//, "");
@@ -38,10 +38,10 @@ export default function OpengraphImage() {
               fontWeight: 800,
             }}
           >
-            С
+            V
           </div>
           <span style={{ fontSize: 34, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" }}>
-            Стефан
+            VOYTOV STUDIO
           </span>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>

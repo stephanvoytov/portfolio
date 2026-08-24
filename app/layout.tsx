@@ -23,8 +23,8 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.siteUrl),
   title: {
-    default: "Стефан — разработка сайтов на Next.js, интеграции с Ozon и Wildberries",
-    template: "%s — Стефан",
+    default: "VOYTOV STUDIO — разработка сайтов на Next.js, интеграции с Ozon и Wildberries",
+    template: "%s — VOYTOV STUDIO",
   },
   description:
     "Разработка сайтов на Next.js и WordPress: интернет-магазины, каталоги с синхронизацией Ozon и Wildberries, лендинги под ключ. От идеи до запуска и поддержки.",
@@ -43,14 +43,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    siteName: "Стефан",
-    title: "Стефан — разработка сайтов на Next.js",
+    siteName: "VOYTOV STUDIO",
+    title: "VOYTOV STUDIO — разработка сайтов на Next.js",
     description:
       "Интернет-магазины, каталоги с синхронизацией Ozon и Wildberries, лендинги под ключ.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Стефан — разработка сайтов на Next.js",
+    title: "VOYTOV STUDIO — разработка сайтов на Next.js",
     description:
       "Интернет-магазины, каталоги с синхронизацией Ozon и Wildberries, лендинги под ключ.",
   },

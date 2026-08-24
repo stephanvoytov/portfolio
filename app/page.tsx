@@ -19,7 +19,7 @@ import { pageMeta } from "@/lib/seo";
 import ThemeDark from "@/components/ThemeDark";
 
 export const metadata: Metadata = pageMeta({
-  title: "Стефан — разработка сайтов на Next.js",
+  title: "VOYTOV STUDIO — разработка сайтов на Next.js",
   description:
     "Разработка сайтов на Next.js и WordPress: интернет-магазины, каталоги с синхронизацией Ozon и Wildberries, лендинги под ключ. От идеи до запуска и поддержки.",
   path: "/",
@@ -28,7 +28,7 @@ export const metadata: Metadata = pageMeta({
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Стефан — разработка сайтов на Next.js",
+  name: "VOYTOV STUDIO — разработка сайтов на Next.js",
   url: site.siteUrl,
   inLanguage: "ru",
   description: "Интернет-магазины, каталоги и лендинги под ключ на Next.js.",

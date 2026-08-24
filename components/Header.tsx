@@ -35,7 +35,10 @@ export default function Header() {
           onClick={() => setOpen(false)}
         >
           <Logo />
-          Стефан<span className="text-accent">.</span>
+          <span className="flex flex-col items-start leading-none">
+            <span className="text-base font-bold">VOYTOV</span>
+            <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted">studio</span>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">

@@ -46,7 +46,10 @@ export default function PageLoader() {
           С
         </span>
         <span className="text-2xl font-extrabold tracking-tight text-[#f4f4f5]">
-          Стефан<span className="text-[#f6d860]">.</span>
+          <span className="flex flex-col items-start leading-none">
+            <span className="text-2xl font-extrabold tracking-tight text-[#f4f4f5]">VOYTOV</span>
+            <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-[#f6d860]">studio</span>
+          </span>
         </span>
       </div>
     </div>

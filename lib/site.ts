@@ -1,5 +1,5 @@
 export const site = {
-  name: "Стефан",
+  name: "VOYTOV STUDIO",
   role: "Next.js-разработчик",
   tagline: "Сайты, магазины и интеграции с маркетплейсами",
   tg: "https://t.me/ngriia",

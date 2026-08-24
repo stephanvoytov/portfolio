@@ -19,9 +19,9 @@ import { pageMeta } from "@/lib/seo";
 import ThemeDark from "@/components/ThemeDark";
 
 export const metadata: Metadata = pageMeta({
-  title: "Пример главной — Стефан",
+  title: "Пример главной — VOYTOV STUDIO",
   description:
-    "Демо главной страницы: структура как у сильных конкурентов, адаптированная под бренд Стефана — Next.js, WordPress, Ozon/Wildberries, Яндекс.Директ.",
+    "Демо главной страницы: структура как у сильных конкурентов, адаптированная под бренд VOYTOV STUDIO — Next.js, WordPress, Ozon/Wildberries, Яндекс.Директ.",
   path: "/example",
 });
 
