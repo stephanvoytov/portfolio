@@ -210,9 +210,7 @@ export default function MigratePage() {
 @keyframes marq { from { transform: translateX(0);} to { transform: translateX(-50%);} }
 .marq { display:flex; width:max-content; animation: marq 24s linear infinite; }
 @keyframes heroFloat { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-16px) rotate(-1deg); } }
-@keyframes heroFloatPhone { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-12px) rotate(2deg); } }
 .hero-float { animation: heroFloat 7s ease-in-out infinite; will-change: transform; }
-.hero-float-phone { animation: heroFloatPhone 6s ease-in-out 1.2s infinite; will-change: transform; }
 `}</style>
 
       {/* ===== Hero ===== */}
@@ -255,7 +253,7 @@ export default function MigratePage() {
                 </div>
                 <Magnetic>
                   <ModalCta variant="yellow" className="mt-4 w-full py-3 text-sm" subject="Миграция с маркетплейсов — обсуждение">
-                    Обсудить переход
+                    Заказать сайт
                   </ModalCta>
                 </Magnetic>
               </div>
@@ -277,7 +275,7 @@ export default function MigratePage() {
                 <div className="mt-5">
                   <Magnetic>
                     <ModalCta variant="yellow" className="px-10 py-4 text-lg" subject="Миграция с маркетплейсов — обсуждение">
-                      Обсудить переход
+                      Заказать сайт
                     </ModalCta>
                   </Magnetic>
                 </div>
@@ -293,14 +291,7 @@ export default function MigratePage() {
                   className="mx-auto w-full rounded-3xl shadow-2xl"
                 />
               </div>
-              <div className="hero-float-phone absolute bottom-0 right-0 w-28 sm:w-32 md:w-36">
-                {/* eslint-disable-next-line @next/next/no-img-element -- локальный мокап */}
-                <img
-                  src="/images/hero/iphone-sst.png"
-                  alt="Телефон с сайтом"
-                  className="drop-shadow-[0_24px_40px_rgba(0,0,0,0.5)]"
-                />
-              </div>
+
             </div>
           </div>
         </Container>
@@ -395,8 +386,8 @@ export default function MigratePage() {
           <Reveal>
             <h2 className="max-w-4xl text-2xl font-extrabold leading-[1.12] tracking-tight text-heading sm:text-4xl">
               Маркетплейс меняет правила и комиссии — и вы на это не влияете. Свой сайт{" "}
-              <span className="text-accent">даёт полный контроль</span>: цены, бренд и канал продаж{" "}
-              <span className="text-accent">принадлежат вам</span>.
+              <strong className="text-heading">даёт полный контроль</strong>: цены, бренд и канал продаж{" "}
+              <strong className="text-heading">принадлежат вам</strong>.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
               На маркетплейсе трафик и алгоритмы принадлежат площадке. На своём сайте вы{" "}
@@ -499,7 +490,7 @@ export default function MigratePage() {
               <Reveal delay={0.15} className="mt-5">
                 <Link
                   href="/cases"
-                  className="inline-flex items-center gap-2 font-semibold text-accent transition-colors hover:underline"
+                  className="inline-flex items-center gap-2 font-semibold text-heading transition-colors hover:underline"
                 >
                   Смотреть все кейсы →
                 </Link>
@@ -559,8 +550,8 @@ export default function MigratePage() {
                   variant="yellow"
                   className="text-base sm:text-lg px-9 py-4"
                 >
-                  Обсудить переход
-                </ModalCta>
+              Обсудить проект
+            </ModalCta>
               </Magnetic>
             </div>
           </div>
