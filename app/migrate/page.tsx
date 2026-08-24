@@ -194,9 +194,9 @@ export default function MigratePage() {
 .marq { display:flex; width:max-content; animation: marq 24s linear infinite; }
 @keyframes heroFloat { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-16px) rotate(-1deg); } }
 .hero-float { animation: heroFloat 7s ease-in-out infinite; will-change: transform; }
-@keyframes pillFloat1 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-@keyframes pillFloat2 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
-@keyframes pillFloat3 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes pillFloat1 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes pillFloat2 { 0%,100% { transform: translateY(0) translateX(-50%); } 50% { transform: translateY(-16px) translateX(-50%); } }
+@keyframes pillFloat3 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 .pill-float-1 { animation: pillFloat1 5s ease-in-out infinite; }
 .pill-float-2 { animation: pillFloat2 6s ease-in-out 1s infinite; }
 .pill-float-3 { animation: pillFloat3 5.5s ease-in-out 0.5s infinite; }
@@ -210,7 +210,17 @@ export default function MigratePage() {
         />
         <div className="hero-glow pointer-events-none absolute inset-0" />
         <Container className="flex flex-1 flex-col justify-center">
-          <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+          <div className="relative grid grid-cols-1 items-center gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+            {/* Floating marketplace pills */}
+            <div className="pill-float-1 absolute -left-4 top-8 z-10 hidden rounded-xl border border-line bg-panel p-2 shadow-lg lg:block">
+              <WbIcon className="h-8 w-8 rounded-lg" />
+            </div>
+            <div className="pill-float-2 absolute left-1/2 top-0 z-10 hidden -translate-x-1/2 rounded-xl border border-line bg-panel p-2 shadow-lg lg:block">
+              <OzonIcon className="h-8 w-8 rounded-lg" />
+            </div>
+            <div className="pill-float-3 absolute -right-4 top-12 z-10 hidden rounded-xl border border-line bg-panel p-2 shadow-lg lg:block">
+              <YmIcon className="h-8 w-8 rounded-lg" />
+            </div>
             <div>
               <h1 className="text-4xl font-extrabold leading-[1.12] tracking-tight text-heading sm:text-6xl lg:text-7xl">
                 Миграция с маркетплейсов
@@ -272,16 +282,6 @@ export default function MigratePage() {
             </div>
 
             <div className="relative mx-auto w-full max-w-lg">
-              {/* Floating marketplace icons — around the image */}
-              <div className="pill-float-1 absolute -left-16 top-4 z-10 hidden rounded-xl border border-line bg-panel p-2 shadow-lg lg:block">
-                <WbIcon className="h-8 w-8" />
-              </div>
-              <div className="pill-float-2 absolute -right-16 top-0 z-10 hidden rounded-xl border border-line bg-panel p-2 shadow-lg lg:block">
-                <OzonIcon className="h-8 w-8" />
-              </div>
-              <div className="pill-float-3 absolute -left-12 bottom-8 z-10 hidden rounded-xl border border-line bg-panel p-2 shadow-lg lg:block">
-                <YmIcon className="h-8 w-8" />
-              </div>
               <div className="hero-float relative">
                 {/* eslint-disable-next-line @next/next/no-img-element -- локальный мокап */}
                 <img
