@@ -1,120 +1,83 @@
-﻿import { BtnLink } from "@/components/BtnLink";
+﻿import type { Metadata } from "next";
 import { Container } from "@/components/Container";
-import Image from "next/image";
-import Link from "next/link";
-import Reveal from "@/components/Reveal";
-import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-import CtaSection from "@/components/CtaSection";
-import CommissionBreakdown from "@/components/CommissionBreakdown";
+import Reveal from "@/components/Reveal";
 import { ModalCta } from "@/components/ModalCta";
-import MobileStickyCta from "@/components/MobileStickyCta";
-import ScrollRow from "@/components/ScrollRow";
-import Faq, { faqs } from "@/components/Faq";
+import { BtnLink } from "@/components/BtnLink";
+import CustomCursor from "@/components/CustomCursor";
+import Magnetic from "@/components/Magnetic";
+import ProcessSteps from "@/components/ProcessSteps";
+import LeadForm from "@/components/LeadForm";
+import Faq from "@/components/Faq";
+import SeoBlocks from "@/components/SeoBlocks";
+import CookieConsent from "@/components/CookieConsent";
+import PageLoader from "@/components/PageLoader";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
-import { GOALS } from "@/lib/analytics";
+import ThemeDark from "@/components/ThemeDark";
+import Image from "next/image";
+import Link from "next/link";
 
-export const metadata = pageMeta({
-  title: "Миграция с маркетплейсов на свой сайт без потери продаж",
+export const metadata: Metadata = pageMeta({
+  title: "Миграция с маркетплейсов на свой сайт — Стефан",
   description:
-    "Постепенный переход с Ozon и Wildberries на собственный сайт: комиссии ниже, клиенты ваши, продажи не обрываются. Пошаговый план из 5 шагов.",
+    "Перенесём продажи с Wildberries и Ozon на свой сайт: комиссии ниже, клиенты ваши, продажи не обрываются. Пошаговый план перехода.",
   path: "/migrate",
 });
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: f.a,
-    },
-  })),
-};
+const marqueeItems = [
+  "БЕЗ ПОТЕРИ ПРОДАЖ",
+  "СИНХРОНИЗАЦИЯ С WB/OZON",
+  "ВАШИ КЛИЕНТЫ — ВАША БАЗА",
+  "ОТ 14 ДНЕЙ",
+  "ПОД КЛЮЧ",
+];
 
 const numbers = [
   {
     value: "50–70%",
-    label: "от цены товара могут уходить площадке: комиссия, логистика, реклама, возвраты",
+    label: "от цены товара уходят площадке: комиссия, логистика, реклама, возвраты",
   },
   {
     value: "до ×3",
-    label: "больше выручки с заказа остаётся на своём сайте",
+    label: "больше выручки остаётся на вашём сайте",
   },
   {
     value: "98%",
-    label: "категорий Wildberries подняли комиссии в июле 2026",
-    desktopOnly: true,
+    label: "категорий WB подняли комиссии в июле 2026",
   },
 ];
 
-const checklist = [
-  {
-    num: "01",
-    title: "Разбор",
-    desc: "Переписываемся о вашем магазине: ассортимент, маржа, повторные покупки. По цифрам выбираем формат — витрина, магазин или гибрид.",
-  },
-  {
-    num: "02",
-    title: "Данные",
-    desc: "Переношу карточки товаров с WB и Ozon. Если торгуете параллельно — подключаю синхронизацию остатков и цен по API.",
-  },
-  {
-    num: "03",
-    title: "Дизайн",
-    desc: "Изучаю конкурентов и согласовываю макет главной и карточки товара до кода, чтобы не переделывать потом.",
-  },
-  {
-    num: "04",
-    title: "Запуск",
-    desc: "Вёрстка, оплата ЮKassa и СБП, доставка СДЭК и Почта, оферта и 152-ФЗ. Финал — первый тестовый заказ у вас в руках.",
-  },
-  {
-    num: "05",
-    title: "Клиенты и адаптация",
-    desc: "Подключаю каналы под нишу: QR-скидки в посылках, соцсети, реклама. Через 2–3 месяца сверяем цифры и перераспределяем товары между сайтом и площадками.",
-  },
-];
-
-const basePlans = [
+const packages = [
   {
     name: "Витрина",
     price: "от 25 000 ₽",
     days: "3–7 дней",
-    desc: "Лендинг бренда с каталогом до 20 товаров. Продаёте через маркетплейс — клиенты запоминают вас, а не площадку.",
     items: [
       "Лендинг бренда + каталог до 20 товаров",
       "Кнопка «Купить» ведёт на WB или Ozon",
       "Домен, хостинг, Яндекс.Метрика, базовое SEO",
-      "Заявки вам в Telegram: вопросы, опт, наличие",
+      "Заявки в Telegram: вопросы, опт, наличие",
     ],
   },
   {
     name: "Магазин",
     price: "от 49 000 ₽",
     days: "10–15 дней",
-    desc: "Полноценный магазин с оплатой и доставкой: продажи идут прямо на сайте, маржа остаётся у вас.",
+    hot: true,
     items: [
       "Каталог до 300 товаров, перенос карточек с WB/Ozon",
       "Корзина, онлайн-оплата ЮKassa и СБП",
-      "Промокоды и акции — настраиваете сами в админке",
-      "Доставка: расчёт СДЭК или Почты России",
+      "Промокоды и акции — в админке",
+      "Доставка: расчёт СДЭК и Почты России",
       "Админка + Метрика с целями: заказ и оплата",
-      "+10 000 ₽ — синхронизация остатков, если торгуете параллельно с площадкой",
+      "+10 000 ₽ — синхронизация остатков с площадкой",
     ],
-    hot: true,
   },
-];
-
-const growthPlans = [
   {
     name: "Старт перехода",
     price: "от 69 000 ₽",
-    days: "около 3 недель",
-    desc: "Магазин плюс первый контур перевода клиентов с площадок на свой канал.",
+    days: "~3 недели",
     items: [
       "Всё из «Магазина»",
       "Посадочные страницы под QR для посылок",
@@ -124,57 +87,77 @@ const growthPlans = [
   },
 ];
 
-const addServices = [
+const includes = [
+  "Перенос карточек товаров с WB и Ozon",
+  "Синхронизация остатков и цен по API",
+  "Онлайн-оплата: ЮKassa и СБП",
+  "Доставка: СДЭК, Почта России",
+  "Промокоды и акции в админке",
+  "Яндекс.Метрика с целями",
+  "Базовое SEO и адаптив под все устройства",
+  "Договор и ТЗ с фиксированной ценой",
+  "Инструкция по управлению сайтом",
+  "Поддержка 1 месяц",
+];
+
+const reasons = [
   {
-    name: "Синхронизация остатков с Ozon/WB",
-    desc: "Параллельные продажи без расхождений по наличию.",
+    n: "01",
+    t: "Продажи не останавливаются",
+    d: "Маркетплейсы продолжают работать параллельно. Переход постепенный — ничего не рвётся.",
   },
   {
-    name: "Яндекс.Директ и SEO",
-    desc: "Настройка и ведение рекламы — 2 месяца.",
+    n: "02",
+    t: "Маржа растёт сразу",
+    d: "Комиссии площадки — 30–50%. На своём сайте вы платите только за хостинг и эквайринг.",
   },
   {
-    name: "Страница под QR в посылках",
-    desc: "Сбор контактов, промокод, дизайн вкладыша.",
-  },
-  {
-    name: "Программа лояльности",
-    desc: "Баллы, уровни, персональные скидки.",
-  },
-  {
-    name: "Интеграция с CRM или 1С",
-    desc: "Передача заказов и остатков в вашу систему.",
+    n: "03",
+    t: "Клиенты остаются с вами",
+    d: "База покупателей, контакты, повторные продажи — всё принадлежит вам, а не алгоритмам.",
   },
 ];
 
-type Plan = {
-  name: string;
-  price: string;
-  days: string;
-  desc: string;
-  items: string[];
-  hot?: boolean;
+const reviews = [
+  {
+    name: "Ольга, бренд женской одежды",
+    text: "Перешли с Wildberries на свой сайт — Стефан поднял магазин за две недели, синхронизация с площадкой работает сама. Первые заказы пошли.",
+  },
+  {
+    name: "Алексей, электроника",
+    text: "Думали потеряем продажи при переходе — ничего не потеряли. Маржа выросла на 30% сразу. Всё объяснил, всё настроил.",
+  },
+  {
+    name: "Мария, косметика",
+    text: "База покупателей теперь моя — повторные заказы идут через сайт. Раньше этого не было. Поддержка реально отвечает.",
+  },
+];
+
+const caseData = {
+  src: "/images/mockup-moranti-v2.jpg",
+  alt: "Интернет-магазин Moranti — главная страница",
+  url: "https://morantibags.ru",
+  title: "Кейс Moranti — витрина бренда с маркетплейсов",
+  desc: "Бренд женских сумок. Сайт синхронизирован с Ozon и Wildberries — карточки, цены и остатки обновляются сами. Площадки остаются, но перестают быть единственным каналом.",
 };
 
-function PlanCard({ p, delay }: { p: Plan; delay: number }) {
+function PkgCard({ p }: { p: (typeof packages)[number] }) {
   return (
-    <Reveal delay={delay} className="h-full">
+    <Reveal className="h-full" delay={p.hot ? 0 : 0.06}>
       <div
-        className={`relative flex h-full flex-col rounded-3xl border-2 p-6 sm:p-7 transition-all duration-200 hover:-translate-y-1 ${
+        className={`relative flex h-full flex-col rounded-3xl border-2 p-6 transition-all duration-200 hover:-translate-y-1 ${
           p.hot
-            ? "border-ink bg-accent shadow-brutal-lg"
-            : "border-line bg-panel shadow-sm hover:border-ink hover:shadow-brutal-accent-md"
+            ? "border-line bg-accent shadow-brutal-accent-lg"
+            : "border-line bg-panel shadow-sm hover:border-accent hover:shadow-brutal-accent-md"
         }`}
       >
         {p.hot && (
-          <span className="absolute -top-3 left-6 rounded-full bg-accent-ink px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-accent">
+          <span className="absolute -top-3 left-6 rounded-full bg-[#141416] px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-[#f4f4f5]">
             Чаще всего выбирают
           </span>
         )}
         <div className="flex items-baseline justify-between gap-3">
-          <h3 className={`text-lg font-bold ${p.hot ? "text-accent-ink" : "text-heading"}`}>
-            {p.name}
-          </h3>
+          <h3 className={`text-lg font-bold ${p.hot ? "text-accent-ink" : "text-heading"}`}>{p.name}</h3>
           <span
             className={`shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-bold ${
               p.hot ? "border-accent-ink/30 text-accent-ink/80" : "border-line text-muted"
@@ -183,46 +166,33 @@ function PlanCard({ p, delay }: { p: Plan; delay: number }) {
             {p.days}
           </span>
         </div>
-        <p
-          className={`mt-3 text-3xl font-extrabold ${
-            p.hot ? "text-accent-ink" : "text-heading"
-          }`}
-        >
+        <p className={`mt-3 text-3xl font-extrabold sm:text-4xl ${p.hot ? "text-accent-ink" : "text-heading"}`}>
           {p.price}
         </p>
-        <p
-          className={`mt-3 text-sm leading-relaxed ${
-            p.hot ? "text-accent-ink/70" : "text-muted"
-          }`}
-        >
-          {p.desc}
-        </p>
-        <ul
-          className={`mt-6 flex-1 space-y-2.5 text-sm font-semibold ${
-            p.hot ? "text-accent-ink" : "text-heading"
-          }`}
-        >
-          {p.items.map((item) => (
-            <li key={item} className="flex items-start gap-2.5">
+        <ul className={`mt-6 flex-1 space-y-2.5 text-sm font-semibold ${p.hot ? "text-accent-ink" : "text-heading"}`}>
+          {p.items.map((i) => (
+            <li key={i} className="flex items-start gap-2.5">
               <span
                 className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] font-extrabold ${
-                  p.hot ? "bg-panel text-accent-ink" : "bg-accent text-accent-ink"
+                  p.hot ? "bg-[#141416] text-[#f4f4f5]" : "bg-accent text-accent-ink"
                 }`}
               >
                 ✓
               </span>
-              {item}
+              {i}
             </li>
           ))}
         </ul>
         <div className="mt-7">
-          <ModalCta
-            variant={p.hot ? "primary" : "yellow"}
-            block
-            subject={`Тариф «${p.name}» (${p.price}) — переход с маркетплейсов`}
-          >
-            Обсудить задачу
-          </ModalCta>
+          <Magnetic full>
+            <ModalCta
+              variant={p.hot ? "primary" : "yellow"}
+              block
+              subject={`Тариф «${p.name}» (${p.price}) — миграция с маркетплейсов`}
+            >
+              Обсудить задачу
+            </ModalCta>
+          </Magnetic>
         </div>
       </div>
     </Reveal>
@@ -232,49 +202,135 @@ function PlanCard({ p, delay }: { p: Plan; delay: number }) {
 export default function MigratePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <PageHero
-        kicker="Миграция с маркетплейсов"
-        title={
-          <>
-            Перенесём ваши продажи
-            <br />
-            с Wildberries и Ozon на свой сайт за 14 дней
-          </>
-        }
-        sub={
-          <>
-            Соберите <strong className="font-bold text-heading">базу клиентов</strong>, увеличьте{" "}
-            <strong className="font-bold text-heading">маржу</strong> и синхронизируйте остатки с
-            площадками. Продажи на маркетплейсах при этом продолжают работать — текущие заказы{" "}
-            <strong className="font-bold text-heading">не остановятся</strong>.
-          </>
-        }
-        image={{
-          src: "/images/mockup-moranti-v2.jpg",
-          alt: "Интернет-магазин Moranti — витрина бренда, перенесённая с маркетплейсов",
-        }}
-        imageCaption="Реальный пример: витрина бренда Moranti синхронизирована с Ozon и Wildberries"
-      >
-        <BtnLink href="#calc" className="w-full sm:w-auto" goal={GOALS.heroCalc}>
-          Посчитать экономию
-        </BtnLink>
-      </PageHero>
+      <ThemeDark />
+      <PageLoader />
+      <CustomCursor />
+      <CookieConsent />
+      <style>{`
+@keyframes marq { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+.marq { display:flex; width:max-content; animation: marq 24s linear infinite; }
+@keyframes heroFloat { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-16px) rotate(-1deg); } }
+@keyframes heroFloatPhone { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-12px) rotate(2deg); } }
+.hero-float { animation: heroFloat 7s ease-in-out infinite; will-change: transform; }
+.hero-float-phone { animation: heroFloatPhone 6s ease-in-out 1.2s infinite; will-change: transform; }
+`}</style>
 
-      {/* Цифры */}
-      <section className="bg-ink py-12 text-white sm:py-16">
+      {/* ===== Hero ===== */}
+      <section className="relative flex min-h-[100svh] flex-col overflow-hidden pt-16">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.12]"
+          style={{ backgroundImage: "url('/images/hero/topo-bg.jpg')", backgroundSize: "cover", backgroundPosition: "center", mixBlendMode: "screen" }}
+        />
+        <div className="hero-glow pointer-events-none absolute inset-0" />
+        <Container className="flex flex-1 flex-col justify-center">
+          <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+            <div>
+              <h1 className="text-4xl font-extrabold leading-[1.12] tracking-tight text-heading sm:text-6xl lg:text-7xl">
+                Миграция с маркетплейсов
+              </h1>
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-body sm:text-lg">
+                Перенесём продажи с Wildberries и Ozon на свой сайт — без потери заказов и с ростом маржи.
+              </p>
+
+              <div className="mt-6 space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent text-xs font-extrabold text-accent-ink">✓</span>
+                  <span className="text-base text-body sm:text-lg">Продажи на площадках продолжают работать параллельно.</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent text-xs font-extrabold text-accent-ink">✓</span>
+                  <span className="text-base text-body sm:text-lg">Комиссии площадки — 30–50%. На своём сайте вы платите только за хостинг.</span>
+                </div>
+              </div>
+
+              {/* Mobile compact CTA */}
+              <div className="mt-6 rounded-2xl border-2 border-accent bg-panel p-4 sm:hidden">
+                <p className="text-sm font-semibold text-heading">
+                  Переход на свой сайт{" "}
+                  <span className="rounded bg-accent px-1.5 py-0.5 font-bold text-accent-ink">от 14 дней</span>
+                </p>
+                <div className="mt-3 flex flex-wrap items-center gap-3">
+                  <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">от 25 000 ₽</span>
+                  <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">без остановки продаж</span>
+                </div>
+                <Magnetic>
+                  <ModalCta variant="yellow" className="mt-4 w-full py-3 text-sm" subject="Миграция с маркетплейсов — обсуждение">
+                    Обсудить переход
+                  </ModalCta>
+                </Magnetic>
+              </div>
+
+              {/* Desktop full CTA */}
+              <div className="mt-6 hidden sm:block sm:rounded-3xl sm:border-2 sm:border-accent sm:bg-panel sm:p-6 sm:shadow-brutal-accent">
+                <p className="text-base font-semibold leading-snug text-heading sm:text-lg">
+                  Переход на свой сайт{" "}
+                  <span className="rounded bg-accent px-1.5 py-0.5 font-bold text-accent-ink">от 14 дней</span>
+                  — маркетплейсы продолжают продавать параллельно.
+                </p>
+                <p className="mt-2 text-sm text-muted sm:text-base">
+                  Стоимость фиксируется до старта и не растёт по ходу работы.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <span className="rounded-full border border-line bg-bg px-4 py-1.5 font-mono text-sm font-bold text-heading">от 25 000 ₽</span>
+                  <span className="rounded-full border border-line bg-bg px-4 py-1.5 font-mono text-sm font-bold text-heading">от 3 дней</span>
+                </div>
+                <div className="mt-5">
+                  <Magnetic>
+                    <ModalCta variant="yellow" className="px-10 py-4 text-lg" subject="Миграция с маркетплейсов — обсуждение">
+                      Обсудить переход
+                    </ModalCta>
+                  </Magnetic>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative mx-auto w-full max-w-md">
+              <div className="hero-float relative">
+                {/* eslint-disable-next-line @next/next/no-img-element -- локальный мокап */}
+                <img
+                  src="/images/mockup-moranti-v2.jpg"
+                  alt="Интернет-магазин Moranti — витрина бренда, перенесённая с маркетплейсов"
+                  className="mx-auto w-full rounded-3xl shadow-2xl"
+                />
+              </div>
+              <div className="hero-float-phone absolute bottom-0 right-0 w-28 sm:w-32 md:w-36">
+                {/* eslint-disable-next-line @next/next/no-img-element -- локальный мокап */}
+                <img
+                  src="/images/hero/iphone-sst.png"
+                  alt="Телефон с сайтом"
+                  className="drop-shadow-[0_24px_40px_rgba(0,0,0,0.5)]"
+                />
+              </div>
+            </div>
+          </div>
+        </Container>
+
+        {/* Marquee */}
+        <div className="mt-auto overflow-hidden border-t-2 border-line bg-panel py-3">
+          <div className="marq">
+            {[...marqueeItems, ...marqueeItems].map((t, i) => (
+              <span
+                key={i}
+                className="mx-6 whitespace-nowrap font-mono text-sm font-bold uppercase tracking-[0.2em] text-accent"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Цифры ===== */}
+      <section className="py-10 sm:py-24">
         <Container>
           <div className="mx-auto grid max-w-3xl grid-cols-2 gap-2 sm:max-w-none sm:grid-cols-3 sm:gap-8">
             {numbers.map((n, i) => (
               <Reveal key={n.label} delay={i * 0.08}>
-                <div className={n.desktopOnly ? "hidden text-center sm:block sm:text-left" : "text-center sm:text-left"}>
+                <div className="text-center sm:text-left">
                   <p className="text-[22px] font-extrabold tracking-tight text-accent sm:text-4xl">
                     {n.value}
                   </p>
-                  <p className="mt-1 line-clamp-2 text-xs leading-tight text-white/60 sm:mt-2 sm:text-sm sm:leading-relaxed">
+                  <p className="mt-1 line-clamp-2 text-xs leading-tight text-muted sm:mt-2 sm:text-sm sm:leading-relaxed">
                     {n.label}
                   </p>
                 </div>
@@ -284,125 +340,134 @@ export default function MigratePage() {
         </Container>
       </section>
 
-      {/* Суть — крупный цепляющий текст */}
-      <section className="border-b border-line bg-panel py-14 sm:py-20">
-        <Container>
-          <Reveal>
-            <p className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">
-              <span className="h-2 w-2 rounded-full bg-accent" />
-              Почему это важно
-            </p>
-            <h2 className="mt-4 max-w-4xl text-3xl font-extrabold leading-[1.12] tracking-tight text-heading sm:text-5xl">
-              Маркетплейс меняет правила и комиссии — и вы на это не влияете. Свой сайт{" "}
-              <strong className="text-accent-ink">даёт полный контроль</strong>: цены, бренд и канал
-              продаж <strong className="text-accent-ink">принадлежат вам</strong>.
-            </h2>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-              На маркетплейсе трафик и алгоритмы принадлежат площадке, а не вам. На своём сайте вы{" "}
-              <strong className="font-bold text-heading">сами решаете</strong>, как продавать и с
-              кем общаться, — и это остаётся с вами на годы.
-            </p>
-          </Reveal>
-        </Container>
-      </section>
-
-      {/* Тарифы — подняты наверх */}
-      <section id="tariffs" className="scroll-mt-24 border-y border-line bg-panel-soft py-14 sm:py-24">
+      {/* ===== Тарифы ===== */}
+      <section className="py-10 sm:py-24">
         <Container>
           <SectionHeading
-            kicker="Стоимость"
+            dark
             title="Что во что обходится"
             sub={
               <>
-                Цена <strong className="font-semibold text-heading">фиксируется до старта</strong>{" "}
-                и не меняется по ходу работы. Точную оценку даю после короткого разговора о задаче.
+                Цена <strong className="font-semibold text-heading">фиксируется до старта</strong> и не меняется по
+                ходу работы.
               </>
             }
           />
-          <p className="mt-10 font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint sm:mt-12">
-            Базовые форматы
-          </p>
-          <div className="mt-5 grid gap-5 md:grid-cols-2">
-            {basePlans.map((p, i) => (
-              <PlanCard key={p.name} p={p} delay={i * 0.08} />
+          <div className="mt-8 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-3">
+            {packages.map((p) => (
+              <PkgCard key={p.name} p={p} />
             ))}
           </div>
+        </Container>
+      </section>
 
-          <p className="mt-10 sm:mt-14 font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">
-            Переход под ключ
-          </p>
-          <div className="mx-auto mt-5 max-w-2xl">
-            {growthPlans.map((p, i) => (
-              <PlanCard key={p.name} p={p} delay={i * 0.08} />
-            ))}
+      {/* ===== Форма ===== */}
+      <section className="border-y border-line bg-panel-soft py-10 sm:py-24">
+        <Container>
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
+            <div>
+              <h2 className="text-2xl font-extrabold leading-[1.15] tracking-tight text-heading sm:text-5xl">
+                Рассчитаем экономию бесплатно
+              </h2>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-body sm:mt-4 sm:text-lg">
+                Оставьте контакт — напишу за 15 минут в Telegram или Max, разберём ваш магазин и посчитаем,
+                сколько останется на сайте.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a href={site.tg} target="_blank" rel="noopener" className="font-semibold text-heading hover:underline">
+                  Telegram
+                </a>
+                <a href={site.max} target="_blank" rel="noopener" className="font-semibold text-heading hover:underline">
+                  Max
+                </a>
+              </div>
+            </div>
+            <div className="rounded-3xl border-2 border-line bg-panel p-6 shadow-brutal-accent sm:p-8">
+              <LeadForm />
+            </div>
           </div>
+        </Container>
+      </section>
 
-          <p className="mt-10 sm:mt-14 font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">
-            Дополнительные услуги — добавляю к любому тарифу
-          </p>
-          <ul className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
-            {addServices.map((s) => (
-              <li key={s.name} className="flex items-start gap-3 text-[15px] leading-relaxed text-body">
-                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent text-[11px] font-extrabold text-accent-ink">
-                  ✓
-                </span>
-                <span>
-                  <span className="font-bold text-heading">{s.name}.</span> {s.desc}
-                </span>
-              </li>
-            ))}
-          </ul>
-
-          <Reveal delay={0.2}>
-            <p className="mx-auto mt-10 max-w-3xl text-center text-[15px] leading-relaxed text-muted">
-              В любой тариф входит: договор и ТЗ с{" "}
-              <strong className="font-semibold text-heading">фиксированной ценой</strong>, адаптив
-              под телефоны, SSL, обучение работе с сайтом и поддержка первый месяц.
+      {/* ===== Почему важно ===== */}
+      <section className="bg-bg section-light py-10 sm:py-24">
+        <Container>
+          <Reveal>
+            <h2 className="max-w-4xl text-2xl font-extrabold leading-[1.12] tracking-tight text-heading sm:text-4xl">
+              Маркетплейс меняет правила и комиссии — и вы на это не влияете. Свой сайт{" "}
+              <span className="text-accent">даёт полный контроль</span>: цены, бренд и канал продаж{" "}
+              <span className="text-accent">принадлежат вам</span>.
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+              На маркетплейсе трафик и алгоритмы принадлежат площадке. На своём сайте вы{" "}
+              <strong className="font-bold text-heading">сами решаете</strong>, как продавать — и это остаётся с вами на годы.
             </p>
           </Reveal>
         </Container>
       </section>
 
-      <CommissionBreakdown />
-
-      {/* Чек-лист */}
-      <section className="py-14 sm:py-24">
+      {/* ===== Что входит ===== */}
+      <section className="border-y border-line bg-panel-soft section-light py-10 sm:py-24">
         <Container>
-          <SectionHeading
-            kicker="План из 5 шагов"
-            title="Как проходит переход"
-            sub={
-              <>
-                Никаких резких движений: каждый шаг понятен, измерим и{" "}
-                <strong className="font-semibold text-heading">не ломает текущие продажи</strong>.
-              </>
-            }
-          />
-          <div className="mt-10">
-            <ScrollRow label="План перехода по шагам">
-              {checklist.map((s, i) => (
-                <Reveal key={s.num} delay={i * 0.05} className="w-[80%] shrink-0 snap-start sm:w-[310px]">
-                  <div className="group h-full rounded-2xl border border-line bg-panel p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-ink hover:shadow-brutal-accent-md">
-                    <span className="inline-block rounded-full border-2 border-ink bg-accent px-3 py-1 text-xs font-extrabold text-accent-ink">{s.num}</span>
-                    <h3 className="mt-4 text-lg font-bold text-heading">{s.title}</h3>
-                    <p className="mt-2 text-[15px] leading-relaxed text-muted">{s.desc}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </ScrollRow>
+          <SectionHeading title="Что входит в переход" />
+          <div className="mt-8 grid grid-cols-1 gap-3 sm:mt-12 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {includes.map((t, i) => (
+              <Reveal key={t} delay={(i % 3) * 0.05}>
+                <div className="flex h-full items-start gap-3 rounded-2xl border border-line bg-panel p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-accent sm:p-5">
+                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent text-xs font-extrabold text-accent-ink sm:h-7 sm:w-7">
+                    ✓
+                  </span>
+                  <span className="text-sm font-semibold leading-relaxed text-heading sm:text-base">{t}</span>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </Container>
       </section>
 
-      {/* Кейс */}
-      <section className="bg-ink py-20 text-white sm:py-24">
+      {/* ===== Топ-3 причины ===== */}
+      <section className="bg-bg section-light py-10 sm:py-24">
         <Container>
-          <div className="grid items-center gap-14 lg:grid-cols-2">
+          <SectionHeading title="Три причины перейти" />
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-12 sm:gap-6 lg:grid-cols-3">
+            {reasons.map((r, i) => (
+              <Reveal key={r.n} delay={i * 0.06}>
+                <div className="group h-full rounded-3xl border border-line bg-panel p-5 transition-all duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-brutal-accent sm:p-7">
+                  <div className="grid h-10 w-10 place-items-center rounded-2xl bg-accent font-mono text-lg font-extrabold text-accent-ink sm:h-12 sm:w-12 sm:text-xl">
+                    {r.n}
+                  </div>
+                  <h3 className="mt-4 text-lg font-bold text-heading sm:mt-5 sm:text-xl">{r.t}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-body sm:mt-3">{r.d}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ===== Процесс ===== */}
+      <section className="py-10 sm:py-24">
+        <Container>
+          <SectionHeading
+            dark
+            title="Как проходит переход"
+            sub="Пять шагов — каждый понятен, измерим и не ломает текущие продажи."
+          />
+          <div className="mt-8 sm:mt-12">
+            <ProcessSteps />
+          </div>
+        </Container>
+      </section>
+
+      {/* ===== Кейс ===== */}
+      <section className="border-y border-line bg-panel-soft section-light py-10 sm:py-24">
+        <Container>
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
             <Reveal>
-              <div className="overflow-hidden rounded-3xl shadow-2xl shadow-black/50">
+              <div className="overflow-hidden rounded-3xl">
                 <Image
-                  src="/images/mockup-moranti-v2.jpg"
-                  alt="Интернет-магазин Moranti — главная страница сайта"
+                  src={caseData.src}
+                  alt={caseData.alt}
                   width={1600}
                   height={1000}
                   className="h-auto w-full"
@@ -411,37 +476,30 @@ export default function MigratePage() {
             </Reveal>
             <div>
               <Reveal>
-                <p className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
-                  <span className="h-2 w-2 rounded-full bg-accent" />
-                  Пример
-                </p>
-                <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-5xl">
-                  Кейс Moranti — витрина бренда, переехавшая с маркетплейсов
+                <h2 className="text-2xl font-extrabold leading-[1.15] tracking-tight text-heading sm:text-4xl">
+                  {caseData.title}
                 </h2>
-                <p className="mt-5 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
-                  Бренд женских сумок. Сайт готов и синхронизирован с Ozon и Wildberries —
-                  карточки, цены и остатки обновляются сами. Ждём поставку товара клиенту и
-                  начинаем продавать прямо на сайте. Площадки остаются, но перестают быть
-                  единственным каналом продаж.
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-body sm:text-lg">
+                  {caseData.desc}
                 </p>
               </Reveal>
-              <Reveal delay={0.1} className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Reveal delay={0.1} className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
-                  href="https://morantibags.ru"
+                  href={caseData.url}
                   target="_blank"
                   rel="noopener"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-brutal-accent-soft sm:w-auto"
                 >
                   Посмотреть сайт ↗
                 </a>
-                <BtnLink href={site.tg} external variant="ghost" className="w-full sm:w-auto" goal={GOALS.tgClick}>
+                <BtnLink href={site.tg} external variant="ghost" className="w-full sm:w-auto">
                   Сделать так же
                 </BtnLink>
               </Reveal>
-              <Reveal delay={0.15} className="mt-7">
+              <Reveal delay={0.15} className="mt-5">
                 <Link
                   href="/cases"
-                  className="inline-flex items-center gap-2 font-semibold text-accent-ink transition-colors hover:underline"
+                  className="inline-flex items-center gap-2 font-semibold text-accent transition-colors hover:underline"
                 >
                   Смотреть все кейсы →
                 </Link>
@@ -451,100 +509,63 @@ export default function MigratePage() {
         </Container>
       </section>
 
-      {/* Лицо — кто делает переход */}
-      <section className="border-t border-line bg-panel-soft py-14 sm:py-24">
+      {/* ===== Отзывы ===== */}
+      <section className="py-10 sm:py-24">
         <Container>
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
-            <Reveal>
-              <div className="relative mx-auto w-full max-w-xs overflow-hidden rounded-3xl border-2 border-ink bg-panel shadow-brutal-lg">
-                <div className="relative aspect-square w-full">
-                  <Image
-                    src="/images/photo-hero.webp"
-                    alt="Стефан — разработчик сайтов на Next.js и WordPress"
-                    fill
-                    className="object-cover object-top"
-                  />
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
-                Кто делает переход
-              </p>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-heading sm:text-4xl">
-                Переход ведёт живой человек, а не агентство
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
-                Я — Стефан, разработчик на Next.js и WordPress. Делаю сайт своими руками,
-                настраиваю интеграции с Ozon и Wildberries и остаюсь на связи после запуска —
-                правки и поддержка входят в работу.
-              </p>
-              <ul className="mt-6 space-y-3">
-                {[
-                  "Кастомная разработка на Next.js или WordPress — под вашу задачу, без конструкторов вроде Tilda и Wix",
-                  "Интеграции с Ozon и Wildberries: перенос карточек и синхронизация остатков по API",
-                  "После запуска — обучение, правки и поддержка первый месяц",
-                ].map((t) => (
-                  <li key={t} className="flex items-start gap-3 text-[15px] leading-relaxed text-body">
-                    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent text-[11px] font-extrabold text-accent-ink">
-                      ✓
-                    </span>
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <ModalCta
-                  variant="primary"
-                  subject="Вопрос с migrate — познакомиться / обсудить проект"
-                >
-                  Обсудить проект
-                </ModalCta>
-                <Link
-                  href="/about"
-                  className="inline-flex items-center justify-center rounded-full border border-line-strong bg-panel px-7 py-3.5 text-sm font-semibold text-body transition-all duration-200 hover:-translate-y-0.5 hover:border-ink hover:text-heading"
-                >
-                  Подробнее обо мне →
-                </Link>
-              </div>
-            </Reveal>
+          <Reveal>
+            <h2 className="text-2xl font-extrabold leading-[1.15] tracking-tight text-heading sm:text-5xl">
+              Отзывы
+            </h2>
+          </Reveal>
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:gap-6 md:grid-cols-3">
+            {reviews.map((r, i) => (
+              <Reveal key={r.name} delay={i * 0.06}>
+                <figure className="h-full rounded-3xl border border-line bg-panel p-5 shadow-sm sm:p-6">
+                  <div className="text-xl font-extrabold text-heading sm:text-2xl">★★★★★</div>
+                  <blockquote className="mt-2 text-sm leading-relaxed text-body sm:mt-3">
+                    &ldquo;{r.text}&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-3 font-semibold text-heading sm:mt-4">{r.name}</figcaption>
+                </figure>
+              </Reveal>
+            ))}
           </div>
         </Container>
       </section>
 
-      <Faq />
+      {/* ===== FAQ ===== */}
+      <Faq dark />
 
-      <MobileStickyCta />
-
-      {/* Полезное — внутренняя перелинковка */}
-      <section className="py-10 sm:py-14">
+      {/* ===== SEO ===== */}
+      <section className="bg-bg section-light py-10 sm:py-24">
         <Container>
-          <Reveal>
-            <div className="flex flex-col gap-5 rounded-3xl border border-line bg-panel p-6 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-8">
-              <div>
-                <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
-                  Полезное
-                </p>
-                <p className="mt-2 text-lg font-extrabold text-heading sm:text-xl">
-                  Как разделить продажи между сайтом и маркетплейсом
-                </p>
-                <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-muted">
-                  Пошаговый гайд: что переводить на сайт, как легально перенаправлять клиентов,
-                  реклама и цели на 3–6 месяцев.
-                </p>
-              </div>
-              <Link
-                href="/blog/kak-razdelit-prodazhi-sait-i-marketpleisy"
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-brutal-accent-soft"
-              >
-                Читать статью →
-              </Link>
-            </div>
-          </Reveal>
+          <SeoBlocks />
         </Container>
       </section>
 
-      <CtaSection hideMigrate />
+      {/* ===== CTA ===== */}
+      <section className="border-t border-line bg-panel py-16 text-heading sm:py-24">
+        <Container>
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-extrabold leading-[1.15] tracking-tight text-heading sm:text-5xl">
+              Обсудим ваш переход за 15 минут
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
+              Расскажите про магазин — предложу формат, цену и срок. Без воды.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <Magnetic>
+                <ModalCta
+                  variant="yellow"
+                  className="text-base sm:text-lg px-9 py-4"
+                >
+                  Обсудить переход
+                </ModalCta>
+              </Magnetic>
+            </div>
+          </div>
+        </Container>
+      </section>
     </>
   );
 }
