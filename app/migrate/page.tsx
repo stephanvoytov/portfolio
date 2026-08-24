@@ -15,8 +15,7 @@ import PageLoader from "@/components/PageLoader";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 import ThemeDark from "@/components/ThemeDark";
-import Image from "next/image";
-import Link from "next/link";
+import { WbIcon, OzonIcon, YmIcon } from "@/components/MarketplaceLogos";
 
 export const metadata: Metadata = pageMeta({
   title: "Миграция с маркетплейсов на свой сайт — Стефан",
@@ -29,7 +28,7 @@ const marqueeItems = [
   "БЕЗ ПОТЕРИ ПРОДАЖ",
   "СИНХРОНИЗАЦИЯ С WB/OZON",
   "ВАШИ КЛИЕНТЫ — ВАША БАЗА",
-  "ОТ 14 ДНЕЙ",
+  "ОТ 3 ДНЕЙ",
   "ПОД КЛЮЧ",
 ];
 
@@ -55,7 +54,7 @@ const packages = [
     days: "3–7 дней",
     items: [
       "Лендинг бренда + каталог до 20 товаров",
-      "Кнопка «Купить» ведёт на WB или Ozon",
+      "Форма заявки и сбор контактов",
       "Домен, хостинг, Яндекс.Метрика, базовое SEO",
       "Заявки в Telegram: вопросы, опт, наличие",
     ],
@@ -120,26 +119,10 @@ const reasons = [
 
 const reviews = [
   {
-    name: "Ольга, бренд женской одежды",
-    text: "Перешли с Wildberries на свой сайт — Стефан поднял магазин за две недели, синхронизация с площадкой работает сама. Первые заказы пошли.",
-  },
-  {
-    name: "Алексей, электроника",
-    text: "Думали потеряем продажи при переходе — ничего не потеряли. Маржа выросла на 30% сразу. Всё объяснил, всё настроил.",
-  },
-  {
-    name: "Мария, косметика",
-    text: "База покупателей теперь моя — повторные заказы идут через сайт. Раньше этого не было. Поддержка реально отвечает.",
+    name: "Moranti — бренд женских сумок",
+    text: "Синхронизация с Ozon и Wildberries работает автоматически: карточки, цены, остатки обновляются сами. Площадки остались, но перестали быть единственным каналом — первые заказы через сайт уже пошли.",
   },
 ];
-
-const caseData = {
-  src: "/images/mockup-moranti-v2.jpg",
-  alt: "Интернет-магазин Moranti — главная страница",
-  url: "https://morantibags.ru",
-  title: "Кейс Moranti — витрина бренда с маркетплейсов",
-  desc: "Бренд женских сумок. Сайт синхронизирован с Ozon и Wildberries — карточки, цены и остатки обновляются сами. Площадки остаются, но перестают быть единственным каналом.",
-};
 
 function PkgCard({ p }: { p: (typeof packages)[number] }) {
   return (
@@ -211,6 +194,12 @@ export default function MigratePage() {
 .marq { display:flex; width:max-content; animation: marq 24s linear infinite; }
 @keyframes heroFloat { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-16px) rotate(-1deg); } }
 .hero-float { animation: heroFloat 7s ease-in-out infinite; will-change: transform; }
+@keyframes pillFloat1 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes pillFloat2 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@keyframes pillFloat3 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.pill-float-1 { animation: pillFloat1 5s ease-in-out infinite; }
+.pill-float-2 { animation: pillFloat2 6s ease-in-out 1s infinite; }
+.pill-float-3 { animation: pillFloat3 5.5s ease-in-out 0.5s infinite; }
 `}</style>
 
       {/* ===== Hero ===== */}
@@ -245,15 +234,15 @@ export default function MigratePage() {
               <div className="mt-6 rounded-2xl border-2 border-accent bg-panel p-4 sm:hidden">
                 <p className="text-sm font-semibold text-heading">
                   Переход на свой сайт{" "}
-                  <span className="rounded bg-accent px-1.5 py-0.5 font-bold text-accent-ink">от 14 дней</span>
+                  <span className="rounded bg-accent px-1.5 py-0.5 font-bold text-accent-ink">от 3 дней</span>
                 </p>
                 <div className="mt-3 flex flex-wrap items-center gap-3">
                   <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">от 25 000 ₽</span>
                   <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">без остановки продаж</span>
                 </div>
                 <Magnetic>
-                  <ModalCta variant="yellow" className="mt-4 w-full py-3 text-sm" subject="Миграция с маркетплейсов — обсуждение">
-                    Заказать сайт
+                  <ModalCta variant="yellow" className="mt-4 w-full py-3 text-sm" subject="Миграция с маркетплейсов — расчёт экономии">
+                    Посчитать экономию
                   </ModalCta>
                 </Magnetic>
               </div>
@@ -262,7 +251,7 @@ export default function MigratePage() {
               <div className="mt-6 hidden sm:block sm:rounded-3xl sm:border-2 sm:border-accent sm:bg-panel sm:p-6 sm:shadow-brutal-accent">
                 <p className="text-base font-semibold leading-snug text-heading sm:text-lg">
                   Переход на свой сайт{" "}
-                  <span className="rounded bg-accent px-1.5 py-0.5 font-bold text-accent-ink">от 14 дней</span>
+                  <span className="rounded bg-accent px-1.5 py-0.5 font-bold text-accent-ink">от 3 дней</span>
                   — маркетплейсы продолжают продавать параллельно.
                 </p>
                 <p className="mt-2 text-sm text-muted sm:text-base">
@@ -274,24 +263,33 @@ export default function MigratePage() {
                 </div>
                 <div className="mt-5">
                   <Magnetic>
-                    <ModalCta variant="yellow" className="px-10 py-4 text-lg" subject="Миграция с маркетплейсов — обсуждение">
-                      Заказать сайт
+                    <ModalCta variant="yellow" className="px-10 py-4 text-lg" subject="Миграция с маркетплейсов — расчёт экономии">
+                      Посчитать экономию
                     </ModalCta>
                   </Magnetic>
                 </div>
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-md">
+            <div className="relative mx-auto w-full max-w-lg">
+              {/* Floating marketplace icons — around the image */}
+              <div className="pill-float-1 absolute -left-16 top-4 z-10 hidden rounded-xl border border-line bg-panel p-2 shadow-lg lg:block">
+                <WbIcon className="h-8 w-8" />
+              </div>
+              <div className="pill-float-2 absolute -right-16 top-0 z-10 hidden rounded-xl border border-line bg-panel p-2 shadow-lg lg:block">
+                <OzonIcon className="h-8 w-8" />
+              </div>
+              <div className="pill-float-3 absolute -left-12 bottom-8 z-10 hidden rounded-xl border border-line bg-panel p-2 shadow-lg lg:block">
+                <YmIcon className="h-8 w-8" />
+              </div>
               <div className="hero-float relative">
                 {/* eslint-disable-next-line @next/next/no-img-element -- локальный мокап */}
                 <img
                   src="/images/mockup-moranti-v2.jpg"
-                  alt="Интернет-магазин Moranti — витрина бренда, перенесённая с маркетплейсов"
+                  alt="Интернет-магазин — витрина бренда, перенесённая с маркетплейсов"
                   className="mx-auto w-full rounded-3xl shadow-2xl"
                 />
               </div>
-
             </div>
           </div>
         </Container>
@@ -453,49 +451,28 @@ export default function MigratePage() {
       {/* ===== Кейс ===== */}
       <section className="border-y border-line bg-panel-soft section-light py-10 sm:py-24">
         <Container>
-          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+          <div className="mx-auto max-w-2xl text-center">
             <Reveal>
-              <div className="overflow-hidden rounded-3xl">
-                <Image
-                  src={caseData.src}
-                  alt={caseData.alt}
-                  width={1600}
-                  height={1000}
-                  className="h-auto w-full"
-                />
-              </div>
+              <h2 className="text-2xl font-extrabold leading-[1.15] tracking-tight text-heading sm:text-4xl">
+                Кейс Moranti — с маркетплейсов на свой сайт
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-body sm:text-lg">
+                Бренд женских сумок. Сайт синхронизирован с Ozon и Wildberries — карточки, цены и остатки обновляются сами. Площадки остались, но перестали быть единственным каналом.
+              </p>
             </Reveal>
-            <div>
-              <Reveal>
-                <h2 className="text-2xl font-extrabold leading-[1.15] tracking-tight text-heading sm:text-4xl">
-                  {caseData.title}
-                </h2>
-                <p className="mt-4 max-w-xl text-base leading-relaxed text-body sm:text-lg">
-                  {caseData.desc}
-                </p>
-              </Reveal>
-              <Reveal delay={0.1} className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <a
-                  href={caseData.url}
-                  target="_blank"
-                  rel="noopener"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-brutal-accent-soft sm:w-auto"
-                >
-                  Посмотреть сайт ↗
-                </a>
-                <BtnLink href={site.tg} external variant="ghost" className="w-full sm:w-auto">
-                  Сделать так же
-                </BtnLink>
-              </Reveal>
-              <Reveal delay={0.15} className="mt-5">
-                <Link
-                  href="/cases"
-                  className="inline-flex items-center gap-2 font-semibold text-heading transition-colors hover:underline"
-                >
-                  Смотреть все кейсы →
-                </Link>
-              </Reveal>
-            </div>
+            <Reveal delay={0.1} className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center sm:flex-wrap">
+              <a
+                href="https://morantibags.ru"
+                target="_blank"
+                rel="noopener"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 hover:shadow-brutal-accent-soft sm:w-auto"
+              >
+                Посмотреть сайт ↗
+              </a>
+              <BtnLink href={site.tg} external variant="ghost" className="w-full sm:w-auto">
+                Сделать так же
+              </BtnLink>
+            </Reveal>
           </div>
         </Container>
       </section>
@@ -508,15 +485,15 @@ export default function MigratePage() {
               Отзывы
             </h2>
           </Reveal>
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:gap-6 md:grid-cols-3">
+          <div className="mt-8 mx-auto max-w-2xl">
             {reviews.map((r, i) => (
               <Reveal key={r.name} delay={i * 0.06}>
-                <figure className="h-full rounded-3xl border border-line bg-panel p-5 shadow-sm sm:p-6">
+                <figure className="h-full rounded-3xl border border-line bg-panel p-6 shadow-sm sm:p-8">
                   <div className="text-xl font-extrabold text-heading sm:text-2xl">★★★★★</div>
-                  <blockquote className="mt-2 text-sm leading-relaxed text-body sm:mt-3">
+                  <blockquote className="mt-3 text-base leading-relaxed text-body sm:text-lg">
                     &ldquo;{r.text}&rdquo;
                   </blockquote>
-                  <figcaption className="mt-3 font-semibold text-heading sm:mt-4">{r.name}</figcaption>
+                  <figcaption className="mt-4 font-semibold text-heading sm:mt-5">{r.name}</figcaption>
                 </figure>
               </Reveal>
             ))}
