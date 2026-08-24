@@ -49,16 +49,16 @@ export const faqs = [
   },
 ];
 
-export default function Faq() {
+export default function Faq({ dark = false }: { dark?: boolean }) {
   return (
     <section className="border-y border-line bg-panel-soft py-20 sm:py-24">
       <Container>
         <SectionHeading
-          kicker="Вопросы и ответы"
+          dark={dark}
           title="Сомнения, которые у всех"
           sub="Отвечаю честно — в том числе на то, что может быть не в мою пользу. Если вашего вопроса нет, напишите в Telegram."
         />
-        <div className="mx-auto mt-12 max-w-3xl space-y-3">
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {faqs.map((f, i) => (
             <Reveal key={f.q} delay={i * 0.04}>
               <details className="group rounded-2xl border border-line bg-panel shadow-sm transition-all duration-200 open:border-ink open:shadow-brutal-accent">
@@ -68,7 +68,7 @@ export default function Faq() {
                     +
                   </span>
                 </summary>
-                <p className="px-6 pb-6 text-sm leading-relaxed text-muted sm:text-base">{f.a}</p>
+                <p className="px-6 pb-6 text-sm leading-relaxed text-body sm:text-base">{f.a}</p>
               </details>
             </Reveal>
           ))}

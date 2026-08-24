@@ -51,6 +51,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
   const [channel, setChannel] = useState<ChannelId>("telegram");
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
+  const [consent, setConsent] = useState(false);
   const [errorText, setErrorText] = useState("");
   const nameRef = useRef<HTMLInputElement>(null);
 
@@ -81,6 +82,10 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
     e.preventDefault();
     if (!name.trim() || !contact.trim()) {
       setErrorText("Заполните имя и контакт");
+      return;
+    }
+    if (!consent) {
+      setErrorText("Поставьте галочку согласия на обработку персональных данных");
       return;
     }
     const channelLabel = channels.find((c) => c.id === channel)?.label ?? channel;
@@ -163,7 +168,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                   <div>
                     <label
                       htmlFor="lead-name"
-                      className="font-mono text-xs font-bold uppercase tracking-wider text-faint"
+                      className="font-mono text-xs font-bold uppercase tracking-wider text-muted"
                     >
                       Имя
                     </label>
@@ -175,13 +180,13 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Как к вам обращаться"
                       autoComplete="name"
-                      className="mt-1.5 w-full rounded-xl border-2 border-ink bg-panel px-4 py-3 text-base font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
+                      className="mt-1.5 w-full rounded-xl border-2 border-ink bg-panel px-4 py-3 text-base font-semibold text-heading placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="lead-contact"
-                      className="font-mono text-xs font-bold uppercase tracking-wider text-faint"
+                      className="font-mono text-xs font-bold uppercase tracking-wider text-muted"
                     >
 Куда удобнее ответить?
                     </label>
@@ -214,14 +219,14 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                       placeholder={channels.find((c) => c.id === channel)?.placeholder}
                       inputMode={channel === "whatsapp" || channel === "max" ? "tel" : channel === "email" ? "email" : undefined}
                       autoComplete={channel === "email" ? "email" : "off"}
-                      className="mt-2.5 w-full rounded-xl border-2 border-ink bg-panel px-4 py-3 text-base font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
+                      className="mt-2.5 w-full rounded-xl border-2 border-ink bg-panel px-4 py-3 text-base font-semibold text-heading placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
                     />
-                    <p className="mt-1.5 text-xs text-faint">Связываюсь только в этих каналах — без звонков.</p>
+                    <p className="mt-1.5 text-xs text-muted">Связываюсь только в этих каналах — без звонков.</p>
                   </div>
                   <div>
                     <label
                       htmlFor="lead-message"
-                      className="font-mono text-xs font-bold uppercase tracking-wider text-faint"
+                      className="font-mono text-xs font-bold uppercase tracking-wider text-muted"
                     >
                       Расскажите о задаче
                     </label>
@@ -231,15 +236,31 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Например: нужен интернет-магазин для бренда одежды…"
                       rows={3}
-                      className="mt-1.5 w-full resize-none rounded-xl border-2 border-ink bg-panel px-4 py-3 text-base font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
-                    />
+                      className="mt-1.5 w-full resize-none rounded-xl border-2 border-ink bg-panel px-4 py-3 text-base font-semibold text-heading placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
+                     />
                   </div>
 
+                  <label className="flex items-start gap-2 text-xs leading-relaxed text-muted">
+                    <input
+                      type="checkbox"
+                      checked={consent}
+                      onChange={(e) => setConsent(e.target.checked)}
+                      className="mt-0.5"
+                    />
+                    <span>
+                      Я даю согласие на обработку персональных данных по{" "}
+                      <a href="/privacy" className="font-semibold text-accent underline hover:no-underline">
+                        политике конфиденциальности
+                      </a>{" "}
+                      (152-ФЗ).
+                    </span>
+                  </label>
+
                   {errorText ? (
-                    <p className="text-sm font-semibold text-red-600">{errorText}</p>
+                    <p className="text-sm font-semibold text-red-400">{errorText}</p>
                   ) : null}
                   {status === "error" ? (
-                    <p className="text-sm font-semibold text-red-600">
+                    <p className="text-sm font-semibold text-red-400">
                       Не получилось отправить. Напишите мне напрямую в Telegram.
                     </p>
                   ) : null}

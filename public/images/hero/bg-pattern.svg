@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <defs>
+    <linearGradient id="arc-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6d860" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#f6d860" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  <!-- Концентрические дуги — от центра к краям -->
+  <path d="M600 450 C600 250 800 150 1000 250 C1200 350 1100 600 900 650 C700 700 600 650 600 450Z" stroke="url(#arc-grad)" stroke-width="0.8" fill="none"/>
+  <path d="M600 450 C600 200 850 80 1100 200 C1350 320 1200 650 950 720 C700 790 600 700 600 450Z" stroke="url(#arc-grad)" stroke-width="0.6" fill="none"/>
+  <path d="M600 450 C600 150 900 10 1200 150 C1500 290 1300 700 1000 790 C700 880 600 750 600 450Z" stroke="url(#arc-grad)" stroke-width="0.5" fill="none"/>
+  <path d="M600 450 C600 100 950 -60 1300 100 C1650 260 1400 750 1050 860 C700 970 600 800 600 450Z" stroke="url(#arc-grad)" stroke-width="0.4" fill="none"/>
+  <!-- Левая сторона — зеркальные дуги -->
+  <path d="M600 450 C600 250 400 150 200 250 C0 350 100 600 300 650 C500 700 600 650 600 450Z" stroke="url(#arc-grad)" stroke-width="0.8" fill="none"/>
+  <path d="M600 450 C600 200 350 80 100 200 C-150 320 0 650 250 720 C500 790 600 700 600 450Z" stroke="url(#arc-grad)" stroke-width="0.6" fill="none"/>
+  <path d="M600 450 C600 150 300 10 0 150 C-300 290 -100 700 200 790 C500 880 600 750 600 450Z" stroke="url(#arc-grad)" stroke-width="0.5" fill="none"/>
+  <path d="M600 450 C600 100 250 -60 -100 100 C-450 260 -200 750 150 860 C500 970 600 800 600 450Z" stroke="url(#arc-grad)" stroke-width="0.4" fill="none"/>
+</svg>

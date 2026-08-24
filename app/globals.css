@@ -60,6 +60,62 @@
   --accent-ink: #0a0a0a;
 }
 
+/* Тёмная тема — только для демо-страницы /example (обёрнута в .theme-dark).
+   Не чистый чёрный, а тёмно-серый; жёлтый акцент остаётся, текст на нём — тёмный. */
+.theme-dark {
+  color-scheme: dark;
+  --bg: #141416;
+  --panel: #1d1d21;
+  --panel-soft: #232328;
+  --heading: #f4f4f5;
+  --body: #c9c9d1;
+  --muted: #9b9ba6;
+  --faint: #82828c;
+  --line: #2e2e34;
+  --line-strong: #3a3a42;
+  --ink: #f4f4f5;
+}
+
+/* Светлая секция внутри тёмного /example — чтобы не было сплошной «черноты» */
+.section-light {
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --panel-soft: #f4f4f5;
+  --heading: #0a0a0a;
+  --body: #3f3f46;
+  --muted: #52525b;
+  --faint: #6f6f78;
+  --line: #e4e4e7;
+  --line-strong: #d4d4d8;
+}
+
+@media (pointer: fine) {
+  html.theme-dark,
+  html.theme-dark * {
+    cursor: none !important;
+  }
+}
+
+/* Цифры шагов ProcessSteps: в тёмной теме — акцентные (на тёмно-сером фоне иначе не видно) */
+html.theme-dark .process-num {
+  color: var(--accent);
+}
+
+/* Плавное появление содержимого аккордеона FAQ */
+details[open] summary ~ * {
+  animation: faqIn 0.3s ease both;
+}
+@keyframes faqIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -160,4 +216,13 @@ body {
 
 .pulse-dot {
   animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Скрытие скроллбара у горизонтальных каруселей */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

@@ -38,7 +38,7 @@ export default function Header() {
           Стефан<span className="text-accent">.</span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -59,7 +59,7 @@ export default function Header() {
           </button>
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <button
             type="button"
             onClick={() => openContact()}
@@ -95,7 +95,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-panel px-4 pb-6 pt-2 md:hidden">
+        <nav className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-panel px-4 pb-6 pt-2 lg:hidden">
           {links.map((l) => (
             <Link
               key={l.href}
