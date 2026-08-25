@@ -89,13 +89,6 @@
   --line-strong: #d4d4d8;
 }
 
-@media (pointer: fine) {
-  html.theme-dark,
-  html.theme-dark * {
-    cursor: none !important;
-  }
-}
-
 /* Цифры шагов ProcessSteps: в тёмной теме — акцентные (на тёмно-сером фоне иначе не видно) */
 html.theme-dark .process-num {
   color: var(--accent);
