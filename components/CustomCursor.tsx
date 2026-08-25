@@ -58,13 +58,26 @@ export default function CustomCursor() {
       setHovering(!!t?.closest("a, button, input, textarea, [data-cursor], summary"));
     };
 
+    // в покое ставим декоративные анимации на паузу — снимает нагрузку GPU от blend-курсора
+    let idleTimer: number | undefined;
+    const onActivity = () => {
+      document.documentElement.classList.remove("anim-idle");
+      window.clearTimeout(idleTimer);
+      idleTimer = window.setTimeout(() => document.documentElement.classList.add("anim-idle"), 1200);
+    };
+    document.documentElement.classList.add("anim-idle");
+
     window.addEventListener("mousemove", move, { passive: true });
     window.addEventListener("mouseover", over, { passive: true });
+    window.addEventListener("mousemove", onActivity, { passive: true });
     raf = requestAnimationFrame(loop);
     running = true;
     return () => {
       window.removeEventListener("mousemove", move);
       window.removeEventListener("mouseover", over);
+      window.removeEventListener("mousemove", onActivity);
+      window.clearTimeout(idleTimer);
+      document.documentElement.classList.remove("anim-idle");
       cancelAnimationFrame(raf);
     };
   }, []);

@@ -223,6 +223,22 @@ body {
   }
 }
 
+/* В покое (мышь не двигается) ставим декоративные бесконечные анимации на
+   паузу — иначе mix-blend-mode курсора пересобирает слой каждый кадр и грузит GPU */
+html.anim-idle .marq,
+html.anim-idle .hero-float,
+html.anim-idle .hero-float-phone,
+html.anim-idle .float-slow,
+html.anim-idle .float-slower,
+html.anim-idle .pulse-dot {
+  animation-play-state: paused;
+}
+
+/* пауза, когда элемент вне экрана (ставится AnimPause) */
+.is-offscreen {
+  animation-play-state: paused !important;
+}
+
 /* Скрытие скроллбара у горизонтальных каруселей */
 .no-scrollbar {
   -ms-overflow-style: none;
