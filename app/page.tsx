@@ -1,4 +1,5 @@
 ﻿import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
@@ -237,7 +238,7 @@ export default function HomePage() {
                   <span className="rounded bg-accent px-1.5 py-0.5 font-bold text-accent-ink">до оплаты</span>
                 </p>
                 <div className="mt-3 flex flex-wrap items-center gap-3">
-                  <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">от 19 900 ₽</span>
+                  <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">от 15 000 ₽</span>
                   <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">от 5 дней</span>
                 </div>
                 <Magnetic>
@@ -258,9 +259,17 @@ export default function HomePage() {
                   И месяц Яндекс.Директа — в подарок при заказе.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3">
-                  <span className="rounded-full border border-line bg-bg px-4 py-1.5 font-mono text-sm font-bold text-heading">от 19 900 ₽</span>
+                  <span className="rounded-full border border-line bg-bg px-4 py-1.5 font-mono text-sm font-bold text-heading">от 15 000 ₽</span>
                   <span className="rounded-full border border-line bg-bg px-4 py-1.5 font-mono text-sm font-bold text-heading">от 5 дней</span>
                 </div>
+                <p className="mt-3 text-sm text-muted">
+                  Цена — за лендинг бренда под ключ. Каталог, магазин и синхронизация с WB/Ozon —
+                  отдельными пакетами на{" "}
+                  <Link href="/migrate" className="font-semibold text-accent underline underline-offset-2">
+                    странице перехода
+                  </Link>
+                  .
+                </p>
                 <div className="mt-5">
                   <Magnetic>
                     <ModalCta variant="yellow" className="px-10 py-4 text-lg" subject="Обсуждение проекта">

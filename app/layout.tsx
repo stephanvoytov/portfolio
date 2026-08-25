@@ -101,9 +101,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ru"
-      className={`${golos.variable} ${jetbrains.variable} h-full antialiased`}
+      suppressHydrationWarning
+      className={`${golos.variable} ${jetbrains.variable} h-full antialiased theme-dark`}
     >
-      <body className="flex min-h-full flex-col">
+      <body suppressHydrationWarning className="flex min-h-full flex-col">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}

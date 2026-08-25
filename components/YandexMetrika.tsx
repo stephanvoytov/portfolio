@@ -11,8 +11,8 @@ const counterJs = `
 
 ym(${YM_ID}, 'init', {
     ssr: true,
-    webvisor: false,
-    clickmap: false,
+    webvisor: true,
+    clickmap: true,
     ecommerce: "dataLayer",
     referrer: document.referrer,
     url: location.href,

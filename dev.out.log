@@ -27,3 +27,60 @@
 ✓ Compiled in 217ms
  GET / 200 in 251ms (next.js: 9ms, application-code: 241ms)
  GET /manifest.webmanifest 200 in 15ms (next.js: 4ms, application-code: 11ms)
+ GET /migrate 200 in 480ms (next.js: 178ms, application-code: 302ms)
+ GET /manifest.webmanifest 200 in 123ms (next.js: 106ms, application-code: 17ms)
+ GET / 200 in 210ms (next.js: 36ms, application-code: 173ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /manifest.webmanifest 200 in 32ms (next.js: 11ms, application-code: 21ms)
+ GET / 200 in 150ms (next.js: 19ms, application-code: 131ms)
+ GET /manifest.webmanifest 200 in 19ms (next.js: 7ms, application-code: 12ms)
+ GET / 200 in 104ms (next.js: 11ms, application-code: 93ms)
+ GET /manifest.webmanifest 200 in 11ms (next.js: 4ms, application-code: 7ms)
+⨯ ReferenceError: Link is not defined
+    at HomePage (app\page.tsx:267:20)
+  265 |                   Цена — за лендинг бренда под ключ. Каталог, магазин и синхронизация с WB/Ozon —
+  266 |                   отдельными пакетами на{" "}
+> 267 |                   <Link href="/migrate" className="font-semibold text-accent underline underline-offset-2">
+      |                    ^
+  268 |                     странице перехода
+  269 |                   </Link>
+  270 |                   . {
+  digest: '2087506736'
+}
+ GET / 200 in 115ms (next.js: 17ms, application-code: 98ms)
+[browser] Uncaught ReferenceError: Link is not defined
+    at HomePage (app\page.tsx:267:20)
+  265 |                   Цена — за лендинг бренда под ключ. Каталог, магазин и синхронизация с WB/Ozon —
+  266 |                   отдельными пакетами на{" "}
+> 267 |                   <Link href="/migrate" className="font-semibold text-accent underline underline-offset-2">
+      |                    ^
+  268 |                     странице перехода
+  269 |                   </Link>
+  270 |                   .
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⨯ ReferenceError: Link is not defined
+    at HomePage (app\page.tsx:267:20)
+  265 |                   Цена — за лендинг бренда под ключ. Каталог, магазин и синхронизация с WB/Ozon —
+  266 |                   отдельными пакетами на{" "}
+> 267 |                   <Link href="/migrate" className="font-semibold text-accent underline underline-offset-2">
+      |                    ^
+  268 |                     странице перехода
+  269 |                   </Link>
+  270 |                   . {
+  digest: '2087506736'
+}
+✓ Compiled in 554ms
+ GET / 500 in 145ms (next.js: 8ms, application-code: 136ms)
+ GET /manifest.webmanifest 200 in 15ms (next.js: 7ms, application-code: 8ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+[browser] Uncaught ReferenceError: Link is not defined
+    at HomePage (app\page.tsx:267:20)
+  265 |                   Цена — за лендинг бренда под ключ. Каталог, магазин и синхронизация с WB/Ozon —
+  266 |                   отдельными пакетами на{" "}
+> 267 |                   <Link href="/migrate" className="font-semibold text-accent underline underline-offset-2">
+      |                    ^
+  268 |                     странице перехода
+  269 |                   </Link>
+  270 |                   .
+ GET / 200 in 434ms (next.js: 14ms, application-code: 420ms)
+ GET /manifest.webmanifest 200 in 27ms (next.js: 18ms, application-code: 9ms)
