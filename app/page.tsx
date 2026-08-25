@@ -15,6 +15,8 @@ import CookieConsent from "@/components/CookieConsent";
 import { cases } from "@/lib/cases";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
+import { packages as allPackages, whatIncluded } from "@/lib/packages";
+import PkgCard from "@/components/PkgCard";
 import ThemeDark from "@/components/ThemeDark";
 
 export const metadata: Metadata = pageMeta({
@@ -42,60 +44,7 @@ const marqueeItems = [
   "ПОД КЛЮЧ",
 ];
 
-const packages = [
-  {
-    name: "Визитка",
-    price: "от 14 900 ₽",
-    days: "5–10 дней",
-    items: [
-      "До 5 страниц",
-      "Базовое SEO и адаптив",
-      "Яндекс.Метрика + цели",
-      "Инструкция по управлению сайтом",
-      "Домен и хостинг на вас",
-    ],
-  },
-  {
-    name: "Лендинг",
-    price: "от 24 900 ₽",
-    days: "10–14 дней",
-    items: [
-      "Уникальный дизайн",
-      "До 6 смысловых блоков",
-      "Копирайтинг и конкурентный анализ",
-      "Форма заявки + Messaging",
-      "1 месяц поддержки",
-    ],
-  },
-  {
-    name: "Интернет-магазин",
-    price: "от 39 900 ₽",
-    days: "2–3 недели",
-    hot: true,
-    items: [
-      "Каталог до 300 товаров",
-      "Корзина, оплата картой и СБП",
-      "Доставка: СДЭК, Почта России",
-      "Личный кабинет покупателя",
-      "Настройка Яндекс.Директа",
-    ],
-  },
-];
-
-const includes = [
-  "Защищённый HTTPS-протокол",
-  "Аудит и карта релевантности",
-  "Подключение Яндекс.Метрики",
-  "Удобная админка сайта",
-  "Инструкция по управлению сайтом",
-  "Базовая защита от взлома",
-  "Базовая SEO-настройка",
-  "Поддержка в чате без лимитов",
-  "Техподдержка 1 месяц",
-  "Доменное имя в зоне .ru",
-  "Синхронизация с Ozon/Wildberries",
-  "Настройка Яндекс.Директа",
-];
+const homePackages = allPackages.filter((p) => p.audience === "home" || p.audience === "both");
 
 const reasons = [
   {
@@ -129,64 +78,6 @@ const reviews = [
     text: "Объяснил всё просто, хотя я в сайтах ноль. Договор, доступы — мои. Поддержка реально отвечает.",
   },
 ];
-
-function PkgCard({ p }: { p: (typeof packages)[number] }) {
-  return (
-    <Reveal className="h-full" delay={p.hot ? 0 : 0.06}>
-      <div
-        className={`relative flex h-full flex-col rounded-3xl border-2 p-6 transition-all duration-200 hover:-translate-y-1 ${
-          p.hot
-            ? "border-line bg-accent shadow-brutal-accent-lg"
-            : "border-line bg-panel shadow-sm hover:border-accent hover:shadow-brutal-accent-md"
-        }`}
-      >
-        {p.hot && (
-          <span className="absolute -top-3 left-6 rounded-full bg-[#141416] px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-[#f4f4f5]">
-            Чаще всего выбирают
-          </span>
-        )}
-        <div className="flex items-baseline justify-between gap-3">
-          <h3 className={`text-lg font-bold ${p.hot ? "text-accent-ink" : "text-heading"}`}>{p.name}</h3>
-          <span
-            className={`shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-bold ${
-              p.hot ? "border-accent-ink/30 text-accent-ink/80" : "border-line text-muted"
-            }`}
-          >
-            {p.days}
-          </span>
-        </div>
-        <p className={`mt-3 text-3xl font-extrabold sm:text-4xl ${p.hot ? "text-accent-ink" : "text-heading"}`}>
-          {p.price}
-        </p>
-        <ul className={`mt-6 flex-1 space-y-2.5 text-sm font-semibold ${p.hot ? "text-accent-ink" : "text-heading"}`}>
-          {p.items.map((i) => (
-            <li key={i} className="flex items-start gap-2.5">
-                <span
-                  className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] font-extrabold ${
-                    p.hot ? "bg-[#141416] text-[#f4f4f5]" : "bg-accent text-accent-ink"
-                  }`}
-                >
-                ✓
-              </span>
-              {i}
-            </li>
-          ))}
-        </ul>
-        <div className="mt-7">
-          <Magnetic full>
-            <ModalCta
-              variant={p.hot ? "primary" : "yellow"}
-              block
-              subject={`Пакет «${p.name}» (${p.price})`}
-            >
-              Обсудить задачу
-            </ModalCta>
-          </Magnetic>
-        </div>
-      </div>
-    </Reveal>
-  );
-}
 
 export default function HomePage() {
   return (
@@ -238,7 +129,7 @@ export default function HomePage() {
                   <span className="rounded bg-accent px-1.5 py-0.5 font-bold text-accent-ink">до оплаты</span>
                 </p>
                 <div className="mt-3 flex flex-wrap items-center gap-3">
-                  <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">от 15 000 ₽</span>
+                  <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">от 10 000 ₽</span>
                   <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">от 5 дней</span>
                 </div>
                 <Magnetic>
@@ -259,7 +150,7 @@ export default function HomePage() {
                   И месяц Яндекс.Директа — в подарок при заказе.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3">
-                  <span className="rounded-full border border-line bg-bg px-4 py-1.5 font-mono text-sm font-bold text-heading">от 15 000 ₽</span>
+                  <span className="rounded-full border border-line bg-bg px-4 py-1.5 font-mono text-sm font-bold text-heading">от 10 000 ₽</span>
                   <span className="rounded-full border border-line bg-bg px-4 py-1.5 font-mono text-sm font-bold text-heading">от 5 дней</span>
                 </div>
                 <p className="mt-3 text-sm text-muted">
@@ -330,8 +221,8 @@ export default function HomePage() {
             }
           />
           <div className="mt-8 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-3">
-            {packages.map((p) => (
-              <PkgCard key={p.name} p={p} />
+            {homePackages.map((p) => (
+              <PkgCard key={p.id} p={p} />
             ))}
           </div>
         </Container>
@@ -394,7 +285,7 @@ export default function HomePage() {
         <Container>
           <SectionHeading title="Что входит в разработку сайта" />
           <div className="mt-8 grid grid-cols-1 gap-3 sm:mt-12 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {includes.map((t, i) => (
+            {whatIncluded.map((t, i) => (
               <Reveal key={t} delay={(i % 3) * 0.05}>
                 <div className="flex h-full items-start gap-3 rounded-2xl border border-line bg-panel p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-accent sm:p-5">
                   <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent text-xs font-extrabold text-accent-ink sm:h-7 sm:w-7">

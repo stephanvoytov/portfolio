@@ -12,6 +12,8 @@ import SeoBlocks from "@/components/SeoBlocks";
 import CookieConsent from "@/components/CookieConsent";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
+import { packages as allPackages, whatIncluded } from "@/lib/packages";
+import PkgCard from "@/components/PkgCard";
 import ThemeDark from "@/components/ThemeDark";
 
 
@@ -45,57 +47,7 @@ const numbers = [
   },
 ];
 
-const packages = [
-  {
-    name: "Витрина",
-    price: "от 25 000 ₽",
-    days: "3–7 дней",
-    items: [
-      "Лендинг бренда + каталог до 20 товаров",
-      "Форма заявки и сбор контактов",
-      "Домен, хостинг, Яндекс.Метрика, базовое SEO",
-      "Заявки в Telegram: вопросы, опт, наличие",
-    ],
-  },
-  {
-    name: "Магазин",
-    price: "от 49 000 ₽",
-    days: "10–15 дней",
-    hot: true,
-    items: [
-      "Каталог до 300 товаров, перенос карточек с WB/Ozon",
-      "Корзина, онлайн-оплата ЮKassa и СБП",
-      "Промокоды и акции — в админке",
-      "Доставка: расчёт СДЭК и Почты России",
-      "Админка + Метрика с целями: заказ и оплата",
-      "+10 000 ₽ — синхронизация остатков с площадкой",
-    ],
-  },
-  {
-    name: "Старт перехода",
-    price: "от 69 000 ₽",
-    days: "~3 недели",
-    items: [
-      "Всё из «Магазина»",
-      "Посадочные страницы под QR для посылок",
-      "Форма сбора контактов покупателей",
-      "Базовая стратегия перевода клиентов",
-    ],
-  },
-];
-
-const includes = [
-  "Перенос карточек товаров с WB и Ozon",
-  "Синхронизация остатков и цен по API",
-  "Онлайн-оплата: ЮKassa и СБП",
-  "Доставка: СДЭК, Почта России",
-  "Промокоды и акции в админке",
-  "Яндекс.Метрика с целями",
-  "Базовое SEO и адаптив под все устройства",
-  "Договор и ТЗ с фиксированной ценой",
-  "Инструкция по управлению сайтом",
-  "Поддержка 1 месяц",
-];
+const marketPackages = allPackages.filter((p) => p.audience === "migrate" || p.audience === "both");
 
 const reasons = [
   {
@@ -121,64 +73,6 @@ const reviews = [
     text: "Синхронизация с Ozon и Wildberries работает автоматически: карточки, цены, остатки обновляются сами. Площадки остались, но перестали быть единственным каналом — первые заказы через сайт уже пошли.",
   },
 ];
-
-function PkgCard({ p }: { p: (typeof packages)[number] }) {
-  return (
-    <Reveal className="h-full" delay={p.hot ? 0 : 0.06}>
-      <div
-        className={`relative flex h-full flex-col rounded-3xl border-2 p-6 transition-all duration-200 hover:-translate-y-1 ${
-          p.hot
-            ? "border-line bg-accent shadow-brutal-accent-lg"
-            : "border-line bg-panel shadow-sm hover:border-accent hover:shadow-brutal-accent-md"
-        }`}
-      >
-        {p.hot && (
-          <span className="absolute -top-3 left-6 rounded-full bg-[#141416] px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-[#f4f4f5]">
-            Чаще всего выбирают
-          </span>
-        )}
-        <div className="flex items-baseline justify-between gap-3">
-          <h3 className={`text-lg font-bold ${p.hot ? "text-accent-ink" : "text-heading"}`}>{p.name}</h3>
-          <span
-            className={`shrink-0 rounded-full border px-2.5 py-1 font-mono text-[11px] font-bold ${
-              p.hot ? "border-accent-ink/30 text-accent-ink/80" : "border-line text-muted"
-            }`}
-          >
-            {p.days}
-          </span>
-        </div>
-        <p className={`mt-3 text-3xl font-extrabold sm:text-4xl ${p.hot ? "text-accent-ink" : "text-heading"}`}>
-          {p.price}
-        </p>
-        <ul className={`mt-6 flex-1 space-y-2.5 text-sm font-semibold ${p.hot ? "text-accent-ink" : "text-heading"}`}>
-          {p.items.map((i) => (
-            <li key={i} className="flex items-start gap-2.5">
-              <span
-                className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] font-extrabold ${
-                  p.hot ? "bg-[#141416] text-[#f4f4f5]" : "bg-accent text-accent-ink"
-                }`}
-              >
-                ✓
-              </span>
-              {i}
-            </li>
-          ))}
-        </ul>
-        <div className="mt-7">
-          <Magnetic full>
-            <ModalCta
-              variant={p.hot ? "primary" : "yellow"}
-              block
-              subject={`Тариф «${p.name}» (${p.price}) — миграция с маркетплейсов`}
-            >
-              Обсудить задачу
-            </ModalCta>
-          </Magnetic>
-        </div>
-      </div>
-    </Reveal>
-  );
-}
 
 export default function MigratePage() {
   return (
@@ -323,8 +217,8 @@ export default function MigratePage() {
             }
           />
           <div className="mt-8 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-3">
-            {packages.map((p) => (
-              <PkgCard key={p.name} p={p} />
+            {marketPackages.map((p) => (
+              <PkgCard key={p.id} p={p} context="migrate" />
             ))}
           </div>
         </Container>
@@ -380,7 +274,7 @@ export default function MigratePage() {
         <Container>
           <SectionHeading title="Что входит в переход" />
           <div className="mt-8 grid grid-cols-1 gap-3 sm:mt-12 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {includes.map((t, i) => (
+            {whatIncluded.map((t, i) => (
               <Reveal key={t} delay={(i % 3) * 0.05}>
                 <div className="flex h-full items-start gap-3 rounded-2xl border border-line bg-panel p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-accent sm:p-5">
                   <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent text-xs font-extrabold text-accent-ink sm:h-7 sm:w-7">
