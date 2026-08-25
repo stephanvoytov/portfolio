@@ -4,14 +4,12 @@ import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { ModalCta } from "@/components/ModalCta";
 import { BtnLink } from "@/components/BtnLink";
-import CustomCursor from "@/components/CustomCursor";
 import Magnetic from "@/components/Magnetic";
 import ProcessSteps from "@/components/ProcessSteps";
 import LeadForm from "@/components/LeadForm";
 import Faq from "@/components/Faq";
 import SeoBlocks from "@/components/SeoBlocks";
 import CookieConsent from "@/components/CookieConsent";
-import PageLoader from "@/components/PageLoader";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 import ThemeDark from "@/components/ThemeDark";
@@ -186,8 +184,6 @@ export default function MigratePage() {
   return (
     <>
       <ThemeDark />
-      <PageLoader />
-      <CustomCursor />
       <CookieConsent />
       <style>{`
 @keyframes marq { from { transform: translateX(0);} to { transform: translateX(-50%);} }

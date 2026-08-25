@@ -228,7 +228,7 @@ export default async function CasePage({ params }: CasePageProps) {
               <ul className="mt-8 space-y-4">
                 {item.solution.map((s, i) => (
                   <li key={s} className="flex gap-4 text-sm leading-relaxed text-body sm:text-base">
-                    <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-accent/15 text-xs font-extrabold text-accent-ink">
+                    <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-accent/15 text-xs font-extrabold text-accent">
                       {i + 1}
                     </span>
                     {s}

@@ -130,7 +130,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">
+                  <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
                     Заявка
                   </p>
                   <h3 className="mt-2 text-2xl font-extrabold tracking-tight text-heading">
@@ -149,7 +149,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
 
               {status === "success" ? (
                 <div className="mt-6 rounded-2xl border-2 border-ink bg-accent p-6 text-center">
-                  <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">
+                  <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink/80">
                     ✓ Отправлено
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-accent-ink">
@@ -158,7 +158,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                   <button
                     type="button"
                     onClick={close}
-                    className="mt-5 rounded-full bg-accent-ink px-7 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5"
+                    className="mt-5 rounded-full bg-[#141416] px-7 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5"
                   >
                     Закрыть
                   </button>
@@ -198,13 +198,13 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                             role="radio"
                             aria-checked={channel === c.id}
                             onClick={() => setChannel(c.id)}
-                            className={`inline-flex items-center gap-1.5 rounded-full border-2 border-ink px-4 py-2 text-sm font-semibold transition-colors ${
+                            className={`inline-flex items-center gap-1.5 rounded-full border-2 px-4 py-2 text-sm font-semibold transition-colors ${
                               channel === c.id
-                                ? "bg-accent-ink text-white"
-                                : "bg-panel text-heading hover:bg-accent"
+                                ? "border-accent bg-accent text-accent-ink"
+                                : "border-line bg-panel text-heading hover:border-accent"
                             }`}
                           >
-                            <span className={channel === c.id ? "text-accent" : "text-accent-ink"}>
+                            <span className={channel === c.id ? "text-accent-ink" : "text-accent"}>
                               {channelIcons[c.id]}
                             </span>
                             {c.label}
@@ -268,7 +268,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="w-full rounded-full bg-accent-ink px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 disabled:translate-y-0 disabled:opacity-60"
+                    className="w-full rounded-full bg-accent px-7 py-3.5 text-sm font-bold text-accent-ink transition-all duration-200 hover:-translate-y-0.5 disabled:translate-y-0 disabled:opacity-60"
                   >
                     {status === "submitting" ? "Отправляю…" : "Отправить заявку"}
                   </button>

@@ -1,30 +1,30 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+/* eslint-disable @next/next/no-img-element */
+import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function PageLoader() {
   const [phase, setPhase] = useState<"in" | "out" | "done">("in");
   const prevPath = useRef<string | null>(null);
+  const pathname = usePathname();
 
-  // Initial load
+  // Первый заход
   useEffect(() => {
+    prevPath.current = pathname;
     const t = setTimeout(() => setPhase("out"), 700);
     return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Route changes
+  // Переход между страницами
   useEffect(() => {
-    const handler = () => {
-      if (prevPath.current !== window.location.pathname) {
-        prevPath.current = window.location.pathname;
-        setPhase("in");
-        const t = setTimeout(() => setPhase("out"), 600);
-        return () => clearTimeout(t);
-      }
-    };
-    window.addEventListener("popstate", handler);
-    return () => window.removeEventListener("popstate", handler);
-  }, []);
+    if (prevPath.current === null || pathname === prevPath.current) return;
+    prevPath.current = pathname;
+    setPhase("in");
+    const t = setTimeout(() => setPhase("out"), 600);
+    return () => clearTimeout(t);
+  }, [pathname]);
 
   useEffect(() => {
     if (phase === "out") {
@@ -42,14 +42,10 @@ export default function PageLoader() {
       style={{ opacity: phase === "out" ? 0 : 1, pointerEvents: phase === "in" ? "auto" : "none" }}
     >
       <div className="flex items-center gap-3">
-        <span className="grid h-12 w-12 place-items-center rounded-[14px] border-2 border-[#f4f4f5] bg-[#f6d860] text-xl font-extrabold leading-none text-[#0a0a0a]">
-          С
-        </span>
-        <span className="text-2xl font-extrabold tracking-tight text-[#f4f4f5]">
-          <span className="flex flex-col items-start leading-none">
-            <span className="text-2xl font-extrabold tracking-tight text-[#f4f4f5]">VOYTOV</span>
-            <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-[#f6d860]">studio</span>
-          </span>
+        <img src="/images/logo-vs.png" alt="" className="h-12 w-12" />
+        <span className="flex flex-col items-start leading-none">
+          <span className="text-2xl font-extrabold tracking-tight text-[#f4f4f5]">VOYTOV</span>
+          <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-[#f6d860]">studio</span>
         </span>
       </div>
     </div>

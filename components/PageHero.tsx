@@ -18,7 +18,7 @@ export default function PageHero({ kicker, title, sub, children, image, imageCap
       <Container>
         <div className="grid items-center gap-8 lg:grid-cols-2 sm:gap-10">
           <div>
-            <p className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">
+            <p className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
               <span className="h-2 w-2 rounded-full bg-accent" />
               {kicker}
             </p>

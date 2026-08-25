@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ContactModalProvider } from "@/components/ContactModal";
 import YandexMetrika from "@/components/YandexMetrika";
+import CustomCursor from "@/components/CustomCursor";
+import PageLoader from "@/components/PageLoader";
 import { site } from "@/lib/site";
 import { theme } from "@/lib/theme";
 
@@ -112,6 +114,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           }}
         />
         <YandexMetrika />
+        <CustomCursor />
+        <PageLoader />
         <ContactModalProvider>
           <Header />
           <main className="flex-1">{children}</main>

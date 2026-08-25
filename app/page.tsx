@@ -4,7 +4,6 @@ import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { ModalCta } from "@/components/ModalCta";
 import { BtnLink } from "@/components/BtnLink";
-import CustomCursor from "@/components/CustomCursor";
 import Magnetic from "@/components/Magnetic";
 import CaseCard from "@/components/CaseCard";
 import ProcessSteps from "@/components/ProcessSteps";
@@ -12,7 +11,6 @@ import LeadForm from "@/components/LeadForm";
 import Faq from "@/components/Faq";
 import SeoBlocks from "@/components/SeoBlocks";
 import CookieConsent from "@/components/CookieConsent";
-import PageLoader from "@/components/PageLoader";
 import { cases } from "@/lib/cases";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
@@ -197,8 +195,6 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
       <ThemeDark />
-      <PageLoader />
-      <CustomCursor />
       <CookieConsent />
       <style>{`
 @keyframes marq { from { transform: translateX(0);} to { transform: translateX(-50%);} }

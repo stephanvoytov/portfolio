@@ -118,7 +118,7 @@ export default function DesignSystemPage() {
           <SectionHeading kicker="02 · Типографика" title="Шрифты и размеры" sub="Golos Text — для текста и цифр, JetBrains Mono — для кикеров и меток." />
           <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
             <div className="rounded-3xl border border-line bg-panel p-6 shadow-sm sm:p-8">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
                 <span className="mr-2 inline-block h-2 w-2 rounded-full bg-accent" />
                 Кикер
               </p>
@@ -135,12 +135,12 @@ export default function DesignSystemPage() {
               </p>
               <p className="mt-3 text-sm text-faint">Едва заметный текст — вспомогательное.</p>
               <p className="mt-6 font-mono text-sm text-heading">
-                <span className="text-accent-ink">{"//"}</span> mono-строка для меток
+                <span className="text-accent">{"//"}</span> mono-строка для меток
               </p>
             </div>
 
             <div className="rounded-3xl border border-line bg-panel p-6 shadow-sm sm:p-8">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">Шкала размеров</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">Шкала размеров</p>
               <ul className="mt-6 space-y-3">
                 {typeScale.map((t) => (
                   <li key={t.cls} className="flex items-baseline justify-between gap-4 border-b border-line pb-2">
@@ -167,7 +167,7 @@ export default function DesignSystemPage() {
           <SectionHeading kicker="03 · Кнопки" title="Кнопки и ссылки" sub="Скругления full, отступ px-7 py-3.5, hover — приподъём -translate-y-0.5." />
           <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
             <div className="rounded-3xl border border-line bg-panel p-6 shadow-sm sm:p-8">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">На светлом фоне</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">На светлом фоне</p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 {buttons.slice(0, 3).map((b) => (
                   <button key={b.label} className={`inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 ${b.cls}`}>
@@ -179,7 +179,7 @@ export default function DesignSystemPage() {
                 <BtnLink href="/" variant="ghost">Ghost-ссылка ←</BtnLink>
               </div>
               <p className="mt-6 font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">Текстовая ссылка</p>
-              <Link href="/" className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-ink transition-colors hover:text-accent">
+              <Link href="/" className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-heading">
                 Подробнее о кейсе
                 <span aria-hidden>→</span>
               </Link>
@@ -210,7 +210,7 @@ export default function DesignSystemPage() {
           <SectionHeading kicker="04 · Чипы" title="Метки и теги" sub="Моно-шрифт, маленький кегль, округлые капсулы. Два режима: светлый и тёмный." />
           <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
             <div className="rounded-3xl border border-line bg-panel p-6 shadow-sm sm:p-8">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">Светлый режим</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">Светлый режим</p>
               <div className="mt-6 flex flex-wrap gap-2">
                 <span className="rounded-full border border-line-strong bg-panel px-3 py-1 font-mono text-xs text-muted">Интернет-магазин</span>
                 <span className="rounded-full border border-line-strong bg-panel px-3 py-1 font-mono text-xs text-muted">Лендинг</span>
@@ -218,7 +218,7 @@ export default function DesignSystemPage() {
                 <span className="rounded-full bg-accent px-3 py-1 font-mono text-xs font-bold text-accent-ink">Акцент</span>
               </div>
               <p className="mt-6 font-mono text-xs font-bold uppercase tracking-[0.25em] text-faint">Кикер с точкой</p>
-              <p className="mt-3 inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">
+              <p className="mt-3 inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
                 <span className="h-2 w-2 rounded-full bg-accent" />
                 Работы
               </p>
@@ -245,13 +245,13 @@ export default function DesignSystemPage() {
           <SectionHeading kicker="05 · Карточки" title="Карточки и поверхности" sub="Скругления xl / 2xl / 3xl, тонкие границы line, мягкие тени на светлом и жёсткие на тёмном." />
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-3xl border border-line bg-panel p-6 shadow-sm">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">Карточка</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">Карточка</p>
               <p className="mt-3 text-lg font-bold text-heading">Заголовок</p>
               <p className="mt-2 text-sm leading-relaxed text-body">Основная поверхность: rounded-3xl, border-line, bg-panel, shadow-sm.</p>
             </div>
             <div className="rounded-3xl border border-line bg-panel p-6 shadow-sm">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">KPI-чип</p>
-              <p className="mt-3 text-2xl font-extrabold leading-none text-accent-ink">98/100</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">KPI-чип</p>
+              <p className="mt-3 text-2xl font-extrabold leading-none text-accent">98/100</p>
               <p className="mt-2 text-[11px] leading-tight text-muted">PageSpeed на десктопе</p>
             </div>
             <div className="rounded-3xl border border-white/10 bg-ink p-6">
@@ -260,11 +260,11 @@ export default function DesignSystemPage() {
               <p className="mt-2 text-sm leading-relaxed text-white/60">bg-ink, border-white/10, hover:border-white/25.</p>
             </div>
             <div className="rounded-2xl border-2 border-ink bg-accent p-6">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">Акцентная плашка</p>
-              <p className="mt-3 text-sm font-semibold text-accent-ink">Модалка: border-2 border-ink + жёсткая тень shadow-brutal-accent-lg.</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">Акцентная плашка</p>
+              <p className="mt-3 text-sm font-semibold text-accent">Модалка: border-2 border-ink + жёсткая тень shadow-brutal-accent-lg.</p>
             </div>
             <div className="rounded-2xl border border-line bg-panel p-6 shadow-sm">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">Список-пункт</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">Список-пункт</p>
               <div className="mt-4 flex gap-3">
                 <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-accent/15 text-xs font-extrabold text-accent-ink">1</span>
                 <p className="text-sm leading-relaxed text-body">Номер-кружок с жёлтой заливкой 15%.</p>
@@ -275,14 +275,14 @@ export default function DesignSystemPage() {
               </div>
             </div>
             <div className="rounded-2xl border border-line bg-panel p-6 shadow-sm">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">Форма</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">Форма</p>
               <div className="mt-4 space-y-3">
                 <input
                   type="text"
                   placeholder="Ваше имя"
                   className="w-full rounded-xl border-2 border-ink bg-panel px-4 py-3 text-sm font-semibold text-heading placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent"
                 />
-                <button className="w-full rounded-full bg-accent-ink px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5">
+                <button className="w-full rounded-full bg-accent px-7 py-3.5 text-sm font-bold text-accent-ink transition-all duration-200 hover:-translate-y-0.5">
                   Отправить
                 </button>
               </div>
@@ -297,7 +297,7 @@ export default function DesignSystemPage() {
           <SectionHeading kicker="06 · Сетка и эффекты" title="Контейнер, тени, анимации" sub="Контент в max-w-6xl с отступами px-4 / sm:px-6. Эффекты определены в globals.css." />
           <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
             <div className="rounded-3xl border border-line bg-panel p-6 shadow-sm">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">Мягкая тень</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">Мягкая тень</p>
               <div className="mt-5 flex gap-4">
                 <div className="h-16 w-16 rounded-2xl border border-line bg-panel shadow-sm" />
                 <div className="h-16 w-16 rounded-2xl border border-line bg-panel shadow-md" />
@@ -305,21 +305,21 @@ export default function DesignSystemPage() {
               </div>
             </div>
             <div className="rounded-3xl border border-line bg-panel p-6 shadow-sm">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">Жёсткая тень</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">Жёсткая тень</p>
               <div className="mt-5 flex gap-4">
                 <div className="h-16 w-16 rounded-2xl bg-accent shadow-brutal" />
                 <div className="h-16 w-16 rounded-2xl border-2 border-ink bg-panel shadow-brutal-accent-lg" />
               </div>
             </div>
             <div className="overflow-hidden rounded-3xl border border-line bg-panel p-6 shadow-sm">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">Сетка фона</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">Сетка фона</p>
               <div className="mt-5 h-20 rounded-2xl border border-line grid-bg" />
               <p className="mt-4 text-xs text-muted">Класс .grid-bg — 44px, тонкие линии 4.5%.</p>
             </div>
           </div>
 
           <div className="mt-6 rounded-3xl border border-line bg-panel p-6 shadow-sm">
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">Анимации</p>
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">Анимации</p>
             <div className="mt-5 flex flex-wrap items-center gap-6">
               <span className="rounded-full bg-accent px-4 py-2 font-mono text-xs font-bold text-accent-ink shadow-brutal-sm float-slow">
                 float 5s
@@ -327,7 +327,7 @@ export default function DesignSystemPage() {
               <span className="rounded-full bg-accent px-4 py-2 font-mono text-xs font-bold text-accent-ink shadow-brutal-sm float-slower">
                 float 6.5s
               </span>
-              <span className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">
+              <span className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
                 <span className="h-2 w-2 rounded-full bg-accent pulse-dot" />
                 pulse-dot
               </span>
@@ -339,7 +339,7 @@ export default function DesignSystemPage() {
 
           <Reveal>
             <div className="mt-6 overflow-hidden rounded-3xl border border-line bg-panel p-6 shadow-sm">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">Reveal</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">Reveal</p>
               <p className="mt-3 text-sm leading-relaxed text-body">
                 Этот блок появился с анимацией fade + slide-up — компонент Reveal с framer-motion (y: 24 → 0, 0.6s, при скролле).
               </p>

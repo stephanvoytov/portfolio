@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { theme } from "@/lib/theme";
+import { theme, iconImgDataUri } from "@/lib/theme";
 import { site } from "@/lib/site";
 
 export const size = { width: 1200, height: 630 };
@@ -24,22 +24,8 @@ export default function OpengraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: 72,
-              height: 72,
-              borderRadius: 18,
-              backgroundColor: theme.accent,
-              color: theme.ink,
-              fontSize: 40,
-              fontWeight: 800,
-            }}
-          >
-            V
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element -- внутри ImageResponse обычный img обязателен */}
+          <img src={iconImgDataUri()} width={72} height={72} alt="" />
           <span style={{ fontSize: 34, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" }}>
             VOYTOV STUDIO
           </span>

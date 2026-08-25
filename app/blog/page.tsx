@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { pageMeta } from "@/lib/seo";
+import ThemeDark from "@/components/ThemeDark";
 
 export const metadata: Metadata = pageMeta({
   title: "Блог — разработка сайтов, e-commerce и переход с маркетплейсов",
@@ -39,7 +40,9 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <section className="pt-28 pb-20 sm:pt-36">
+    <>
+      <ThemeDark />
+      <section className="pt-28 pb-20 sm:pt-36">
       <Container>
         <div className="max-w-3xl">
           <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
@@ -64,15 +67,16 @@ export default function BlogPage() {
               <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
                 {post.kicker}
               </p>
-              <h2 className="mt-4 text-xl font-extrabold leading-snug text-heading group-hover:text-accent-ink">
+              <h2 className="mt-4 text-xl font-extrabold leading-snug text-heading group-hover:text-accent">
                 {post.title}
               </h2>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{post.desc}</p>
-              <span className="mt-5 font-semibold text-accent-ink">Читать →</span>
+              <span className="mt-5 font-semibold text-accent">Читать →</span>
             </Link>
           ))}
         </div>
       </Container>
     </section>
+    </>
   );
 }

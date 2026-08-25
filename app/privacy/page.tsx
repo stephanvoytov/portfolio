@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { site } from "@/lib/site";
+import ThemeDark from "@/components/ThemeDark";
 
 export const metadata: Metadata = {
   title: "Политика конфиденциальности",
@@ -10,8 +11,10 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <Container>
-      <article className="mx-auto max-w-3xl py-20">
+    <>
+      <ThemeDark />
+      <Container>
+        <article className="mx-auto max-w-3xl py-20">
         <h1 className="text-3xl font-extrabold tracking-tight text-heading sm:text-4xl">
           Политика конфиденциальности
         </h1>
@@ -92,7 +95,8 @@ export default function PrivacyPage() {
             </p>
           </section>
         </div>
-      </article>
-    </Container>
+        </article>
+      </Container>
+    </>
   );
 }

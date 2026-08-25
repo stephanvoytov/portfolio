@@ -4,6 +4,7 @@ import { Container } from "@/components/Container";
 import { BtnLink } from "@/components/BtnLink";
 import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
+import ThemeDark from "@/components/ThemeDark";
 
 export const metadata: Metadata = pageMeta({
   title: "Как перевести клиентов с Ozon и Wildberries на свой сайт — 6 рабочих способов",
@@ -29,7 +30,9 @@ function Li({ children }: { children: React.ReactNode }) {
 
 export default function BlogPost() {
   return (
-    <article className="pt-28 pb-20 sm:pt-36">
+    <>
+      <ThemeDark />
+      <article className="pt-28 pb-20 sm:pt-36">
       <Container>
         <div className="mx-auto max-w-3xl">
           <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
@@ -139,12 +142,13 @@ export default function BlogPost() {
           </div>
 
           <p className="mt-10 text-sm">
-            <Link href="/blog" className="font-semibold text-accent-ink hover:underline">
+            <Link href="/blog" className="font-semibold text-accent hover:underline">
               ← Все статьи
             </Link>
           </p>
         </div>
       </Container>
     </article>
+    </>
   );
 }

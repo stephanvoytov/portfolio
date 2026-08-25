@@ -7,6 +7,7 @@ import CtaSection from "@/components/CtaSection";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
 import { cases } from "@/lib/cases";
 import { pageMeta } from "@/lib/seo";
+import ThemeDark from "@/components/ThemeDark";
 
 export const metadata = pageMeta({
   title: "Кейсы — реальные проекты",
@@ -18,11 +19,12 @@ export const metadata = pageMeta({
 export default function CasesPage() {
   return (
     <>
+      <ThemeDark />
       <PageHero
         kicker="Кейсы"
         title={
           <>
-            Реальные проекты, <span className="text-accent-ink">которые я разработал</span>
+            Реальные проекты, <span className="text-accent">которые я разработал</span>
           </>
         }
         sub="Каждый кейс — это задача бизнеса, моё решение и конкретный результат. Без выдуманных цифр: всё, что написано, можно проверить на живом сайте."
@@ -51,7 +53,7 @@ export default function CasesPage() {
                   </Link>
                   <div className="flex flex-col p-6 sm:p-8">
                     <div className="flex flex-wrap items-center gap-3">
-                      <span className="text-sm font-bold text-accent-ink">{c.index}</span>
+                      <span className="text-sm font-bold text-accent">{c.index}</span>
                       <span className="rounded-full border border-line-strong bg-panel px-3 py-1 font-mono text-xs text-muted">
                         {c.typeLabel}
                       </span>
@@ -64,7 +66,7 @@ export default function CasesPage() {
                     <div className="mt-6 grid grid-cols-2 gap-4 sm:max-w-md">
                       {c.results.slice(0, 2).map((r) => (
                         <div key={r.label}>
-                          <p className="text-xl font-extrabold tracking-tight text-accent-ink">
+                          <p className="text-xl font-extrabold tracking-tight text-accent">
                             {r.value}
                           </p>
                           <p className="mt-1 text-xs leading-snug text-muted">{r.label}</p>

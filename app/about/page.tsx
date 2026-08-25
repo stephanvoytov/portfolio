@@ -6,6 +6,7 @@ import { pageMeta } from "@/lib/seo";
 import { ModalCta } from "@/components/ModalCta";
 import { BtnLink } from "@/components/BtnLink";
 import Reveal from "@/components/Reveal";
+import ThemeDark from "@/components/ThemeDark";
 
 export const metadata: Metadata = pageMeta({
   title: "Обо мне — VOYTOV STUDIO, разработка сайтов на Next.js и WordPress",
@@ -42,62 +43,81 @@ const principles = [
 
 export default function AboutPage() {
   return (
-    <section className="pt-28 pb-20 sm:pt-36">
-      <Container>
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-          <Reveal>
-            <div className="relative mx-auto w-full max-w-sm overflow-hidden rounded-3xl border-2 border-ink bg-panel shadow-brutal-lg">
-              <div className="relative aspect-square w-full">
-                <Image
-                  src="/images/photo-hero.webp"
-                  alt="Стефан — разработчик сайтов на Next.js и WordPress"
-                  fill
-                  priority
-                  className="object-cover object-top"
-                />
-              </div>
-            </div>
-          </Reveal>
-
-          <div>
+    <>
+      <ThemeDark />
+      <section className="pt-28 pb-20 sm:pt-36">
+        <Container>
+          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
             <Reveal>
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
-                Обо мне
-              </p>
-              <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-heading sm:text-5xl">
-                Стефан — разработчик сайтов на Next.js и WordPress
-              </h1>
-              <p className="mt-5 text-lg leading-relaxed text-muted">
-                Делаю сайты для бизнеса под ключ: интернет-магазины, каталоги, лендинги.
-                Специализируюсь на переходе с маркетплейсов на собственный сайт — с
-                интеграциями Ozon и Wildberries.
-                Работаю один, напрямую с вами. Код пишу сам — и на Next.js, и на WordPress,
-                без Tilda и Wix. После запуска не пропадаю: правки и поддержка входят в работу.
-              </p>
+              <div className="relative mx-auto w-full max-w-sm overflow-hidden rounded-3xl border-2 border-line bg-panel shadow-brutal-lg">
+                <div className="relative aspect-square w-full">
+                  <Image
+                    src="/images/photo-hero.webp"
+                    alt="Стефан — разработчик сайтов на Next.js и WordPress"
+                    fill
+                    priority
+                    className="object-cover object-top"
+                  />
+                </div>
+              </div>
             </Reveal>
 
-            <Reveal delay={0.05}>
-              <div className="mt-8 rounded-2xl border-2 border-ink bg-ink p-5 text-white shadow-brutal-accent-md sm:p-6">
-                <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-accent">
-                  Как я работаю
+            <div>
+              <Reveal>
+                <p className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
+                  Обо мне
                 </p>
-                <div className="mt-5 grid grid-cols-3 gap-3 border-b border-white/15 pb-5 text-center">
-                  <div>
-                    <p className="text-2xl font-extrabold text-accent sm:text-3xl">5+</p>
-                    <p className="mt-1 text-[11px] leading-snug text-white/70">лет в веб-разработке</p>
+                <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-heading sm:text-5xl">
+                  Стефан — разработчик сайтов на Next.js и WordPress
+                </h1>
+                <p className="mt-5 text-lg leading-relaxed text-muted">
+                  Делаю сайты для бизнеса под ключ: интернет-магазины, каталоги, лендинги.
+                  Специализируюсь на переходе с маркетплейсов на собственный сайт — с
+                  интеграциями Ozon и Wildberries.
+                  Работаю один, напрямую с вами. Код пишу сам — и на Next.js, и на WordPress,
+                  без Tilda и Wix. После запуска не пропадаю: правки и поддержка входят в работу.
+                </p>
+              </Reveal>
+
+              <Reveal delay={0.05}>
+                <div className="mt-8 rounded-2xl border-2 border-accent bg-panel p-5 shadow-brutal-accent-md sm:p-6">
+                  <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-accent">
+                    Как я работаю
+                  </p>
+                  <div className="mt-5 grid grid-cols-3 gap-3 border-b border-line pb-5 text-center">
+                    <div>
+                      <p className="text-2xl font-extrabold text-accent sm:text-3xl">5+</p>
+                      <p className="mt-1 text-[11px] leading-snug text-muted">лет в веб-разработке</p>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-extrabold text-accent sm:text-3xl">десятки</p>
+                      <p className="mt-1 text-[11px] leading-snug text-muted">запущенных проектов</p>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-extrabold text-accent sm:text-3xl">1</p>
+                      <p className="mt-1 text-[11px] leading-snug text-muted">человек — вы и разработчик напрямую</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-2xl font-extrabold text-accent sm:text-3xl">десятки</p>
-                    <p className="mt-1 text-[11px] leading-snug text-white/70">запущенных проектов</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl font-extrabold text-accent sm:text-3xl">1</p>
-                    <p className="mt-1 text-[11px] leading-snug text-white/70">человек — вы и разработчик напрямую</p>
-                  </div>
+                  <ul className="mt-5 grid gap-3 text-sm leading-relaxed text-body sm:text-base">
+                    {principles.map((t) => (
+                      <li key={t} className="flex items-start gap-3">
+                        <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent text-[11px] font-extrabold text-accent-ink">
+                          ✓
+                        </span>
+                        <span>{t}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="mt-5 grid gap-3 text-sm leading-relaxed text-white/80 sm:text-base">
-                  {principles.map((t) => (
-                    <li key={t} className="flex items-start gap-3">
+              </Reveal>
+
+              <Reveal delay={0.1}>
+                <h2 className="mt-10 text-xl font-extrabold tracking-tight text-heading">
+                  Что я делаю
+                </h2>
+                <ul className="mt-4 grid gap-3">
+                  {doList.map((t) => (
+                    <li key={t} className="flex items-start gap-3 text-[15px] leading-relaxed text-body">
                       <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent text-[11px] font-extrabold text-accent-ink">
                         ✓
                       </span>
@@ -105,62 +125,46 @@ export default function AboutPage() {
                     </li>
                   ))}
                 </ul>
+              </Reveal>
+
+              <Reveal delay={0.15}>
+                <div className="mt-8 rounded-2xl border border-line bg-panel p-5 shadow-sm sm:p-6">
+                  <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-muted">
+                    Чего я не делаю
+                  </p>
+                  <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-muted sm:text-base">
+                    {dontList.map((i) => (
+                      <li key={i.t} className="flex items-start gap-3">
+                        <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-line bg-panel font-mono text-xs font-extrabold text-heading">
+                          ✕
+                        </span>
+                        <span>
+                          <span className="font-semibold text-heading">{i.t}</span> {i.d}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <ModalCta variant="yellow" subject="Вопрос с /about — обсудить проект">
+                  Обсудить проект
+                </ModalCta>
+                <BtnLink href="/migrate" variant="ghost">
+                  Сайт вместо маркетплейса →
+                </BtnLink>
               </div>
-            </Reveal>
 
-            <Reveal delay={0.1}>
-              <h2 className="mt-10 text-xl font-extrabold tracking-tight text-heading">
-                Что я делаю
-              </h2>
-              <ul className="mt-4 grid gap-3">
-                {doList.map((t) => (
-                  <li key={t} className="flex items-start gap-3 text-[15px] leading-relaxed text-body">
-                    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent text-[11px] font-extrabold text-accent-ink">
-                      ✓
-                    </span>
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-
-            <Reveal delay={0.15}>
-              <div className="mt-8 rounded-2xl border border-line bg-panel p-5 shadow-sm sm:p-6">
-                <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-faint">
-                  Чего я не делаю
-                </p>
-                <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-muted sm:text-base">
-                  {dontList.map((i) => (
-                    <li key={i.t} className="flex items-start gap-3">
-                      <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-ink bg-panel font-mono text-xs font-extrabold text-heading">
-                        ✕
-                      </span>
-                      <span>
-                        <span className="font-semibold text-heading">{i.t}</span> {i.d}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ModalCta variant="primary" subject="Вопрос с /about — обсудить проект">
-                Обсудить проект
-              </ModalCta>
-              <BtnLink href="/migrate" variant="ghost">
-                Сайт вместо маркетплейса →
-              </BtnLink>
+              <p className="mt-8 text-sm">
+                <Link href="/cases" className="font-semibold text-accent hover:underline">
+                  Посмотреть кейсы →
+                </Link>
+              </p>
             </div>
-
-            <p className="mt-8 text-sm">
-              <Link href="/cases" className="font-semibold text-accent-ink hover:underline">
-                Посмотреть кейсы →
-              </Link>
-            </p>
           </div>
-        </div>
-      </Container>
-    </section>
+        </Container>
+      </section>
+    </>
   );
 }

@@ -20,7 +20,7 @@ export default function CtaSection({ hideMigrate = false }: { hideMigrate?: bool
                   "radial-gradient(ellipse 60% 90% at 50% 0%, rgb(var(--accent-rgb) / 0.28), transparent 70%)",
               }}
             />
-            <p className="relative font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-ink">
+            <p className="relative font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent">
               Следующий шаг
             </p>
             <h2 className="relative mt-4 text-3xl font-extrabold tracking-tight text-heading sm:text-5xl">
@@ -34,14 +34,14 @@ export default function CtaSection({ hideMigrate = false }: { hideMigrate?: bool
               <button
                 type="button"
                 onClick={() => open()}
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink bg-accent-ink px-7 py-3.5 text-sm font-semibold text-white shadow-brutal transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-accent bg-accent px-7 py-3.5 text-sm font-bold text-accent-ink shadow-brutal-accent transition-all duration-200 hover:-translate-y-0.5"
               >
                 Оставить заявку
               </button>
             </div>
             {!hideMigrate && (
               <p className="relative mt-5 text-sm text-muted">
-                <Link href="/migrate" className="font-semibold text-accent-ink hover:underline">
+                <Link href="/migrate" className="font-semibold text-accent hover:underline">
                   Нужен сайт вместо маркетплейса? →
                 </Link>
               </p>
