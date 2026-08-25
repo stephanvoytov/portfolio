@@ -3845,3 +3845,13 @@ Parsing ecmascript source code failed
  GET /migrate 200 in 187ms (next.js: 89ms, application-code: 98ms)
 [browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
  GET /manifest.webmanifest 200 in 16ms (next.js: 7ms, application-code: 9ms)
+ GET /icon.svg 200 in 10ms (next.js: 4ms, application-code: 6ms)
+ GET /icon/192 200 in 362ms (next.js: 215ms, application-code: 147ms)
+ GET /apple-icon 200 in 240ms (next.js: 205ms, application-code: 35ms)
+ GET /opengraph-image 200 in 1329ms (next.js: 1200ms, application-code: 129ms)
+ GET / 200 in 548ms (next.js: 8ms, application-code: 541ms)
+ GET /blog 200 in 206ms (next.js: 84ms, application-code: 122ms)
+ GET /cases 200 in 184ms (next.js: 57ms, application-code: 128ms)
+ GET /about 200 in 130ms (next.js: 24ms, application-code: 106ms)
+ GET /privacy 200 in 173ms (next.js: 87ms, application-code: 86ms)
+ GET /migrate 200 in 203ms (next.js: 9ms, application-code: 195ms)

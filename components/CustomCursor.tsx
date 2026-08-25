@@ -14,6 +14,32 @@ export default function CustomCursor() {
     const smooth = { x: -100, y: -100 };
     let raf = 0;
     let shown = false;
+    let running = false;
+
+    // rAF-цикл работает только пока точка догоняет курсор; в покое — останавливается
+    const loop = () => {
+      const dx = pos.x - smooth.x;
+      const dy = pos.y - smooth.y;
+      if (Math.abs(dx) < 0.3 && Math.abs(dy) < 0.3) {
+        smooth.x = pos.x;
+        smooth.y = pos.y;
+        running = false;
+        return;
+      }
+      smooth.x += dx * 0.2;
+      smooth.y += dy * 0.2;
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate(${smooth.x}px, ${smooth.y}px) translate(-50%, -50%)`;
+      }
+      raf = requestAnimationFrame(loop);
+    };
+
+    const wake = () => {
+      if (!running) {
+        running = true;
+        raf = requestAnimationFrame(loop);
+      }
+    };
 
     const move = (e: MouseEvent) => {
       pos.x = e.clientX;
@@ -24,18 +50,7 @@ export default function CustomCursor() {
         smooth.y = pos.y;
         setVisible(true);
       }
-    };
-
-    const leave = () => setVisible(false);
-    const enter = () => setVisible(true);
-
-    const loop = () => {
-      smooth.x += (pos.x - smooth.x) * 0.2;
-      smooth.y += (pos.y - smooth.y) * 0.2;
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate(${smooth.x}px, ${smooth.y}px) translate(-50%, -50%)`;
-      }
-      raf = requestAnimationFrame(loop);
+      wake();
     };
 
     const over = (e: MouseEvent) => {
@@ -45,14 +60,11 @@ export default function CustomCursor() {
 
     window.addEventListener("mousemove", move, { passive: true });
     window.addEventListener("mouseover", over, { passive: true });
-    document.addEventListener("mouseleave", leave);
-    document.addEventListener("mouseenter", enter);
     raf = requestAnimationFrame(loop);
+    running = true;
     return () => {
       window.removeEventListener("mousemove", move);
       window.removeEventListener("mouseover", over);
-      document.removeEventListener("mouseleave", leave);
-      document.removeEventListener("mouseenter", enter);
       cancelAnimationFrame(raf);
     };
   }, []);

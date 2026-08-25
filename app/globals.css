@@ -218,6 +218,18 @@ body {
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
+/* Уважение к reduced-motion: не нагружаем систему анимациями */
+@media (prefers-reduced-motion: reduce) {
+  .marq,
+  .hero-float,
+  .hero-float-phone,
+  .float-slow,
+  .float-slower,
+  .pulse-dot {
+    animation: none !important;
+  }
+}
+
 /* Скрытие скроллбара у горизонтальных каруселей */
 .no-scrollbar {
   -ms-overflow-style: none;

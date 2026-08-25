@@ -190,12 +190,6 @@ export default function MigratePage() {
 .marq { display:flex; width:max-content; animation: marq 24s linear infinite; }
 @keyframes heroFloat { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-16px) rotate(-1deg); } }
 .hero-float { animation: heroFloat 7s ease-in-out infinite; will-change: transform; }
-@keyframes pillFloat1 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-@keyframes pillFloat2 { 0%,100% { transform: translateY(0) translateX(-50%); } 50% { transform: translateY(-16px) translateX(-50%); } }
-@keyframes pillFloat3 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-.pill-float-1 { animation: pillFloat1 5s ease-in-out infinite; }
-.pill-float-2 { animation: pillFloat2 6s ease-in-out 1s infinite; }
-.pill-float-3 { animation: pillFloat3 5.5s ease-in-out 0.5s infinite; }
 `}</style>
 
       {/* ===== Hero ===== */}

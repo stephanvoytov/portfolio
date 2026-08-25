@@ -7,6 +7,7 @@ import { ContactModalProvider } from "@/components/ContactModal";
 import YandexMetrika from "@/components/YandexMetrika";
 import CustomCursor from "@/components/CustomCursor";
 import PageLoader from "@/components/PageLoader";
+import AnimPause from "@/components/AnimPause";
 import { site } from "@/lib/site";
 import { theme } from "@/lib/theme";
 
@@ -115,6 +116,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
         <YandexMetrika />
         <CustomCursor />
+        <AnimPause />
         <PageLoader />
         <ContactModalProvider>
           <Header />
