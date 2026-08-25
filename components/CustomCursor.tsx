@@ -78,8 +78,9 @@ export default function CustomCursor() {
         width: hovering ? 56 : 28,
         height: hovering ? 56 : 28,
         background: "white",
-        mixBlendMode: "difference",
-        opacity: visible ? 1 : 0,
+        border: "1px solid rgba(0, 0, 0, 0.35)",
+        boxShadow: "0 0 0 1px rgba(255, 255, 255, 0.25)",
+        opacity: visible ? 0.9 : 0,
         transition: "width 0.25s ease-out, height 0.25s ease-out, opacity 0.2s",
         willChange: "transform",
       }}
