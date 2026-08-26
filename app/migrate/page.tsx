@@ -1,4 +1,5 @@
 ﻿import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
@@ -18,7 +19,7 @@ import ThemeDark from "@/components/ThemeDark";
 
 
 export const metadata: Metadata = pageMeta({
-  title: "Миграция с маркетплейсов на свой сайт — VOYTOV STUDIO",
+  title: "Свой интернет-магазин: перенесу товары с Wildberries и Ozon",
   description:
     "Перенесём продажи с Wildberries и Ozon на свой сайт: комиссии ниже, клиенты ваши, продажи не обрываются. Пошаговый план перехода.",
   path: "/migrate",
@@ -97,7 +98,7 @@ export default function MigratePage() {
           <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
             <div>
               <h1 className="text-4xl font-extrabold leading-[1.12] tracking-tight text-heading sm:text-6xl lg:text-7xl">
-                Миграция с маркетплейсов
+                Свой интернет-магазин: перенесу товары с Wildberries и Ozon
               </h1>
               <p className="mt-4 max-w-xl text-base leading-relaxed text-body sm:text-lg">
                 Перенесём продажи с Wildberries и Ozon на свой сайт — без потери заказов и с ростом маржи.
@@ -122,13 +123,20 @@ export default function MigratePage() {
                 </p>
                 <div className="mt-3 flex flex-wrap items-center gap-3">
                   <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">от 25 000 ₽</span>
-                  <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">без остановки продаж</span>
+                  <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">без абонплаты</span>
                 </div>
                 <Magnetic>
-                  <ModalCta variant="yellow" className="mt-4 w-full py-3 text-sm" subject="Миграция с маркетплейсов — расчёт экономии">
-                    Посчитать экономию
+                  <ModalCta variant="yellow" className="mt-4 w-full py-3 text-sm" subject="Миграция с маркетплейсов — обсуждение магазина">
+                    Обсудить мой магазин
                   </ModalCta>
                 </Magnetic>
+                <p className="mt-3 text-xs leading-relaxed text-muted">
+                  Сделал{" "}
+                  <Link href="/cases/moranti" className="font-semibold text-accent underline underline-offset-2">
+                    Moranti
+                  </Link>{" "}
+                  — бренд женских сумок: синхронизация с WB/Ozon, первые заказы пошли с сайта.
+                </p>
               </div>
 
               {/* Desktop full CTA */}
@@ -136,7 +144,6 @@ export default function MigratePage() {
                 <p className="text-base font-semibold leading-snug text-heading sm:text-lg">
                   Переход на свой сайт{" "}
                   <span className="rounded bg-accent px-1.5 py-0.5 font-bold text-accent-ink">от 3 дней</span>
-                  — маркетплейсы продолжают продавать параллельно.
                 </p>
                 <p className="mt-2 text-sm text-muted sm:text-base">
                   Стоимость фиксируется до старта и не растёт по ходу работы.
@@ -147,11 +154,18 @@ export default function MigratePage() {
                 </div>
                 <div className="mt-5">
                   <Magnetic>
-                    <ModalCta variant="yellow" className="px-10 py-4 text-lg" subject="Миграция с маркетплейсов — расчёт экономии">
-                      Посчитать экономию
+                    <ModalCta variant="yellow" className="px-10 py-4 text-lg" subject="Миграция с маркетплейсов — обсуждение магазина">
+                      Обсудить мой магазин
                     </ModalCta>
                   </Magnetic>
                 </div>
+                <p className="mt-4 text-sm leading-relaxed text-muted">
+                  Сделал{" "}
+                  <Link href="/cases/moranti" className="font-semibold text-accent underline underline-offset-2">
+                    Moranti
+                  </Link>{" "}
+                  — бренд женских сумок: синхронизация с WB/Ozon, первые заказы пошли с сайта.
+                </p>
               </div>
             </div>
 

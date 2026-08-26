@@ -6,14 +6,9 @@ export default function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const [hovering, setHovering] = useState(false);
   const [visible, setVisible] = useState(false);
-  // Firefox софтверно рендерит mix-blend-mode и жутко грузит CPU — отключаем blend там
-  const [blend, setBlend] = useState(true);
 
   useEffect(() => {
     if (typeof window === "undefined" || !window.matchMedia("(pointer: fine)").matches) return;
-
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    if (/firefox/i.test(navigator.userAgent || "")) setBlend(false);
 
     const pos = { x: -100, y: -100 };
     const smooth = { x: -100, y: -100 };
@@ -95,8 +90,9 @@ export default function CustomCursor() {
       style={{
         width: hovering ? 56 : 28,
         height: hovering ? 56 : 28,
-        background: "white",
-        mixBlendMode: blend ? "difference" : "normal",
+        background: "transparent",
+        backdropFilter: "invert(1)",
+        WebkitBackdropFilter: "invert(1)",
         opacity: visible ? 1 : 0,
         transition: "width 0.25s ease-out, height 0.25s ease-out, opacity 0.2s",
         willChange: "transform",

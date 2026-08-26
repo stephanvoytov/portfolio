@@ -20,7 +20,7 @@ import PkgCard from "@/components/PkgCard";
 import ThemeDark from "@/components/ThemeDark";
 
 export const metadata: Metadata = pageMeta({
-  title: "VOYTOV STUDIO — разработка сайтов на Next.js",
+  title: "разработка сайтов на Next.js и интеграции с Ozon, Wildberries",
   description:
     "Разработка сайтов на Next.js и WordPress: интернет-магазины, каталоги с синхронизацией Ozon и Wildberries, лендинги под ключ. От идеи до запуска и поддержки.",
   path: "/",

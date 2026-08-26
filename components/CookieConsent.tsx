@@ -1,12 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function CookieConsent() {
-  const [show, setShow] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return !localStorage.getItem("cookie-consent");
-  });
+  // Показываем только после монтирования: иначе SSR (null) против клиента
+  // (баннер) даёт ошибку гидратации на каждом первом визите.
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    if (!localStorage.getItem("cookie-consent")) setShow(true);
+  }, []);
 
   const accept = () => {
     localStorage.setItem("cookie-consent", "1");
@@ -16,10 +19,10 @@ export default function CookieConsent() {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[9990] border-t-2 border-line bg-panel p-4 shadow-brutal-accent sm:p-6">
-      <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm leading-relaxed text-body sm:text-base">
-          Сайт использует файлы cookie для улучшения работы. Продолжая пользоваться сайтом, вы соглашаетесь с{" "}
+    <div className="fixed inset-x-0 bottom-0 z-[9990] border-t border-line bg-panel/95 px-3 py-2.5 backdrop-blur-none sm:px-4 sm:py-3">
+      <div className="mx-auto flex max-w-5xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+        <p className="text-xs leading-snug text-muted sm:text-sm">
+          Продолжая пользоваться сайтом, вы соглашаетесь с{" "}
           <a href="/privacy" className="font-semibold text-heading hover:underline">
             политикой конфиденциальности
           </a>
@@ -28,7 +31,7 @@ export default function CookieConsent() {
         <button
           type="button"
           onClick={accept}
-          className="shrink-0 rounded-full border-2 border-line bg-panel px-6 py-2.5 text-sm font-bold text-heading transition-colors hover:border-accent hover:text-accent"
+          className="shrink-0 rounded-full bg-accent px-4 py-1.5 text-xs font-bold text-accent-ink transition-transform hover:-translate-y-0.5 sm:px-5 sm:py-2 sm:text-sm"
         >
           Принять
         </button>
