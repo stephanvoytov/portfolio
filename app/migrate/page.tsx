@@ -19,9 +19,9 @@ import ThemeDark from "@/components/ThemeDark";
 
 
 export const metadata: Metadata = pageMeta({
-  title: "Свой интернет-магазин: перенесу товары с Wildberries и Ozon",
+  title: "Свой интернет-магазин рядом с Wildberries и Ozon — добавьте второй канал продаж",
   description:
-    "Перенесём продажи с Wildberries и Ozon на свой сайт: комиссии ниже, клиенты ваши, продажи не обрываются. Пошаговый план перехода.",
+    "Запустим ваш сайт как второй канал продаж: продаёте и на маркетплейсах, и на своём — комиссии ниже, клиенты ваши. Пошаговый план запуска.",
   path: "/migrate",
 });
 
@@ -43,8 +43,8 @@ const numbers = [
     label: "больше выручки остаётся на вашём сайте",
   },
   {
-    value: "98%",
-    label: "категорий WB подняли комиссии в июле 2026",
+    value: "каждый год",
+    label: "маркетплейсы пересматривают комиссии и правила — вы не влияете на это",
   },
 ];
 
@@ -98,11 +98,11 @@ export default function MigratePage() {
           <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
             <div>
               <h1 className="text-4xl font-extrabold leading-[1.12] tracking-tight text-heading sm:text-6xl lg:text-7xl">
-                Свой интернет-магазин: перенесу товары с Wildberries и Ozon
-              </h1>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-body sm:text-lg">
-                Перенесём продажи с Wildberries и Ozon на свой сайт — без потери заказов и с ростом маржи.
-              </p>
+                 Свой интернет-магазин: второй канал продаж рядом с Wildberries и Ozon
+               </h1>
+               <p className="mt-4 max-w-xl text-base leading-relaxed text-body sm:text-lg">
+                 Запустим ваш сайт как дополнительный канал к маркетплейсам — без потери заказов и с ростом маржи.
+               </p>
 
               <div className="mt-6 space-y-3">
                 <div className="flex items-start gap-3">
@@ -111,61 +111,59 @@ export default function MigratePage() {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent text-xs font-extrabold text-accent-ink">✓</span>
-                  <span className="text-base text-body sm:text-lg">Комиссии площадки — 30–50%. На своём сайте вы платите только за хостинг.</span>
+                   <span className="text-base text-body sm:text-lg">На маркетплейсах комиссия доходит до 30–50%. На своём сайте вы платите только за хостинг.</span>
                 </div>
               </div>
 
               {/* Mobile compact CTA */}
               <div className="mt-6 rounded-2xl border-2 border-accent bg-panel p-4 sm:hidden">
-                <p className="text-sm font-semibold text-heading">
-                  Переход на свой сайт{" "}
-                  <span className="rounded bg-accent px-1.5 py-0.5 font-bold text-accent-ink">от 3 дней</span>
-                </p>
-                <div className="mt-3 flex flex-wrap items-center gap-3">
-                  <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">от 25 000 ₽</span>
-                  <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">без абонплаты</span>
-                </div>
-                <Magnetic>
-                  <ModalCta variant="yellow" className="mt-4 w-full py-3 text-sm" subject="Миграция с маркетплейсов — обсуждение магазина">
-                    Обсудить мой магазин
-                  </ModalCta>
-                </Magnetic>
-                <p className="mt-3 text-xs leading-relaxed text-muted">
-                  Сделал{" "}
-                  <Link href="/cases/moranti" className="font-semibold text-accent underline underline-offset-2">
-                    Moranti
-                  </Link>{" "}
-                  — бренд женских сумок: синхронизация с WB/Ozon, первые заказы пошли с сайта.
-                </p>
+                 <p className="text-sm font-semibold text-heading">
+                   Запуск от 3 дней
+                 </p>
+                 <div className="mt-3 flex flex-wrap items-center gap-3">
+                   <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">от 25 000 ₽</span>
+                   <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">без абонплаты</span>
+                 </div>
+                 <Magnetic>
+                   <ModalCta variant="yellow" className="mt-4 w-full py-3 text-sm" subject="Второй канал продаж — обсуждение магазина">
+                     Обсудить мой магазин
+                   </ModalCta>
+                 </Magnetic>
+                 <p className="mt-3 text-xs leading-relaxed text-muted">
+                   Сделал{" "}
+                   <Link href="/cases/moranti" className="font-semibold text-accent underline underline-offset-2">
+                     Moranti
+                   </Link>{" "}
+                   — бренд женских сумок: синхронизация с WB/Ozon, сайт стал отдельным каналом продаж.
+                 </p>
               </div>
 
               {/* Desktop full CTA */}
               <div className="mt-6 hidden sm:block sm:rounded-3xl sm:border-2 sm:border-accent sm:bg-panel sm:p-6 sm:shadow-brutal-accent">
-                <p className="text-base font-semibold leading-snug text-heading sm:text-lg">
-                  Переход на свой сайт{" "}
-                  <span className="rounded bg-accent px-1.5 py-0.5 font-bold text-accent-ink">от 3 дней</span>
-                </p>
-                <p className="mt-2 text-sm text-muted sm:text-base">
-                  Стоимость фиксируется до старта и не растёт по ходу работы.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-3">
-                  <span className="rounded-full border border-line bg-bg px-4 py-1.5 font-mono text-sm font-bold text-heading">от 25 000 ₽</span>
-                  <span className="rounded-full border border-line bg-bg px-4 py-1.5 font-mono text-sm font-bold text-heading">от 3 дней</span>
-                </div>
-                <div className="mt-5">
-                  <Magnetic>
-                    <ModalCta variant="yellow" className="px-10 py-4 text-lg" subject="Миграция с маркетплейсов — обсуждение магазина">
-                      Обсудить мой магазин
-                    </ModalCta>
-                  </Magnetic>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-muted">
-                  Сделал{" "}
-                  <Link href="/cases/moranti" className="font-semibold text-accent underline underline-offset-2">
-                    Moranti
-                  </Link>{" "}
-                  — бренд женских сумок: синхронизация с WB/Ozon, первые заказы пошли с сайта.
-                </p>
+                 <p className="text-base font-semibold leading-snug text-heading sm:text-lg">
+                   Запуск от 3 дней
+                 </p>
+                 <p className="mt-2 text-sm text-muted sm:text-base">
+                   Стоимость фиксируется до старта и не растёт по ходу работы.
+                 </p>
+                 <div className="mt-4 flex flex-wrap gap-3">
+                   <span className="rounded-full border border-line bg-bg px-4 py-1.5 font-mono text-sm font-bold text-heading">от 25 000 ₽</span>
+                   <span className="rounded-full border border-line bg-bg px-4 py-1.5 font-mono text-sm font-bold text-heading">от 3 дней</span>
+                 </div>
+                 <div className="mt-5">
+                   <Magnetic>
+                     <ModalCta variant="yellow" className="px-10 py-4 text-lg" subject="Второй канал продаж — обсуждение магазина">
+                       Обсудить мой магазин
+                     </ModalCta>
+                   </Magnetic>
+                 </div>
+                 <p className="mt-4 text-sm leading-relaxed text-muted">
+                   Сделал{" "}
+                   <Link href="/cases/moranti" className="font-semibold text-accent underline underline-offset-2">
+                     Moranti
+                   </Link>{" "}
+                   — бренд женских сумок: синхронизация с WB/Ozon, сайт стал отдельным каналом продаж.
+                 </p>
               </div>
             </div>
 
@@ -174,7 +172,7 @@ export default function MigratePage() {
                 {/* eslint-disable-next-line @next/next/no-img-element -- локальный мокап */}
                 <img
                   src="/images/mockup-moranti-v2.jpg"
-                  alt="Интернет-магазин — витрина бренда, перенесённая с маркетплейсов"
+                   alt="Интернет-магазин — витрина бренда как второй канал продаж"
                   className="mx-auto w-full rounded-3xl shadow-2xl"
                 />
               </div>
@@ -270,11 +268,11 @@ export default function MigratePage() {
       <section className="bg-bg section-light py-10 sm:py-24">
         <Container>
           <Reveal>
-            <h2 className="max-w-4xl text-2xl font-extrabold leading-[1.12] tracking-tight text-heading sm:text-4xl">
-              Маркетплейс меняет правила и комиссии — и вы на это не влияете. Свой сайт{" "}
-              <strong className="text-heading">даёт полный контроль</strong>: цены, бренд и канал продаж{" "}
-              <strong className="text-heading">принадлежат вам</strong>.
-            </h2>
+              <h2 className="max-w-4xl text-2xl font-extrabold leading-[1.12] tracking-tight text-heading sm:text-4xl">
+               На маркетплейсе правила и комиссии меняют без вас. Свой сайт — это{" "}
+               <strong className="text-heading">второй канал продаж</strong>, который остаётся у вас: цены, бренд и
+               клиенты <strong className="text-heading">принадлежат вам</strong>, а площадки работают параллельно.
+             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
               На маркетплейсе трафик и алгоритмы принадлежат площадке. На своём сайте вы{" "}
               <strong className="font-bold text-heading">сами решаете</strong>, как продавать — и это остаётся с вами на годы.
@@ -286,7 +284,7 @@ export default function MigratePage() {
       {/* ===== Что входит ===== */}
       <section className="border-y border-line bg-panel-soft section-light py-10 sm:py-24">
         <Container>
-          <SectionHeading title="Что входит в переход" />
+           <SectionHeading title="Что входит в запуск" />
           <div className="mt-8 grid grid-cols-1 gap-3 sm:mt-12 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {whatIncluded.map((t, i) => (
               <Reveal key={t} delay={(i % 3) * 0.05}>
@@ -305,7 +303,7 @@ export default function MigratePage() {
       {/* ===== Топ-3 причины ===== */}
       <section className="bg-bg section-light py-10 sm:py-24">
         <Container>
-          <SectionHeading title="Три причины перейти" />
+           <SectionHeading title="Три причины добавить свой канал" />
           <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-12 sm:gap-6 lg:grid-cols-3">
             {reasons.map((r, i) => (
               <Reveal key={r.n} delay={i * 0.06}>
@@ -327,7 +325,7 @@ export default function MigratePage() {
         <Container>
           <SectionHeading
             dark
-            title="Как проходит переход"
+             title="Как проходит запуск"
             sub="Пять шагов — каждый понятен, измерим и не ломает текущие продажи."
           />
           <div className="mt-8 sm:mt-12">
@@ -342,7 +340,7 @@ export default function MigratePage() {
           <div className="mx-auto max-w-2xl text-center">
             <Reveal>
               <h2 className="text-2xl font-extrabold leading-[1.15] tracking-tight text-heading sm:text-4xl">
-                Кейс Moranti — с маркетплейсов на свой сайт
+                 Кейс Moranti — свой канал продаж рядом с маркетплейсами
               </h2>
               <p className="mt-4 text-base leading-relaxed text-body sm:text-lg">
                 Бренд женских сумок. Сайт синхронизирован с Ozon и Wildberries — карточки, цены и остатки обновляются сами. Площадки остались, но перестали быть единственным каналом.
@@ -404,7 +402,7 @@ export default function MigratePage() {
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-extrabold leading-[1.15] tracking-tight text-heading sm:text-5xl">
-              Обсудим ваш переход за 15 минут
+               Обсудим запуск вашего канала за 15 минут
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
               Расскажите про магазин — предложу формат, цену и срок. Без воды.

@@ -12,7 +12,7 @@ export default function PkgCard({
 }) {
   const subject =
     context === "migrate"
-      ? `Тариф «${p.name}» (${p.price}) — миграция с маркетплейсов`
+      ? `Тариф «${p.name}» (${p.price}) — второй канал продаж`
       : `Пакет «${p.name}» (${p.price})`;
   return (
     <Reveal className="h-full" delay={p.hot ? 0 : 0.06}>
