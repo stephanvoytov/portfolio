@@ -42,7 +42,7 @@ export default function Footer() {
                 </Link>
               ))}
               <Link href="/migrate" className="-mx-2 rounded-lg px-2 py-2 text-sm text-muted hover:text-heading">
-                Сайт вместо маркетплейса
+                Второй канал продаж
               </Link>
               <Link href="/blog" className="-mx-2 rounded-lg px-2 py-2 text-sm text-muted hover:text-heading">
                 Блог

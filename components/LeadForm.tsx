@@ -10,17 +10,15 @@ const fieldCls =
   "w-full rounded-xl border-2 border-ink bg-bg px-4 py-3 text-base font-semibold text-heading placeholder:text-muted outline-none transition-colors focus:border-accent";
 
 export default function LeadForm() {
-  const [name, setName] = useState("");
   const [contact, setContact] = useState("");
-  const [message, setMessage] = useState("");
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !contact.trim()) {
-      setError("Заполните имя и контакт");
+    if (!contact.trim()) {
+      setError("Укажите телефон");
       return;
     }
     if (!consent) {
@@ -33,7 +31,7 @@ export default function LeadForm() {
       const res = await fetch("/api/telegram", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, contact, message }),
+        body: JSON.stringify({ contact }),
       });
       if (!res.ok) throw new Error("send failed");
       reachGoal(GOALS.leadSent);
@@ -49,16 +47,16 @@ export default function LeadForm() {
         <div className="text-3xl">✅</div>
         <p className="mt-3 text-lg font-bold text-heading">Заявка отправлена!</p>
         <p className="mt-1 text-sm text-body">
-          Напишу в{" "}
-          <a href={site.tg} target="_blank" rel="noopener" className="font-semibold text-accent underline">
-            Telegram
-          </a>{" "}
-          или{" "}
-          <a href={site.max} target="_blank" rel="noopener" className="font-semibold text-accent underline">
-            Max
-          </a>{" "}
-          в течение 15 минут.
-        </p>
+           Перезвоню на указанный номер или напишу в{" "}
+           <a href={site.tg} target="_blank" rel="noopener" className="font-semibold text-accent underline">
+             Telegram
+           </a>{" "}
+           или{" "}
+           <a href={site.max} target="_blank" rel="noopener" className="font-semibold text-accent underline">
+             Max
+           </a>{" "}
+           в течение 15 минут.
+         </p>
       </div>
     );
   }
@@ -67,51 +65,20 @@ export default function LeadForm() {
     <form onSubmit={submit} className="space-y-4">
       <div>
         <label
-          htmlFor="lead-name"
+          htmlFor="lead-phone"
           className="font-mono text-xs font-bold uppercase tracking-wider text-muted"
         >
-          Имя
+          Телефон
         </label>
         <input
-          id="lead-name"
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Как к вам обращаться"
-          autoComplete="name"
-          className={fieldCls}
-        />
-      </div>
-      <div>
-        <label
-          htmlFor="lead-contact"
-          className="font-mono text-xs font-bold uppercase tracking-wider text-muted"
-        >
-          Контакт для связи
-        </label>
-        <input
-          id="lead-contact"
-          type="text"
+          id="lead-phone"
+          type="tel"
+          inputMode="tel"
+          autoComplete="tel"
           value={contact}
           onChange={(e) => setContact(e.target.value)}
-          placeholder="Telegram, телефон или почта"
+          placeholder="+7 (900) 000-00-00"
           className={fieldCls}
-        />
-      </div>
-      <div>
-        <label
-          htmlFor="lead-message"
-          className="font-mono text-xs font-bold uppercase tracking-wider text-muted"
-        >
-          Задача
-        </label>
-        <textarea
-          id="lead-message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="Например: нужен интернет-магазин для бренда одежды…"
-          rows={3}
-          className={`${fieldCls} resize-none`}
         />
       </div>
 

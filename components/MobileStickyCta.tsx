@@ -35,7 +35,7 @@ export default function MobileStickyCta() {
         onClick={() => { reachGoal(GOALS.stickyCta); open(); }}
         className="w-full rounded-full bg-accent px-6 py-3.5 text-base font-bold text-accent-ink shadow-brutal-sm transition-transform active:scale-[0.98]"
       >
-        Обсудить переход
+        Обсудить проект
       </button>
     </div>
   );

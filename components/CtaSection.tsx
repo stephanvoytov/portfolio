@@ -42,7 +42,7 @@ export default function CtaSection({ hideMigrate = false }: { hideMigrate?: bool
             {!hideMigrate && (
               <p className="relative mt-5 text-sm text-muted">
                 <Link href="/migrate" className="font-semibold text-accent hover:underline">
-                  Нужен сайт вместо маркетплейса? →
+                  Нужен второй канал продаж? →
                 </Link>
               </p>
             )}

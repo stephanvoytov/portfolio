@@ -11,7 +11,7 @@ const links = [
   { href: "/#work", label: "Работы" },
   { href: "/#process", label: "Процесс" },
   { href: "/about", label: "Обо мне" },
-  { href: "/migrate", label: "Сайт вместо маркетплейса" },
+  { href: "/migrate", label: "Второй канал продаж" },
   { href: "/blog", label: "Блог" },
 ];
 

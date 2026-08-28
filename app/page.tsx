@@ -16,6 +16,7 @@ import { cases } from "@/lib/cases";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 import { packages as allPackages, whatIncluded } from "@/lib/packages";
+import { services } from "@/lib/services";
 import PkgCard from "@/components/PkgCard";
 import ThemeDark from "@/components/ThemeDark";
 
@@ -66,8 +67,8 @@ const reasons = [
 
 const reviews = [
   {
-    name: "Ирина, бренд сумок",
-    text: "Перешли с Wildberries на свой сайт — Стефан поднял всё за две недели, синхронизация с площадкой работает сама. Первые заказы пошли.",
+    name: "Ирина, продаёт сумки Moranti в России",
+    text: "Запустили свой сайт рядом с Wildberries — Стефан поднял всё за две недели, синхронизация с площадкой работает сама. Первые заказы пошли.",
   },
   {
     name: "Дмитрий, карго из Китая",
@@ -125,9 +126,9 @@ export default function HomePage() {
               {/* на мобилке — компактный блок */}
               <div className="mt-6 rounded-2xl border-2 border-accent bg-panel p-4 sm:hidden">
                 <p className="text-sm font-semibold text-heading">
-                  Главную страницу разработаю{" "}
-                  <span className="rounded bg-accent px-1.5 py-0.5 font-bold text-accent-ink">до оплаты</span>
-                </p>
+                   Макет главной —{" "}
+                   <span className="rounded bg-accent px-1.5 py-0.5 font-bold text-accent-ink">до оплаты</span>
+                 </p>
                 <div className="mt-3 flex flex-wrap items-center gap-3">
                   <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">от 10 000 ₽</span>
                   <span className="rounded-full border border-line bg-bg px-3 py-1 font-mono text-xs font-bold text-heading">от 5 дней</span>
@@ -157,8 +158,8 @@ export default function HomePage() {
                   Цена — за лендинг бренда под ключ. Каталог, магазин и синхронизация с WB/Ozon —
                   отдельными пакетами на{" "}
                   <Link href="/migrate" className="font-semibold text-accent underline underline-offset-2">
-                    странице перехода
-                  </Link>
+                     странице второго канала
+                   </Link>
                   .
                 </p>
                 <div className="mt-5">
@@ -228,6 +229,41 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {/* ===== Услуги ===== */}
+      <section id="services" className="py-10 sm:py-24">
+        <Container>
+          <SectionHeading
+            dark
+            title="Что ещё делаю"
+            sub={
+              <>
+                Не только сайты с нуля — доработки, интеграции, боты и поддержка{" "}
+                <strong className="font-semibold text-heading">уже работающего</strong> проекта.
+              </>
+            }
+          />
+          <div className="mt-8 grid gap-4 sm:mt-12 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((s) => (
+              <Reveal key={s.num}>
+                <div className="flex h-full flex-col rounded-3xl border border-line bg-panel p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-accent sm:p-7">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-sm font-bold text-accent">{s.num}</span>
+                    {s.hot && (
+                      <span className="rounded-full bg-accent px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-accent-ink">
+                        часто
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="mt-4 text-lg font-bold text-heading">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-body">{s.desc}</p>
+                  <p className="mt-auto pt-4 font-mono text-sm font-bold text-heading">{s.price}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* ===== Форма захвата ===== */}
       <section className="border-y border-line bg-panel-soft py-10 sm:py-24">
         <Container>
@@ -257,7 +293,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Работы ===== */}
-      <section className="flex min-h-[100svh] flex-col justify-center py-8 sm:py-16">
+      <section id="work" className="flex min-h-[100svh] flex-col justify-center py-8 sm:py-16">
         <Container>
           <Reveal>
             <h2 className="text-2xl font-extrabold leading-[1.15] tracking-tight text-heading sm:text-5xl">
@@ -320,7 +356,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Процесс ===== */}
-      <section className="py-10 sm:py-24">
+      <section id="process" className="py-10 sm:py-24">
         <Container>
           <SectionHeading
             dark

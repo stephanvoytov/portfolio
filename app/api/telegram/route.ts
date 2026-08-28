@@ -28,17 +28,17 @@ export async function POST(request: Request) {
   const contact = (body.contact ?? "").trim();
   const message = (body.message ?? "").trim();
 
-  if (!name || !contact) {
+  if (!contact) {
     return Response.json(
-      { ok: false, error: "Имя и контакт обязательны" },
+      { ok: false, error: "Укажите телефон" },
       { status: 400 },
     );
   }
 
   const text = [
     "Заявка с сайта:",
-    `Имя: ${name}`,
-    `Контакт: ${contact}`,
+    `Телефон: ${contact}`,
+    name ? `Имя: ${name}` : null,
     message ? `Задача: ${message}` : null,
   ]
     .filter(Boolean)
